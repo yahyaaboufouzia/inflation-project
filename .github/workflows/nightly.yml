@@ -1,7 +1,7 @@
 name: nightly-scrape
 
-# Runs every night and commits the refreshed index to the repo, so the price
-# history is versioned and public (the reproducibility that is the whole point).
+# Runs every night and commits the refreshed price history back to the repo,
+# so the data is versioned and public (the reproducibility that is the point).
 on:
   schedule:
     - cron: "0 3 * * *"  # 03:00 UTC daily
@@ -26,23 +26,29 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      # DEMO MODE: rebuilds the deterministic synthetic history up to today.
-      # Swap this step for `inflation-scrape` (real scrapers) once the site
-      # selectors in config/sites.yaml are wired up and verified.
-      - name: Build history (demo)
+      # DEMO MODE (active): regenerates the deterministic synthetic history up
+      # to today and exports data/observations.csv + data/daily/index.csv.
+      - name: Refresh data (demo)
         run: python scripts/seed_demo.py
 
-      - name: Compute & export index
-        run: inflation-index --export data/daily/index.csv
+      # REAL MODE (enable once site selectors in config/sites.yaml are verified):
+      # rebuild the DB from the committed history, scrape only today's prices,
+      # append them, then recompute and re-export.
+      #   - name: Scrape today's prices
+      #     run: |
+      #       python -c "from inflation.storage import repository as r; e=r.get_engine(); r.init_db(e); r.import_observations_csv(e,'data/observations.csv')"
+      #       inflation-scrape
+      #       inflation-index --export data/daily/index.csv
+      #       python -c "from inflation.storage import repository as r; r.export_observations_csv(r.get_engine(),'data/observations.csv')"
 
-      - name: Commit refreshed index
+      - name: Commit refreshed data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/daily/index.csv
+          git add data/observations.csv data/daily/index.csv
           if git diff --staged --quiet; then
-            echo "No change in the index."
+            echo "No change in the data."
           else
-            git commit -m "chore: nightly index refresh ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: nightly data refresh ($(date -u +%Y-%m-%d))"
             git push
           fi

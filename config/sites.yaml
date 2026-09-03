@@ -1,30 +1,76 @@
 # Per-site scraping configuration.
 #   type      "static" (httpx + BeautifulSoup) or "browser" (Playwright, JS pages)
 #   selector  CSS selector pointing at the price element on a product page
-#   in_stock  optional CSS selector; if absent the product is treated as out of stock
+#   in_stock  optional CSS selector; if absent the product is treated as in stock
 #   delay     seconds to wait between requests (be polite, avoid rate limits)
 #   user_agent sent with each request
 #
+# IMPORTANT: the selectors below are STARTING POINTS, not verified values.
+# Every site must be checked before use:
+#   1. read its robots.txt to see what scraping is allowed
+#   2. inspect a product page (right-click the price -> Inspect) to get the
+#      real CSS selector, and confirm whether the price is in the HTML
+#      (type: static) or injected by JavaScript (type: browser -> Playwright)
+# Keeping selectors here (not in code) means fixing a site is a one-line change.
+#
 # The "demo" site needs no config — it generates synthetic prices offline.
-# The entries below are STARTING POINTS: real selectors must be verified against
-# the live pages (they change over time), which is exactly why sites.yaml is
-# separate from the code — you fix a selector here without touching Python.
 sites:
-  jumia:
+  # --- General e-commerce ---------------------------------------------------
+  jumia:              # jumia.ma — largest, best starting point
     type: static
     selector: "span.-b.-ubpt.-tal.-fs24.-prxs"
     in_stock: "p.-pvs.-mvxs.-fs16"
     delay: 2.0
     user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
 
-  marjane:
+  avito:              # avito.ma — classifieds (new & used)
+    type: static
+    selector: "span[data-testid='price']"
+    delay: 3.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  # --- Supermarkets (best food coverage, usually JavaScript-rendered) -------
+  marjane:            # marjane.ma
     type: browser
     selector: "span.price"
     delay: 3.0
     user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
 
-  electroplanet:
+  marjanemall:        # marjanemall.ma — online marketplace
+    type: browser
+    selector: "span.price"
+    delay: 3.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  aswakassalam:       # aswakassalam.com
+    type: browser
+    selector: "span.price"
+    delay: 3.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  acima:              # acima.ma
+    type: browser
+    selector: "span.price"
+    delay: 3.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  # --- Appliances / electronics (for durable goods, if re-added) ------------
+  electroplanet:      # electroplanet.ma
     type: static
     selector: "span.price"
     delay: 2.0
     user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  cosmos:             # cosmoselectro.ma
+    type: static
+    selector: "span.price"
+    delay: 2.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+# NOTE — some basket items are NOT scraped from shops:
+#   * Fuel (essence, gasoil): liberalised but published; source is distributor
+#     sites / press, updated roughly every two weeks.
+#   * Regulated / subsidised goods (bread, national flour, sugar, butane gas):
+#     administered prices that rarely change; source is official texts
+#     (Bulletin Officiel, ONICL, Caisse de Compensation).
+# These are handled by a separate "official prices" importer, not this scraper.
