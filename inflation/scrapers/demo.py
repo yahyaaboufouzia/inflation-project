@@ -38,7 +38,9 @@ class DemoScraper(BaseScraper):
         self.annual_drift = annual_drift  # ~6% "official-ish" trend per year
 
     def fetch_price(self, product: ProductCfg) -> PriceResult:
-        base = _base_price(product.id)
+        # use the product's realistic reference price when provided,
+        # otherwise fall back to a pseudo-random one
+        base = product.base_price if product.base_price else _base_price(product.id)
 
         # deterministic daily wiggle in +/- 1%, unique per product and day
         seed = _hash(f"{product.id}:{self.day:%Y-%m-%d}")

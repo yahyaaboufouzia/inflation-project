@@ -1,72 +1,79 @@
 # The basket: everyday products frequently consumed by Moroccan households.
-#   id       stable slug, used as primary key and never reused
-#   category must match an id in weights.yaml
-#   site     which scraper to use (see config/sites.yaml); "demo" = synthetic
-#   url      product page to scrape (placeholder for demo products)
-#   unit     normalised unit, so different pack sizes stay comparable
+#   id         stable slug, used as primary key and never reused
+#   category   must match an id in weights.yaml
+#   site       which scraper to use (see config/sites.yaml); "demo" = synthetic
+#   url        product page to scrape (placeholder for demo products)
+#   unit       normalised unit, so different pack sizes stay comparable
+#   base_price starting price in MAD (dirhams)
 #
-# All products use site "demo" so the project runs out of the box with
-# synthetic prices. To track a real product: set site to a real one
-# (e.g. jumia / marjane) and put the real product url.
+# SOURCE OF base_price:
+#   These are INDICATIVE reference prices reflecting typical Moroccan retail
+#   levels in 2025-2026 (ordinary retail / supermarket prices). They are demo
+#   anchors only — used so the synthetic history looks realistic — NOT scraped
+#   live data. They can be cross-checked against HCP "prix moyens de vente au
+#   détail" and current Jumia / Marjane listings, and will be REPLACED by real
+#   scraped prices once the site selectors in config/sites.yaml are wired up.
+#
+# All products use site "demo" so the project runs out of the box.
 products:
   # --- Céréales & féculents -------------------------------------------------
-  - { id: pain-ordinaire,   name: "Pain ordinaire (khobz)",     category: cereales_feculents, site: demo, url: "https://example.com/pain",        unit: "1u" }
-  - { id: farine-ble-1kg,   name: "Farine de blé 1kg",          category: cereales_feculents, site: demo, url: "https://example.com/farine",      unit: "1kg" }
-  - { id: semoule-1kg,      name: "Semoule fine 1kg",           category: cereales_feculents, site: demo, url: "https://example.com/semoule",     unit: "1kg" }
-  - { id: riz-1kg,          name: "Riz 1kg",                    category: cereales_feculents, site: demo, url: "https://example.com/riz",         unit: "1kg" }
-  - { id: pates-500g,       name: "Pâtes (spaghetti) 500g",     category: cereales_feculents, site: demo, url: "https://example.com/pates",       unit: "500g" }
+  - { id: pain-ordinaire,   name: "Pain ordinaire (khobz)",     category: cereales_feculents, site: demo, url: "https://example.com/pain",        unit: "1u",   base_price: 1.20 }
+  - { id: farine-ble-1kg,   name: "Farine de blé 1kg",          category: cereales_feculents, site: demo, url: "https://example.com/farine",      unit: "1kg",  base_price: 6.00 }
+  - { id: semoule-1kg,      name: "Semoule fine 1kg",           category: cereales_feculents, site: demo, url: "https://example.com/semoule",     unit: "1kg",  base_price: 8.00 }
+  - { id: riz-1kg,          name: "Riz 1kg",                    category: cereales_feculents, site: demo, url: "https://example.com/riz",         unit: "1kg",  base_price: 15.00 }
+  - { id: pates-500g,       name: "Pâtes (spaghetti) 500g",     category: cereales_feculents, site: demo, url: "https://example.com/pates",       unit: "500g", base_price: 7.00 }
 
   # --- Sucre & huiles -------------------------------------------------------
-  - { id: sucre-granule-2kg, name: "Sucre granulé 2kg",         category: sucre_huiles, site: demo, url: "https://example.com/sucre",             unit: "2kg" }
-  - { id: pain-sucre,        name: "Pain de sucre",             category: sucre_huiles, site: demo, url: "https://example.com/pain-sucre",        unit: "1u" }
-  - { id: huile-table-5l,    name: "Huile de table 5L",         category: sucre_huiles, site: demo, url: "https://example.com/huile-table",       unit: "5L" }
-  - { id: huile-olive-1l,    name: "Huile d'olive 1L",          category: sucre_huiles, site: demo, url: "https://example.com/huile-olive",       unit: "1L" }
+  - { id: sucre-granule-2kg, name: "Sucre granulé 2kg",         category: sucre_huiles, site: demo, url: "https://example.com/sucre",             unit: "2kg",  base_price: 16.00 }
+  - { id: pain-sucre,        name: "Pain de sucre (2kg)",       category: sucre_huiles, site: demo, url: "https://example.com/pain-sucre",        unit: "2kg",  base_price: 14.00 }
+  - { id: huile-table-5l,    name: "Huile de table 5L",         category: sucre_huiles, site: demo, url: "https://example.com/huile-table",       unit: "5L",   base_price: 120.00 }
+  - { id: huile-olive-1l,    name: "Huile d'olive 1L",          category: sucre_huiles, site: demo, url: "https://example.com/huile-olive",       unit: "1L",   base_price: 90.00 }
 
   # --- Produits laitiers & œufs --------------------------------------------
-  - { id: lait-1l,          name: "Lait 1L",                    category: laitiers_oeufs, site: demo, url: "https://example.com/lait",            unit: "1L" }
-  - { id: beurre-250g,      name: "Beurre 250g",                category: laitiers_oeufs, site: demo, url: "https://example.com/beurre",          unit: "250g" }
-  - { id: fromage-portions, name: "Fromage (16 portions)",      category: laitiers_oeufs, site: demo, url: "https://example.com/fromage",         unit: "16p" }
-  - { id: yaourt-pack,      name: "Yaourt (pack de 4)",         category: laitiers_oeufs, site: demo, url: "https://example.com/yaourt",          unit: "4u" }
-  - { id: oeufs-30,         name: "Œufs (plateau de 30)",       category: laitiers_oeufs, site: demo, url: "https://example.com/oeufs",           unit: "30u" }
+  - { id: lait-1l,          name: "Lait 1L",                    category: laitiers_oeufs, site: demo, url: "https://example.com/lait",            unit: "1L",   base_price: 7.50 }
+  - { id: beurre-250g,      name: "Beurre 250g",                category: laitiers_oeufs, site: demo, url: "https://example.com/beurre",          unit: "250g", base_price: 22.00 }
+  - { id: fromage-portions, name: "Fromage (16 portions)",      category: laitiers_oeufs, site: demo, url: "https://example.com/fromage",         unit: "16p",  base_price: 18.00 }
+  - { id: yaourt-pack,      name: "Yaourt (pack de 4)",         category: laitiers_oeufs, site: demo, url: "https://example.com/yaourt",          unit: "4u",   base_price: 10.00 }
+  - { id: oeufs-30,         name: "Œufs (plateau de 30)",       category: laitiers_oeufs, site: demo, url: "https://example.com/oeufs",           unit: "30u",  base_price: 45.00 }
 
   # --- Viandes & poissons ---------------------------------------------------
-  - { id: poulet-kg,        name: "Poulet entier (le kg)",      category: viandes_poissons, site: demo, url: "https://example.com/poulet",        unit: "1kg" }
-  - { id: boeuf-kg,         name: "Viande de bœuf (le kg)",     category: viandes_poissons, site: demo, url: "https://example.com/boeuf",         unit: "1kg" }
-  - { id: viande-hachee-kg, name: "Viande hachée (le kg)",      category: viandes_poissons, site: demo, url: "https://example.com/hachee",        unit: "1kg" }
-  - { id: sardines-kg,      name: "Sardines fraîches (le kg)",  category: viandes_poissons, site: demo, url: "https://example.com/sardines",      unit: "1kg" }
-  - { id: thon-boite,       name: "Thon en boîte",              category: viandes_poissons, site: demo, url: "https://example.com/thon",          unit: "1boite" }
+  - { id: poulet-kg,        name: "Poulet entier (le kg)",      category: viandes_poissons, site: demo, url: "https://example.com/poulet",        unit: "1kg",  base_price: 22.00 }
+  - { id: boeuf-kg,         name: "Viande de bœuf (le kg)",     category: viandes_poissons, site: demo, url: "https://example.com/boeuf",         unit: "1kg",  base_price: 90.00 }
+  - { id: viande-hachee-kg, name: "Viande hachée (le kg)",      category: viandes_poissons, site: demo, url: "https://example.com/hachee",        unit: "1kg",  base_price: 85.00 }
+  - { id: sardines-kg,      name: "Sardines fraîches (le kg)",  category: viandes_poissons, site: demo, url: "https://example.com/sardines",      unit: "1kg",  base_price: 15.00 }
+  - { id: thon-boite,       name: "Thon en boîte",              category: viandes_poissons, site: demo, url: "https://example.com/thon",          unit: "1boite", base_price: 12.00 }
 
   # --- Légumes frais --------------------------------------------------------
-  - { id: tomate-1kg,       name: "Tomates 1kg",                category: legumes_frais, site: demo, url: "https://example.com/tomate",           unit: "1kg" }
-  - { id: pomme-terre-1kg,  name: "Pommes de terre 1kg",        category: legumes_frais, site: demo, url: "https://example.com/pdt",              unit: "1kg" }
-  - { id: oignon-1kg,       name: "Oignons 1kg",                category: legumes_frais, site: demo, url: "https://example.com/oignon",           unit: "1kg" }
-  - { id: carotte-1kg,      name: "Carottes 1kg",               category: legumes_frais, site: demo, url: "https://example.com/carotte",          unit: "1kg" }
-  - { id: poivron-1kg,      name: "Poivrons 1kg",               category: legumes_frais, site: demo, url: "https://example.com/poivron",          unit: "1kg" }
+  - { id: tomate-1kg,       name: "Tomates 1kg",                category: legumes_frais, site: demo, url: "https://example.com/tomate",           unit: "1kg",  base_price: 6.00 }
+  - { id: pomme-terre-1kg,  name: "Pommes de terre 1kg",        category: legumes_frais, site: demo, url: "https://example.com/pdt",              unit: "1kg",  base_price: 5.00 }
+  - { id: oignon-1kg,       name: "Oignons 1kg",                category: legumes_frais, site: demo, url: "https://example.com/oignon",           unit: "1kg",  base_price: 5.00 }
+  - { id: carotte-1kg,      name: "Carottes 1kg",               category: legumes_frais, site: demo, url: "https://example.com/carotte",          unit: "1kg",  base_price: 5.00 }
+  - { id: poivron-1kg,      name: "Poivrons 1kg",               category: legumes_frais, site: demo, url: "https://example.com/poivron",          unit: "1kg",  base_price: 8.00 }
 
   # --- Fruits ---------------------------------------------------------------
-  - { id: banane-1kg,       name: "Bananes 1kg",                category: fruits, site: demo, url: "https://example.com/banane",                  unit: "1kg" }
-  - { id: pomme-1kg,        name: "Pommes 1kg",                 category: fruits, site: demo, url: "https://example.com/pomme",                   unit: "1kg" }
-  - { id: orange-1kg,       name: "Oranges 1kg",                category: fruits, site: demo, url: "https://example.com/orange",                  unit: "1kg" }
+  - { id: banane-1kg,       name: "Bananes 1kg",                category: fruits, site: demo, url: "https://example.com/banane",                  unit: "1kg",  base_price: 12.00 }
+  - { id: pomme-1kg,        name: "Pommes 1kg",                 category: fruits, site: demo, url: "https://example.com/pomme",                   unit: "1kg",  base_price: 15.00 }
+  - { id: orange-1kg,       name: "Oranges 1kg",                category: fruits, site: demo, url: "https://example.com/orange",                  unit: "1kg",  base_price: 6.00 }
 
   # --- Légumes secs & épicerie ---------------------------------------------
-  - { id: lentilles-1kg,    name: "Lentilles 1kg",              category: secs_epicerie, site: demo, url: "https://example.com/lentilles",        unit: "1kg" }
-  - { id: pois-chiches-1kg, name: "Pois chiches 1kg",           category: secs_epicerie, site: demo, url: "https://example.com/pois-chiches",     unit: "1kg" }
-  - { id: concentre-tomate, name: "Concentré de tomate",        category: secs_epicerie, site: demo, url: "https://example.com/concentre",        unit: "1boite" }
-  - { id: sel-1kg,          name: "Sel 1kg",                    category: secs_epicerie, site: demo, url: "https://example.com/sel",              unit: "1kg" }
-  - { id: olives-1kg,       name: "Olives 1kg",                 category: secs_epicerie, site: demo, url: "https://example.com/olives",           unit: "1kg" }
+  - { id: lentilles-1kg,    name: "Lentilles 1kg",              category: secs_epicerie, site: demo, url: "https://example.com/lentilles",        unit: "1kg",  base_price: 18.00 }
+  - { id: pois-chiches-1kg, name: "Pois chiches 1kg",           category: secs_epicerie, site: demo, url: "https://example.com/pois-chiches",     unit: "1kg",  base_price: 16.00 }
+  - { id: concentre-tomate, name: "Concentré de tomate",        category: secs_epicerie, site: demo, url: "https://example.com/concentre",        unit: "1boite", base_price: 5.00 }
+  - { id: sel-1kg,          name: "Sel 1kg",                    category: secs_epicerie, site: demo, url: "https://example.com/sel",              unit: "1kg",  base_price: 3.00 }
+  - { id: olives-1kg,       name: "Olives 1kg",                 category: secs_epicerie, site: demo, url: "https://example.com/olives",           unit: "1kg",  base_price: 20.00 }
 
   # --- Boissons -------------------------------------------------------------
-  - { id: the-vert-200g,    name: "Thé vert 200g",              category: boissons, site: demo, url: "https://example.com/the",                   unit: "200g" }
-  - { id: cafe-250g,        name: "Café moulu 250g",            category: boissons, site: demo, url: "https://example.com/cafe",                  unit: "250g" }
-  - { id: eau-minerale-5l,  name: "Eau minérale 5L",            category: boissons, site: demo, url: "https://example.com/eau",                   unit: "5L" }
+  - { id: the-vert-200g,    name: "Thé vert 200g",              category: boissons, site: demo, url: "https://example.com/the",                   unit: "200g", base_price: 18.00 }
+  - { id: cafe-250g,        name: "Café moulu 250g",            category: boissons, site: demo, url: "https://example.com/cafe",                  unit: "250g", base_price: 25.00 }
+  - { id: eau-minerale-5l,  name: "Eau minérale 5L",            category: boissons, site: demo, url: "https://example.com/eau",                   unit: "5L",   base_price: 10.00 }
 
   # --- Hygiène & entretien --------------------------------------------------
-  - { id: savon-liquide-1l, name: "Savon liquide 1L",           category: hygiene_entretien, site: demo, url: "https://example.com/savon",        unit: "1L" }
-  - { id: lessive-3kg,      name: "Détergent lessive 3kg",      category: hygiene_entretien, site: demo, url: "https://example.com/lessive",      unit: "3kg" }
-  - { id: javel-1l,         name: "Eau de javel 1L",            category: hygiene_entretien, site: demo, url: "https://example.com/javel",        unit: "1L" }
-  - { id: papier-hygienique, name: "Papier hygiénique (pack 6)", category: hygiene_entretien, site: demo, url: "https://example.com/papier",      unit: "6u" }
+  - { id: savon-liquide-1l, name: "Savon liquide 1L",           category: hygiene_entretien, site: demo, url: "https://example.com/savon",        unit: "1L",   base_price: 20.00 }
+  - { id: lessive-3kg,      name: "Détergent lessive 3kg",      category: hygiene_entretien, site: demo, url: "https://example.com/lessive",      unit: "3kg",  base_price: 45.00 }
+  - { id: javel-1l,         name: "Eau de javel 1L",            category: hygiene_entretien, site: demo, url: "https://example.com/javel",        unit: "1L",   base_price: 8.00 }
+  - { id: papier-hygienique, name: "Papier hygiénique (pack 6)", category: hygiene_entretien, site: demo, url: "https://example.com/papier",      unit: "6u",   base_price: 25.00 }
 
   # --- Énergie domestique & carburant --------------------------------------
-  - { id: gaz-butane-12kg,  name: "Bouteille de gaz butane 12kg", category: energie_carburant, site: demo, url: "https://example.com/gaz",        unit: "12kg" }
-  - { id: essence-litre,    name: "Essence (le litre)",         category: energie_carburant, site: demo, url: "https://example.com/essence",      unit: "1L" }
-  - { id: gasoil-litre,     name: "Gasoil (le litre)",          category: energie_carburant, site: demo, url: "https://example.com/gasoil",       unit: "1L" }
+  - { id: gaz-butane-12kg,  name: "Bouteille de gaz butane 12kg", category: energie_carburant, site: demo, url: "https://example.com/gaz",        unit: "12kg", base_price: 40.00 }
+  - { id: essence-litre,    name: "Essence (le litre)",         category: energie_carburant, site: demo, url: "https://example.com/essence",      unit: "1L",   base_price: 15.00 }
+  - { id: gasoil-litre,     name: "Gasoil (le litre)",          category: energie_carburant, site: demo, url: "https://example.com/gasoil",       unit: "1L",   base_price: 13.50 }

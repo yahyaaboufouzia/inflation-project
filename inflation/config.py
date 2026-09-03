@@ -30,6 +30,7 @@ class ProductCfg(BaseModel):
     unit: str = ""
     active: bool = True
     selector: str | None = None  # optional per-product CSS override
+    base_price: float | None = None  # realistic starting price (MAD) for the demo
 
 
 class SiteCfg(BaseModel):
