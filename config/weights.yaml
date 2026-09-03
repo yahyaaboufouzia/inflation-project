@@ -1,28 +1,35 @@
 # Budget weights per spending category (must sum to 1.0).
-# Inspired by the HCP household-consumption weighting structure.
-# Morocco spends a large share of the budget on food, so the basket is food-heavy.
+# Inspired by the HCP household-consumption structure: a Moroccan household
+# spends most of its budget on everyday food staples, so the basket is
+# deliberately food-heavy and centred on frequently consumed goods.
 categories:
-  - id: alimentation_base
-    name: "Produits alimentaires de base"
-    weight: 0.35
-  - id: produits_frais
-    name: "Produits frais"
+  - id: cereales_feculents
+    name: "Céréales & féculents (pain, farine, semoule, riz, pâtes)"
+    weight: 0.20
+  - id: sucre_huiles
+    name: "Sucre & huiles"
+    weight: 0.10
+  - id: laitiers_oeufs
+    name: "Produits laitiers & œufs"
+    weight: 0.10
+  - id: viandes_poissons
+    name: "Viandes & poissons"
     weight: 0.12
+  - id: legumes_frais
+    name: "Légumes frais"
+    weight: 0.10
+  - id: fruits
+    name: "Fruits"
+    weight: 0.06
+  - id: secs_epicerie
+    name: "Légumes secs & épicerie"
+    weight: 0.07
   - id: boissons
-    name: "Boissons"
-    weight: 0.05
+    name: "Boissons (thé, café, eau)"
+    weight: 0.08
   - id: hygiene_entretien
     name: "Hygiène & entretien"
-    weight: 0.08
-  - id: habillement
-    name: "Habillement"
-    weight: 0.08
-  - id: electromenager_electronique
-    name: "Électroménager & électronique"
-    weight: 0.12
-  - id: transport_carburant
-    name: "Transport & carburant"
-    weight: 0.10
-  - id: sante
-    name: "Santé"
+    weight: 0.07
+  - id: energie_carburant
+    name: "Énergie domestique & carburant (gaz, essence, gasoil)"
     weight: 0.10
