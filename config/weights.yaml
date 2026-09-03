@@ -1,0 +1,28 @@
+# Budget weights per spending category (must sum to 1.0).
+# Inspired by the HCP household-consumption weighting structure.
+# Morocco spends a large share of the budget on food, so the basket is food-heavy.
+categories:
+  - id: alimentation_base
+    name: "Produits alimentaires de base"
+    weight: 0.35
+  - id: produits_frais
+    name: "Produits frais"
+    weight: 0.12
+  - id: boissons
+    name: "Boissons"
+    weight: 0.05
+  - id: hygiene_entretien
+    name: "Hygiène & entretien"
+    weight: 0.08
+  - id: habillement
+    name: "Habillement"
+    weight: 0.08
+  - id: electromenager_electronique
+    name: "Électroménager & électronique"
+    weight: 0.12
+  - id: transport_carburant
+    name: "Transport & carburant"
+    weight: 0.10
+  - id: sante
+    name: "Santé"
+    weight: 0.10

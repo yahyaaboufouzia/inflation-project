@@ -1,0 +1,2 @@
+# Daily index exports (index.csv) are written here by `inflation-index`
+# and committed by the nightly workflow, so the data history is versioned.

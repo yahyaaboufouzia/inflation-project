@@ -1,0 +1,30 @@
+# Per-site scraping configuration.
+#   type      "static" (httpx + BeautifulSoup) or "browser" (Playwright, JS pages)
+#   selector  CSS selector pointing at the price element on a product page
+#   in_stock  optional CSS selector; if absent the product is treated as out of stock
+#   delay     seconds to wait between requests (be polite, avoid rate limits)
+#   user_agent sent with each request
+#
+# The "demo" site needs no config — it generates synthetic prices offline.
+# The entries below are STARTING POINTS: real selectors must be verified against
+# the live pages (they change over time), which is exactly why sites.yaml is
+# separate from the code — you fix a selector here without touching Python.
+sites:
+  jumia:
+    type: static
+    selector: "span.-b.-ubpt.-tal.-fs24.-prxs"
+    in_stock: "p.-pvs.-mvxs.-fs16"
+    delay: 2.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  marjane:
+    type: browser
+    selector: "span.price"
+    delay: 3.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
+
+  electroplanet:
+    type: static
+    selector: "span.price"
+    delay: 2.0
+    user_agent: "Mozilla/5.0 (compatible; MoroccoInflationTracker/0.1; research)"
