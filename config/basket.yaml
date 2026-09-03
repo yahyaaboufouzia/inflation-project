@@ -1,0 +1,38 @@
+# The basket: every product we track.
+#   id       stable slug, used as primary key and never reused
+#   category must match an id in weights.yaml
+#   site     which scraper to use (see config/sites.yaml); "demo" = synthetic
+#   url      product page to scrape (placeholder for demo products)
+#   unit     normalised unit, so 5L vs 1L stay comparable
+#
+# The products below use site "demo" so the whole project runs out of the box.
+# To track a real product: set site to a real one (e.g. jumia) and a real url.
+products:
+  - { id: huile-table-5l,      name: "Huile de table 5L",          category: alimentation_base, site: demo, url: "https://example.com/huile-5l",    unit: "5L" }
+  - { id: farine-5kg,          name: "Farine 5kg",                 category: alimentation_base, site: demo, url: "https://example.com/farine-5kg",  unit: "5kg" }
+  - { id: sucre-2kg,           name: "Sucre 2kg",                  category: alimentation_base, site: demo, url: "https://example.com/sucre-2kg",   unit: "2kg" }
+  - { id: riz-1kg,             name: "Riz 1kg",                    category: alimentation_base, site: demo, url: "https://example.com/riz-1kg",     unit: "1kg" }
+  - { id: lentilles-1kg,       name: "Lentilles 1kg",              category: alimentation_base, site: demo, url: "https://example.com/lentilles",   unit: "1kg" }
+
+  - { id: tomate-1kg,          name: "Tomates 1kg",                category: produits_frais,    site: demo, url: "https://example.com/tomate",      unit: "1kg" }
+  - { id: pomme-terre-1kg,     name: "Pommes de terre 1kg",        category: produits_frais,    site: demo, url: "https://example.com/pdt",         unit: "1kg" }
+  - { id: oeufs-30,            name: "Oeufs (plateau de 30)",      category: produits_frais,    site: demo, url: "https://example.com/oeufs",       unit: "30u" }
+
+  - { id: cafe-250g,           name: "Café moulu 250g",            category: boissons,          site: demo, url: "https://example.com/cafe",        unit: "250g" }
+  - { id: the-vert-200g,       name: "Thé vert 200g",              category: boissons,          site: demo, url: "https://example.com/the",         unit: "200g" }
+
+  - { id: savon-liquide-1l,    name: "Savon liquide 1L",           category: hygiene_entretien, site: demo, url: "https://example.com/savon",       unit: "1L" }
+  - { id: detergent-3kg,       name: "Détergent lessive 3kg",      category: hygiene_entretien, site: demo, url: "https://example.com/detergent",   unit: "3kg" }
+
+  - { id: tshirt-coton,        name: "T-shirt coton homme",        category: habillement,       site: demo, url: "https://example.com/tshirt",      unit: "1u" }
+  - { id: jean-homme,          name: "Jean homme",                 category: habillement,       site: demo, url: "https://example.com/jean",        unit: "1u" }
+
+  - { id: tv-43,               name: "Téléviseur 43\"",            category: electromenager_electronique, site: demo, url: "https://example.com/tv-43", unit: "1u" }
+  - { id: refrigerateur,       name: "Réfrigérateur 300L",         category: electromenager_electronique, site: demo, url: "https://example.com/frigo", unit: "1u" }
+  - { id: smartphone-entry,    name: "Smartphone entrée de gamme", category: electromenager_electronique, site: demo, url: "https://example.com/phone", unit: "1u" }
+
+  - { id: essence-litre,       name: "Essence (le litre)",         category: transport_carburant, site: demo, url: "https://example.com/essence",    unit: "1L" }
+  - { id: gasoil-litre,        name: "Gasoil (le litre)",          category: transport_carburant, site: demo, url: "https://example.com/gasoil",     unit: "1L" }
+
+  - { id: paracetamol-boite,   name: "Paracétamol (boîte)",        category: sante,             site: demo, url: "https://example.com/paracetamol", unit: "1boite" }
+  - { id: masque-chirurgical,  name: "Masques chirurgicaux (50)",  category: sante,             site: demo, url: "https://example.com/masques",     unit: "50u" }
