@@ -111,3 +111,40 @@ def index_df(engine: Engine) -> pd.DataFrame:
         engine,
         parse_dates=["day", "base_day"],
     )
+
+
+# --- CSV persistence ---------------------------------------------------------
+# The raw observations are the versioned source of truth: we commit them as a
+# text CSV so the price history lives in Git (public, diffable, reproducible).
+# The SQLite file is only a local cache, always rebuildable from this CSV.
+
+def export_observations_csv(engine: Engine, path: Path | str) -> int:
+    """Write every raw observation to a CSV. Returns the row count."""
+    df = pd.read_sql_query(
+        "SELECT product_id, price, currency, in_stock, scraped_at "
+        "FROM price_observations ORDER BY scraped_at, product_id",
+        engine,
+    )
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path, index=False)
+    return len(df)
+
+
+def import_observations_csv(engine: Engine, path: Path | str) -> int:
+    """Load observations from a CSV back into the DB. Returns rows inserted."""
+    path = Path(path)
+    if not path.exists():
+        return 0
+    df = pd.read_csv(path, parse_dates=["scraped_at"])
+    rows = [
+        {
+            "product_id": r["product_id"],
+            "price": float(r["price"]),
+            "currency": r.get("currency", "MAD"),
+            "in_stock": bool(r["in_stock"]),
+            "scraped_at": r["scraped_at"].to_pydatetime(),
+        }
+        for _, r in df.iterrows()
+    ]
+    return add_observations(engine, rows)

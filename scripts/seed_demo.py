@@ -50,10 +50,16 @@ def main() -> None:
     index = compute_index(repo.observations_df(engine))
     repo.save_index(engine, index)
 
+    # export the versioned CSVs (the data history that gets committed to Git)
+    n_obs = repo.export_observations_csv(engine, "data/observations.csv")
+    index.to_csv("data/daily/index.csv", index=False)
+
     print(
         f"Seeded {total} observations over {DAYS} days "
         f"for {len(basket.products)} products."
     )
+    print(f"Exported {n_obs} rows -> data/observations.csv")
+    print("Exported index -> data/daily/index.csv")
     if not index.empty:
         last = index.iloc[-1]
         print(f"Latest index: {last['value']:.2f} ({last['value'] - 100:+.2f}%)")
