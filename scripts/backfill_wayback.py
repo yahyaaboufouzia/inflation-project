@@ -28,6 +28,9 @@ from inflation.storage import repository as repo  # noqa: E402
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120"}
 CDX = "http://web.archive.org/cdx/search/cdx"
+# Keep only recent, well-covered history. Earlier snapshots exist but are too
+# sparse to give a reliable index, so we start the series here.
+MIN_TIMESTAMP = "2025"
 
 
 def _get(url: str, **kwargs) -> httpx.Response | None:
@@ -49,7 +52,7 @@ def snapshots(url: str) -> list[str]:
         print(f"  ! CDX unreachable for {url}")
         return []
     try:
-        return [row[1] for row in r.json()[1:]]
+        return [row[1] for row in r.json()[1:] if row[1] >= MIN_TIMESTAMP]
     except Exception:
         return []  # empty / non-JSON response = no snapshots
 
