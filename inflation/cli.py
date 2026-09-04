@@ -1,7 +1,7 @@
 """Command-line entry points.
 
     inflation-scrape [--demo] [--db PATH]     scrape prices once
-    inflation-index  [--base YYYY-MM-DD]      (re)compute the daily index
+    inflation-index  [--export PATH]          (re)compute the monthly index
 
 Also runnable as `python -m inflation.cli scrape` / `... index`.
 """
@@ -9,10 +9,9 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import date
 
 from . import pipeline
-from .index import compute_index
+from .index import compute_monthly_index
 from .storage import repository as repo
 
 
@@ -30,15 +29,13 @@ def scrape(argv: list[str] | None = None) -> None:
 def build_index(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description="Compute the daily inflation index.")
     ap.add_argument("--db", default=str(repo.DEFAULT_DB))
-    ap.add_argument("--base", help="base day (index = 100), format YYYY-MM-DD")
     ap.add_argument("--elementary", default="jevons", choices=["jevons", "carli"])
     ap.add_argument("--export", help="also write the index to this CSV path")
     args = ap.parse_args(argv)
 
     engine = repo.get_engine(args.db)
     df = repo.observations_df(engine)
-    base = date.fromisoformat(args.base) if args.base else None
-    out = compute_index(df, base_day=base, elementary=args.elementary)
+    out = compute_monthly_index(df, elementary=args.elementary)
 
     if out.empty:
         print("No data yet — run `inflation-scrape --demo` first.")
@@ -55,7 +52,7 @@ def build_index(argv: list[str] | None = None) -> None:
     change = last["value"] - 100.0
     print(
         f"Index on {last['day']}: {last['value']:.2f} "
-        f"({change:+.2f}% vs base {last['base_day']}) over {len(out)} days."
+        f"({change:+.2f}% vs base {last['base_day']}) over {len(out)} months."
     )
 
 
