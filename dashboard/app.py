@@ -49,7 +49,8 @@ def load_official() -> pd.DataFrame:
 
 st.title("📈 Morocco Inflation Tracker")
 st.caption(
-    "An independent, daily price index for Morocco, built from online prices — "
+    "An independent, monthly price index for Morocco, built from real online "
+    "prices (Aswak Assalam) with history reconstructed from web archives — "
     "compared against the official HCP consumer price index. "
     "Inspired by MIT's Billion Prices Project."
 )
@@ -89,14 +90,14 @@ if not official_line.empty:
     col2.metric("Official HCP (rebased)", f"{official_line['rebased'].iloc[-1]:.1f}",
                 f"{off_change:+.2f}% vs base")
     col3.metric("Gap (ours − official)", f"{our_change - off_change:+.2f} pts")
-col1.caption(f"Base = 100 on {base_day:%d %b %Y} · {len(index)} days tracked")
+col1.caption(f"Base = 100 on {base_day:%b %Y} · {len(index)} months tracked")
 
 # ---- the two curves ---------------------------------------------------------
 fig = go.Figure()
 fig.add_trace(
     go.Scatter(
-        x=index["day"], y=index["value"], name="Our daily index",
-        mode="lines", line=dict(color=OURS, width=2.5),
+        x=index["day"], y=index["value"], name="Our index (monthly)",
+        mode="lines+markers", line=dict(color=OURS, width=2.5), marker=dict(size=5),
     )
 )
 if not official_line.empty:
@@ -142,8 +143,8 @@ with st.expander("Why might the two curves diverge?"):
   in-store basket. The overlap is partial.
 - **Online vs in-store prices.** Web prices move faster and promotions are
   more frequent online.
-- **Frequency.** Ours is daily and reacts immediately; the official index is
-  monthly and smoothed.
+- **History source.** Our back-history comes from archived snapshots of the
+  product pages (Wayback Machine), so early months are sparser than recent ones.
 - **Coverage.** We cover a handful of cities' online offers, not the whole country.
 
 The goal is not to be *right against* the HCP — it is to **explain the gap**.

@@ -1,8 +1,10 @@
 # 📈 Morocco Inflation Tracker
 
-**An independent, daily inflation index for Morocco, built from online prices — and compared against the official HCP consumer price index.**
+**An independent inflation index for Morocco, built from real online prices — and compared against the official HCP consumer price index.**
 
-Inspired by MIT's [Billion Prices Project](https://thebillionpricesproject.com/): official inflation in Morocco is published once a month by a public body, with no way for an outsider to verify the calculation. This project produces its *own* measure, *every day*, and asks a simple question — **do the two tell the same story?**
+Inspired by MIT's [Billion Prices Project](https://thebillionpricesproject.com/): official inflation in Morocco is published once a month by a public body, with no way for an outsider to verify the calculation. This project produces its *own* measure and asks a simple question — **do the two tell the same story?**
+
+Prices are scraped live from **Aswak Assalam** (a Moroccan hypermarket chain), and back-history is reconstructed from archived snapshots of the same pages via the **Wayback Machine** — so every value is real and carries its source URL.
 
 <!-- Add screenshots / a Streamlit Cloud badge here once deployed -->
 
@@ -74,7 +76,10 @@ inflation/          the Python package
   cli.py            inflation-scrape · inflation-index
 config/             basket.yaml · weights.yaml · sites.yaml
 dashboard/app.py    Streamlit dashboard
-scripts/seed_demo.py  offline synthetic history, so it runs on clone
+scripts/
+  backfill_wayback.py  reconstruct real history from web archives
+  run_daily.py         one daily collection run (used by the nightly job)
+  seed_demo.py         optional offline synthetic history
 tests/              index math is unit-tested
 .github/workflows/  nightly scrape + CI
 ```
@@ -89,35 +94,40 @@ python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -e ".[dashboard,dev]"
 
-python scripts/seed_demo.py     # build ~75 days of demo history (offline, no network)
-streamlit run dashboard/app.py  # open the dashboard
+python scripts/backfill_wayback.py   # reconstruct real history from web archives
+inflation-scrape                     # add today's real prices (Aswak Assalam)
+inflation-index --export data/daily/index.csv
+streamlit run dashboard/app.py       # open the dashboard
 ```
 
-Run the tests:
+The committed `data/observations.csv` already contains real history, so you can
+open the dashboard straight away. Run the tests with `pytest -q`.
 
-```bash
-pytest -q
-```
+## How the data is collected
 
-Recompute the index (e.g. with a different base day):
+- **Live prices** come from **Aswak Assalam** (`aswakassalam.com`), a WooCommerce
+  store whose prices sit in the HTML — scraped with `httpx` + BeautifulSoup. The
+  bigger sites (Jumia, Marjane, Avito, Electroplanet) return HTTP 403 to bots.
+- **History** is reconstructed from the **Wayback Machine**: each product page
+  has archived snapshots going back to 2022, and we read the price from each.
+- **Provenance**: every observation stores its `source_site` and `source_url`,
+  so any value can be traced back to the exact page it came from.
+- **Frequency**: because snapshots are irregular, the index is aggregated
+  **monthly** (last known price carried forward), which also makes it directly
+  comparable to the monthly HCP index.
+- **Regulated / published prices** (bread, sugar, butane gas, fuel) are not sold
+  online and will be added later from official sources.
 
-```bash
-inflation-index --base 2026-07-01
-```
-
-> The bundled products use a synthetic `demo` scraper, so the project runs with **zero configuration**. To track a real product, add it to [`config/basket.yaml`](config/basket.yaml) with a real `site` and `url`, and set that site's CSS selector in [`config/sites.yaml`](config/sites.yaml).
-
-## Collecting real prices
-
-`config/sites.yaml` maps each site to a CSS selector for its price element. Static pages are scraped with `httpx` + BeautifulSoup; JavaScript-rendered pages need the optional Playwright extra (`pip install -e ".[browser]"`). Selectors are config, not code — when a site changes its markup you fix one YAML line.
-
-The nightly [GitHub Actions workflow](.github/workflows/nightly.yml) runs the collection on a cron schedule and commits the refreshed index back to the repo, so the price history is versioned and reproducible. It ships in demo mode; switch the one marked step to `inflation-scrape` once real selectors are verified.
+The nightly [GitHub Actions workflow](.github/workflows/nightly.yml) re-runs the
+collection and commits the refreshed data back, so the history is versioned and
+public. Aswak Assalam may block cloud runners, so a local machine (Task
+Scheduler) running `scripts/run_daily.py` is the reliable collector.
 
 ## Roadmap
 
-- [ ] Wire up 2–3 real Moroccan sites (Jumia, Marjane, Electroplanet)
-- [ ] Expand the basket toward 150–300 products
-- [ ] Product matching across sites (same good, several listings)
+- [ ] Expand the basket with more Aswak Assalam products
+- [ ] Add regulated/published prices (fuel, butane, bread) from official sources
+- [ ] A Playwright-based scraper for the JavaScript sites (Marjane, Jumia)
 - [ ] Deploy the dashboard to Streamlit Community Cloud (public link)
 - [ ] Written analysis of the gap vs the HCP index
 

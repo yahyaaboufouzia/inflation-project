@@ -6,7 +6,12 @@ from datetime import date
 import pandas as pd
 import pytest
 
-from inflation.index import compute_index, simple_laspeyres, top_movers
+from inflation.index import (
+    compute_index,
+    compute_monthly_index,
+    simple_laspeyres,
+    top_movers,
+)
 
 
 def test_simple_laspeyres_matches_worked_example():
@@ -67,6 +72,28 @@ def test_compute_index_empty_is_safe():
         columns=["product_id", "category_id", "category_weight", "scraped_at", "price"]
     )
     assert compute_index(empty).empty
+
+
+def test_monthly_index_forward_fills_and_weights():
+    # A (cat X, w=0.6): Jan 100, [Feb missing -> ffill 100], Mar 110
+    # B (cat Y, w=0.4): Jan 200, Feb 190, Mar 190
+    rows = [
+        ("A", "X", 0.6, "2026-01-15", 100.0),
+        ("A", "X", 0.6, "2026-03-15", 110.0),
+        ("B", "Y", 0.4, "2026-01-15", 200.0),
+        ("B", "Y", 0.4, "2026-02-15", 190.0),
+        ("B", "Y", 0.4, "2026-03-15", 190.0),
+    ]
+    df = pd.DataFrame(
+        rows, columns=["product_id", "category_id", "category_weight", "scraped_at", "price"]
+    )
+    df["scraped_at"] = pd.to_datetime(df["scraped_at"])
+    df["product_name"] = df["product_id"]
+
+    out = compute_monthly_index(df).set_index("day")["value"]
+    assert out.loc[date(2026, 1, 1)] == pytest.approx(100.0)   # base
+    assert out.loc[date(2026, 2, 1)] == pytest.approx(98.0)    # A ffilled, B -5%
+    assert out.loc[date(2026, 3, 1)] == pytest.approx(104.0)   # A +10%, B -5%
 
 
 def test_top_movers_ranks_by_absolute_change():

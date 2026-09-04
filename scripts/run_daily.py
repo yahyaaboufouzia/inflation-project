@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from inflation import pipeline  # noqa: E402
 from inflation.config import load_basket  # noqa: E402
-from inflation.index import compute_index  # noqa: E402
+from inflation.index import compute_monthly_index  # noqa: E402
 from inflation.storage import repository as repo  # noqa: E402
 
 OBS_CSV = "data/observations.csv"
@@ -37,7 +37,7 @@ def main() -> None:
     added = pipeline.run_scrape()
 
     # recompute and persist
-    index = compute_index(repo.observations_df(engine))
+    index = compute_monthly_index(repo.observations_df(engine))
     repo.save_index(engine, index)
     n_obs = repo.export_observations_csv(engine, OBS_CSV)
     index.to_csv(INDEX_CSV, index=False)

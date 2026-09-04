@@ -95,6 +95,73 @@ def compute_index(
     return out.sort_values("day").reset_index(drop=True)
 
 
+def compute_monthly_index(
+    df: pd.DataFrame, coverage: float = 0.7, elementary: str = "jevons"
+) -> pd.DataFrame:
+    """Monthly index, robust to sparse/irregular observations (e.g. archives).
+
+    Real archived snapshots do not land on a regular grid, so we:
+      1. take one price per product per month (median of that month's snapshots)
+      2. forward-fill each product onto a monthly grid — a price is assumed to
+         hold until the next observation (the standard assumption)
+      3. anchor the base at the first month whose coverage reaches `coverage`
+         (so the base is well populated), then Jevons within category and
+         Laspeyres across categories, exactly like the daily index.
+
+    Returns columns day (month), value, base_day — same shape as compute_index.
+    """
+    empty = pd.DataFrame(columns=["day", "value", "base_day"])
+    if df.empty:
+        return empty
+
+    d = df.copy()
+    d["month"] = pd.to_datetime(d["scraped_at"]).dt.to_period("M").dt.to_timestamp()
+    cat_of = d.groupby("product_id")["category_id"].first()
+    weight_of = d.groupby("product_id")["category_weight"].first()
+
+    monthly = d.groupby(["product_id", "month"])["price"].median().reset_index()
+    grid = pd.date_range(monthly["month"].min(), monthly["month"].max(), freq="MS")
+    wide = monthly.pivot(index="month", columns="product_id", values="price")
+    wide = wide.reindex(grid).ffill()  # carry last known price forward
+
+    # anchor the base at a well-covered month, but keep the WHOLE history:
+    # months before the base are shown too (indexed to the base), using
+    # whichever products were already archived then.
+    cov = wide.notna().sum(axis=1) / wide.shape[1]
+    eligible = cov[cov >= coverage].index
+    base_month = eligible[0] if len(eligible) else cov.idxmax()
+
+    p0 = wide.loc[base_month]
+    valid = p0.dropna().index
+    if len(valid) == 0:
+        return empty
+    rel = wide[valid].divide(p0[valid])
+
+    out = []
+    for month, row in rel.iterrows():
+        r = row.dropna()
+        if r.empty:
+            continue
+        cat_vals: dict[str, list[float]] = {}
+        cat_w: dict[str, float] = {}
+        for pid, val in r.items():
+            c = cat_of[pid]
+            cat_vals.setdefault(c, []).append(val)
+            cat_w[c] = weight_of[pid]
+        if elementary == "jevons":
+            cat_rel = {c: float(np.exp(np.mean(np.log(v)))) for c, v in cat_vals.items()}
+        else:
+            cat_rel = {c: float(np.mean(v)) for c, v in cat_vals.items()}
+        weights = np.array([cat_w[c] for c in cat_rel])
+        values = np.array(list(cat_rel.values()))
+        out.append({
+            "day": month.date(),
+            "value": 100.0 * float(np.average(values, weights=weights)),
+            "base_day": base_month.date(),
+        })
+    return pd.DataFrame(out).sort_values("day").reset_index(drop=True)
+
+
 def simple_laspeyres(
     relatives: dict[str, float], weights: dict[str, float]
 ) -> float:
