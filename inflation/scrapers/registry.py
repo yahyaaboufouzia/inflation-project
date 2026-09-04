@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from ..config import SiteCfg
+from .aswak import AswakAssalamScraper
 from .base import BaseScraper
 from .demo import DemoScraper
 from .static import StaticScraper
@@ -12,6 +13,7 @@ from .static import StaticScraper
 _REGISTRY: dict[str, type[BaseScraper]] = {
     "demo": DemoScraper,
     "static": StaticScraper,
+    "aswak": AswakAssalamScraper,
 }
 
 

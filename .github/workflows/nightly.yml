@@ -4,7 +4,7 @@ name: nightly-scrape
 # so the data is versioned and public (the reproducibility that is the point).
 on:
   schedule:
-    - cron: "0 3 * * *"  # 03:00 UTC daily
+    - cron: "0 6 * * *"  # 06:00 UTC daily
   workflow_dispatch:      # allow manual runs from the Actions tab
 
 permissions:
@@ -26,20 +26,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      # DEMO MODE (active): regenerates the deterministic synthetic history up
-      # to today and exports data/observations.csv + data/daily/index.csv.
-      - name: Refresh data (demo)
-        run: python scripts/seed_demo.py
-
-      # REAL MODE (enable once site selectors in config/sites.yaml are verified):
-      # rebuild the DB from the committed history, scrape only today's prices,
-      # append them, then recompute and re-export.
-      #   - name: Scrape today's prices
-      #     run: |
-      #       python -c "from inflation.storage import repository as r; e=r.get_engine(); r.init_db(e); r.import_observations_csv(e,'data/observations.csv')"
-      #       inflation-scrape
-      #       inflation-index --export data/daily/index.csv
-      #       python -c "from inflation.storage import repository as r; r.export_observations_csv(r.get_engine(),'data/observations.csv')"
+      # Real collection: restore history, scrape today's live prices, append,
+      # recompute the index, and re-export the versioned CSVs.
+      # NOTE: aswakassalam.com may geo/bot-block GitHub's runners; if it does,
+      # nothing is added that day and the reliable collector is a local machine
+      # (Task Scheduler) running this same script. It never fails the job.
+      - name: Daily real scrape
+        run: python scripts/run_daily.py
 
       - name: Commit refreshed data
         run: |
