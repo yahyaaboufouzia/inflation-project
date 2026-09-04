@@ -59,6 +59,9 @@ class PriceObservation(Base):
     currency: Mapped[str] = mapped_column(String, default="MAD")
     in_stock: Mapped[bool] = mapped_column(Boolean, default=True)
     scraped_at: Mapped[datetime] = mapped_column(DateTime, index=True)
+    # provenance: where this exact value came from (the audit trail)
+    source_site: Mapped[str] = mapped_column(String, default="")
+    source_url: Mapped[str] = mapped_column(String, default="")
 
     product: Mapped["Product"] = relationship(back_populates="observations")
 

@@ -64,6 +64,8 @@ def run_scrape(
                     "currency": result.currency,
                     "in_stock": result.in_stock,
                     "scraped_at": result.scraped_at or datetime.now(),
+                    "source_site": site,
+                    "source_url": product.url,
                 }
             )
 

@@ -66,6 +66,8 @@ def add_observations(engine: Engine, rows: Iterable[dict]) -> int:
                     currency=r.get("currency", "MAD"),
                     in_stock=r.get("in_stock", True),
                     scraped_at=r.get("scraped_at") or datetime.now(),
+                    source_site=r.get("source_site", ""),
+                    source_url=r.get("source_url", ""),
                 )
             )
         s.commit()
@@ -121,7 +123,8 @@ def index_df(engine: Engine) -> pd.DataFrame:
 def export_observations_csv(engine: Engine, path: Path | str) -> int:
     """Write every raw observation to a CSV. Returns the row count."""
     df = pd.read_sql_query(
-        "SELECT product_id, price, currency, in_stock, scraped_at "
+        "SELECT product_id, price, currency, in_stock, scraped_at, "
+        "source_site, source_url "
         "FROM price_observations ORDER BY scraped_at, product_id",
         engine,
     )
@@ -144,6 +147,8 @@ def import_observations_csv(engine: Engine, path: Path | str) -> int:
             "currency": r.get("currency", "MAD"),
             "in_stock": bool(r["in_stock"]),
             "scraped_at": r["scraped_at"].to_pydatetime(),
+            "source_site": r.get("source_site", "") if pd.notna(r.get("source_site")) else "",
+            "source_url": r.get("source_url", "") if pd.notna(r.get("source_url")) else "",
         }
         for _, r in df.iterrows()
     ]

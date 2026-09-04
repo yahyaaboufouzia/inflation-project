@@ -15,7 +15,14 @@
 #
 # The "demo" site needs no config — it generates synthetic prices offline.
 sites:
-  # --- General e-commerce ---------------------------------------------------
+  # --- WORKING real source (WooCommerce, static HTML, no anti-bot block) -----
+  aswak:              # aswakassalam.com — Moroccan hypermarket chain
+    type: static
+    selector: ".summary .price .woocommerce-Price-amount"
+    delay: 1.5
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+
+  # --- General e-commerce (BLOCKED as of testing: HTTP 403 anti-bot) --------
   jumia:              # jumia.ma — largest, best starting point
     type: static
     selector: "span.-b.-ubpt.-tal.-fs24.-prxs"
