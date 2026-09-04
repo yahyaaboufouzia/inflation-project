@@ -49,10 +49,9 @@ def load_official() -> pd.DataFrame:
 
 st.title("📈 Morocco Inflation Tracker")
 st.caption(
-    "An independent, monthly price index for Morocco, built from real online "
-    "prices (Aswak Assalam) with history reconstructed from web archives — "
-    "compared against the official HCP consumer price index. "
-    "Inspired by MIT's Billion Prices Project."
+    "Inflation **réelle** (mesurée sur de vrais prix en ligne — Aswak Assalam, "
+    "historique reconstruit depuis les archives web) vs inflation **théorique** "
+    "(l'IPC officiel du HCP). Inspiré du Billion Prices Project du MIT."
 )
 
 index = load_index()
@@ -84,19 +83,19 @@ latest = index.iloc[-1]
 our_change = latest["value"] - 100.0
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Our index (latest)", f"{latest['value']:.1f}", f"{our_change:+.2f}% vs base")
+col1.metric("Inflation réelle (nos prix)", f"{latest['value']:.1f}", f"{our_change:+.2f}% vs base")
 if not official_line.empty:
     off_change = official_line["rebased"].iloc[-1] - 100.0
-    col2.metric("Official HCP (rebased)", f"{official_line['rebased'].iloc[-1]:.1f}",
+    col2.metric("Inflation théorique (HCP officiel)", f"{official_line['rebased'].iloc[-1]:.1f}",
                 f"{off_change:+.2f}% vs base")
-    col3.metric("Gap (ours − official)", f"{our_change - off_change:+.2f} pts")
-col1.caption(f"Base = 100 on {base_day:%b %Y} · {len(index)} months tracked")
+    col3.metric("Écart (réelle − théorique)", f"{our_change - off_change:+.2f} pts")
+col1.caption(f"Base = 100 en {base_day:%b %Y} · {len(index)} mois suivis")
 
 # ---- the two curves ---------------------------------------------------------
 fig = go.Figure()
 fig.add_trace(
     go.Scatter(
-        x=index["day"], y=index["value"], name="Our index (monthly)",
+        x=index["day"], y=index["value"], name="Inflation réelle (nos prix mesurés)",
         mode="lines+markers", line=dict(color=OURS, width=2.5), marker=dict(size=5),
     )
 )
@@ -104,7 +103,7 @@ if not official_line.empty:
     fig.add_trace(
         go.Scatter(
             x=official_line["month"], y=official_line["rebased"],
-            name="Official HCP (monthly)", mode="lines+markers",
+            name="Inflation théorique (IPC officiel HCP)", mode="lines+markers",
             line=dict(color=HCP, width=2, dash="dot"), marker=dict(size=7),
         )
     )
