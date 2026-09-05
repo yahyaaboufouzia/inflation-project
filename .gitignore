@@ -18,6 +18,9 @@ env/
 data/prices.db
 data/raw/
 
+# Local collector log (Task Scheduler)
+collect.log
+
 # Tooling
 .pytest_cache/
 .ipynb_checkpoints/

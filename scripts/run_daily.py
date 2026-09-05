@@ -16,6 +16,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from sqlalchemy import text  # noqa: E402
+
 from inflation import pipeline  # noqa: E402
 from inflation.config import load_basket  # noqa: E402
 from inflation.index import compute_monthly_index  # noqa: E402
@@ -30,8 +32,20 @@ def main() -> None:
     repo.init_db(engine)
     repo.sync_catalog(engine, load_basket("config"))
 
+    # the SQLite file is only a cache — rebuild it cleanly from the committed
+    # CSV each run so a persistent local DB never accumulates duplicates
+    with engine.begin() as conn:
+        conn.execute(text("DELETE FROM price_observations"))
+
     # restore prior history so today's scrape appends to it
     restored = repo.import_observations_csv(engine, OBS_CSV)
+
+    # make re-runs idempotent: drop any of today's rows before re-scraping
+    with engine.begin() as conn:
+        conn.execute(
+            text("DELETE FROM price_observations "
+                 "WHERE date(scraped_at) = date('now', 'localtime')")
+        )
 
     # scrape today's real prices
     added = pipeline.run_scrape()

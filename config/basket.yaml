@@ -1,51 +1,17 @@
-# The basket: REAL products tracked on Aswak Assalam (aswakassalam.com),
-# a Moroccan hypermarket chain. Each line points at a real product page; the
-# price is scraped live from that URL, which is stored as the value's source.
+# The basket: ONLY staples that are (a) heavily consumed by Moroccan households
+# AND (b) densely archived on the Wayback Machine — so the reconstructed curve
+# is reliable. Products with few archives (thin, unreliable history) were
+# dropped on purpose.
 #
-#   id        stable slug, used as primary key and never reused
-#   category  must match an id in weights.yaml
-#   site      "aswak" -> real scraper (inflation/scrapers/aswak.py)
-#   url       the real product page the price is read from (the source)
-#   unit      the pack/size as sold, so comparisons stay honest
-#
-# Note: online availability is limited to what the store lists, so units are
-# not always the household-standard 1kg (e.g. flour is sold as 10kg). Categories
-# not carried online yet (hygiene, fuel, butane gas, bread staples) will be
-# added later via a separate official-prices importer.
+# Every product is a real Aswak Assalam page; its `url` is the source of each
+# price (live scrape today + archived snapshots for history). The provenance is
+# also stored per observation (source_site, source_url) in data/observations.csv.
 products:
-  # --- Céréales & féculents -------------------------------------------------
-  - { id: farine-fleur-10kg,  name: "Farine fleur 10kg – KENZ",              category: cereales_feculents, site: aswak, unit: "10kg",   url: "https://aswakassalam.com/produit/farine-fleur-10kg-kenz/" }
-  - { id: baguette-nature,    name: "Baguette à l'ancienne nature 250g",     category: cereales_feculents, site: aswak, unit: "250g",   url: "https://aswakassalam.com/produit/baguette-a-lancienne-nature-as/" }
-  - { id: couscous-2kg,       name: "Couscous barquette ~2kg",               category: cereales_feculents, site: aswak, unit: "~2kg",   url: "https://aswakassalam.com/produit/couscous-barquette-2kg/" }
-
-  # --- Sucre & huiles -------------------------------------------------------
-  - { id: huile-olive-1l,     name: "Huile d'olive vierge 1L – CAMPO SUR",   category: sucre_huiles, site: aswak, unit: "1L",   url: "https://aswakassalam.com/produit/huile-dolive-vierge-1l-campo-sur/" }
-
-  # --- Produits laitiers & œufs --------------------------------------------
-  - { id: beurre-1kg-centrale, name: "Beurre 1kg – CENTRALE",                category: laitiers_oeufs, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/beurre-1-kg-centrale/" }
-  - { id: raibi-jamila-16,    name: "Pack 16 Raïbi Jamila 165g – DANONE",    category: laitiers_oeufs, site: aswak, unit: "16u",   url: "https://aswakassalam.com/produit/pack-de-16-pots-raibi-jamila-165g-danone/" }
-
-  # --- Viandes & poissons ---------------------------------------------------
-  - { id: cuisse-poulet-1kg,  name: "Cuisse de poulet 1kg",                  category: viandes_poissons, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/cuisse-de-poulet-1kg/" }
-  - { id: filet-poulet-1kg,   name: "Filet de poulet 1kg",                   category: viandes_poissons, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/filet-de-poulet-1kg/" }
-  - { id: entrecote-boeuf-1kg, name: "Entrecôte de bœuf 1kg",               category: viandes_poissons, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/entrecote-de-boeuf-1kg/" }
-  - { id: thon-lot3-80g,      name: "Lot de 3 boîtes de thon 80g – JANIS",   category: viandes_poissons, site: aswak, unit: "3x80g", url: "https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-janis/" }
-
-  # --- Légumes frais --------------------------------------------------------
-  - { id: carotte-1kg,        name: "Carotte 1kg",                           category: legumes_frais, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/carotte-1kg/" }
-  - { id: courgette-1kg,      name: "Courgette ronde 1kg",                   category: legumes_frais, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/courgette-ronde-1kg/" }
-  - { id: citron-1kg,         name: "Citron 1kg",                            category: legumes_frais, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/citron-1kg/" }
-
-  # --- Fruits ---------------------------------------------------------------
-  - { id: banane-import-1kg,  name: "Banane import 1kg",                     category: fruits, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/banane-import-1kg/" }
-  - { id: ananas-piece,       name: "Ananas la pièce (~1kg)",                category: fruits, site: aswak, unit: "1piece", url: "https://aswakassalam.com/produit/ananas-la-piece-1kg-a-1200kg/" }
-  - { id: fraise-250g,        name: "Fraise barquette 250g",                 category: fruits, site: aswak, unit: "250g",  url: "https://aswakassalam.com/produit/fraise-barquette-250/" }
-
-  # --- Légumes secs & épicerie ---------------------------------------------
-  - { id: lentilles-1kg,      name: "Lentilles 1kg – JANIS",                 category: secs_epicerie, site: aswak, unit: "1kg",   url: "https://aswakassalam.com/produit/lentilles-1kg-janis-2/" }
-  - { id: mais-340g,          name: "Boîte de maïs 340g – JANIS",            category: secs_epicerie, site: aswak, unit: "340g",  url: "https://aswakassalam.com/produit/boite-de-mais-340g-janis/" }
-  - { id: miel-850g,          name: "Miel toutes fleurs 850g",               category: secs_epicerie, site: aswak, unit: "850g",  url: "https://aswakassalam.com/produit/miel-toutes-fleurs-850g-jnane-el-aassal/" }
-
-  # --- Boissons -------------------------------------------------------------
-  - { id: the-vert-sultan,    name: "Lot de 2 thés verts Sultan 200g",       category: boissons, site: aswak, unit: "2x200g", url: "https://aswakassalam.com/produit/lot-de-2-thes-verts-4011-en-filaments-200g-sultan/" }
-  - { id: cafe-java-2x200g,   name: "Lot de 2 cafés moulus JAVA 200g",       category: boissons, site: aswak, unit: "2x200g", url: "https://aswakassalam.com/produit/lot-de-2-cafes-moulus-java-timor-200g-dubois/" }
+  - { id: baguette-nature,     name: "Baguette à l'ancienne nature 250g", category: cereales_feculents, site: aswak, unit: "250g", url: "https://aswakassalam.com/produit/baguette-a-lancienne-nature-as/" }
+  - { id: beurre-1kg-centrale, name: "Beurre 1kg – CENTRALE",             category: laitiers_oeufs,     site: aswak, unit: "1kg",  url: "https://aswakassalam.com/produit/beurre-1-kg-centrale/" }
+  - { id: cuisse-poulet-1kg,   name: "Cuisse de poulet 1kg",              category: viandes_poissons,   site: aswak, unit: "1kg",  url: "https://aswakassalam.com/produit/cuisse-de-poulet-1kg/" }
+  - { id: filet-poulet-1kg,    name: "Filet de poulet 1kg",               category: viandes_poissons,   site: aswak, unit: "1kg",  url: "https://aswakassalam.com/produit/filet-de-poulet-1kg/" }
+  - { id: carotte-1kg,         name: "Carotte 1kg",                       category: legumes_frais,      site: aswak, unit: "1kg",  url: "https://aswakassalam.com/produit/carotte-1kg/" }
+  - { id: citron-1kg,          name: "Citron 1kg",                        category: legumes_frais,      site: aswak, unit: "1kg",  url: "https://aswakassalam.com/produit/citron-1kg/" }
+  - { id: banane-import-1kg,   name: "Banane import 1kg",                 category: fruits,             site: aswak, unit: "1kg",  url: "https://aswakassalam.com/produit/banane-import-1kg/" }
+  - { id: cafe-java-2x200g,    name: "Lot de 2 cafés moulus JAVA 200g",   category: boissons,           site: aswak, unit: "2x200g", url: "https://aswakassalam.com/produit/lot-de-2-cafes-moulus-java-timor-200g-dubois/" }
