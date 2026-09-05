@@ -1,0 +1,430 @@
+produit,categorie,annee,prix_mad_par_kg,prix_usd_par_kg,produit_faostat,code_produit_cpc,drapeau_qualite,source,source_url
+Blé,Céréales,2000,2.57,0.242,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2001,2.51,0.222,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2002,2.5,0.227,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2003,2.49,0.26,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2004,2.39,0.27,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2005,2.52,0.284,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2006,2.21,0.251,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2007,2.74,0.334,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2008,3.16,0.408,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2009,2.4,0.298,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2010,2.57,0.305,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2011,2.47,0.305,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2012,2.76,0.32,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2013,2.52,0.3,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2014,2.49,0.296,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2015,2.37,0.243,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2016,2.67,0.272,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2017,2.58,0.266,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2018,2.38,0.254,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2019,2.34,0.243,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2020,2.57,0.271,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2021,2.8,0.312,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2022,4.06,0.399,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2023,3.91,0.386,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Blé,Céréales,2024,4.34,0.436,Wheat,'0111,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2000,2.37,0.223,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2001,2.24,0.198,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2002,2.07,0.188,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2003,1.92,0.2,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2004,1.97,0.222,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2005,2.0,0.226,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2006,1.86,0.212,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2007,2.47,0.302,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2008,3.09,0.399,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2009,2.19,0.272,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2010,2.16,0.257,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2011,2.42,0.299,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2012,2.77,0.321,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2013,2.64,0.314,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2014,2.55,0.303,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2015,2.37,0.243,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2016,2.53,0.258,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2017,2.91,0.3,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2018,2.78,0.296,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2019,3.04,0.316,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2020,3.1,0.326,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2021,3.8,0.423,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2022,5.55,0.546,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2023,5.25,0.518,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Maïs,Céréales,2024,6.74,0.678,Maize (corn),'0112,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2000,2.27,0.214,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2001,2.19,0.194,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2002,1.64,0.149,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2003,1.5,0.157,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2004,1.61,0.182,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2005,1.95,0.22,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2006,1.61,0.183,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2007,2.36,0.288,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2008,2.99,0.386,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2009,1.6,0.199,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2010,1.71,0.203,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2011,2.25,0.278,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2012,2.92,0.338,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2013,2.3,0.274,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2014,2.37,0.282,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2015,2.05,0.21,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2016,2.78,0.284,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2017,2.19,0.226,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2018,1.9,0.202,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2019,2.0,0.207,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2020,2.35,0.248,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2021,2.6,0.289,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2022,3.77,0.371,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2023,3.46,0.342,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Orge,Céréales,2024,4.54,0.457,Barley,'0115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2000,6.65,0.626,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2001,6.77,0.599,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2002,6.79,0.616,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2003,5.98,0.625,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2004,6.14,0.692,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2005,6.68,0.754,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2006,5.43,0.617,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2007,7.09,0.865,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2008,7.1,0.916,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2009,7.22,0.896,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2010,7.1,0.844,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2011,7.13,0.881,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2012,7.61,0.882,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2013,7.12,0.847,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2014,6.31,0.751,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2015,6.68,0.684,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2016,7.22,0.736,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2017,4.22,0.436,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2018,5.2,0.554,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2019,4.28,0.446,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2020,4.8,0.505,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2021,5.46,0.608,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2022,6.41,0.631,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2023,6.71,0.662,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bananes,Fruits,2024,6.51,0.655,Bananas,'01312,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2000,2.63,0.248,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2001,2.82,0.25,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2002,2.62,0.238,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2003,2.46,0.257,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2004,2.87,0.324,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2005,3.09,0.349,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2006,2.36,0.268,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2007,3.71,0.453,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2008,4.27,0.551,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2009,4.42,0.549,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2010,4.21,0.5,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2011,3.87,0.478,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2012,4.14,0.48,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2013,4.36,0.519,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2014,2.68,0.319,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2015,2.96,0.303,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2016,3.59,0.366,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2017,1.59,0.164,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2018,1.42,0.151,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2019,1.61,0.167,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2020,2.83,0.298,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2021,3.1,0.344,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2022,3.58,0.352,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2023,3.39,0.335,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Clémentines,Fruits,2024,3.87,0.389,"Tangerines, mandarins, clementines",'01324,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2000,3.26,0.307,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2001,3.13,0.277,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2002,3.59,0.326,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2003,2.76,0.288,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2004,3.22,0.363,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2005,4.26,0.48,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2006,4.95,0.563,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2007,4.72,0.576,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2008,5.06,0.653,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2009,3.88,0.482,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2010,3.29,0.391,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2011,3.63,0.449,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2012,3.75,0.435,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2013,4.64,0.552,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2014,4.57,0.544,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2015,4.89,0.501,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2016,5.89,0.601,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2017,5.31,0.548,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2018,5.37,0.572,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2019,4.5,0.468,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2020,5.24,0.552,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2021,5.11,0.568,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2022,6.27,0.617,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2023,8.69,0.857,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Olives,Fruits,2024,11.1,1.116,Olives,'01450,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2000,1.57,0.148,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2001,2.13,0.188,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2002,2.22,0.201,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2003,1.85,0.193,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2004,2.73,0.308,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2005,1.7,0.192,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2006,2.34,0.266,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2007,3.2,0.391,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2008,3.17,0.409,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2009,3.14,0.39,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2010,4.15,0.493,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2011,3.3,0.408,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2012,2.81,0.326,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2013,4.58,0.545,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2014,2.57,0.306,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2015,3.2,0.328,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2016,3.87,0.395,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2017,2.21,0.228,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2018,2.4,0.255,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2019,1.34,0.139,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2020,2.65,0.279,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2021,2.89,0.322,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2022,3.64,0.358,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2023,4.95,0.489,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oranges,Fruits,2024,5.18,0.522,Oranges,'01323,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2000,5.5,0.518,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2001,5.94,0.526,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2002,6.45,0.585,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2003,6.34,0.662,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2004,6.48,0.731,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2005,5.2,0.587,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2006,6.84,0.778,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2007,6.41,0.782,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2008,7.55,0.974,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2009,8.53,1.059,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2010,8.83,1.049,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2011,7.82,0.967,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2012,8.01,0.928,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2013,8.5,1.011,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2014,7.2,0.856,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2015,7.3,0.748,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2016,8.16,0.832,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2017,4.53,0.467,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2018,3.78,0.403,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2019,4.2,0.437,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2020,3.75,0.394,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2021,3.99,0.444,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2022,4.57,0.449,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes,Fruits,2023,5.2,0.513,Apples,'01341,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2007,1.95,0.238,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2008,2.36,0.304,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2009,2.49,0.309,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2010,2.68,0.318,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2011,2.18,0.27,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2012,2.48,0.287,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2013,2.25,0.268,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2014,2.29,0.272,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2015,2.78,0.285,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2016,2.48,0.253,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2017,1.27,0.131,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2018,1.57,0.167,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2019,1.75,0.182,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2020,1.8,0.19,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2021,1.5,0.167,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2022,2.19,0.215,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2023,2.83,0.279,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Carottes,Légumes,2024,3.19,0.32,Carrots and turnips,'01251,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2000,1.53,0.144,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2001,1.12,0.099,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2002,1.3,0.118,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2003,1.76,0.184,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2004,1.24,0.14,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2005,1.33,0.15,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2006,1.29,0.147,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2007,1.46,0.178,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2008,1.46,0.188,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2009,3.5,0.434,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2010,3.72,0.442,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2011,3.09,0.382,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2012,2.18,0.253,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2013,2.8,0.333,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2014,2.87,0.341,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2015,2.4,0.246,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2016,4.55,0.464,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2017,3.4,0.351,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2018,1.37,0.146,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2020,2.4,0.253,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2021,1.5,0.167,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2022,1.89,0.186,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2023,3.25,0.321,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Oignons,Légumes,2024,2.84,0.286,"Onions and shallots, dry (excluding dehydrated)",'01253.02,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2007,3.09,0.377,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2008,3.58,0.462,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2009,3.5,0.434,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2010,3.9,0.463,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2011,3.56,0.44,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2012,3.84,0.445,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2013,3.5,0.416,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2014,3.35,0.398,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2015,3.45,0.353,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2016,3.83,0.39,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2017,2.07,0.214,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2018,2.77,0.295,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2019,2.39,0.248,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2020,2.4,0.253,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2021,2.48,0.276,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2022,4.44,0.437,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2023,5.09,0.502,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poivrons,Légumes,2024,4.79,0.482,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",'01231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2000,2.0,0.188,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2001,1.98,0.175,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2002,1.69,0.153,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2003,1.96,0.205,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2004,1.89,0.213,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2005,1.93,0.218,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2006,2.34,0.266,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2007,2.47,0.302,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2008,2.09,0.27,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2009,2.01,0.25,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2010,2.96,0.352,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2011,2.42,0.299,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2012,2.22,0.257,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2013,2.38,0.283,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2014,1.78,0.212,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2015,1.97,0.202,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2016,2.0,0.204,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2017,1.84,0.19,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2018,2.15,0.229,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2019,2.08,0.217,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2020,2.1,0.221,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2021,2.27,0.252,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2022,2.72,0.268,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2023,3.23,0.319,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pommes de terre,Légumes,2024,3.86,0.388,Potatoes,'01510,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2000,1.7,0.16,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2001,1.52,0.134,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2002,1.66,0.151,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2003,2.0,0.209,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2004,1.46,0.165,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2005,1.77,0.2,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2006,1.45,0.165,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2007,1.84,0.225,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2008,2.04,0.263,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2009,2.31,0.287,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2010,2.01,0.239,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2011,2.11,0.261,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2012,2.41,0.279,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2013,2.31,0.275,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2014,2.28,0.271,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2015,1.68,0.172,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2016,1.95,0.199,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2017,2.03,0.21,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2018,2.04,0.217,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2019,2.31,0.24,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2020,2.4,0.253,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2021,2.25,0.25,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2022,3.73,0.368,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2023,2.6,0.257,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Tomates,Légumes,2024,2.05,0.206,Tomatoes,'01234,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2000,9.59,0.902,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2001,9.53,0.843,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2002,8.41,0.763,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2003,7.08,0.74,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2004,6.14,0.692,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2005,7.98,0.9,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2006,9.05,1.029,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2007,9.0,1.099,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2008,8.99,1.16,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2009,7.67,0.952,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2010,9.29,1.104,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2011,9.95,1.23,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2012,7.74,0.897,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2013,12.01,1.429,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2014,13.05,1.552,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2015,11.82,1.21,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2016,11.76,1.199,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2017,12.83,1.324,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2018,10.46,1.114,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2019,8.22,0.855,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2020,9.24,0.973,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2021,10.3,1.146,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2022,12.05,1.186,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2023,14.12,1.394,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Haricots secs,Légumineuses,2024,14.23,1.431,"Beans, dry",'01701,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2000,8.32,0.783,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2001,5.65,0.5,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2002,4.1,0.372,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2003,3.78,0.395,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2004,4.31,0.486,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2005,6.32,0.713,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2006,4.27,0.486,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2007,5.89,0.719,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2008,8.83,1.139,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2009,7.29,0.905,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2010,6.52,0.775,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2011,7.53,0.931,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2012,7.9,0.916,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2013,7.29,0.867,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2014,7.21,0.858,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2015,7.85,0.804,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2016,9.93,1.012,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2017,8.23,0.85,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2018,8.93,0.952,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2019,7.04,0.732,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2020,6.78,0.714,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2021,8.86,0.985,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2022,8.12,0.8,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2023,13.55,1.337,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lentilles,Légumineuses,2024,15.25,1.534,"Lentils, dry",'01704,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2000,7.47,0.703,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2001,7.75,0.686,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2002,4.0,0.363,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2003,3.24,0.338,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2004,4.89,0.551,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2005,6.86,0.774,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2006,7.87,0.895,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2007,7.45,0.909,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2008,7.05,0.91,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2009,5.35,0.664,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2010,5.33,0.633,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2011,9.85,1.218,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2012,9.95,1.153,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2013,11.58,1.378,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2014,9.97,1.186,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2015,9.18,0.94,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2016,10.19,1.039,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2017,12.57,1.297,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2018,11.92,1.27,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2019,10.63,1.105,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2020,8.04,0.847,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2021,7.62,0.847,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2022,9.27,0.912,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2023,13.8,1.362,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Pois chiches,Légumineuses,2024,15.41,1.55,"Chick peas, dry",'01703,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2000,3.08,0.29,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2001,3.18,0.281,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2002,3.18,0.289,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2003,3.18,0.332,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2004,3.18,0.359,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2005,3.18,0.359,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2006,3.18,0.362,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2021,4.8,0.534,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2022,5.0,0.492,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2023,5.6,0.553,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Lait de vache,Produits animaux,2024,5.8,0.583,Raw milk of cattle,'02211,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2000,12.0,1.129,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2001,11.2,0.991,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2002,10.97,0.995,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2003,10.91,1.14,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2004,9.09,1.025,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2005,10.0,1.128,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2006,10.01,1.138,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2021,10.91,1.214,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2022,16.36,1.61,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2023,18.18,1.795,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Œufs,Produits animaux,2024,21.82,2.194,"Hen eggs in shell, fresh",'0231,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2000,47.2,4.442,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2001,48.3,4.273,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2002,53.9,4.891,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2003,57.4,5.995,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2004,60.0,6.766,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2005,53.75,6.063,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2006,60.41,6.868,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2022,66.5,6.545,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2023,78.0,7.699,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Bœuf,Viandes,2024,83.5,8.398,"Meat of cattle with the bone, fresh or chilled",'21111.01,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2000,45.7,4.301,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2001,48.65,4.304,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2002,54.2,4.918,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2003,56.5,5.901,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2004,56.5,6.371,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2005,51.4,5.798,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2006,54.6,6.208,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2022,68.1,6.702,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2023,90.2,8.903,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Mouton,Viandes,2024,102.1,10.269,"Meat of sheep, fresh or chilled",'21115,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poulet,Viandes,2022,20.5,2.018,"Meat of chickens, fresh or chilled",'21121,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poulet,Viandes,2023,21.32,2.105,"Meat of chickens, fresh or chilled",'21121,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
+Poulet,Viandes,2024,23.3,2.343,"Meat of chickens, fresh or chilled",'21121,A,FAOSTAT - Producer Prices (Maroc),https://www.fao.org/faostat/fr/#data/PP
