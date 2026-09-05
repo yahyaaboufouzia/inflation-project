@@ -40,6 +40,12 @@ def load_daily() -> pd.DataFrame:
     return pd.read_csv(p, parse_dates=["date"]) if p.exists() else pd.DataFrame()
 
 
+@st.cache_data(ttl=600)
+def load_validation() -> pd.DataFrame:
+    p = ROOT / "data" / "validation_usa.csv"
+    return pd.read_csv(p) if p.exists() else pd.DataFrame()
+
+
 st.title("📈 Morocco Inflation Tracker")
 st.caption(
     "Notre indice d'inflation **alimentaire indépendant** (panier de 21 produits "
@@ -92,6 +98,32 @@ bar.update_layout(height=320, barmode="group",
                   legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
                   margin=dict(l=10, r=10, t=10, b=10), yaxis_title="%")
 st.plotly_chart(bar, use_container_width=True)
+
+# ---- method validation on the USA -------------------------------------------
+val = load_validation()
+if not val.empty:
+    st.subheader("🇺🇸 Preuve que la méthode marche : validation sur les USA")
+    corr = val["indice_nous_usa"].corr(val["cpi_food_usa"])
+    a, b = st.columns([1, 3])
+    a.metric("Corrélation", f"{corr:.2f}",
+             help="Entre notre indice US (vrais prix de détail) et l'inflation officielle US")
+    a.caption(
+        "Là où les **vrais prix de détail existent** (USA), notre méthode "
+        "**reproduit l'inflation officielle**. Le problème au Maroc est donc la "
+        "**donnée** (on n'a que des prix producteurs), pas la méthode."
+    )
+    vfig = go.Figure()
+    vfig.add_trace(go.Scatter(x=val["annee"], y=val["indice_nous_usa"],
+                              name="Notre indice US (prix de détail réels)",
+                              mode="lines", line=dict(color=OURS, width=2.8)))
+    vfig.add_trace(go.Scatter(x=val["annee"], y=val["cpi_food_usa"],
+                              name="Inflation alimentaire officielle US (BLS)",
+                              mode="lines", line=dict(color=FOOD, width=2, dash="dash")))
+    vfig.update_layout(height=340, hovermode="x unified",
+                       legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
+                       margin=dict(l=10, r=10, t=10, b=10),
+                       yaxis_title="Indice (base 2000 = 100)")
+    b.plotly_chart(vfig, use_container_width=True)
 
 # ---- recent daily prices ----------------------------------------------------
 daily = load_daily()
