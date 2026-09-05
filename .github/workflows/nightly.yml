@@ -1,47 +1,49 @@
-name: nightly-scrape
+name: nightly-update
 
-# Runs every night and commits the refreshed price history back to the repo,
-# so the data is versioned and public (the reproducibility that is the point).
+# Runs daily: appends today's real retail prices, rebuilds the inflation index
+# (and refreshes the official World Bank CPI), and commits the data back so the
+# public dashboard always reads fresh, versioned data.
 on:
   schedule:
     - cron: "0 6 * * *"  # 06:00 UTC daily
-  workflow_dispatch:      # allow manual runs from the Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  scrape:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
-
       - name: Install
         run: |
           python -m pip install --upgrade pip
           pip install -e .
 
-      # Real collection: restore history, scrape today's live prices, append,
-      # recompute the index, and re-export the versioned CSVs.
-      # NOTE: aswakassalam.com may geo/bot-block GitHub's runners; if it does,
-      # nothing is added that day and the reliable collector is a local machine
-      # (Task Scheduler) running this same script. It never fails the job.
-      - name: Daily real scrape
-        run: python scripts/run_daily.py
+      # Append today's retail prices. NOTE: Aswak Assalam may block GitHub's
+      # runners (non-Morocco IP); if so this step adds nothing and the reliable
+      # collector is a local machine (Task Scheduler + scripts/daily_collect.bat).
+      - name: Append today's prices
+        run: python scripts/append_today.py || echo "scrape skipped/blocked"
+
+      # Rebuild the index and refresh the official CPI (World Bank + FAOSTAT
+      # work fine from CI).
+      - name: Rebuild inflation index
+        run: python scripts/build_inflation_index.py
 
       - name: Commit refreshed data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/observations.csv data/daily/index.csv
+          git add data/prix_actuels.csv data/indice_inflation.csv data/official/cpi_maroc_worldbank.csv
           if git diff --staged --quiet; then
-            echo "No change in the data."
+            echo "No change."
           else
-            git commit -m "chore: nightly data refresh ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: nightly data update ($(date -u +%Y-%m-%d))"
             git push
           fi
