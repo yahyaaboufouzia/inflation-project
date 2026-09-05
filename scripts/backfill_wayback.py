@@ -28,9 +28,9 @@ from inflation.storage import repository as repo  # noqa: E402
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120"}
 CDX = "http://web.archive.org/cdx/search/cdx"
-# Keep only recent, well-covered history. Earlier snapshots exist but are too
-# sparse to give a reliable index, so we start the series here.
-MIN_TIMESTAMP = "2025"
+# The kept products are densely archived, so we can safely use their full
+# history (snapshots start around 2022) without the sparse-coverage volatility.
+MIN_TIMESTAMP = "2022"
 
 
 def _get(url: str, **kwargs) -> httpx.Response | None:
