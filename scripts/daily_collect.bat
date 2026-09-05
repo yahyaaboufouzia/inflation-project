@@ -14,7 +14,7 @@ REM 2. append today's real prices, then rebuild the inflation index
 "venv\Scripts\python.exe" scripts\build_inflation_index.py >> collect.log 2>&1
 
 REM 3. commit + push only if something changed
-git add data\prix_actuels.csv data\indice_inflation.csv data\official\cpi_maroc_worldbank.csv
+git add data\prix_actuels.csv data\indice_inflation.csv data\official\cpi_maroc_faostat.csv
 git diff --cached --quiet
 if errorlevel 1 (
   git commit -m "chore: mise a jour quotidienne des prix (%DATE%)" >> collect.log 2>&1
