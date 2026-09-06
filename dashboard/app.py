@@ -46,6 +46,12 @@ def load_validation() -> pd.DataFrame:
     return pd.read_csv(p) if p.exists() else pd.DataFrame()
 
 
+@st.cache_data(ttl=600)
+def load_daily_index() -> pd.DataFrame:
+    p = ROOT / "data" / "indice_quotidien.csv"
+    return pd.read_csv(p, parse_dates=["date"]) if p.exists() else pd.DataFrame()
+
+
 st.title("📈 Morocco Inflation Tracker")
 st.caption(
     "Notre indice d'inflation **alimentaire indépendant** (panier de 21 produits "
@@ -53,7 +59,37 @@ st.caption(
     "Inspiré du Billion Prices Project du MIT."
 )
 
+# ---- DAILY index (the headline: our real-time measure) ----------------------
+di = load_daily_index()
+if not di.empty:
+    st.subheader("🗓️ Indice quotidien — notre mesure en temps réel")
+    latest = di.iloc[-1]
+    d1, d2, d3 = st.columns(3)
+    d1.metric("Indice du jour", f"{latest['indice_quotidien']:.1f}",
+              f"{latest['indice_quotidien'] - 100:+.2f}% vs départ")
+    d2.metric("Produits suivis", int(latest["n_produits"]))
+    d3.metric("Jours collectés", len(di))
+    if len(di) >= 2:
+        dfig = go.Figure()
+        dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"],
+                                  mode="lines+markers", line=dict(color=OURS, width=2.5),
+                                  name="Indice quotidien"))
+        dfig.update_layout(height=330, hovermode="x unified",
+                           margin=dict(l=10, r=10, t=10, b=10),
+                           yaxis_title="Indice (base 100 au départ)")
+        st.plotly_chart(dfig, use_container_width=True)
+    else:
+        st.info(
+            f"📈 La série quotidienne démarre aujourd'hui (base 100, "
+            f"{int(latest['n_produits'])} produits). **Elle s'enrichit d'un point "
+            "chaque jour** — reviens demain pour voir la courbe se tracer."
+        )
+    st.divider()
+
 idx = load_index()
+
+# ---- long-run comparison (context) -----------------------------------------
+st.subheader("📅 Comparaison longue durée (contexte annuel)")
 
 # ---- headline metrics -------------------------------------------------------
 both = idx.dropna(subset=["indice_nous", "cpi_food_officiel"])
