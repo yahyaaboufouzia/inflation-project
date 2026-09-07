@@ -11,6 +11,7 @@ Output: data/aswak_catalog.csv (product_id, produit, categorie, unite, url, prix
 """
 from __future__ import annotations
 
+import random
 import re
 import time
 from pathlib import Path
@@ -24,10 +25,31 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120",
     "Accept": "text/html", "Accept-Language": "fr-FR,fr;q=0.9",
 }
-MAX_PAGES = 3   # per category
+MAX_PAGES = 3          # per category
+PRICE_MIN, PRICE_MAX = 0.1, 100000.0   # sanity bounds (MAD) — reject 0 / 999999
 OUT = Path("data/aswak_catalog.csv")
 
 client = httpx.Client(headers=HEADERS, timeout=30, follow_redirects=True)
+
+
+def fetch(url: str, attempts: int = 4) -> httpx.Response | None:
+    """GET with exponential backoff + jitter; backs off on 403/429/503."""
+    for i in range(attempts):
+        try:
+            r = client.get(url)
+            if r.status_code == 200:
+                return r
+            if r.status_code in (403, 429, 503):
+                time.sleep(2 ** i + random.uniform(0, 1.5))
+                continue
+            return r
+        except Exception:
+            time.sleep(2 ** i + random.uniform(0, 1.5))
+    return None
+
+
+def plausible(price: float | None) -> bool:
+    return price is not None and PRICE_MIN <= price <= PRICE_MAX
 
 
 def parse_unit(name: str) -> str:
@@ -47,7 +69,10 @@ def parse_price(text: str) -> float | None:
 
 
 def categories() -> list[str]:
-    r = client.get(BASE + "/")
+    r = fetch(BASE + "/")
+    if r is None:
+        print("  ! page d'accueil inaccessible (bloqué ?)")
+        return []
     soup = BeautifulSoup(r.text, "lxml")
     slugs = []
     for a in soup.select('a[href*="/product-category/"]'):
@@ -58,18 +83,17 @@ def categories() -> list[str]:
 
 
 def scrape_category(slug: str) -> list[dict]:
-    rows = []
+    rows, dropped = [], 0
     for page in range(1, MAX_PAGES + 1):
         url = f"{BASE}/product-category/{slug}/" + (f"page/{page}/" if page > 1 else "")
-        try:
-            r = client.get(url)
-        except Exception:
-            break
-        if r.status_code != 200:
+        r = fetch(url)
+        if r is None or r.status_code != 200:
             break
         soup = BeautifulSoup(r.text, "lxml")
         items = soup.select("li.product")
         if not items:
+            if page == 1:   # 200 but no products = possible markup change / block
+                print(f"  ! {slug}: 0 produit en page 1 (structure changée ou bloqué ?)")
             break
         for li in items:
             a = li.select_one('a[href*="/produit/"]')
@@ -77,18 +101,22 @@ def scrape_category(slug: str) -> list[dict]:
             amounts = li.select(".price .woocommerce-Price-amount")
             if not a or not amounts:
                 continue
+            price = parse_price(amounts[-1].get_text(" ", strip=True))
+            if not plausible(price):   # reject 0 / 999999 / unparsable
+                dropped += 1
+                continue
             name = title.get_text(" ", strip=True) if title else a.get_text(" ", strip=True)
-            pid = a["href"].rstrip("/").split("/")[-1]
             rows.append({
-                "product_id": pid,
+                "product_id": a["href"].rstrip("/").split("/")[-1],
                 "produit": name,
                 "categorie": slug,
-                "unite": (re.search(r"\d+\s?(?:x\s?\d+)?\s?(?:kg|g|l|cl|ml|u)\b", name.lower())
-                          or [None])[0] if isinstance(re.search(r"\d+\s?(?:x\s?\d+)?\s?(?:kg|g|l|cl|ml|u)\b", name.lower()), re.Match) else "",
+                "unite": parse_unit(name),
                 "url": a["href"],
-                "prix": parse_price(amounts[-1].get_text(" ", strip=True)),
+                "prix": price,
             })
         time.sleep(1.5)
+    if dropped:
+        print(f"  · {slug}: {dropped} prix aberrants ignorés")
     return rows
 
 

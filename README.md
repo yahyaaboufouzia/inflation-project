@@ -130,11 +130,12 @@ Because prices are collected **forward** in time, the daily curve **grows one po
 
 ## Roadmap
 
+- [x] Gap analysis: cumulative deviation vs the official index
+- [x] Scraping robustness: retries with jitter + sanity checks (rejects 0 / 999999)
+- [x] Category contribution chart (what drives inflation)
 - [ ] More sources: solve the anti-bot block on Jumia/Marjane (Playwright + stealth)
 - [ ] Regulated prices (fuel, butane, bread, sugar) from official communiqués
-- [ ] Gap analysis: cumulative deviation vs the official index
 - [ ] Deploy the dashboard publicly (Streamlit Community Cloud)
-- [ ] Scraping robustness: retries with jitter, sanity checks, failure alerts
 - [ ] A minimal REST API + monthly data releases
 
 ## Credits

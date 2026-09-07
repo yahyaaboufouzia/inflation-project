@@ -135,6 +135,25 @@ bar.update_layout(height=320, barmode="group",
                   margin=dict(l=10, r=10, t=10, b=10), yaxis_title="%")
 st.plotly_chart(bar, use_container_width=True)
 
+# ---- gap analysis (the raison d'être) --------------------------------------
+st.subheader("Écart cumulé — notre indice vs officiel")
+g = idx.dropna(subset=["indice_nous", "cpi_food_officiel"]).copy()
+g["ecart"] = (g["indice_nous"] - g["cpi_food_officiel"]).round(1)
+gfig = go.Figure()
+gfig.add_trace(go.Scatter(x=g["annee"], y=g["ecart"], fill="tozeroy",
+                          mode="lines+markers", line=dict(color="#dc2626", width=2),
+                          name="Écart (points d'indice)"))
+gfig.add_hline(y=0, line=dict(color="#6b7280", width=1))
+gfig.update_layout(height=280, hovermode="x unified",
+                   margin=dict(l=10, r=10, t=10, b=10),
+                   yaxis_title="Écart (points, base 2010)")
+st.plotly_chart(gfig, use_container_width=True)
+st.caption(
+    "Au-dessus de 0 : notre panier alimentaire signale **plus** d'inflation que "
+    "l'indice officiel. L'écart se creuse à partir de 2020 (prix producteurs très "
+    "volatils lors de la sécheresse et de la flambée mondiale)."
+)
+
 # ---- method validation on the USA -------------------------------------------
 val = load_validation()
 if not val.empty:
@@ -180,6 +199,26 @@ if len(piv.columns):
     tbl["Variation %"] = ((piv[y1].values / piv[y0].values - 1) * 100).round(0)
     st.dataframe(tbl.dropna().sort_values("Variation %", ascending=False),
                  use_container_width=True, hide_index=True)
+
+# ---- what drives inflation, by category -------------------------------------
+st.subheader("Ce qui tire l'inflation, par catégorie")
+if len(piv.columns):
+    import numpy as np
+    y0, y1 = min(piv.columns), max(piv.columns)
+    prices2 = prices[prices["annee"].isin([y0, y1])]
+    contrib = []
+    for cat, gc in prices2.groupby("categorie"):
+        w = gc.pivot_table(index="produit", columns="annee", values="prix_mad_par_kg", aggfunc="first").dropna()
+        if w.empty:
+            continue
+        change = float(np.exp(np.log(w[y1] / w[y0]).mean()) - 1) * 100
+        contrib.append((cat, round(change, 1)))
+    cdf = pd.DataFrame(contrib, columns=["Catégorie", "Variation %"]).sort_values("Variation %")
+    cbar = go.Figure(go.Bar(x=cdf["Variation %"], y=cdf["Catégorie"], orientation="h",
+                            marker_color=["#dc2626" if v > 0 else "#2563eb" for v in cdf["Variation %"]]))
+    cbar.update_layout(height=300, margin=dict(l=10, r=10, t=10, b=10),
+                       xaxis_title=f"Variation du prix moyen {y0}→{y1} (%)")
+    st.plotly_chart(cbar, use_container_width=True)
 
 with st.expander("Méthodologie, corrections et sources"):
     st.markdown(
