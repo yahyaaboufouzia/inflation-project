@@ -1,87 +1,93 @@
 # 📈 Morocco Inflation Tracker
 
-**An independent inflation index for Morocco, built from real online prices — and compared against the official HCP consumer price index.**
+**An independent, daily inflation index for Morocco — built from real online prices, validated against ground truth, and compared to the official CPI.**
 
-Inspired by MIT's [Billion Prices Project](https://thebillionpricesproject.com/): official inflation in Morocco is published once a month by a public body, with no way for an outsider to verify the calculation. This project produces its *own* measure and asks a simple question — **do the two tell the same story?**
+[![tests](https://github.com/yahyaaboufouzia/inflation-project/actions/workflows/tests.yml/badge.svg)](https://github.com/yahyaaboufouzia/inflation-project/actions/workflows/tests.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![python](https://img.shields.io/badge/python-3.11%2B-blue)
+![basket](https://img.shields.io/badge/basket-352%20products-brightgreen)
+![data](https://img.shields.io/badge/data-updated%20daily-orange)
 
-Prices are scraped live from **Aswak Assalam** (a Moroccan hypermarket chain), and back-history is reconstructed from archived snapshots of the same pages via the **Wayback Machine** — so every value is real and carries its source URL.
-
-<!-- Add screenshots / a Streamlit Cloud badge here once deployed -->
+Inspired by MIT's [Billion Prices Project](https://thebillionpricesproject.com/): official inflation in Morocco is published once a month by a public body, with no way for an outsider to verify it. This project builds its **own** measure — **daily**, from real prices, with every value traceable to its source — and asks: *do the two tell the same story?*
 
 ---
 
-## Why this is interesting
+## What it does
 
-The official index (HCP) is measured the classic way: field agents visit shops, record the price of a fixed basket of goods, and compare month over month. It is solid, but **slow** (monthly), **costly** (people on the ground), and **opaque** (you see the result, not the readings).
+| | |
+|---|---|
+| 🗓️ **Daily index** | Scrapes **352 everyday products** (food, hygiene, cleaning) from **Aswak Assalam** every day and builds a daily price index. A new point is added each day. |
+| 📅 **Long-run comparison** | A 21-staple index from **FAOSTAT** producer prices (2000–2024) vs the **official Morocco food CPI**, with three fairness corrections. |
+| 🇺🇸 **Method validation** | The same method applied to **real US retail prices** (BLS/FRED) reproduces the official US food CPI with a **correlation of 0.99** — proving the method works where good data exists. |
+| 🔎 **Full provenance** | Every price stores its `source_url`. Any value can be checked at its source. |
 
-A scraper does, for free and every night, what the agents do once a month. After two months you have something almost no one else has: **a daily price history for Morocco.**
+## The key idea
 
-This is exactly the method Cavallo & Rigobon used at MIT to show Argentina was under-reporting its inflation — official ~10%/yr, their scraped index ~twice that. Same idea, applied to Morocco.
+Naively averaging price changes is **wrong**: a household buys cooking oil every week and a TV every eight years. Each product is weighted by its share of the budget. Formally, a two-stage index (like real statistical agencies):
 
-## How the index is built
-
-Naively averaging price changes is **wrong**: a household buys cooking oil every week and a TV every eight years. So each product is weighted by its share of the household budget. Formally, a **Laspeyres index**:
+**1. Elementary index per category** — geometric mean of price relatives (**Jevons**):
 
 ```
-I_t = 100 × Σ_c  w_c · (I_c,t)
+I(c,t) = ( Π  p(i,t)/p(i,0) ) ^ (1/n)
 ```
 
-where `w_c` is the budget weight of category `c` and `I_c,t` is that category's elementary index (a **Jevons** geometric mean of price relatives `p_t / p_0`).
+**2. Overall index** — budget-weighted average across categories (**Laspeyres**):
 
-**Worked example** (documented and unit-tested in [`tests/test_index.py`](tests/test_index.py)):
+```
+I(t) = 100 × Σ_c  w(c) · I(c,t)
+```
 
-| Product | Change | Weight | Contribution |
-|---|--:|--:|--:|
-| Cooking oil 5L | +7.9% | 0.35 | +2.77 |
-| Flour 5kg | +2.4% | 0.40 | +0.96 |
-| Coffee 250g | 0% | 0.15 | 0 |
-| TV 43" | −5.0% | 0.10 | −0.50 |
-| **Index** | | **1.00** | **≈ +3.2%** |
+## Method validation (the important part)
 
-A naive average would say +1.3%. Weighting says +3.2%. That gap is the whole point.
+Anyone can build an index — the question is whether it's *right*. So the method is tested where the truth is known: the **USA**, which publishes decades of real retail prices (BLS "Average Price" series via FRED). Feeding those into **our exact method** and comparing to the **official US food CPI** gives:
+
+> **Correlation = 0.99** over 1980–2026.
+
+Where real retail prices exist, our method reproduces official inflation. Morocco's gap is therefore a **data problem** (only producer prices are publicly available), not a method problem — a concrete, evidence-backed case for seeking better data access. See [`scripts/validate_usa.py`](scripts/validate_usa.py).
+
+## Data & sources (all verifiable)
+
+| Series | Source | File |
+|---|---|---|
+| Daily retail prices | Aswak Assalam (scraped) | `data/prix_actuels.csv`, `data/indice_quotidien.csv` |
+| Historical staple prices | [FAOSTAT — Producer Prices](https://www.fao.org/faostat/fr/#data/PP) | `data/prix_maroc_faostat.csv` |
+| Official Morocco CPI (food + general) | [FAOSTAT — Consumer Price Indices](https://www.fao.org/faostat/fr/#data/CP) | `data/official/cpi_maroc_faostat.csv` |
+| US retail prices + US CPI | [FRED / BLS](https://fred.stlouisfed.org/) | `data/validation_usa.csv` |
+
+Why Aswak Assalam? Jumia, Marjane, Avito and Electroplanet block automated requests (HTTP 403); Aswak Assalam runs on WooCommerce with prices in the HTML — so it is the one large Moroccan retailer that is reliably scrapable today.
 
 ## Architecture
 
 ```
-   E-commerce sites (Jumia, Marjane, …)
-            │   every night
-            ▼
-      [ Scrapers ]  ───►  raw snapshots (audit trail)
-            │
-            ▼
-      [ Cleaning ]   "1 299,00 DH" → 1299.0 · in stock?
-            │
-            ▼
-      [ SQLite ]   price_observations  (append-only time series)
-            │
-            ├──►  [ Laspeyres index ]  ──►  index_values
-            │
-            └──►  [ Official HCP CPI ]
-                        │
-                        ▼
-              [ Dashboard: 2 curves + gap analysis ]
+   Aswak Assalam (352 products, 11 categories)
+          │  every day (Task Scheduler / GitHub Actions)
+          ▼
+   collect_daily.py  ──►  data/prix_actuels.csv   (dated, with source_url)
+          │
+          ▼
+   build_daily_index.py  ──►  data/indice_quotidien.csv   (the daily curve)
+
+   FAOSTAT + FRED  ──►  build_inflation_index.py / validate_usa.py
+          │
+          ▼
+   Streamlit dashboard  (daily curve + long-run comparison + US validation)
 ```
 
-**Design principles.** Collection and calculation are decoupled — scrapers only record price observations, the index is a pure function on top, so you can recompute with different weights or a different basket **without re-scraping**. The basket and weights live in versioned YAML, not in code.
+**Design principle:** collection and calculation are decoupled. Scrapers only record dated observations; the index is a pure function on top, so weights, basket, or formula can change **without re-scraping**.
 
 ```
-inflation/          the Python package
-  config.py         load & validate basket + weights (pydantic)
-  scrapers/         base.py · static.py · demo.py · registry.py
-  storage/          models.py · repository.py  (SQLAlchemy + SQLite)
-  cleaning.py       price string → float
-  index.py          Laspeyres / Jevons index  ← the core
-  official.py       load & rebase the HCP CPI
-  pipeline.py       scrape → clean → store (one entry point)
-  cli.py            inflation-scrape · inflation-index
-config/             basket.yaml · weights.yaml · sites.yaml
-dashboard/app.py    Streamlit dashboard
+inflation/            core package (config, scrapers, storage, index, cleaning)
 scripts/
-  backfill_wayback.py  reconstruct real history from web archives
-  run_daily.py         one daily collection run (used by the nightly job)
-  seed_demo.py         optional offline synthetic history
-tests/              index math is unit-tested
-.github/workflows/  nightly scrape + CI
+  scrape_aswak_catalog.py   build the 352-product catalog
+  collect_daily.py          scrape today's prices (run daily)
+  build_daily_index.py      the daily index
+  build_inflation_index.py  long-run index + official CPI
+  validate_usa.py           method validation on the USA
+  daily_collect.bat         Windows Task Scheduler entry point
+dashboard/app.py      Streamlit dashboard (reads only CSVs)
+data/                 versioned datasets (the audit trail)
+tests/                unit tests for the index math
+.github/workflows/    nightly collection + CI
 ```
 
 ## Quickstart
@@ -91,49 +97,49 @@ git clone https://github.com/yahyaaboufouzia/inflation-project.git
 cd inflation-project
 
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -e ".[dashboard,dev]"
 
-python scripts/backfill_wayback.py   # reconstruct real history from web archives
-inflation-scrape                     # add today's real prices (Aswak Assalam)
-inflation-index --export data/daily/index.csv
-streamlit run dashboard/app.py       # open the dashboard
+python scripts/build_inflation_index.py   # long-run index + official CPI
+python scripts/validate_usa.py            # method validation (r = 0.99)
+streamlit run dashboard/app.py            # open the dashboard
 ```
 
-The committed `data/observations.csv` already contains real history, so you can
-open the dashboard straight away. Run the tests with `pytest -q`.
+To grow the daily series, run the collector (schedule it once a day):
 
-## How the data is collected
+```bash
+python scripts/collect_daily.py       # scrape today's 352 prices
+python scripts/build_daily_index.py   # add today's point to the daily index
+```
 
-- **Live prices** come from **Aswak Assalam** (`aswakassalam.com`), a WooCommerce
-  store whose prices sit in the HTML — scraped with `httpx` + BeautifulSoup. The
-  bigger sites (Jumia, Marjane, Avito, Electroplanet) return HTTP 403 to bots.
-- **History** is reconstructed from the **Wayback Machine**: each product page
-  has archived snapshots going back to 2022, and we read the price from each.
-- **Provenance**: every observation stores its `source_site` and `source_url`,
-  so any value can be traced back to the exact page it came from.
-- **Frequency**: because snapshots are irregular, the index is aggregated
-  **monthly** (last known price carried forward), which also makes it directly
-  comparable to the monthly HCP index.
-- **Regulated / published prices** (bread, sugar, butane gas, fuel) are not sold
-  online and will be added later from official sources.
+Run the tests with `pytest -q`.
 
-The nightly [GitHub Actions workflow](.github/workflows/nightly.yml) re-runs the
-collection and commits the refreshed data back, so the history is versioned and
-public. Aswak Assalam may block cloud runners, so a local machine (Task
-Scheduler) running `scripts/run_daily.py` is the reliable collector.
+## Daily automation
+
+- **Local (reliable):** `scripts/daily_collect.bat` is registered in **Windows Task Scheduler** (runs at 20:00) — it collects, rebuilds the index, and commits + pushes. A Morocco IP is not blocked by the retailer.
+- **Cloud:** the [nightly GitHub Actions workflow](.github/workflows/nightly.yml) does the same and refreshes the official series; the retailer may block cloud IPs, so the local runner is the primary collector.
+
+Because prices are collected **forward** in time, the daily curve **grows one point per day** — a real daily history can't be reconstructed from the past, exactly as the Billion Prices Project did.
+
+## Honest limitations
+
+- **Single retail source** (Aswak Assalam) — the others block scraping. Adding sources is the top priority for anti-fragility.
+- **Producer vs retail:** the historical FAOSTAT series is farm-gate (more volatile, lower level than shelf prices); the daily scrape provides true retail going forward.
+- **Official CPI is monthly** — it can't be daily; our daily curve is the added value.
+- **Coverage:** food + household consumables, not the full COICOP basket (housing, transport… have no independent public price source in Morocco).
 
 ## Roadmap
 
-- [ ] Expand the basket with more Aswak Assalam products
-- [ ] Add regulated/published prices (fuel, butane, bread) from official sources
-- [ ] A Playwright-based scraper for the JavaScript sites (Marjane, Jumia)
-- [ ] Deploy the dashboard to Streamlit Community Cloud (public link)
-- [ ] Written analysis of the gap vs the HCP index
+- [ ] More sources: solve the anti-bot block on Jumia/Marjane (Playwright + stealth)
+- [ ] Regulated prices (fuel, butane, bread, sugar) from official communiqués
+- [ ] Gap analysis: cumulative deviation vs the official index
+- [ ] Deploy the dashboard publicly (Streamlit Community Cloud)
+- [ ] Scraping robustness: retries with jitter, sanity checks, failure alerts
+- [ ] A minimal REST API + monthly data releases
 
 ## Credits
 
-Methodology after Alberto Cavallo & Roberto Rigobon, *"The Billion Prices Project: Using Online Prices for Measurement and Research"* (Journal of Economic Perspectives, 2016). Official data: Haut-Commissariat au Plan (HCP), Morocco.
+Method after Alberto Cavallo & Roberto Rigobon, *"The Billion Prices Project: Using Online Prices for Measurement and Research"* (Journal of Economic Perspectives, 2016). Data: FAOSTAT, World Bank, US BLS/FRED, Aswak Assalam.
 
 ## License
 
