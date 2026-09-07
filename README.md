@@ -16,7 +16,7 @@ Inspired by MIT's [Billion Prices Project](https://thebillionpricesproject.com/)
 
 | | |
 |---|---|
-| 🗓️ **Daily index** | Scrapes **352 everyday products** (food, hygiene, cleaning) from **Aswak Assalam** every day and builds a daily price index. A new point is added each day. |
+| 🗓️ **Daily index** | Scrapes **350+ items** every day across CPI-style divisions — food, hygiene & cleaning (**Aswak Assalam**) **and housing** (rent in MAD/m², **Mubawab**) — weighted like a CPI (Food 45%, Housing 22%, …). A new point is added each day. |
 | 📅 **Long-run comparison** | A 21-staple index from **FAOSTAT** producer prices (2000–2024) vs the **official Morocco food CPI**, with three fairness corrections. |
 | 🇺🇸 **Method validation** | The same method applied to **real US retail prices** (BLS/FRED) reproduces the official US food CPI with a **correlation of 0.99** — proving the method works where good data exists. |
 | 🔎 **Full provenance** | Every price stores its `source_url`. Any value can be checked at its source. |
@@ -126,7 +126,7 @@ Because prices are collected **forward** in time, the daily curve **grows one po
 - **Single retail source** (Aswak Assalam) — the others block scraping. Adding sources is the top priority for anti-fragility.
 - **Producer vs retail:** the historical FAOSTAT series is farm-gate (more volatile, lower level than shelf prices); the daily scrape provides true retail going forward.
 - **Official CPI is monthly** — it can't be daily; our daily curve is the added value.
-- **Coverage:** food + household consumables, not the full COICOP basket (housing, transport… have no independent public price source in Morocco).
+- **Coverage:** the daily index now spans food, hygiene/cleaning and **housing** (rent). Housing uses rental *listings* (a composition-shifting proxy, normalised to MAD/m² and taken as a median). **Transport/fuel** is still missing — no scrapable public source found yet.
 
 ## Roadmap
 

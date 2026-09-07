@@ -69,6 +69,11 @@ if not di.empty:
               f"{latest['indice_quotidien'] - 100:+.2f}% vs départ")
     d2.metric("Produits suivis", int(latest["n_produits"]))
     d3.metric("Jours collectés", len(di))
+    st.caption(
+        "Panier pondéré façon CPI : **Alimentation 45%** (Aswak Assalam), "
+        "**Logement 22%** (loyers Mubawab, DH/m²), Transport 13%, Équipement 12%, "
+        "Hygiène & entretien 8%. Non plus seulement alimentaire."
+    )
     if len(di) >= 2:
         dfig = go.Figure()
         dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"],

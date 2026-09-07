@@ -1,489 +1,8 @@
 date,product_id,produit,categorie,prix,source_url
-2026-09-06,creme-solaire-protectrice-et-hydratante-spf-50-200ml-nivea,Crème solaire protectrice et hydratante SPF 50+ 200ml – NIVEA,beaute-hygiene,164.95,https://aswakassalam.com/produit/creme-solaire-protectrice-et-hydratante-spf-50-200ml-nivea/
-2026-09-06,gel-douche-250ml-divers-parfums-taous,Gel douche 250ml. Divers parfums – TAOUS,beaute-hygiene,14.95,https://aswakassalam.com/produit/gel-douche-250ml-divers-parfums-taous/
-2026-09-06,lot-de-2-dentifrices-white-now-75ml-signal,Lot de 2 dentifrices WHITE NOW 75ml – SIGNAL,beaute-hygiene,27.95,https://aswakassalam.com/produit/lot-de-2-dentifrices-white-now-75ml-signal/
-2026-09-06,lot-de-2-gels-douche-250ml-divers-parfums-taous,Lot de 2 gels douche 250ml divers parfums – TAOUS,beaute-hygiene,21.95,https://aswakassalam.com/produit/lot-de-2-gels-douche-250ml-divers-parfums-taous/
-2026-09-06,lot-de-2-gels-douches-lait-hydratant-250ml-divers-parfums-cottage,Lot de 2 gels douches lait hydratant 250ml Divers parfums – COTTAGE,beaute-hygiene,55.95,https://aswakassalam.com/produit/lot-de-2-gels-douches-lait-hydratant-250ml-divers-parfums-cottage/
-2026-09-06,20-rasoirs-blue2-gillette-15-achetes-5-gratuits,20 RASOIRS BLUE2 GILLETTE (15 ACHETES = 5 GRATUITS),beaute-hygiene,83.95,https://aswakassalam.com/produit/20-rasoirs-blue2-gillette-15-achetes-5-gratuits/
-2026-09-06,after-shave-original-100-ml-brut,AFTER SHAVE ORIGINAL 100 ML BRUT,beaute-hygiene,50.5,https://aswakassalam.com/produit/after-shave-original-100-ml-brut/
-2026-09-06,apres-shampooing-avocat-200ml-ultra-doux,APRES SHAMPOOING AVOCAT 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-avocat-200ml-ultra-doux/
-2026-09-06,apres-shampooing-avocat-beurre-de-karite-400ml-ultra-doux-garnier,APRES SHAMPOOING AVOCAT BEURRE DE KARITE 400ML ULTRA DOUX GARNIER,beaute-hygiene,59.95,https://aswakassalam.com/produit/apres-shampooing-avocat-beurre-de-karite-400ml-ultra-doux-garnier/
-2026-09-06,apres-shampooing-dream-long-200ml-elseve,APRES SHAMPOOING DREAM LONG 200ML ELSEVE,beaute-hygiene,44.95,https://aswakassalam.com/produit/apres-shampooing-dream-long-200ml-elseve/
-2026-09-06,apres-shampooing-huile-extraordinaire-pour-cheveux-normaux-200ml-elseve,APRES SHAMPOOING HUILE EXTRAORDINAIRE POUR CHEVEUX NORMAUX 200ML ELSEVE,beaute-hygiene,44.95,https://aswakassalam.com/produit/apres-shampooing-huile-extraordinaire-pour-cheveux-normaux-200ml-elseve/
-2026-09-06,apres-shampooing-hydratant-72h-hyaluron-repulp-200ml-elseve,APRES SHAMPOOING HYDRATANT 72H HYALURON REPULP 200ML ELSEVE,beaute-hygiene,48.95,https://aswakassalam.com/produit/apres-shampooing-hydratant-72h-hyaluron-repulp-200ml-elseve/
-2026-09-06,apres-shampooing-lait-damande-nourricier-200ml-ultra-doux,APRES SHAMPOOING LAIT D’AMANDE NOURRICIER 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-lait-damande-nourricier-200ml-ultra-doux/
-2026-09-06,apres-shampooing-olive-mythique-400ml-ultra-doux,APRES SHAMPOOING OLIVE MYTHIQUE 400ML ULTRA DOUX,beaute-hygiene,59.95,https://aswakassalam.com/produit/apres-shampooing-olive-mythique-400ml-ultra-doux/
-2026-09-06,apres-shampooing-tresors-de-miel-200ml-ultra-doux,APRES SHAMPOOING TRESORS DE MIEL 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-tresors-de-miel-200ml-ultra-doux/
-2026-09-06,apres-shampooing-beurre-de-karite-et-macadamia-cheveux-tres-secs-ou-frises-200ml-le-petit-olivier,APRES-SHAMPOOING BEURRE DE KARITE ET MACADAMIA CHEVEUX TRES SECS OU FRISES 200ML LE PETIT OLIVIER,beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-beurre-de-karite-et-macadamia-cheveux-tres-secs-ou-frises-200ml-le-petit-olivier/
-2026-09-06,apres-shampooing-coco-et-the-vert-tous-types-de-cheveux-250ml-lovea,APRES-SHAMPOOING COCO ET THE VERT TOUS TYPES DE CHEVEUX 250ML LOVEA,beaute-hygiene,74.95,https://aswakassalam.com/produit/apres-shampooing-coco-et-the-vert-tous-types-de-cheveux-250ml-lovea/
-2026-09-06,apres-shampooing-monoi-karite-pour-cheveux-secs-et-abimes-200ml-lovea,APRES-SHAMPOOING MONOI & KARITE POUR CHEVEUX SECS ET ABIMES 200ML LOVEA,beaute-hygiene,74.95,https://aswakassalam.com/produit/apres-shampooing-monoi-karite-pour-cheveux-secs-et-abimes-200ml-lovea/
-2026-09-06,apres-shampooing-nutrition-huiles-dolive-karite-argan-200ml-le-petit-olivier,"APRES-SHAMPOOING NUTRITION HUILES D’OLIVE, KARITE, ARGAN 200ML LE PETIT OLIVIER",beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-nutrition-huiles-dolive-karite-argan-200ml-le-petit-olivier/
-2026-09-06,apres-shampooing-olive-mythique-200ml-ultra-doux,APRES-SHAMPOOING OLIVE MYTHIQUE 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-olive-mythique-200ml-ultra-doux/
-2026-09-06,apres-shampooing-purifiant-aloe-vera-the-vert-200ml-le-petit-olivier,APRES-SHAMPOOING PURIFIANT ALOE VERA & THE VERT 200ML LE PETIT OLIVIER,beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-purifiant-aloe-vera-the-vert-200ml-le-petit-olivier/
-2026-09-06,apres-shampooing-tonus-brillance-huile-sesame-300ml-timotei,APRES-SHAMPOOING TONUS BRILLANCE HUILE SESAME 300ML TIMOTEI,beaute-hygiene,34.5,https://aswakassalam.com/produit/apres-shampooing-tonus-brillance-huile-sesame-300ml-timotei/
-2026-09-06,baby-shampooing-shiny-drops-300ml-johnson-baby,BABY SHAMPOOING SHINY DROPS 300ML JOHNSON BABY,beaute-hygiene,45.5,https://aswakassalam.com/produit/baby-shampooing-shiny-drops-300ml-johnson-baby/
-2026-09-06,bain-bouche-fraiche-intense-500ml-listerine,BAIN BOUCHE FRAICHE INTENSE 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-fraiche-intense-500ml-listerine/
-2026-09-06,bain-bouche-soin-blancheur-500ml-listerine,BAIN BOUCHE SOIN BLANCHEUR 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-soin-blancheur-500ml-listerine/
-2026-09-06,bain-bouche-zero-alcool-menthe-500ml-listerine,BAIN BOUCHE ZERO ALCOOL MENTHE 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-zero-alcool-menthe-500ml-listerine/
-2026-09-06,bain-de-bouche-optic-white-500ml-colgate,BAIN DE BOUCHE OPTIC WHITE 500ML COLGATE,beaute-hygiene,45.5,https://aswakassalam.com/produit/bain-de-bouche-optic-white-500ml-colgate/
-2026-09-06,bain-moussant-200ml-johnson-baby,BAIN MOUSSANT 200ML JOHNSON BABY,beaute-hygiene,33.95,https://aswakassalam.com/produit/bain-moussant-200ml-johnson-baby/
-2026-09-06,bande-de-cire-peau-normale-10-unites-veet,BANDE DE CIRE PEAU NORMALE 10 UNITES VEET,beaute-hygiene,36.95,https://aswakassalam.com/produit/bande-de-cire-peau-normale-10-unites-veet/
-2026-09-06,bandes-de-cire-peaux-sensibles-10-unites-veet,BANDES DE CIRE PEAUX SENSIBLES 10 UNITES VEET,beaute-hygiene,36.95,https://aswakassalam.com/produit/bandes-de-cire-peaux-sensibles-10-unites-veet/
-2026-09-06,bandes-epilation-10-pieces-depiliss,BANDES EPILATION 10 PIECES DEPILISS,beaute-hygiene,5.95,https://aswakassalam.com/produit/bandes-epilation-10-pieces-depiliss/
-2026-09-06,bandes-epilation-50-unites-depiliss,BANDES EPILATION 50 UNITES DEPILISS,beaute-hygiene,15.95,https://aswakassalam.com/produit/bandes-epilation-50-unites-depiliss/
-2026-09-06,baume-a-levres-3en1-pink-48g-labello,"BAUME A LEVRES 3EN1 PINK 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-pink-48g-labello/
-2026-09-06,baume-a-levres-3en1-red-48g-labello,"BAUME A LEVRES 3EN1 RED 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-red-48g-labello/
-2026-09-06,baume-a-levres-3en1-rose-48g-labello,"BAUME A LEVRES 3EN1 ROSE 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-rose-48g-labello/
-2026-09-06,baume-a-levres-coco-lovea,BAUME A LEVRES COCO LOVEA,beaute-hygiene,69.95,https://aswakassalam.com/produit/baume-a-levres-coco-lovea/
-2026-09-06,batonnet-de-glace-80ml-divers-parfums-haagen-dazs,Bâtonnet de glace 80ml divers parfums – HÄAGEN-DAZS,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/batonnet-de-glace-80ml-divers-parfums-haagen-dazs/
-2026-09-06,beurre-de-cacahuetes-340g-janis-2,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,29.85,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-2/
-2026-09-06,beurre-de-cacahuetes-340g-janis-3,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,27.95,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-3/
-2026-09-06,beurre-de-cacahuetes-340g-janis-4,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,27.95,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-4/
-2026-09-06,cereales-cerealoco-1kg-cerealitalia,Céréales CEREALOCO 1kg – CEREALITALIA,biscuiterie-confiserie,39.95,https://aswakassalam.com/produit/cereales-cerealoco-1kg-cerealitalia/
-2026-09-06,fleur-de-mais-en-poudre-180g-alsa,Fleur de maïs en poudre 180g – ALSA,biscuiterie-confiserie,6.65,https://aswakassalam.com/produit/fleur-de-mais-en-poudre-180g-alsa/
-2026-09-06,lot-de-2-cafes-moulus-java-timor-200g-dubois,Lot de 2 cafés moulus JAVA TIMOR 200g – DUBOIS,biscuiterie-confiserie,68.95,https://aswakassalam.com/produit/lot-de-2-cafes-moulus-java-timor-200g-dubois/
-2026-09-06,lot-de-2-thes-verts-4011-en-filaments-200g-sultan,Lot de 2 thés verts 4011 en filaments 200g – SULTAN,biscuiterie-confiserie,36.95,https://aswakassalam.com/produit/lot-de-2-thes-verts-4011-en-filaments-200g-sultan/
-2026-09-06,lot-de-2-thes-verts-41022-en-filaments-200g-100g-dahmiss,Lot de 2 thés verts 41022 en filaments 200g + 100g – DAHMISS,biscuiterie-confiserie,28.95,https://aswakassalam.com/produit/lot-de-2-thes-verts-41022-en-filaments-200g-100g-dahmiss/
-2026-09-06,lot-de-3-thes-verts-en-grains-200g-selham,Lot de 3 thés verts en grains 200g – SELHAM,biscuiterie-confiserie,26.95,https://aswakassalam.com/produit/lot-de-3-thes-verts-en-grains-200g-selham/
-2026-09-06,mais-grilles-sales-100g-original-ou-barbecue-x-korn,Maïs grillés salés 100g Original ou barbecue – X-KORN,biscuiterie-confiserie,10.95,https://aswakassalam.com/produit/mais-grilles-sales-100g-original-ou-barbecue-x-korn/
-2026-09-06,miel-toutes-fleurs-850g-jnane-el-aassal,Miel toutes fleurs 850g – JNANE EL AÂSSAL,biscuiterie-confiserie,44.95,https://aswakassalam.com/produit/miel-toutes-fleurs-850g-jnane-el-aassal/
-2026-09-06,12-capsules-espresso-asta-black-10-achetes-2-gratuits,12 CAPSULES ESPRESSO ASTA BLACK (10 ACHETES = 2 GRATUITS),biscuiterie-confiserie,38.95,https://aswakassalam.com/produit/12-capsules-espresso-asta-black-10-achetes-2-gratuits/
-2026-09-06,225-morceaux-de-sucre-1kg-enmer,225 MORCEAUX DE SUCRE 1KG ENMER,biscuiterie-confiserie,6.15,https://aswakassalam.com/produit/225-morceaux-de-sucre-1kg-enmer/
-2026-09-06,4-barres-de-chocolat-au-lait-40g-kitkat-chunky,4 BARRES DE CHOCOLAT AU LAIT 40G KITKAT CHUNKY,biscuiterie-confiserie,29.95,https://aswakassalam.com/produit/4-barres-de-chocolat-au-lait-40g-kitkat-chunky/
-2026-09-06,amandes-effilees-100g-macao,AMANDES EFFILEES 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-effilees-100g-macao/
-2026-09-06,amandes-en-poudre-100g-macao,AMANDES EN POUDRE 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-en-poudre-100g-macao/
-2026-09-06,amandes-grillees-100g-oncle-sam,AMANDES GRILLEES 100G ONCLE SAM,biscuiterie-confiserie,24.95,https://aswakassalam.com/produit/amandes-grillees-100g-oncle-sam/
-2026-09-06,amandes-hachees-100g-macao,AMANDES HACHEES 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-hachees-100g-macao/
-2026-09-06,amlou-cacahuete-200g-jnane-el-aassal,AMLOU CACAHUETE 200G JNANE EL AASSAL,biscuiterie-confiserie,15.5,https://aswakassalam.com/produit/amlou-cacahuete-200g-jnane-el-aassal/
-2026-09-06,amlou-cacahuete-700g-jnane-el-aassal,AMLOU CACAHUETE 700G JNANE EL AASSAL,biscuiterie-confiserie,47.95,https://aswakassalam.com/produit/amlou-cacahuete-700g-jnane-el-aassal/
-2026-09-06,assortiment-de-24-bouchees-ferrero-rondnoir-et-raffaello-ferrero-colletion,"ASSORTIMENT DE 24 BOUCHEES FERRERO, RONDNOIR ET RAFFAELLO FERRERO COLLETION",biscuiterie-confiserie,154.95,https://aswakassalam.com/produit/assortiment-de-24-bouchees-ferrero-rondnoir-et-raffaello-ferrero-colletion/
-2026-09-06,assortiment-de-chocolats-180g-creations-delaviuda,ASSORTIMENT DE CHOCOLATS 180G CREATIONS DELAVIUDA,biscuiterie-confiserie,153.95,https://aswakassalam.com/produit/assortiment-de-chocolats-180g-creations-delaviuda/
-2026-09-06,assortiment-de-chocolats-200g-selection-delaviuda,ASSORTIMENT DE CHOCOLATS 200G SELECTION DELAVIUDA,biscuiterie-confiserie,92.95,https://aswakassalam.com/produit/assortiment-de-chocolats-200g-selection-delaviuda/
-2026-09-06,assortiment-de-chocolats-sans-sucres-ajoutes-200g-selection-delaviuda,ASSORTIMENT DE CHOCOLATS SANS SUCRES AJOUTÉS 200G SELECTION DELAVIUDA,biscuiterie-confiserie,95.95,https://aswakassalam.com/produit/assortiment-de-chocolats-sans-sucres-ajoutes-200g-selection-delaviuda/
-2026-09-06,barre-caramel-peanuts-extrem-pack-de-5-unites-34g-excelo,BARRE CARAMEL & PEANUTS EXTREM PACK DE 5 UNITES 34G EXCELO,biscuiterie-confiserie,10.95,https://aswakassalam.com/produit/barre-caramel-peanuts-extrem-pack-de-5-unites-34g-excelo/
-2026-09-06,barre-chocolat-cacahuete-semi-enrobee-28g-nooco,BARRE CHOCOLAT CACAHUETE SEMI-ENROBEE 28G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-cacahuete-semi-enrobee-28g-nooco/
-2026-09-06,barre-chocolat-crispy-caramel-cacahuete-40g-nooco,BARRE CHOCOLAT CRISPY CARAMEL CACAHUETE 40G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-crispy-caramel-cacahuete-40g-nooco/
-2026-09-06,barre-chocolat-noix-de-coco-24g-nooco,BARRE CHOCOLAT NOIX DE COCO 24G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-noix-de-coco-24g-nooco/
-2026-09-06,barre-chocolat-nougat-34g-nooco,BARRE CHOCOLAT NOUGAT 34G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-nougat-34g-nooco/
-2026-09-06,barre-chocolat-nougat-caramel-42g-nooco,BARRE CHOCOLAT NOUGAT CARAMEL 42G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-nougat-caramel-42g-nooco/
-2026-09-06,barre-chocolat-nougat-caramel-cacahuete-24g-nooco,BARRE CHOCOLAT NOUGAT CARAMEL CACAHUETE 24G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-nougat-caramel-cacahuete-24g-nooco/
-2026-09-06,barre-croustillante-chocolat-au-lait-18g-nooco,BARRE CROUSTILLANTE CHOCOLAT AU LAIT 18G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-croustillante-chocolat-au-lait-18g-nooco/
-2026-09-06,barre-multi-cereales-au-chocolat-au-lait-621g-cerealitalia,BARRE MULTI-CEREALES AU CHOCOLAT AU LAIT 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-au-chocolat-au-lait-621g-cerealitalia/
-2026-09-06,barre-multi-cereales-aux-myrtilles-621g-cerealitalia,BARRE MULTI-CEREALES AUX MYRTILLES 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-aux-myrtilles-621g-cerealitalia/
-2026-09-06,barre-multi-cereales-aux-noix-de-coco-et-chocolat-621g-cerealitalia,BARRE MULTI-CEREALES AUX NOIX DE COCO ET CHOCOLAT 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-aux-noix-de-coco-et-chocolat-621g-cerealitalia/
-2026-09-06,cannette-25cl-orangina-orangina-zero,Cannette 25cl – ORANGINA/ORANGINA ZÉRO,boissons,3.5,https://aswakassalam.com/produit/cannette-25cl-orangina-orangina-zero/
-2026-09-06,eau-minerale-25l-ain-soltane,"Eau minérale 2,5L – AIN SOLTANE",boissons,5.95,https://aswakassalam.com/produit/eau-minerale-25l-ain-soltane/
-2026-09-06,eau-minerale-gazeuse-1l-ain-soltane,Eau minérale gazeuse 1L – AÏN SOLTANE,boissons,5.0,https://aswakassalam.com/produit/eau-minerale-gazeuse-1l-ain-soltane/
-2026-09-06,ice-coffee-250ml-diverses-saveurs-rauch,"Ice coffee 250ml, diverses saveurs – RAUCH",boissons,21.95,https://aswakassalam.com/produit/ice-coffee-250ml-diverses-saveurs-rauch/
-2026-09-06,ice-tea-fruits-rouges-peche-50cl-lipton,Ice Tea fruits rouges/pêche 50cl – LIPTON,boissons,5.5,https://aswakassalam.com/produit/ice-tea-fruits-rouges-peche-50cl-lipton/
-2026-09-06,pack-6-canettes-boissons-gazeuses-25cl-coca-cola,Pack 6 canettes boissons gazeuses 25cl – COCA-COLA,boissons,21.95,https://aswakassalam.com/produit/pack-6-canettes-boissons-gazeuses-25cl-coca-cola/
-2026-09-06,7-up-canette-33cl,7 UP CANETTE 33CL,boissons,5.95,https://aswakassalam.com/produit/7-up-canette-33cl/
-2026-09-06,7-up-citron-1l,7 UP CITRON 1L,boissons,6.5,https://aswakassalam.com/produit/7-up-citron-1l/
-2026-09-06,7-up-citron-20cl,7 UP CITRON 20CL,boissons,2.95,https://aswakassalam.com/produit/7-up-citron-20cl/
-2026-09-06,7-up-citron-33cl,7 UP CITRON 33CL,boissons,3.5,https://aswakassalam.com/produit/7-up-citron-33cl/
-2026-09-06,7-up-citron-50cl,7 UP CITRON 50CL,boissons,4.5,https://aswakassalam.com/produit/7-up-citron-50cl/
-2026-09-06,7up-canette-25cl,7UP CANETTE 25CL,boissons,4.5,https://aswakassalam.com/produit/7up-canette-25cl/
-2026-09-06,boisson-a-lorange-frut-1l-marrakech,BOISSON A L’ORANGE FRUT 1L MARRAKECH,boissons,5.75,https://aswakassalam.com/produit/boisson-a-lorange-frut-1l-marrakech/
-2026-09-06,boisson-a-la-pulpe-dorange-1l-al-boustane,BOISSON A LA PULPE D’ORANGE 1L AL BOUSTANE,boissons,7.9,https://aswakassalam.com/produit/boisson-a-la-pulpe-dorange-1l-al-boustane/
-2026-09-06,boisson-a-la-pulpe-dorange-1l-jutos-jaouda,BOISSON A LA PULPE D’ORANGE 1L JUTOS JAOUDA,boissons,9.8,https://aswakassalam.com/produit/boisson-a-la-pulpe-dorange-1l-jutos-jaouda/
-2026-09-06,boisson-a-la-pulpe-peche-25cl-cappy-pulpy,BOISSON A LA PULPE PECHE 25CL CAPPY PULPY,boissons,4.5,https://aswakassalam.com/produit/boisson-a-la-pulpe-peche-25cl-cappy-pulpy/
-2026-09-06,boisson-ananas-des-tropiques-1l-marrakech,BOISSON ANANAS DES TROPIQUES 1L MARRAKECH,boissons,15.5,https://aswakassalam.com/produit/boisson-ananas-des-tropiques-1l-marrakech/
-2026-09-06,boisson-cocktail-1l-jutos,BOISSON COCKTAIL 1L JUTOS,boissons,8.5,https://aswakassalam.com/produit/boisson-cocktail-1l-jutos/
-2026-09-06,boisson-cocktail-355cl-rauch,"BOISSON COCKTAIL 35,5CL RAUCH",boissons,16.9,https://aswakassalam.com/produit/boisson-cocktail-355cl-rauch/
-2026-09-06,boisson-energetique-25cl-burn,BOISSON ENERGETIQUE 25CL BURN,boissons,11.85,https://aswakassalam.com/produit/boisson-energetique-25cl-burn/
-2026-09-06,boisson-energetique-25cl-red-bull,BOISSON ENERGETIQUE 25CL RED BULL,boissons,22.95,https://aswakassalam.com/produit/boisson-energetique-25cl-red-bull/
-2026-09-06,boisson-energetique-citron-50cl-aquarius,BOISSON ENERGETIQUE CITRON 50CL AQUARIUS,boissons,7.5,https://aswakassalam.com/produit/boisson-energetique-citron-50cl-aquarius/
-2026-09-06,boisson-energetique-pack-425cl-red-bull,BOISSON ENERGETIQUE PACK 4*25CL RED BULL,boissons,83.95,https://aswakassalam.com/produit/boisson-energetique-pack-425cl-red-bull/
-2026-09-06,boisson-energetique-sans-sucre-25cl-red-bull,BOISSON ENERGETIQUE SANS SUCRE 25CL RED BULL,boissons,21.5,https://aswakassalam.com/produit/boisson-energetique-sans-sucre-25cl-red-bull/
-2026-09-06,boisson-energisante-blue-25cl-bomba,BOISSON ENERGISANTE BLUE 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-blue-25cl-bomba/
-2026-09-06,boisson-energisante-burry-blast-25cl-sting,BOISSON ENERGISANTE BURRY BLAST 25CL STING,boissons,7.95,https://aswakassalam.com/produit/boisson-energisante-burry-blast-25cl-sting/
-2026-09-06,boisson-energisante-cherry-25cl-bomba,BOISSON ENERGISANTE CHERRY 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-cherry-25cl-bomba/
-2026-09-06,boisson-energisante-classic-250ml-hell,BOISSON ENERGISANTE CLASSIC 250ML HELL,boissons,14.95,https://aswakassalam.com/produit/boisson-energisante-classic-250ml-hell/
-2026-09-06,boisson-energisante-classic-25cl-bomba,BOISSON ENERGISANTE CLASSIC 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-classic-25cl-bomba/
-2026-09-06,boisson-energisante-gold-rush-25cl-sting,BOISSON ENERGISANTE GOLD RUSH 25CL STING,boissons,7.95,https://aswakassalam.com/produit/boisson-energisante-gold-rush-25cl-sting/
-2026-09-06,boisson-energisante-mojito-25cl-bomba,BOISSON ENERGISANTE MOJITO 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-mojito-25cl-bomba/
-2026-09-06,boisson-energisante-pink-25cl-bomba,BOISSON ENERGISANTE PINK 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-pink-25cl-bomba/
-2026-09-06,boisson-gazeuse-25cl-la-cigogne,Boisson gazeuse 25cl – LA CIGOGNE,boissons,3.95,https://aswakassalam.com/produit/boisson-gazeuse-25cl-la-cigogne/
-2026-09-06,boisson-gazeuse-au-jus-naturel-de-pamplemousse-rose-200ml-le-tribute,BOISSON GAZEUSE AU JUS NATUREL DE PAMPLEMOUSSE ROSE 200ML LE TRIBUTE,boissons,26.95,https://aswakassalam.com/produit/boisson-gazeuse-au-jus-naturel-de-pamplemousse-rose-200ml-le-tribute/
-2026-09-06,boisson-gazeuse-orange-sanguine-canette-33cl-san-pellegrino,BOISSON GAZEUSE ORANGE SANGUINE CANETTE 33CL SAN PELLEGRINO,boissons,12.95,https://aswakassalam.com/produit/boisson-gazeuse-orange-sanguine-canette-33cl-san-pellegrino/
-2026-09-06,boisson-juper-orange-1l-valencia,BOISSON JUPER ORANGE 1L VALENCIA,boissons,6.95,https://aswakassalam.com/produit/boisson-juper-orange-1l-valencia/
-2026-09-06,brochettes-de-poulet-aux-3-poivrons-1kg,BROCHETTES DE POULET AUX 3 POIVRONS 1KG,boucherie-volaille,86.95,https://aswakassalam.com/produit/brochettes-de-poulet-aux-3-poivrons-1kg/
-2026-09-06,burger-de-boeuf-1kg,BURGER DE BOEUF 1KG,boucherie-volaille,144.95,https://aswakassalam.com/produit/burger-de-boeuf-1kg/
-2026-09-06,coquelet-a-la-piece,COQUELET A LA PIECE,boucherie-volaille,27.9,https://aswakassalam.com/produit/coquelet-a-la-piece/
-2026-09-06,cote-de-veau-1-kg,COTE DE VEAU 1 KG,boucherie-volaille,127.9,https://aswakassalam.com/produit/cote-de-veau-1-kg/
-2026-09-06,cuisse-de-poulet-1kg,CUISSE DE POULET 1KG,boucherie-volaille,39.9,https://aswakassalam.com/produit/cuisse-de-poulet-1kg/
-2026-09-06,cuisses-de-poulet-farcies-a-la-feta-1kg,CUISSES DE POULET FARCIES A LA FETA 1KG,boucherie-volaille,60.95,https://aswakassalam.com/produit/cuisses-de-poulet-farcies-a-la-feta-1kg/
-2026-09-06,entrecote-de-boeuf-1kg,ENTRECOTE DE BOEUF 1KG,boucherie-volaille,149.95,https://aswakassalam.com/produit/entrecote-de-boeuf-1kg/
-2026-09-06,faux-filet-new-york-05kg,"FAUX FILET NEW YORK 0,5KG",boucherie-volaille,77.5,https://aswakassalam.com/produit/faux-filet-new-york-05kg/
-2026-09-06,filet-de-poulet-1kg,FILET DE POULET 1KG,boucherie-volaille,59.9,https://aswakassalam.com/produit/filet-de-poulet-1kg/
-2026-09-06,gigot-d%c2%92agneau-entier-%c2%93calibre-2kg%c2%94,GIGOT DAGNEAU ENTIER CALIBRE +-2KG,boucherie-volaille,345.8,https://aswakassalam.com/produit/gigot-d%c2%92agneau-entier-%c2%93calibre-2kg%c2%94/
-2026-09-06,haut-de-cuisse-de-poulet-1kg,HAUT DE CUISSE DE POULET 1KG,boucherie-volaille,33.9,https://aswakassalam.com/produit/haut-de-cuisse-de-poulet-1kg/
-2026-09-06,jarret-de-boeuf-avec-os-1kg,JARRET DE BOEUF AVEC OS 1KG,boucherie-volaille,141.9,https://aswakassalam.com/produit/jarret-de-boeuf-avec-os-1kg/
-2026-09-06,merguez-de-boeuf-1kg,MERGUEZ DE BOEUF 1KG,boucherie-volaille,111.9,https://aswakassalam.com/produit/merguez-de-boeuf-1kg/
-2026-09-06,pied-de-veau,PIED DE VEAU,boucherie-volaille,164.9,https://aswakassalam.com/produit/pied-de-veau/
-2026-09-06,pilons-de-poulet-1kg,PILONS DE POULET 1KG,boucherie-volaille,45.9,https://aswakassalam.com/produit/pilons-de-poulet-1kg/
-2026-09-06,poulet-entier-1-piece,POULET ENTIER 1 PIECE,boucherie-volaille,52.5,https://aswakassalam.com/produit/poulet-entier-1-piece/
-2026-09-06,poulet-fermier-a-la-piece,POULET FERMIER A LA PIECE,boucherie-volaille,139.0,https://aswakassalam.com/produit/poulet-fermier-a-la-piece/
-2026-09-06,queue-de-boeuf-1kg,QUEUE DE BOEUF 1KG,boucherie-volaille,104.95,https://aswakassalam.com/produit/queue-de-boeuf-1kg/
-2026-09-06,saucisse-de-dinde-1kg,SAUCISSE DE DINDE 1KG,boucherie-volaille,49.95,https://aswakassalam.com/produit/saucisse-de-dinde-1kg/
-2026-09-06,saucisse-de-poulet-1kg,SAUCISSE DE POULET 1KG,boucherie-volaille,56.9,https://aswakassalam.com/produit/saucisse-de-poulet-1kg/
-2026-09-06,steak-de-boeuf-1kg,STEAK DE BOEUF 1KG,boucherie-volaille,145.9,https://aswakassalam.com/produit/steak-de-boeuf-1kg/
-2026-09-06,tagine-de-boeuf-extra-1kg,TAGINE DE BOEUF EXTRA 1KG,boucherie-volaille,125.95,https://aswakassalam.com/produit/tagine-de-boeuf-extra-1kg/
-2026-09-06,viande-hachee-de-boeuf-avec-graisse-1kg,VIANDE HACHEE DE BOEUF AVEC GRAISSE 1KG,boucherie-volaille,119.95,https://aswakassalam.com/produit/viande-hachee-de-boeuf-avec-graisse-1kg/
-2026-09-06,viande-hachee-de-boeuf-nature-1kg,VIANDE HACHEE DE BOEUF NATURE 1KG,boucherie-volaille,132.9,https://aswakassalam.com/produit/viande-hachee-de-boeuf-nature-1kg/
-2026-09-06,wings-de-poulet-marinees-1kg,WINGS DE POULET MARINEES 1KG,boucherie-volaille,36.95,https://aswakassalam.com/produit/wings-de-poulet-marinees-1kg/
-2026-09-06,baguette-a-lancienne-pavot-as,BAGUETTE A L’ANCIENNE AU PAVOT 250G,boulangerie,5.95,https://aswakassalam.com/produit/baguette-a-lancienne-pavot-as/
-2026-09-06,baguette-a-lancienne-sesame-as,BAGUETTE A L’ANCIENNE AU SESAME 250G,boulangerie,5.95,https://aswakassalam.com/produit/baguette-a-lancienne-sesame-as/
-2026-09-06,baguette-a-lancienne-nature-as,BAGUETTE A L’ANCIENNE NATURE 250G,boulangerie,3.5,https://aswakassalam.com/produit/baguette-a-lancienne-nature-as/
-2026-09-06,brownies-chocolat-248g-kekito-bimbo,BROWNIE CHOCOLAT 248G KEKITO BIMBO,boulangerie,21.5,https://aswakassalam.com/produit/brownies-chocolat-248g-kekito-bimbo/
-2026-09-06,burger-6-unites-330g-jacquet,BURGER 6 UNITES 330G JACQUET,boulangerie,35.9,https://aswakassalam.com/produit/burger-6-unites-330g-jacquet/
-2026-09-06,chapelure-250g-bimbo,CHAPELURE 250G BIMBO,boulangerie,7.5,https://aswakassalam.com/produit/chapelure-250g-bimbo/
-2026-09-06,chapelure-panko-200g-jessys,CHAPELURE PANKO 200G JESSY’S,boulangerie,25.5,https://aswakassalam.com/produit/chapelure-panko-200g-jessys/
-2026-09-06,feuilles-de-pastilla-30cm-10-unites-200g-goldy,FEUILLES DE PASTILLA 30CM 10 UNITES 200G GOLDY,boulangerie,18.95,https://aswakassalam.com/produit/feuilles-de-pastilla-30cm-10-unites-200g-goldy/
-2026-09-06,feuilles-de-pastilla-30cm-10-unites-belpate,FEUILLES DE PASTILLA 30CM 10 UNITES BELPATE,boulangerie,16.5,https://aswakassalam.com/produit/feuilles-de-pastilla-30cm-10-unites-belpate/
-2026-09-06,feuilles-de-pastilla-40cm-10-unites-belpate,FEUILLES DE PASTILLA 40CM 10 UNITES BELPATE,boulangerie,22.5,https://aswakassalam.com/produit/feuilles-de-pastilla-40cm-10-unites-belpate/
-2026-09-06,fonds-de-tarte-sales-8-unites-chef-du-pain,FONDS DE TARTE SALES 8 UNITES CHEF DU PAIN,boulangerie,16.5,https://aswakassalam.com/produit/fonds-de-tarte-sales-8-unites-chef-du-pain/
-2026-09-06,fonds-de-tarte-sucres-8-unites-chef-du-pain,FONDS DE TARTE SUCRES 8 UNITES CHEF DU PAIN,boulangerie,17.5,https://aswakassalam.com/produit/fonds-de-tarte-sucres-8-unites-chef-du-pain/
-2026-09-06,krachelle-beldi-x10,LOT DE 10 KRACHELLES BELDI,boulangerie,13.95,https://aswakassalam.com/produit/krachelle-beldi-x10/
-2026-09-06,pain-au-chocolat-x-10-pces,LOT DE 10 PAINS AU CHOCOLAT,boulangerie,45.95,https://aswakassalam.com/produit/pain-au-chocolat-x-10-pces/
-2026-09-06,madeleines-pur-beurre-192g-bimbo,MADELEINES PURE BEURRE 192G BIMBO,boulangerie,16.5,https://aswakassalam.com/produit/madeleines-pur-beurre-192g-bimbo/
-2026-09-06,mini-burger-8-unites-assylor,MINI BURGER 8 UNITES ASSYLOR,boulangerie,11.95,https://aswakassalam.com/produit/mini-burger-8-unites-assylor/
-2026-09-06,mini-pate-a-pizza-complete-12-unites-160g-assylor,MINI PATE A PIZZA COMPLETE 12 UNITES 160G ASSYLOR,boulangerie,11.95,https://aswakassalam.com/produit/mini-pate-a-pizza-complete-12-unites-160g-assylor/
-2026-09-06,mini-wraps-de-farine-de-ble-10-unites-250g-deli-sun,MINI WRAPS DE FARINE DE BLE 10 UNITES 250G DELI SUN,boulangerie,21.5,https://aswakassalam.com/produit/mini-wraps-de-farine-de-ble-10-unites-250g-deli-sun/
-2026-09-06,pain-au-lait-4-unites-ole-assylor,PAIN AU LAIT 4 UNITES OLE ASSYLOR,boulangerie,13.95,https://aswakassalam.com/produit/pain-au-lait-4-unites-ole-assylor/
-2026-09-06,pain-au-lait-aux-pepites-de-chocolat-5-unites-ole-assylor,PAIN AU LAIT AUX PEPITES DE CHOCOLAT 5 UNITES OLE ASSYLOR,boulangerie,16.95,https://aswakassalam.com/produit/pain-au-lait-aux-pepites-de-chocolat-5-unites-ole-assylor/
-2026-09-06,pain-blanc-sans-gluten-250g-schar,PAIN BLANC SANS GLUTEN 250G SCHAR,boulangerie,37.95,https://aswakassalam.com/produit/pain-blanc-sans-gluten-250g-schar/
-2026-09-06,burger-avec-seasame-4-unites-bimbo,PAIN BURGER AU SESAME 4 UNITES BIMBO,boulangerie,13.95,https://aswakassalam.com/produit/burger-avec-seasame-4-unites-bimbo/
-2026-09-06,pain-burger-geant-4-unites-310g-assylor,PAIN BURGER GEANT 4 UNITES 310G ASSYLOR,boulangerie,14.5,https://aswakassalam.com/produit/pain-burger-geant-4-unites-310g-assylor/
-2026-09-06,pain-burger-geant-complet-4-unites-assylor,PAIN BURGER GEANT COMPLET 4 UNITES ASSYLOR,boulangerie,14.95,https://aswakassalam.com/produit/pain-burger-geant-complet-4-unites-assylor/
-2026-09-06,pain-chawarma-nature-7-unites-273g-chef-du-pain,PAIN CHAWARMA NATURE 7 UNITES 273G CHEF DU PAIN,boulangerie,7.95,https://aswakassalam.com/produit/pain-chawarma-nature-7-unites-273g-chef-du-pain/
-2026-09-06,pain-ciabatta-a-lhuile-dolive-4-unites-assylor,PAIN CIABATTA A L’HUILE D’OLIVE 4 UNITES ASSYLOR,boulangerie,13.5,https://aswakassalam.com/produit/pain-ciabatta-a-lhuile-dolive-4-unites-assylor/
-2026-09-06,pain-de-mie-complet-430g-bimbo,PAIN DE MIE BLE COMPLET 430G BIMBO,boulangerie,20.5,https://aswakassalam.com/produit/pain-de-mie-complet-430g-bimbo/
-2026-09-06,pain-de-mie-ble-complet-470g-pain-dor,PAIN DE MIE BLE COMPLET 470G PAIN D’OR,boulangerie,16.95,https://aswakassalam.com/produit/pain-de-mie-ble-complet-470g-pain-dor/
-2026-09-06,pain-de-mie-complet-780g-bimbo,PAIN DE MIE COMPLET 780G BIMBO,boulangerie,31.5,https://aswakassalam.com/produit/pain-de-mie-complet-780g-bimbo/
-2026-09-06,pain-de-mie-multigraines-440g-bimbo,PAIN DE MIE MULTIGRAINES 440G  BIMBO,boulangerie,21.95,https://aswakassalam.com/produit/pain-de-mie-multigraines-440g-bimbo/
-2026-09-06,pain-de-mie-nature-400g-bimbo,PAIN DE MIE NATURE 400G BIMBO,boulangerie,19.95,https://aswakassalam.com/produit/pain-de-mie-nature-400g-bimbo/
-2026-09-06,pain-de-mie-nature-470g-pain-dor,PAIN DE MIE NATURE 470G PAIN D’OR,boulangerie,15.95,https://aswakassalam.com/produit/pain-de-mie-nature-470g-pain-dor/
-2026-09-06,pain-de-mie-nature-550g-maxi-jac-jacquet,PAIN DE MIE NATURE 550G MAXI JAC’ JACQUET,boulangerie,34.9,https://aswakassalam.com/produit/pain-de-mie-nature-550g-maxi-jac-jacquet/
-2026-09-06,pain-de-mie-nature-720g-bimbo,PAIN DE MIE NATURE 720G BIMBO,boulangerie,30.95,https://aswakassalam.com/produit/pain-de-mie-nature-720g-bimbo/
-2026-09-06,pain-hot-dog-4-unites-jacquet,PAIN HOT DOG 4 UNITES JACQUET,boulangerie,31.9,https://aswakassalam.com/produit/pain-hot-dog-4-unites-jacquet/
-2026-09-06,pain-hot-dog-4-unites-assylor,PAIN HOT-DOG 4 UNITES ASSYLOR,boulangerie,10.95,https://aswakassalam.com/produit/pain-hot-dog-4-unites-assylor/
-2026-09-06,agriche-1kg-ahl-fes,AGRICHE 1KG AHL FES,charcuterie-traiteur,76.95,https://aswakassalam.com/produit/agriche-1kg-ahl-fes/
-2026-09-06,agriche-250g-ahl-fes,AGRICHE 250G AHL FES,charcuterie-traiteur,25.5,https://aswakassalam.com/produit/agriche-250g-ahl-fes/
-2026-09-06,anchois-marines-a-loriental-200g-la-monegasque,ANCHOIS MARINES A L’ORIENTAL 200G LA MONEGASQUE,charcuterie-traiteur,39.95,https://aswakassalam.com/produit/anchois-marines-a-loriental-200g-la-monegasque/
-2026-09-06,batonnets-de-surimi-saveur-crabe-200g-saint-malo,BATONNETS DE SURIMI SAVEUR CRABE 200G SAINT-MALO,charcuterie-traiteur,23.95,https://aswakassalam.com/produit/batonnets-de-surimi-saveur-crabe-200g-saint-malo/
-2026-09-06,caviar-noir-100g-skandia,CAVIAR NOIR 100G SKANDIA,charcuterie-traiteur,59.5,https://aswakassalam.com/produit/caviar-noir-100g-skandia/
-2026-09-06,caviar-noir-50g-skandia,CAVIAR NOIR 50G SKANDIA,charcuterie-traiteur,37.5,https://aswakassalam.com/produit/caviar-noir-50g-skandia/
-2026-09-06,caviar-rouge-100g-skandia,CAVIAR ROUGE 100G SKANDIA,charcuterie-traiteur,59.5,https://aswakassalam.com/produit/caviar-rouge-100g-skandia/
-2026-09-06,caviar-rouge-50g-skandia,CAVIAR ROUGE 50G SKANDIA,charcuterie-traiteur,37.5,https://aswakassalam.com/produit/caviar-rouge-50g-skandia/
-2026-09-06,cuisse-de-dinde-au-poivre-80g-dindy,CUISSE DE DINDE AU POIVRE 80G DINDY,charcuterie-traiteur,10.5,https://aswakassalam.com/produit/cuisse-de-dinde-au-poivre-80g-dindy/
-2026-09-06,cuisse-de-dinde-fumee-au-poivre-80g-dar-al-lahm,CUISSE DE DINDE FUMEE AU POIVRE 80G DAR AL LAHM,charcuterie-traiteur,14.95,https://aswakassalam.com/produit/cuisse-de-dinde-fumee-au-poivre-80g-dar-al-lahm/
-2026-09-06,feuilles-de-brick-10-unites-170g-mil-brick,FEUILLES DE BRICK 10 UNITES 170G MIL BRICK,charcuterie-traiteur,24.5,https://aswakassalam.com/produit/feuilles-de-brick-10-unites-170g-mil-brick/
-2026-09-06,filet-de-dinde-fume-80g-dar-al-lahm,FILET DE DINDE FUME 80G DAR AL LAHM,charcuterie-traiteur,14.95,https://aswakassalam.com/produit/filet-de-dinde-fume-80g-dar-al-lahm/
-2026-09-06,filet-de-dinde-fume-tsv-80g,FILET DE DINDE FUME TSV 80G,charcuterie-traiteur,11.5,https://aswakassalam.com/produit/filet-de-dinde-fume-tsv-80g/
-2026-09-06,filet-de-saumon-fume-100g-lassiette-nordique,FILET DE SAUMON FUME 100G L’ASSIETTE NORDIQUE,charcuterie-traiteur,49.9,https://aswakassalam.com/produit/filet-de-saumon-fume-100g-lassiette-nordique/
-2026-09-06,filets-danchois-marines-a-lail-et-au-persil-180g-le-ptit-pecheur,FILETS D’ANCHOIS MARINES A L’AIL ET AU PERSIL 180G LE P’TIT PECHEUR,charcuterie-traiteur,26.95,https://aswakassalam.com/produit/filets-danchois-marines-a-lail-et-au-persil-180g-le-ptit-pecheur/
-2026-09-06,filets-danchois-marines-a-lhuile-vegetale-180g-le-ptit-pecheur,FILETS D’ANCHOIS MARINES A L’HUILE VEGETALE 180G LE P’TIT PECHEUR,charcuterie-traiteur,26.95,https://aswakassalam.com/produit/filets-danchois-marines-a-lhuile-vegetale-180g-le-ptit-pecheur/
-2026-09-06,filets-danchois-marines-a-lorientale-180g-le-ptit-pecheur,FILETS D’ANCHOIS MARINES A L’ORIENTALE 180G LE P’TIT PECHEUR,charcuterie-traiteur,26.95,https://aswakassalam.com/produit/filets-danchois-marines-a-lorientale-180g-le-ptit-pecheur/
-2026-09-06,filets-danchois-marines-a-la-provencale-180g-le-ptit-pecheur,FILETS D’ANCHOIS MARINES A LA PROVENCALE 180G LE P’TIT PECHEUR,charcuterie-traiteur,26.95,https://aswakassalam.com/produit/filets-danchois-marines-a-la-provencale-180g-le-ptit-pecheur/
-2026-09-06,filets-danchois-roules-aux-olives-farcies-180g-king-generation,FILETS D’ANCHOIS ROULES AUX OLIVES FARCIES 180G KING GENERATION,charcuterie-traiteur,35.95,https://aswakassalam.com/produit/filets-danchois-roules-aux-olives-farcies-180g-king-generation/
-2026-09-06,filets-de-saumon-fumes-100g-les-domaines,FILETS DE SAUMON FUMÉS 100G LES DOMAINES,charcuterie-traiteur,63.95,https://aswakassalam.com/produit/filets-de-saumon-fumes-100g-les-domaines/
-2026-09-06,hot-dog-250g-dindy,HOT DOG 250G DINDY,charcuterie-traiteur,18.5,https://aswakassalam.com/produit/hot-dog-250g-dindy/
-2026-09-06,hot-dog-de-boeuf-250g-jayda,HOT DOG DE BOEUF 250G JAYDA,charcuterie-traiteur,25.95,https://aswakassalam.com/produit/hot-dog-de-boeuf-250g-jayda/
-2026-09-06,hot-dog-de-dinde-250g-jayda,HOT DOG DE DINDE 250G JAYDA,charcuterie-traiteur,13.95,https://aswakassalam.com/produit/hot-dog-de-dinde-250g-jayda/
-2026-09-06,hot-dog-poulet-250g-delpacha,HOT DOG POULET 250G DELPACHA,charcuterie-traiteur,20.5,https://aswakassalam.com/produit/hot-dog-poulet-250g-delpacha/
-2026-09-06,hot-dog-poulet-au-fromage-250g-delpacha,HOT DOG POULET AU FROMAGE 250G DELPACHA,charcuterie-traiteur,24.5,https://aswakassalam.com/produit/hot-dog-poulet-au-fromage-250g-delpacha/
-2026-09-06,jambon-de-boeuf-fume-80g-jayda,JAMBON DE BOEUF FUME 80G JAYDA,charcuterie-traiteur,16.5,https://aswakassalam.com/produit/jambon-de-boeuf-fume-80g-jayda/
-2026-09-06,jambon-de-b%c2%8cuf-fume-80g-dar-al-lahm,JAMBON DE BUF FUME 80G DAR AL LAHM,charcuterie-traiteur,18.5,https://aswakassalam.com/produit/jambon-de-b%c2%8cuf-fume-80g-dar-al-lahm/
-2026-09-06,jambon-de-dinde-aux-fines-herbes-80g-dar-al-lahm,JAMBON DE DINDE AUX FINES HERBES 80G DAR AL LAHM,charcuterie-traiteur,14.95,https://aswakassalam.com/produit/jambon-de-dinde-aux-fines-herbes-80g-dar-al-lahm/
-2026-09-06,jambon-de-dinde-aux-fines-herbes-80g-del-pacha,JAMBON DE DINDE AUX FINES HERBES 80G DEL PACHA,charcuterie-traiteur,16.5,https://aswakassalam.com/produit/jambon-de-dinde-aux-fines-herbes-80g-del-pacha/
-2026-09-06,jambon-de-dinde-paprika-80g-dar-al-lahm,JAMBON DE DINDE PAPRIKA 80G DAR AL LAHM,charcuterie-traiteur,14.95,https://aswakassalam.com/produit/jambon-de-dinde-paprika-80g-dar-al-lahm/
-2026-09-06,jambon-de-dinde-superieur-80g-dindy,JAMBON DE DINDE SUPERIEUR 80G DINDY,charcuterie-traiteur,10.5,https://aswakassalam.com/produit/jambon-de-dinde-superieur-80g-dindy/
-2026-09-06,jambon-de-poulet-80g-del-pacha,JAMBON DE POULET 80G DEL PACHA,charcuterie-traiteur,17.5,https://aswakassalam.com/produit/jambon-de-poulet-80g-del-pacha/
-2026-09-06,jambon-de-poulet-marbre-80g-del-pacha,JAMBON DE POULET MARBRE 80G DEL PACHA,charcuterie-traiteur,17.5,https://aswakassalam.com/produit/jambon-de-poulet-marbre-80g-del-pacha/
-2026-09-06,jambon-duo-de-boeuf-et-poulet-80g-del-pacha,JAMBON DUO DE BOEUF ET POULET 80G DEL PACHA,charcuterie-traiteur,20.5,https://aswakassalam.com/produit/jambon-duo-de-boeuf-et-poulet-80g-del-pacha/
-2026-09-06,kasher-cocktail-600g-jayda,KASHER COCKTAIL 600G JAYDA,charcuterie-traiteur,18.5,https://aswakassalam.com/produit/kasher-cocktail-600g-jayda/
-2026-09-06,kasher-piquant-380g-dindy,KASHER PIQUANT 380G DINDY,charcuterie-traiteur,18.5,https://aswakassalam.com/produit/kasher-piquant-380g-dindy/
-2026-09-06,baby-edam-900g-irish,Baby Edam 900g – IRISH,cremerie,88.95,https://aswakassalam.com/produit/baby-edam-900g-irish/
-2026-09-06,fromage-blanc-a-tartiner-900g-le-berger,Fromage blanc à tartiner 900g – LE BERGER,cremerie,44.95,https://aswakassalam.com/produit/fromage-blanc-a-tartiner-900g-le-berger/
-2026-09-06,lot-de-2-fromage-frais-a-tartiner-jben-160g-jibal,Lot de 2 fromage frais à tartiner Jben 160g – JIBAL,cremerie,17.95,https://aswakassalam.com/produit/lot-de-2-fromage-frais-a-tartiner-jben-160g-jibal/
-2026-09-06,pack-de-16-pots-raibi-jamila-165g-danone,Pack de 16 pots Raïbi Jamila 165g – DANONE,cremerie,32.95,https://aswakassalam.com/produit/pack-de-16-pots-raibi-jamila-165g-danone/
-2026-09-06,4-fromages-rapes-175g-or-blanc,4 FROMAGES RAPES 175G OR BLANC,cremerie,18.95,https://aswakassalam.com/produit/4-fromages-rapes-175g-or-blanc/
-2026-09-06,beurre-1-kg-centrale,BEURRE 1 KG CENTRALE,cremerie,83.95,https://aswakassalam.com/produit/beurre-1-kg-centrale/
-2026-09-06,beurre-1kg-jaouda,BEURRE 1KG JAOUDA,cremerie,99.95,https://aswakassalam.com/produit/beurre-1kg-jaouda/
-2026-09-06,beurre-200g-badaouia,BEURRE 200G BADAOUIA,cremerie,21.95,https://aswakassalam.com/produit/beurre-200g-badaouia/
-2026-09-06,beurre-200g-demi-sel-president,BEURRE 200G DEMI SEL PRESIDENT,cremerie,53.9,https://aswakassalam.com/produit/beurre-200g-demi-sel-president/
-2026-09-06,beurre-allege-250g-badaouia,BEURRE ALLEGE 250G BADAOUIA,cremerie,35.95,https://aswakassalam.com/produit/beurre-allege-250g-badaouia/
-2026-09-06,beurre-coupelle-810g-filet-president,BEURRE COUPELLE  8*10G FILET PRESIDENT,cremerie,18.95,https://aswakassalam.com/produit/beurre-coupelle-810g-filet-president/
-2026-09-06,beurre-demi-sel-200g-ellevire,BEURRE DEMI SEL 200G ELLE&VIRE,cremerie,59.95,https://aswakassalam.com/produit/beurre-demi-sel-200g-ellevire/
-2026-09-06,beurre-doux-200g-or-blanc,BEURRE DOUX 200G OR BLANC,cremerie,25.95,https://aswakassalam.com/produit/beurre-doux-200g-or-blanc/
-2026-09-06,beurre-doux-marquis-200g-ellevire,BEURRE DOUX MARQUIS 200G ELLE&VIRE,cremerie,22.5,https://aswakassalam.com/produit/beurre-doux-marquis-200g-ellevire/
-2026-09-06,beurre-supper-colaimo-1-kg,BEURRE FERMIER MOUMTEZ 1KG COLAIMO,cremerie,82.5,https://aswakassalam.com/produit/beurre-supper-colaimo-1-kg/
-2026-09-06,beurre-fermier-moumtez-1-4,BEURRE FERMIER MOUMTEZ 250G COLAIMO,cremerie,20.95,https://aswakassalam.com/produit/beurre-fermier-moumtez-1-4/
-2026-09-06,beurre-fermier-moumtez-1-2kg,BEURRE FERMIER MOUMTEZ 500G COLAIMO,cremerie,44.95,https://aswakassalam.com/produit/beurre-fermier-moumtez-1-2kg/
-2026-09-06,beurre-frais-pasteurise-200-g-jaouda,BEURRE FRAIS PASTEURISE 200 G JAOUDA,cremerie,20.95,https://aswakassalam.com/produit/beurre-frais-pasteurise-200-g-jaouda/
-2026-09-06,beurre-frais-pasteurise-plaquette-100g-jaouda,BEURRE FRAIS PASTEURISE PLAQUETTE 100G JAOUDA,cremerie,10.95,https://aswakassalam.com/produit/beurre-frais-pasteurise-plaquette-100g-jaouda/
-2026-09-06,beurre-la-motte-aux-cristaux-de-sel-250g-president,BEURRE LA MOTTE AUX CRISTAUX DE SEL 250G PRESIDENT,cremerie,71.95,https://aswakassalam.com/produit/beurre-la-motte-aux-cristaux-de-sel-250g-president/
-2026-09-06,beurre-la-motte-demi-sel-250g-president,BEURRE LA MOTTE DEMI-SEL 250G PRESIDENT,cremerie,71.95,https://aswakassalam.com/produit/beurre-la-motte-demi-sel-250g-president/
-2026-09-06,beurre-la-motte-doux-250g-president,BEURRE LA MOTTE DOUX 250G PRESIDENT,cremerie,71.95,https://aswakassalam.com/produit/beurre-la-motte-doux-250g-president/
-2026-09-06,beurre-leger-doux-250g-president,BEURRE LEGER DOUX 250G PRESIDENT,cremerie,47.5,https://aswakassalam.com/produit/beurre-leger-doux-250g-president/
-2026-09-06,beurre-marquis-demi-sel-200g-ellevire,BEURRE MARQUIS DEMI SEL 200G ELLE&VIRE,cremerie,22.5,https://aswakassalam.com/produit/beurre-marquis-demi-sel-200g-ellevire/
-2026-09-06,beurre-pasteurise-500g-badaouira,BEURRE PASTEURISE 500G BADAOUIRA,cremerie,56.95,https://aswakassalam.com/produit/beurre-pasteurise-500g-badaouira/
-2026-09-06,beurre-pasteurise-500g-jaouda,BEURRE PASTEURISE 500G JAOUDA,cremerie,52.95,https://aswakassalam.com/produit/beurre-pasteurise-500g-jaouda/
-2026-09-06,beurre-pasteurise-82-mg-200g-jibal,BEURRE PASTEURISE 82% MG 200G JIBAL,cremerie,18.95,https://aswakassalam.com/produit/beurre-pasteurise-82-mg-200g-jibal/
-2026-09-06,beurre-plaquette-200g-lurpak,BEURRE PLAQUETTE 200G LURPAK,cremerie,38.5,https://aswakassalam.com/produit/beurre-plaquette-200g-lurpak/
-2026-09-06,beurre-plaquette-400g-lurpak,BEURRE PLAQUETTE 400G LURPAK,cremerie,72.95,https://aswakassalam.com/produit/beurre-plaquette-400g-lurpak/
-2026-09-06,beurre-pure-200g-new-zealand,BEURRE PURE 200G NEW ZEALAND,cremerie,25.95,https://aswakassalam.com/produit/beurre-pure-200g-new-zealand/
-2026-09-06,boisson-au-soja-et-chocolat-1l-sojasun,BOISSON AU SOJA ET CHOCOLAT 1L SOJASUN,cremerie,39.95,https://aswakassalam.com/produit/boisson-au-soja-et-chocolat-1l-sojasun/
-2026-09-06,boisson-au-soja-nature-1l-sojasun,BOISSON AU SOJA NATURE 1L SOJASUN,cremerie,35.95,https://aswakassalam.com/produit/boisson-au-soja-nature-1l-sojasun/
-2026-09-06,boisson-au-soja-vanille-1l-sojasun,BOISSON AU SOJA VANILLE 1L SOJASUN,cremerie,39.95,https://aswakassalam.com/produit/boisson-au-soja-vanille-1l-sojasun/
-2026-09-06,boisson-de-riz-au-cacao-bio-sans-gluten-1l-scotti,BOISSON DE RIZ AU CACAO BIO SANS GLUTEN 1L  SCOTTI,cremerie,25.5,https://aswakassalam.com/produit/boisson-de-riz-au-cacao-bio-sans-gluten-1l-scotti/
-2026-09-06,boisson-de-riz-bio-sans-gluten-1l-scotti,BOISSON DE RIZ BIO SANS GLUTEN 1L SCOTTI,cremerie,24.5,https://aswakassalam.com/produit/boisson-de-riz-bio-sans-gluten-1l-scotti/
-2026-09-06,camembert-240g-8-portions-president,CAMEMBERT 240G 8 PORTIONS PRESIDENT,cremerie,88.5,https://aswakassalam.com/produit/camembert-240g-8-portions-president/
-2026-09-06,30-pods-3-en-1-ariel,30 pods 3 en 1 – ARIEL,entretien,92.95,https://aswakassalam.com/produit/30-pods-3-en-1-ariel/
-2026-09-06,eau-de-javel-1l-divers-parfums-janis,Eau de javel 1L Divers parfums – JANIS,entretien,5.95,https://aswakassalam.com/produit/eau-de-javel-1l-divers-parfums-janis/
-2026-09-06,eau-de-javel-25l-janis,"Eau de javel 2,5L – JANIS",entretien,10.95,https://aswakassalam.com/produit/eau-de-javel-25l-janis/
-2026-09-06,lot-de-2-essuie-tout-3-plis-selpak,"Lot de 2 essuie-tout, 3 plis – SELPAK",entretien,9.95,https://aswakassalam.com/produit/lot-de-2-essuie-tout-3-plis-selpak/
-2026-09-06,lot-de-3-essuies-tout-2-plis-sany,"Lot de 3 essuies tout, 2 plis – SANY",entretien,18.5,https://aswakassalam.com/produit/lot-de-3-essuies-tout-2-plis-sany/
-2026-09-06,10-sacs-poubelle-120l-igor,10 SACS POUBELLE 120L IGOR,entretien,30.95,https://aswakassalam.com/produit/10-sacs-poubelle-120l-igor/
-2026-09-06,10-sacs-poubelles-35l-folia,10 SACS POUBELLES 35L FOLIA,entretien,10.95,https://aswakassalam.com/produit/10-sacs-poubelles-35l-folia/
-2026-09-06,10-sacs-poubelles-drawstring-100l-folia,10 SACS POUBELLES DRAWSTRING 100L FOLIA,entretien,22.95,https://aswakassalam.com/produit/10-sacs-poubelles-drawstring-100l-folia/
-2026-09-06,10-sacs-poubelles-drawstring-130l-folia,10 SACS POUBELLES DRAWSTRING 130L FOLIA,entretien,35.95,https://aswakassalam.com/produit/10-sacs-poubelles-drawstring-130l-folia/
-2026-09-06,10-sacs-poubelles-drawstring-50l-folia,10 SACS POUBELLES DRAWSTRING 50L FOLIA,entretien,13.95,https://aswakassalam.com/produit/10-sacs-poubelles-drawstring-50l-folia/
-2026-09-06,100-gants-nitrile-medium-bleu-igor,100 GANTS NITRILE MEDIUM BLEU IGOR,entretien,89.95,https://aswakassalam.com/produit/100-gants-nitrile-medium-bleu-igor/
-2026-09-06,100-gants-nitrile-small-bleu-igor,100 GANTS NITRILE SMALL BLEU IGOR,entretien,89.95,https://aswakassalam.com/produit/100-gants-nitrile-small-bleu-igor/
-2026-09-06,100-gants-nitrile-small-noir-igor,100 GANTS NITRILE SMALL NOIR IGOR,entretien,89.95,https://aswakassalam.com/produit/100-gants-nitrile-small-noir-igor/
-2026-09-06,12-feuilles-de-papier-cuisson-sulfurise-netoy,12 FEUILLES DE PAPIER CUISSON SULFURISE NETOY,entretien,13.5,https://aswakassalam.com/produit/12-feuilles-de-papier-cuisson-sulfurise-netoy/
-2026-09-06,12-rouleaux-papier-hygienique-2-plis-dalaa,12 ROULEAUX PAPIER HYGIENIQUE 2 PLIS DALAA,entretien,24.95,https://aswakassalam.com/produit/12-rouleaux-papier-hygienique-2-plis-dalaa/
-2026-09-06,15-sacs-de-congelation-2530cm-chikipak,15 SACS DE CONGELATION 25*30CM CHIKIPAK,entretien,19.95,https://aswakassalam.com/produit/15-sacs-de-congelation-2530cm-chikipak/
-2026-09-06,2-gants-de-nettoyage-multi-usage-en-silicone-magic-gloves,2 GANTS DE NETTOYAGE MULTI-USAGE EN SILICONE MAGIC GLOVES,entretien,60.95,https://aswakassalam.com/produit/2-gants-de-nettoyage-multi-usage-en-silicone-magic-gloves/
-2026-09-06,32-pastilles-allume-feu-sans-odeur-asevi,32 PASTILLES ALLUME FEU SANS ODEUR ASEVI,entretien,18.95,https://aswakassalam.com/produit/32-pastilles-allume-feu-sans-odeur-asevi/
-2026-09-06,40-pastilles-pour-lave-vaisselle-parfum-citron-finish,40 pastilles pour lave-vaisselle parfum citron FINISH,entretien,94.95,https://aswakassalam.com/produit/40-pastilles-pour-lave-vaisselle-parfum-citron-finish/
-2026-09-06,40-sacs-poubelle-30l-elmejor,40 SACS POUBELLE 30L ELMEJOR,entretien,30.5,https://aswakassalam.com/produit/40-sacs-poubelle-30l-elmejor/
-2026-09-06,adoucissant-3l-econet,ADOUCISSANT 3L ECONET,entretien,44.95,https://aswakassalam.com/produit/adoucissant-3l-econet/
-2026-09-06,adoucissant-a-la-rose-3l-doussy,ADOUCISSANT A LA ROSE 3L DOUSSY,entretien,56.95,https://aswakassalam.com/produit/adoucissant-a-la-rose-3l-doussy/
-2026-09-06,adoucissant-concentre-3l-asevi,ADOUCISSANT CONCENTRE 3L ASEVI,entretien,52.95,https://aswakassalam.com/produit/adoucissant-concentre-3l-asevi/
-2026-09-06,adoucissant-concentre-hypoallergenique-rose-talc-15l-asevi,"ADOUCISSANT CONCENTRE HYPOALLERGENIQUE ROSE TALC 1,5L ASEVI",entretien,27.5,https://aswakassalam.com/produit/adoucissant-concentre-hypoallergenique-rose-talc-15l-asevi/
-2026-09-06,adoucissant-fleur-dambre-et-bois-de-santal-144l-peros,"ADOUCISSANT FLEUR D’AMBRE ET BOIS DE SANTAL 1,44L PEROS",entretien,38.95,https://aswakassalam.com/produit/adoucissant-fleur-dambre-et-bois-de-santal-144l-peros/
-2026-09-06,adoucissant-fleur-de-perles-et-cachemire-144l-peros,"ADOUCISSANT FLEUR DE PERLES ET CACHEMIRE 1,44L PEROS",entretien,38.95,https://aswakassalam.com/produit/adoucissant-fleur-de-perles-et-cachemire-144l-peros/
-2026-09-06,adoucissant-jardin-de-lavande-et-bougainvillier-144l-peros,"ADOUCISSANT JARDIN DE LAVANDE ET BOUGAINVILLIER 1,44L PEROS",entretien,38.95,https://aswakassalam.com/produit/adoucissant-jardin-de-lavande-et-bougainvillier-144l-peros/
-2026-09-06,adoucissant-orchidee-bleue-et-fleurs-de-lys-144l-peros,"ADOUCISSANT ORCHIDEE BLEUE ET FLEURS DE LYS 1,44L PEROS",entretien,38.95,https://aswakassalam.com/produit/adoucissant-orchidee-bleue-et-fleurs-de-lys-144l-peros/
-2026-09-06,aerosol-anti-insectes-rampants-360ml-baygon,AEROSOL ANTI INSECTES RAMPANTS 360ML BAYGON,entretien,33.95,https://aswakassalam.com/produit/aerosol-anti-insectes-rampants-360ml-baygon/
-2026-09-06,aerosol-anti-insectes-rampants-450ml-baygon,AEROSOL ANTI INSECTES RAMPANTS 450ML BAYGON,entretien,42.95,https://aswakassalam.com/produit/aerosol-anti-insectes-rampants-450ml-baygon/
-2026-09-06,aerosol-anti-insectes-volants-sans-odeur-400ml-raid,AEROSOL ANTI-INSECTES VOLANTS SANS ODEUR 400ML RAID,entretien,33.5,https://aswakassalam.com/produit/aerosol-anti-insectes-volants-sans-odeur-400ml-raid/
-2026-09-06,aerosol-insecticide-citron-300ml-lance,AEROSOL INSECTICIDE CITRON 300ML LANCE,entretien,14.95,https://aswakassalam.com/produit/aerosol-insecticide-citron-300ml-lance/
-2026-09-06,aerosol-tout-insecte-parfume-au-citron-200ml-zentek,AEROSOL TOUT INSECTE PARFUME AU CITRON 200ML ZENTEK,entretien,12.95,https://aswakassalam.com/produit/aerosol-tout-insecte-parfume-au-citron-200ml-zentek/
-2026-09-06,ajax-vitre-450ml,AJAX VITRE 450ML,entretien,15.95,https://aswakassalam.com/produit/ajax-vitre-450ml/
-2026-09-06,allume-feu-48-cubes-flammat,ALLUME-FEU 48 CUBES FLAMMAT,entretien,14.5,https://aswakassalam.com/produit/allume-feu-48-cubes-flammat/
-2026-09-06,allume-feu-ecologique-24-cubes-flammat,ALLUME-FEU ECOLOGIQUE 24 CUBES FLAMMAT,entretien,18.5,https://aswakassalam.com/produit/allume-feu-ecologique-24-cubes-flammat/
-2026-09-06,boite-de-mais-340g-janis,Boîte de maïs 340g – JANIS,epicerie,12.5,https://aswakassalam.com/produit/boite-de-mais-340g-janis/
-2026-09-06,cornichons-epices-en-morceaux-330g-kuhne,Cornichons épicés en morceaux 330g – KÜHNE,epicerie,39.95,https://aswakassalam.com/produit/cornichons-epices-en-morceaux-330g-kuhne/
-2026-09-06,cornichons-legerement-surcres-180g-kuhne,Cornichons légèrement surcrés 180g – KÜHNE,epicerie,41.5,https://aswakassalam.com/produit/cornichons-legerement-surcres-180g-kuhne/
-2026-09-06,farine-fleur-10kg-kenz,Farine fleur 10kg – KENZ,epicerie,55.95,https://aswakassalam.com/produit/farine-fleur-10kg-kenz/
-2026-09-06,farine-pain-beldi-5kg-farine-de-luxe-1kg-luxor,Farine pain Beldi 5kg + farine de luxe 1kg – LUXOR,epicerie,33.9,https://aswakassalam.com/produit/farine-pain-beldi-5kg-farine-de-luxe-1kg-luxor/
-2026-09-06,huile-dolive-vierge-1l-campo-sur,Huile d’olive vierge 1L  – CAMPO SUR,epicerie,54.95,https://aswakassalam.com/produit/huile-dolive-vierge-1l-campo-sur/
-2026-09-06,lentilles-1kg-janis-2,Lentilles 1kg – JANIS,epicerie,12.95,https://aswakassalam.com/produit/lentilles-1kg-janis-2/
-2026-09-06,lot-3-boites-de-champignons-en-morceaux-185g-janis,Lot 3 boîtes de champignons en morceaux 185g – JANIS,epicerie,29.95,https://aswakassalam.com/produit/lot-3-boites-de-champignons-en-morceaux-185g-janis/
-2026-09-06,lot-de-3-boites-de-mais-140g-janis,Lot de 3 Boîtes de maïs 140g – JANIS,epicerie,28.95,https://aswakassalam.com/produit/lot-de-3-boites-de-mais-140g-janis/
-2026-09-06,lot-de-3-boites-de-thon-80g-janis,Lot de 3 boîtes de thon 80g – JANIS,epicerie,24.5,https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-janis/
-2026-09-06,lot-de-3-boites-de-thon-80g-sauce-tomate-ou-huile-de-tournesol-janis,Lot de 3 boites de thon 80g sauce tomate ou huile de tournesol  – JANIS,epicerie,24.95,https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-sauce-tomate-ou-huile-de-tournesol-janis/
-2026-09-06,lot-de-3-couscous-calibre-moyen-500g-dalia,Lot de 3 couscous calibre moyen 500g DALIA,epicerie,16.2,https://aswakassalam.com/produit/lot-de-3-couscous-calibre-moyen-500g-dalia/
-2026-09-06,lot-de-3-couscous-moyens-500g-alitkane-2,Lot de 3 couscous moyens 500g – ALITKANE,epicerie,15.95,https://aswakassalam.com/produit/lot-de-3-couscous-moyens-500g-alitkane-2/
-2026-09-06,lot-de-3-spaghettis-500g-janis,Lot de 3 spaghettis 500g  – JANIS,epicerie,21.6,https://aswakassalam.com/produit/lot-de-3-spaghettis-500g-janis/
-2026-09-06,melange-fruits-secs-80g-royal-mix-denia,Mélange fruits secs 80g Royal Mix – DÉNIA,epicerie,15.95,https://aswakassalam.com/produit/melange-fruits-secs-80g-royal-mix-denia/
-2026-09-06,semoule-fine-ble-dur-5kg-moony,Semoule fine blé dur 5Kg – MOONY,epicerie,52.95,https://aswakassalam.com/produit/semoule-fine-ble-dur-5kg-moony/
-2026-09-06,abricot-sec-500g-oncle-sam,ABRICOT SEC 500G ONCLE SAM,epicerie,118.6,https://aswakassalam.com/produit/abricot-sec-500g-oncle-sam/
-2026-09-06,ail-semoule-100g-gaya,AIL SEMOULE 100G GAYA,epicerie,22.95,https://aswakassalam.com/produit/ail-semoule-100g-gaya/
-2026-09-06,ail-semoule-215g-harmony,AIL SEMOULE 215G HARMONY,epicerie,83.9,https://aswakassalam.com/produit/ail-semoule-215g-harmony/
-2026-09-06,ail-semoule-300g-gaya,AIL SEMOULE 300G GAYA,epicerie,61.2,https://aswakassalam.com/produit/ail-semoule-300g-gaya/
-2026-09-06,ail-semoule-60g-ducros,AIL SEMOULE 60G DUCROS,epicerie,22.1,https://aswakassalam.com/produit/ail-semoule-60g-ducros/
-2026-09-06,ail-semoule-60g-harmony,AIL SEMOULE 60G HARMONY,epicerie,18.95,https://aswakassalam.com/produit/ail-semoule-60g-harmony/
-2026-09-06,amande-riffi-900g-oncle-sam,AMANDE RIFFI 900G ONCLE SAM,epicerie,146.95,https://aswakassalam.com/produit/amande-riffi-900g-oncle-sam/
-2026-09-06,amandes-250g-oncle-sam,AMANDES 250G ONCLE SAM,epicerie,43.5,https://aswakassalam.com/produit/amandes-250g-oncle-sam/
-2026-09-06,amandes-riffi-200g-rosana,AMANDES RIFFI 200G ROSANA,epicerie,33.5,https://aswakassalam.com/produit/amandes-riffi-200g-rosana/
-2026-09-06,anchois-a-lhuile-dolive-extra-vierge-100g-connetable,ANCHOIS A L’HUILE D’OLIVE EXTRA VIERGE 100G CONNETABLE,epicerie,27.9,https://aswakassalam.com/produit/anchois-a-lhuile-dolive-extra-vierge-100g-connetable/
-2026-09-06,angel-hair-n1-500g-barilla,ANGEL HAIR N°1 500G BARILLA,epicerie,26.95,https://aswakassalam.com/produit/angel-hair-n1-500g-barilla/
-2026-09-06,assaisonement-kefta-35g-javana,ASSAISONEMENT KEFTA 35G JAVANA,epicerie,16.95,https://aswakassalam.com/produit/assaisonement-kefta-35g-javana/
-2026-09-06,assaisonement-poulet-ail-origan-35g-ideal,ASSAISONEMENT POULET AIL ORIGAN 35G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-ail-origan-35g-ideal/
-2026-09-06,assaisonement-poulet-epice-gout-barbecue-52g-ideal,ASSAISONEMENT POULET EPICE GOUT BARBECUE 52G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-epice-gout-barbecue-52g-ideal/
-2026-09-06,assaisonement-poulet-epices-gout-grillade-32g-ideal,ASSAISONEMENT POULET EPICES GOUT GRILLADE 32G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-epices-gout-grillade-32g-ideal/
-2026-09-06,assaisonnement-chawarma-poulet-30g-javana,ASSAISONNEMENT CHAWARMA POULET 30G JAVANA,epicerie,16.95,https://aswakassalam.com/produit/assaisonnement-chawarma-poulet-30g-javana/
-2026-09-06,assaisonnement-grillade-40g-javana,ASSAISONNEMENT GRILLADE 40G JAVANA,epicerie,12.2,https://aswakassalam.com/produit/assaisonnement-grillade-40g-javana/
-2026-09-06,baba-ghannouge-pret-a-manger-385g-al-wadi,BABA GHANNOUGE PRET A MANGER 385G AL WADI,epicerie,46.95,https://aswakassalam.com/produit/baba-ghannouge-pret-a-manger-385g-al-wadi/
-2026-09-06,basilic-12g-harmony,BASILIC 12G HARMONY,epicerie,11.2,https://aswakassalam.com/produit/basilic-12g-harmony/
-2026-09-06,ananas-la-piece-1kg-a-1200kg,"ANANAS LA PIECE (1KG A 1,200KG)",fruits-legumes,32.0,https://aswakassalam.com/produit/ananas-la-piece-1kg-a-1200kg/
-2026-09-06,avocat-1kg,AVOCAT 1KG,fruits-legumes,62.95,https://aswakassalam.com/produit/avocat-1kg/
-2026-09-06,banane-import-1kg,BANANE IMPORT 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/banane-import-1kg/
-2026-09-06,brocoli-1kg,BROCOLI 1KG,fruits-legumes,29.95,https://aswakassalam.com/produit/brocoli-1kg/
-2026-09-06,celeri-botte,CELERI BOTTE,fruits-legumes,15.95,https://aswakassalam.com/produit/celeri-botte/
-2026-09-06,champignon-de-paris-500g,CHAMPIGNON DE PARIS 500G,fruits-legumes,34.95,https://aswakassalam.com/produit/champignon-de-paris-500g/
-2026-09-06,chou-de-bruxelles-500g,CHOU DE BRUXELLES 500G,fruits-legumes,17.95,https://aswakassalam.com/produit/chou-de-bruxelles-500g/
-2026-09-06,citron-1kg,CITRON 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/citron-1kg/
-2026-09-06,courgette-ronde-1kg,COURGETTE RONDE 1KG,fruits-legumes,16.95,https://aswakassalam.com/produit/courgette-ronde-1kg/
-2026-09-06,couscous-barquette-2kg,COUSCOUS BARQUETTE  +/- 2KG,fruits-legumes,22.95,https://aswakassalam.com/produit/couscous-barquette-2kg/
-2026-09-06,fraise-barquette-250,FRAISE BARQUETTE 250,fruits-legumes,12.95,https://aswakassalam.com/produit/fraise-barquette-250/
-2026-09-06,framboise-barquette-125g,FRAMBOISE BARQUETTE 125G,fruits-legumes,24.95,https://aswakassalam.com/produit/framboise-barquette-125g/
-2026-09-06,haricot-vert-1kg,HARICOT VERT 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/haricot-vert-1kg/
-2026-09-06,kiwi-1kg,KIWI 1KG,fruits-legumes,49.95,https://aswakassalam.com/produit/kiwi-1kg/
-2026-09-06,laitue-rouge-a-la-piece,LAITUE ROUGE A LA PIECE,fruits-legumes,6.5,https://aswakassalam.com/produit/laitue-rouge-a-la-piece/
-2026-09-06,mangue-a-la-piece-450g-a-500g,MANGUE A LA PIECE  (450G A 500G),fruits-legumes,16.95,https://aswakassalam.com/produit/mangue-a-la-piece-450g-a-500g/
-2026-09-06,mangue-avion-1kg,MANGUE AVION 1KG,fruits-legumes,31.95,https://aswakassalam.com/produit/mangue-avion-1kg/
-2026-09-06,melon-cantaloup-1kg,MELON CANTALOUP 1KG,fruits-legumes,14.95,https://aswakassalam.com/produit/melon-cantaloup-1kg/
-2026-09-06,melon-jaune-marhoum-a-la-piece-2kg,MELON JAUNE MARHOUM A LA PIECE 2KG,fruits-legumes,16.0,https://aswakassalam.com/produit/melon-jaune-marhoum-a-la-piece-2kg/
-2026-09-06,nectarine-1kg,NECTARINE 1KG,fruits-legumes,15.95,https://aswakassalam.com/produit/nectarine-1kg/
-2026-09-06,orange-a-jus-1kg,ORANGE A JUS 1KG,fruits-legumes,8.95,https://aswakassalam.com/produit/orange-a-jus-1kg/
-2026-09-06,peche-1kg,PECHE 1KG,fruits-legumes,15.95,https://aswakassalam.com/produit/peche-1kg/
-2026-09-06,piment-fort-barquette-500g,PIMENT FORT BARQUETTE 500G,fruits-legumes,7.0,https://aswakassalam.com/produit/piment-fort-barquette-500g/
-2026-09-06,poire-william-au-kg,POIRE WILLIAM AU KG,fruits-legumes,32.95,https://aswakassalam.com/produit/poire-william-au-kg/
-2026-09-06,poireau-1kg,POIREAU 1KG,fruits-legumes,18.95,https://aswakassalam.com/produit/poireau-1kg/
-2026-09-06,poivron-rouge-1kg,POIVRON ROUGE 1KG,fruits-legumes,16.95,https://aswakassalam.com/produit/poivron-rouge-1kg/
-2026-09-06,pomme-de-terre-blanche-1kg,POMME DE TERRE BLANCHE 1KG,fruits-legumes,7.95,https://aswakassalam.com/produit/pomme-de-terre-blanche-1kg/
-2026-09-06,pomme-rouge-1-kg,POMME ROUGE 1 KG,fruits-legumes,19.95,https://aswakassalam.com/produit/pomme-rouge-1-kg/
-2026-09-06,pomme-rouge-import-1kg,POMME ROUGE IMPORT 1KG,fruits-legumes,34.95,https://aswakassalam.com/produit/pomme-rouge-import-1kg/
-2026-09-06,potiron-1kg,POTIRON 1KG,fruits-legumes,9.95,https://aswakassalam.com/produit/potiron-1kg/
-2026-09-06,prune-noir-1kg,PRUNE NOIR 1KG,fruits-legumes,21.95,https://aswakassalam.com/produit/prune-noir-1kg/
-2026-09-06,raisin-blanc-1kg,RAISIN BLANC 1KG,fruits-legumes,14.95,https://aswakassalam.com/produit/raisin-blanc-1kg/
-2026-09-06,romarin-botte,ROMARIN BOTTE,fruits-legumes,6.5,https://aswakassalam.com/produit/romarin-botte/
-2026-09-06,salade-lolo-rouge-piece,SALADE LOLO ROUGE PIECE,fruits-legumes,6.95,https://aswakassalam.com/produit/salade-lolo-rouge-piece/
-2026-09-06,salade-lolo-vert-piece,SALADE LOLO VERT PIECE,fruits-legumes,6.5,https://aswakassalam.com/produit/salade-lolo-vert-piece/
-2026-09-06,thym-botte,THYM BOTTE,fruits-legumes,5.95,https://aswakassalam.com/produit/thym-botte/
-2026-09-06,cake-oreo,CAKE INDIVIDUEL OREO,patisserie,19.95,https://aswakassalam.com/produit/cake-oreo/
-2026-09-06,eclaire,ECLAIR AU CHOCOLAT,patisserie,10.95,https://aswakassalam.com/produit/eclaire/
-2026-09-06,flan-x2,FLAN AUX FRUITS CONFITS,patisserie,14.95,https://aswakassalam.com/produit/flan-x2/
-2026-09-06,tarte-indiv-chocolat,TARTE INDIVIDUELLE AU CHOCOLAT,patisserie,12.95,https://aswakassalam.com/produit/tarte-indiv-chocolat/
-2026-09-07,creme-solaire-protectrice-et-hydratante-spf-50-200ml-nivea,Crème solaire protectrice et hydratante SPF 50+ 200ml – NIVEA,beaute-hygiene,164.95,https://aswakassalam.com/produit/creme-solaire-protectrice-et-hydratante-spf-50-200ml-nivea/
-2026-09-07,gel-douche-250ml-divers-parfums-taous,Gel douche 250ml. Divers parfums – TAOUS,beaute-hygiene,14.95,https://aswakassalam.com/produit/gel-douche-250ml-divers-parfums-taous/
-2026-09-07,lot-de-2-dentifrices-white-now-75ml-signal,Lot de 2 dentifrices WHITE NOW 75ml – SIGNAL,beaute-hygiene,27.95,https://aswakassalam.com/produit/lot-de-2-dentifrices-white-now-75ml-signal/
-2026-09-07,lot-de-2-gels-douche-250ml-divers-parfums-taous,Lot de 2 gels douche 250ml divers parfums – TAOUS,beaute-hygiene,21.95,https://aswakassalam.com/produit/lot-de-2-gels-douche-250ml-divers-parfums-taous/
-2026-09-07,lot-de-2-gels-douches-lait-hydratant-250ml-divers-parfums-cottage,Lot de 2 gels douches lait hydratant 250ml Divers parfums – COTTAGE,beaute-hygiene,55.95,https://aswakassalam.com/produit/lot-de-2-gels-douches-lait-hydratant-250ml-divers-parfums-cottage/
-2026-09-07,20-rasoirs-blue2-gillette-15-achetes-5-gratuits,20 RASOIRS BLUE2 GILLETTE (15 ACHETES = 5 GRATUITS),beaute-hygiene,83.95,https://aswakassalam.com/produit/20-rasoirs-blue2-gillette-15-achetes-5-gratuits/
-2026-09-07,after-shave-original-100-ml-brut,AFTER SHAVE ORIGINAL 100 ML BRUT,beaute-hygiene,50.5,https://aswakassalam.com/produit/after-shave-original-100-ml-brut/
-2026-09-07,apres-shampooing-avocat-200ml-ultra-doux,APRES SHAMPOOING AVOCAT 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-avocat-200ml-ultra-doux/
-2026-09-07,apres-shampooing-avocat-beurre-de-karite-400ml-ultra-doux-garnier,APRES SHAMPOOING AVOCAT BEURRE DE KARITE 400ML ULTRA DOUX GARNIER,beaute-hygiene,59.95,https://aswakassalam.com/produit/apres-shampooing-avocat-beurre-de-karite-400ml-ultra-doux-garnier/
-2026-09-07,apres-shampooing-dream-long-200ml-elseve,APRES SHAMPOOING DREAM LONG 200ML ELSEVE,beaute-hygiene,44.95,https://aswakassalam.com/produit/apres-shampooing-dream-long-200ml-elseve/
-2026-09-07,apres-shampooing-huile-extraordinaire-pour-cheveux-normaux-200ml-elseve,APRES SHAMPOOING HUILE EXTRAORDINAIRE POUR CHEVEUX NORMAUX 200ML ELSEVE,beaute-hygiene,44.95,https://aswakassalam.com/produit/apres-shampooing-huile-extraordinaire-pour-cheveux-normaux-200ml-elseve/
-2026-09-07,apres-shampooing-hydratant-72h-hyaluron-repulp-200ml-elseve,APRES SHAMPOOING HYDRATANT 72H HYALURON REPULP 200ML ELSEVE,beaute-hygiene,48.95,https://aswakassalam.com/produit/apres-shampooing-hydratant-72h-hyaluron-repulp-200ml-elseve/
-2026-09-07,apres-shampooing-lait-damande-nourricier-200ml-ultra-doux,APRES SHAMPOOING LAIT D’AMANDE NOURRICIER 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-lait-damande-nourricier-200ml-ultra-doux/
-2026-09-07,apres-shampooing-olive-mythique-400ml-ultra-doux,APRES SHAMPOOING OLIVE MYTHIQUE 400ML ULTRA DOUX,beaute-hygiene,59.95,https://aswakassalam.com/produit/apres-shampooing-olive-mythique-400ml-ultra-doux/
-2026-09-07,apres-shampooing-tresors-de-miel-200ml-ultra-doux,APRES SHAMPOOING TRESORS DE MIEL 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-tresors-de-miel-200ml-ultra-doux/
-2026-09-07,apres-shampooing-beurre-de-karite-et-macadamia-cheveux-tres-secs-ou-frises-200ml-le-petit-olivier,APRES-SHAMPOOING BEURRE DE KARITE ET MACADAMIA CHEVEUX TRES SECS OU FRISES 200ML LE PETIT OLIVIER,beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-beurre-de-karite-et-macadamia-cheveux-tres-secs-ou-frises-200ml-le-petit-olivier/
-2026-09-07,apres-shampooing-coco-et-the-vert-tous-types-de-cheveux-250ml-lovea,APRES-SHAMPOOING COCO ET THE VERT TOUS TYPES DE CHEVEUX 250ML LOVEA,beaute-hygiene,74.95,https://aswakassalam.com/produit/apres-shampooing-coco-et-the-vert-tous-types-de-cheveux-250ml-lovea/
-2026-09-07,apres-shampooing-monoi-karite-pour-cheveux-secs-et-abimes-200ml-lovea,APRES-SHAMPOOING MONOI & KARITE POUR CHEVEUX SECS ET ABIMES 200ML LOVEA,beaute-hygiene,74.95,https://aswakassalam.com/produit/apres-shampooing-monoi-karite-pour-cheveux-secs-et-abimes-200ml-lovea/
-2026-09-07,apres-shampooing-nutrition-huiles-dolive-karite-argan-200ml-le-petit-olivier,"APRES-SHAMPOOING NUTRITION HUILES D’OLIVE, KARITE, ARGAN 200ML LE PETIT OLIVIER",beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-nutrition-huiles-dolive-karite-argan-200ml-le-petit-olivier/
-2026-09-07,apres-shampooing-olive-mythique-200ml-ultra-doux,APRES-SHAMPOOING OLIVE MYTHIQUE 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-olive-mythique-200ml-ultra-doux/
-2026-09-07,apres-shampooing-purifiant-aloe-vera-the-vert-200ml-le-petit-olivier,APRES-SHAMPOOING PURIFIANT ALOE VERA & THE VERT 200ML LE PETIT OLIVIER,beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-purifiant-aloe-vera-the-vert-200ml-le-petit-olivier/
-2026-09-07,apres-shampooing-tonus-brillance-huile-sesame-300ml-timotei,APRES-SHAMPOOING TONUS BRILLANCE HUILE SESAME 300ML TIMOTEI,beaute-hygiene,34.5,https://aswakassalam.com/produit/apres-shampooing-tonus-brillance-huile-sesame-300ml-timotei/
-2026-09-07,baby-shampooing-shiny-drops-300ml-johnson-baby,BABY SHAMPOOING SHINY DROPS 300ML JOHNSON BABY,beaute-hygiene,45.5,https://aswakassalam.com/produit/baby-shampooing-shiny-drops-300ml-johnson-baby/
-2026-09-07,bain-bouche-fraiche-intense-500ml-listerine,BAIN BOUCHE FRAICHE INTENSE 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-fraiche-intense-500ml-listerine/
-2026-09-07,bain-bouche-soin-blancheur-500ml-listerine,BAIN BOUCHE SOIN BLANCHEUR 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-soin-blancheur-500ml-listerine/
-2026-09-07,bain-bouche-zero-alcool-menthe-500ml-listerine,BAIN BOUCHE ZERO ALCOOL MENTHE 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-zero-alcool-menthe-500ml-listerine/
-2026-09-07,bain-de-bouche-optic-white-500ml-colgate,BAIN DE BOUCHE OPTIC WHITE 500ML COLGATE,beaute-hygiene,45.5,https://aswakassalam.com/produit/bain-de-bouche-optic-white-500ml-colgate/
-2026-09-07,bain-moussant-200ml-johnson-baby,BAIN MOUSSANT 200ML JOHNSON BABY,beaute-hygiene,29.95,https://aswakassalam.com/produit/bain-moussant-200ml-johnson-baby/
-2026-09-07,bande-de-cire-peau-normale-10-unites-veet,BANDE DE CIRE PEAU NORMALE 10 UNITES VEET,beaute-hygiene,36.95,https://aswakassalam.com/produit/bande-de-cire-peau-normale-10-unites-veet/
-2026-09-07,bandes-de-cire-peaux-sensibles-10-unites-veet,BANDES DE CIRE PEAUX SENSIBLES 10 UNITES VEET,beaute-hygiene,36.95,https://aswakassalam.com/produit/bandes-de-cire-peaux-sensibles-10-unites-veet/
-2026-09-07,bandes-epilation-10-pieces-depiliss,BANDES EPILATION 10 PIECES DEPILISS,beaute-hygiene,5.95,https://aswakassalam.com/produit/bandes-epilation-10-pieces-depiliss/
-2026-09-07,bandes-epilation-50-unites-depiliss,BANDES EPILATION 50 UNITES DEPILISS,beaute-hygiene,15.95,https://aswakassalam.com/produit/bandes-epilation-50-unites-depiliss/
-2026-09-07,baume-a-levres-3en1-pink-48g-labello,"BAUME A LEVRES 3EN1 PINK 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-pink-48g-labello/
-2026-09-07,baume-a-levres-3en1-red-48g-labello,"BAUME A LEVRES 3EN1 RED 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-red-48g-labello/
-2026-09-07,baume-a-levres-3en1-rose-48g-labello,"BAUME A LEVRES 3EN1 ROSE 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-rose-48g-labello/
-2026-09-07,baume-a-levres-coco-lovea,BAUME A LEVRES COCO LOVEA,beaute-hygiene,69.95,https://aswakassalam.com/produit/baume-a-levres-coco-lovea/
-2026-09-07,batonnet-de-glace-80ml-divers-parfums-haagen-dazs,Bâtonnet de glace 80ml divers parfums – HÄAGEN-DAZS,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/batonnet-de-glace-80ml-divers-parfums-haagen-dazs/
-2026-09-07,beurre-de-cacahuetes-340g-janis-2,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,29.85,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-2/
-2026-09-07,beurre-de-cacahuetes-340g-janis-3,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,27.95,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-3/
-2026-09-07,beurre-de-cacahuetes-340g-janis-4,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,27.95,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-4/
-2026-09-07,cereales-cerealoco-1kg-cerealitalia,Céréales CEREALOCO 1kg – CEREALITALIA,biscuiterie-confiserie,39.95,https://aswakassalam.com/produit/cereales-cerealoco-1kg-cerealitalia/
-2026-09-07,fleur-de-mais-en-poudre-180g-alsa,Fleur de maïs en poudre 180g – ALSA,biscuiterie-confiserie,6.65,https://aswakassalam.com/produit/fleur-de-mais-en-poudre-180g-alsa/
-2026-09-07,lot-de-2-cafes-moulus-java-timor-200g-dubois,Lot de 2 cafés moulus JAVA TIMOR 200g – DUBOIS,biscuiterie-confiserie,68.95,https://aswakassalam.com/produit/lot-de-2-cafes-moulus-java-timor-200g-dubois/
-2026-09-07,lot-de-2-thes-verts-4011-en-filaments-200g-sultan,Lot de 2 thés verts 4011 en filaments 200g – SULTAN,biscuiterie-confiserie,36.95,https://aswakassalam.com/produit/lot-de-2-thes-verts-4011-en-filaments-200g-sultan/
-2026-09-07,lot-de-2-thes-verts-41022-en-filaments-200g-100g-dahmiss,Lot de 2 thés verts 41022 en filaments 200g + 100g – DAHMISS,biscuiterie-confiserie,28.95,https://aswakassalam.com/produit/lot-de-2-thes-verts-41022-en-filaments-200g-100g-dahmiss/
-2026-09-07,lot-de-3-thes-verts-en-grains-200g-selham,Lot de 3 thés verts en grains 200g – SELHAM,biscuiterie-confiserie,26.95,https://aswakassalam.com/produit/lot-de-3-thes-verts-en-grains-200g-selham/
-2026-09-07,mais-grilles-sales-100g-original-ou-barbecue-x-korn,Maïs grillés salés 100g Original ou barbecue – X-KORN,biscuiterie-confiserie,10.95,https://aswakassalam.com/produit/mais-grilles-sales-100g-original-ou-barbecue-x-korn/
-2026-09-07,miel-toutes-fleurs-850g-jnane-el-aassal,Miel toutes fleurs 850g – JNANE EL AÂSSAL,biscuiterie-confiserie,44.95,https://aswakassalam.com/produit/miel-toutes-fleurs-850g-jnane-el-aassal/
-2026-09-07,12-capsules-espresso-asta-black-10-achetes-2-gratuits,12 CAPSULES ESPRESSO ASTA BLACK (10 ACHETES = 2 GRATUITS),biscuiterie-confiserie,38.95,https://aswakassalam.com/produit/12-capsules-espresso-asta-black-10-achetes-2-gratuits/
-2026-09-07,225-morceaux-de-sucre-1kg-enmer,225 MORCEAUX DE SUCRE 1KG ENMER,biscuiterie-confiserie,6.15,https://aswakassalam.com/produit/225-morceaux-de-sucre-1kg-enmer/
-2026-09-07,4-barres-de-chocolat-au-lait-40g-kitkat-chunky,4 BARRES DE CHOCOLAT AU LAIT 40G KITKAT CHUNKY,biscuiterie-confiserie,29.95,https://aswakassalam.com/produit/4-barres-de-chocolat-au-lait-40g-kitkat-chunky/
-2026-09-07,amandes-effilees-100g-macao,AMANDES EFFILEES 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-effilees-100g-macao/
-2026-09-07,amandes-en-poudre-100g-macao,AMANDES EN POUDRE 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-en-poudre-100g-macao/
-2026-09-07,amandes-grillees-100g-oncle-sam,AMANDES GRILLEES 100G ONCLE SAM,biscuiterie-confiserie,24.95,https://aswakassalam.com/produit/amandes-grillees-100g-oncle-sam/
-2026-09-07,amandes-hachees-100g-macao,AMANDES HACHEES 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-hachees-100g-macao/
-2026-09-07,amlou-cacahuete-200g-jnane-el-aassal,AMLOU CACAHUETE 200G JNANE EL AASSAL,biscuiterie-confiserie,15.5,https://aswakassalam.com/produit/amlou-cacahuete-200g-jnane-el-aassal/
-2026-09-07,amlou-cacahuete-700g-jnane-el-aassal,AMLOU CACAHUETE 700G JNANE EL AASSAL,biscuiterie-confiserie,47.95,https://aswakassalam.com/produit/amlou-cacahuete-700g-jnane-el-aassal/
-2026-09-07,assortiment-de-24-bouchees-ferrero-rondnoir-et-raffaello-ferrero-colletion,"ASSORTIMENT DE 24 BOUCHEES FERRERO, RONDNOIR ET RAFFAELLO FERRERO COLLETION",biscuiterie-confiserie,154.95,https://aswakassalam.com/produit/assortiment-de-24-bouchees-ferrero-rondnoir-et-raffaello-ferrero-colletion/
-2026-09-07,assortiment-de-chocolats-180g-creations-delaviuda,ASSORTIMENT DE CHOCOLATS 180G CREATIONS DELAVIUDA,biscuiterie-confiserie,153.95,https://aswakassalam.com/produit/assortiment-de-chocolats-180g-creations-delaviuda/
-2026-09-07,assortiment-de-chocolats-200g-selection-delaviuda,ASSORTIMENT DE CHOCOLATS 200G SELECTION DELAVIUDA,biscuiterie-confiserie,92.95,https://aswakassalam.com/produit/assortiment-de-chocolats-200g-selection-delaviuda/
-2026-09-07,assortiment-de-chocolats-sans-sucres-ajoutes-200g-selection-delaviuda,ASSORTIMENT DE CHOCOLATS SANS SUCRES AJOUTÉS 200G SELECTION DELAVIUDA,biscuiterie-confiserie,95.95,https://aswakassalam.com/produit/assortiment-de-chocolats-sans-sucres-ajoutes-200g-selection-delaviuda/
-2026-09-07,barre-caramel-peanuts-extrem-pack-de-5-unites-34g-excelo,BARRE CARAMEL & PEANUTS EXTREM PACK DE 5 UNITES 34G EXCELO,biscuiterie-confiserie,10.95,https://aswakassalam.com/produit/barre-caramel-peanuts-extrem-pack-de-5-unites-34g-excelo/
-2026-09-07,barre-chocolat-cacahuete-semi-enrobee-28g-nooco,BARRE CHOCOLAT CACAHUETE SEMI-ENROBEE 28G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-cacahuete-semi-enrobee-28g-nooco/
-2026-09-07,barre-chocolat-crispy-caramel-cacahuete-40g-nooco,BARRE CHOCOLAT CRISPY CARAMEL CACAHUETE 40G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-crispy-caramel-cacahuete-40g-nooco/
-2026-09-07,barre-chocolat-noix-de-coco-24g-nooco,BARRE CHOCOLAT NOIX DE COCO 24G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-noix-de-coco-24g-nooco/
-2026-09-07,barre-chocolat-nougat-34g-nooco,BARRE CHOCOLAT NOUGAT 34G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-nougat-34g-nooco/
-2026-09-07,barre-chocolat-nougat-caramel-42g-nooco,BARRE CHOCOLAT NOUGAT CARAMEL 42G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-nougat-caramel-42g-nooco/
-2026-09-07,barre-chocolat-nougat-caramel-cacahuete-24g-nooco,BARRE CHOCOLAT NOUGAT CARAMEL CACAHUETE 24G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-nougat-caramel-cacahuete-24g-nooco/
-2026-09-07,barre-croustillante-chocolat-au-lait-18g-nooco,BARRE CROUSTILLANTE CHOCOLAT AU LAIT 18G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-croustillante-chocolat-au-lait-18g-nooco/
-2026-09-07,barre-multi-cereales-au-chocolat-au-lait-621g-cerealitalia,BARRE MULTI-CEREALES AU CHOCOLAT AU LAIT 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-au-chocolat-au-lait-621g-cerealitalia/
-2026-09-07,barre-multi-cereales-aux-myrtilles-621g-cerealitalia,BARRE MULTI-CEREALES AUX MYRTILLES 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-aux-myrtilles-621g-cerealitalia/
-2026-09-07,barre-multi-cereales-aux-noix-de-coco-et-chocolat-621g-cerealitalia,BARRE MULTI-CEREALES AUX NOIX DE COCO ET CHOCOLAT 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-aux-noix-de-coco-et-chocolat-621g-cerealitalia/
-2026-09-07,cannette-25cl-orangina-orangina-zero,Cannette 25cl – ORANGINA/ORANGINA ZÉRO,boissons,3.5,https://aswakassalam.com/produit/cannette-25cl-orangina-orangina-zero/
-2026-09-07,eau-minerale-25l-ain-soltane,"Eau minérale 2,5L – AIN SOLTANE",boissons,5.95,https://aswakassalam.com/produit/eau-minerale-25l-ain-soltane/
-2026-09-07,eau-minerale-gazeuse-1l-ain-soltane,Eau minérale gazeuse 1L – AÏN SOLTANE,boissons,5.0,https://aswakassalam.com/produit/eau-minerale-gazeuse-1l-ain-soltane/
-2026-09-07,ice-coffee-250ml-diverses-saveurs-rauch,"Ice coffee 250ml, diverses saveurs – RAUCH",boissons,21.95,https://aswakassalam.com/produit/ice-coffee-250ml-diverses-saveurs-rauch/
-2026-09-07,ice-tea-fruits-rouges-peche-50cl-lipton,Ice Tea fruits rouges/pêche 50cl – LIPTON,boissons,5.5,https://aswakassalam.com/produit/ice-tea-fruits-rouges-peche-50cl-lipton/
-2026-09-07,pack-6-canettes-boissons-gazeuses-25cl-coca-cola,Pack 6 canettes boissons gazeuses 25cl – COCA-COLA,boissons,21.95,https://aswakassalam.com/produit/pack-6-canettes-boissons-gazeuses-25cl-coca-cola/
-2026-09-07,7-up-canette-33cl,7 UP CANETTE 33CL,boissons,5.95,https://aswakassalam.com/produit/7-up-canette-33cl/
-2026-09-07,7-up-citron-1l,7 UP CITRON 1L,boissons,6.5,https://aswakassalam.com/produit/7-up-citron-1l/
-2026-09-07,7-up-citron-20cl,7 UP CITRON 20CL,boissons,2.95,https://aswakassalam.com/produit/7-up-citron-20cl/
-2026-09-07,7-up-citron-33cl,7 UP CITRON 33CL,boissons,3.5,https://aswakassalam.com/produit/7-up-citron-33cl/
-2026-09-07,7-up-citron-50cl,7 UP CITRON 50CL,boissons,4.5,https://aswakassalam.com/produit/7-up-citron-50cl/
-2026-09-07,7up-canette-25cl,7UP CANETTE 25CL,boissons,4.5,https://aswakassalam.com/produit/7up-canette-25cl/
-2026-09-07,boisson-a-lorange-frut-1l-marrakech,BOISSON A L’ORANGE FRUT 1L MARRAKECH,boissons,5.75,https://aswakassalam.com/produit/boisson-a-lorange-frut-1l-marrakech/
-2026-09-07,boisson-a-la-pulpe-dorange-1l-al-boustane,BOISSON A LA PULPE D’ORANGE 1L AL BOUSTANE,boissons,7.9,https://aswakassalam.com/produit/boisson-a-la-pulpe-dorange-1l-al-boustane/
-2026-09-07,boisson-a-la-pulpe-dorange-1l-jutos-jaouda,BOISSON A LA PULPE D’ORANGE 1L JUTOS JAOUDA,boissons,9.8,https://aswakassalam.com/produit/boisson-a-la-pulpe-dorange-1l-jutos-jaouda/
-2026-09-07,boisson-a-la-pulpe-peche-25cl-cappy-pulpy,BOISSON A LA PULPE PECHE 25CL CAPPY PULPY,boissons,4.5,https://aswakassalam.com/produit/boisson-a-la-pulpe-peche-25cl-cappy-pulpy/
-2026-09-07,boisson-ananas-des-tropiques-1l-marrakech,BOISSON ANANAS DES TROPIQUES 1L MARRAKECH,boissons,15.5,https://aswakassalam.com/produit/boisson-ananas-des-tropiques-1l-marrakech/
-2026-09-07,boisson-cocktail-1l-jutos,BOISSON COCKTAIL 1L JUTOS,boissons,8.5,https://aswakassalam.com/produit/boisson-cocktail-1l-jutos/
-2026-09-07,boisson-cocktail-355cl-rauch,"BOISSON COCKTAIL 35,5CL RAUCH",boissons,16.9,https://aswakassalam.com/produit/boisson-cocktail-355cl-rauch/
-2026-09-07,boisson-energetique-25cl-burn,BOISSON ENERGETIQUE 25CL BURN,boissons,11.85,https://aswakassalam.com/produit/boisson-energetique-25cl-burn/
-2026-09-07,boisson-energetique-25cl-red-bull,BOISSON ENERGETIQUE 25CL RED BULL,boissons,22.95,https://aswakassalam.com/produit/boisson-energetique-25cl-red-bull/
-2026-09-07,boisson-energetique-citron-50cl-aquarius,BOISSON ENERGETIQUE CITRON 50CL AQUARIUS,boissons,7.5,https://aswakassalam.com/produit/boisson-energetique-citron-50cl-aquarius/
-2026-09-07,boisson-energetique-pack-425cl-red-bull,BOISSON ENERGETIQUE PACK 4*25CL RED BULL,boissons,83.95,https://aswakassalam.com/produit/boisson-energetique-pack-425cl-red-bull/
-2026-09-07,boisson-energetique-sans-sucre-25cl-red-bull,BOISSON ENERGETIQUE SANS SUCRE 25CL RED BULL,boissons,21.5,https://aswakassalam.com/produit/boisson-energetique-sans-sucre-25cl-red-bull/
-2026-09-07,boisson-energisante-blue-25cl-bomba,BOISSON ENERGISANTE BLUE 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-blue-25cl-bomba/
-2026-09-07,boisson-energisante-burry-blast-25cl-sting,BOISSON ENERGISANTE BURRY BLAST 25CL STING,boissons,7.95,https://aswakassalam.com/produit/boisson-energisante-burry-blast-25cl-sting/
-2026-09-07,boisson-energisante-cherry-25cl-bomba,BOISSON ENERGISANTE CHERRY 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-cherry-25cl-bomba/
-2026-09-07,boisson-energisante-classic-250ml-hell,BOISSON ENERGISANTE CLASSIC 250ML HELL,boissons,14.95,https://aswakassalam.com/produit/boisson-energisante-classic-250ml-hell/
-2026-09-07,boisson-energisante-classic-25cl-bomba,BOISSON ENERGISANTE CLASSIC 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-classic-25cl-bomba/
-2026-09-07,boisson-energisante-gold-rush-25cl-sting,BOISSON ENERGISANTE GOLD RUSH 25CL STING,boissons,7.95,https://aswakassalam.com/produit/boisson-energisante-gold-rush-25cl-sting/
-2026-09-07,boisson-energisante-mojito-25cl-bomba,BOISSON ENERGISANTE MOJITO 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-mojito-25cl-bomba/
-2026-09-07,boisson-energisante-pink-25cl-bomba,BOISSON ENERGISANTE PINK 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-pink-25cl-bomba/
-2026-09-07,boisson-gazeuse-25cl-la-cigogne,Boisson gazeuse 25cl – LA CIGOGNE,boissons,3.95,https://aswakassalam.com/produit/boisson-gazeuse-25cl-la-cigogne/
-2026-09-07,boisson-gazeuse-au-jus-naturel-de-pamplemousse-rose-200ml-le-tribute,BOISSON GAZEUSE AU JUS NATUREL DE PAMPLEMOUSSE ROSE 200ML LE TRIBUTE,boissons,26.95,https://aswakassalam.com/produit/boisson-gazeuse-au-jus-naturel-de-pamplemousse-rose-200ml-le-tribute/
-2026-09-07,boisson-gazeuse-orange-sanguine-canette-33cl-san-pellegrino,BOISSON GAZEUSE ORANGE SANGUINE CANETTE 33CL SAN PELLEGRINO,boissons,12.95,https://aswakassalam.com/produit/boisson-gazeuse-orange-sanguine-canette-33cl-san-pellegrino/
-2026-09-07,boisson-juper-orange-1l-valencia,BOISSON JUPER ORANGE 1L VALENCIA,boissons,6.95,https://aswakassalam.com/produit/boisson-juper-orange-1l-valencia/
-2026-09-07,brochettes-de-poulet-aux-3-poivrons-1kg,BROCHETTES DE POULET AUX 3 POIVRONS 1KG,boucherie-volaille,86.95,https://aswakassalam.com/produit/brochettes-de-poulet-aux-3-poivrons-1kg/
-2026-09-07,burger-de-boeuf-1kg,BURGER DE BOEUF 1KG,boucherie-volaille,144.95,https://aswakassalam.com/produit/burger-de-boeuf-1kg/
-2026-09-07,coquelet-a-la-piece,COQUELET A LA PIECE,boucherie-volaille,27.9,https://aswakassalam.com/produit/coquelet-a-la-piece/
-2026-09-07,cote-de-veau-1-kg,COTE DE VEAU 1 KG,boucherie-volaille,127.9,https://aswakassalam.com/produit/cote-de-veau-1-kg/
-2026-09-07,cuisse-de-poulet-1kg,CUISSE DE POULET 1KG,boucherie-volaille,39.9,https://aswakassalam.com/produit/cuisse-de-poulet-1kg/
-2026-09-07,cuisses-de-poulet-farcies-a-la-feta-1kg,CUISSES DE POULET FARCIES A LA FETA 1KG,boucherie-volaille,60.95,https://aswakassalam.com/produit/cuisses-de-poulet-farcies-a-la-feta-1kg/
-2026-09-07,entrecote-de-boeuf-1kg,ENTRECOTE DE BOEUF 1KG,boucherie-volaille,149.95,https://aswakassalam.com/produit/entrecote-de-boeuf-1kg/
-2026-09-07,faux-filet-new-york-05kg,"FAUX FILET NEW YORK 0,5KG",boucherie-volaille,77.5,https://aswakassalam.com/produit/faux-filet-new-york-05kg/
-2026-09-07,filet-de-poulet-1kg,FILET DE POULET 1KG,boucherie-volaille,59.9,https://aswakassalam.com/produit/filet-de-poulet-1kg/
-2026-09-07,gigot-d%c2%92agneau-entier-%c2%93calibre-2kg%c2%94,GIGOT DAGNEAU ENTIER CALIBRE +-2KG,boucherie-volaille,345.8,https://aswakassalam.com/produit/gigot-d%c2%92agneau-entier-%c2%93calibre-2kg%c2%94/
-2026-09-07,haut-de-cuisse-de-poulet-1kg,HAUT DE CUISSE DE POULET 1KG,boucherie-volaille,33.9,https://aswakassalam.com/produit/haut-de-cuisse-de-poulet-1kg/
-2026-09-07,jarret-de-boeuf-avec-os-1kg,JARRET DE BOEUF AVEC OS 1KG,boucherie-volaille,141.9,https://aswakassalam.com/produit/jarret-de-boeuf-avec-os-1kg/
-2026-09-07,merguez-de-boeuf-1kg,MERGUEZ DE BOEUF 1KG,boucherie-volaille,111.9,https://aswakassalam.com/produit/merguez-de-boeuf-1kg/
-2026-09-07,pied-de-veau,PIED DE VEAU,boucherie-volaille,164.9,https://aswakassalam.com/produit/pied-de-veau/
-2026-09-07,pilons-de-poulet-1kg,PILONS DE POULET 1KG,boucherie-volaille,45.9,https://aswakassalam.com/produit/pilons-de-poulet-1kg/
-2026-09-07,poulet-entier-1-piece,POULET ENTIER 1 PIECE,boucherie-volaille,52.5,https://aswakassalam.com/produit/poulet-entier-1-piece/
-2026-09-07,poulet-fermier-a-la-piece,POULET FERMIER A LA PIECE,boucherie-volaille,139.0,https://aswakassalam.com/produit/poulet-fermier-a-la-piece/
-2026-09-07,queue-de-boeuf-1kg,QUEUE DE BOEUF 1KG,boucherie-volaille,104.95,https://aswakassalam.com/produit/queue-de-boeuf-1kg/
-2026-09-07,saucisse-de-dinde-1kg,SAUCISSE DE DINDE 1KG,boucherie-volaille,49.95,https://aswakassalam.com/produit/saucisse-de-dinde-1kg/
-2026-09-07,saucisse-de-poulet-1kg,SAUCISSE DE POULET 1KG,boucherie-volaille,56.9,https://aswakassalam.com/produit/saucisse-de-poulet-1kg/
-2026-09-07,steak-de-boeuf-1kg,STEAK DE BOEUF 1KG,boucherie-volaille,145.9,https://aswakassalam.com/produit/steak-de-boeuf-1kg/
-2026-09-07,tagine-de-boeuf-extra-1kg,TAGINE DE BOEUF EXTRA 1KG,boucherie-volaille,125.95,https://aswakassalam.com/produit/tagine-de-boeuf-extra-1kg/
-2026-09-07,viande-hachee-de-boeuf-avec-graisse-1kg,VIANDE HACHEE DE BOEUF AVEC GRAISSE 1KG,boucherie-volaille,119.95,https://aswakassalam.com/produit/viande-hachee-de-boeuf-avec-graisse-1kg/
-2026-09-07,viande-hachee-de-boeuf-nature-1kg,VIANDE HACHEE DE BOEUF NATURE 1KG,boucherie-volaille,132.9,https://aswakassalam.com/produit/viande-hachee-de-boeuf-nature-1kg/
-2026-09-07,wings-de-poulet-marinees-1kg,WINGS DE POULET MARINEES 1KG,boucherie-volaille,36.95,https://aswakassalam.com/produit/wings-de-poulet-marinees-1kg/
+2026-09-07,cake-oreo,CAKE INDIVIDUEL OREO,patisserie,19.95,https://aswakassalam.com/produit/cake-oreo/
+2026-09-07,eclaire,ECLAIR AU CHOCOLAT,patisserie,10.95,https://aswakassalam.com/produit/eclaire/
+2026-09-07,flan-x2,FLAN AUX FRUITS CONFITS,patisserie,14.95,https://aswakassalam.com/produit/flan-x2/
+2026-09-07,tarte-indiv-chocolat,TARTE INDIVIDUELLE AU CHOCOLAT,patisserie,12.95,https://aswakassalam.com/produit/tarte-indiv-chocolat/
 2026-09-07,baguette-a-lancienne-pavot-as,BAGUETTE A L’ANCIENNE AU PAVOT 250G,boulangerie,5.95,https://aswakassalam.com/produit/baguette-a-lancienne-pavot-as/
 2026-09-07,baguette-a-lancienne-sesame-as,BAGUETTE A L’ANCIENNE AU SESAME 250G,boulangerie,5.95,https://aswakassalam.com/produit/baguette-a-lancienne-sesame-as/
 2026-09-07,baguette-a-lancienne-nature-as,BAGUETTE A L’ANCIENNE NATURE 250G,boulangerie,3.5,https://aswakassalam.com/produit/baguette-a-lancienne-nature-as/
@@ -510,6 +29,7 @@ date,product_id,produit,categorie,prix,source_url
 2026-09-07,pain-burger-geant-complet-4-unites-assylor,PAIN BURGER GEANT COMPLET 4 UNITES ASSYLOR,boulangerie,14.95,https://aswakassalam.com/produit/pain-burger-geant-complet-4-unites-assylor/
 2026-09-07,pain-chawarma-nature-7-unites-273g-chef-du-pain,PAIN CHAWARMA NATURE 7 UNITES 273G CHEF DU PAIN,boulangerie,7.95,https://aswakassalam.com/produit/pain-chawarma-nature-7-unites-273g-chef-du-pain/
 2026-09-07,pain-ciabatta-a-lhuile-dolive-4-unites-assylor,PAIN CIABATTA A L’HUILE D’OLIVE 4 UNITES ASSYLOR,boulangerie,13.5,https://aswakassalam.com/produit/pain-ciabatta-a-lhuile-dolive-4-unites-assylor/
+2026-09-07,pain-de-mie-blanc-500-gr,PAIN DE MIE BLANC 500G,boulangerie,11.95,https://aswakassalam.com/produit/pain-de-mie-blanc-500-gr/
 2026-09-07,pain-de-mie-complet-430g-bimbo,PAIN DE MIE BLE COMPLET 430G BIMBO,boulangerie,20.5,https://aswakassalam.com/produit/pain-de-mie-complet-430g-bimbo/
 2026-09-07,pain-de-mie-ble-complet-470g-pain-dor,PAIN DE MIE BLE COMPLET 470G PAIN D’OR,boulangerie,16.95,https://aswakassalam.com/produit/pain-de-mie-ble-complet-470g-pain-dor/
 2026-09-07,pain-de-mie-complet-780g-bimbo,PAIN DE MIE COMPLET 780G BIMBO,boulangerie,31.5,https://aswakassalam.com/produit/pain-de-mie-complet-780g-bimbo/
@@ -519,7 +39,67 @@ date,product_id,produit,categorie,prix,source_url
 2026-09-07,pain-de-mie-nature-550g-maxi-jac-jacquet,PAIN DE MIE NATURE 550G MAXI JAC’ JACQUET,boulangerie,34.9,https://aswakassalam.com/produit/pain-de-mie-nature-550g-maxi-jac-jacquet/
 2026-09-07,pain-de-mie-nature-720g-bimbo,PAIN DE MIE NATURE 720G BIMBO,boulangerie,30.95,https://aswakassalam.com/produit/pain-de-mie-nature-720g-bimbo/
 2026-09-07,pain-hot-dog-4-unites-jacquet,PAIN HOT DOG 4 UNITES JACQUET,boulangerie,31.9,https://aswakassalam.com/produit/pain-hot-dog-4-unites-jacquet/
-2026-09-07,pain-hot-dog-4-unites-assylor,PAIN HOT-DOG 4 UNITES ASSYLOR,boulangerie,10.95,https://aswakassalam.com/produit/pain-hot-dog-4-unites-assylor/
+2026-09-07,ananas-la-piece-1kg-a-1200kg,"ANANAS LA PIECE (1KG A 1,200KG)",fruits-legumes,32.0,https://aswakassalam.com/produit/ananas-la-piece-1kg-a-1200kg/
+2026-09-07,avocat-1kg,AVOCAT 1KG,fruits-legumes,62.95,https://aswakassalam.com/produit/avocat-1kg/
+2026-09-07,banane-import-1kg,BANANE IMPORT 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/banane-import-1kg/
+2026-09-07,brocoli-1kg,BROCOLI 1KG,fruits-legumes,29.95,https://aswakassalam.com/produit/brocoli-1kg/
+2026-09-07,celeri-botte,CELERI BOTTE,fruits-legumes,15.95,https://aswakassalam.com/produit/celeri-botte/
+2026-09-07,champignon-de-paris-500g,CHAMPIGNON DE PARIS 500G,fruits-legumes,34.95,https://aswakassalam.com/produit/champignon-de-paris-500g/
+2026-09-07,chou-de-bruxelles-500g,CHOU DE BRUXELLES 500G,fruits-legumes,17.95,https://aswakassalam.com/produit/chou-de-bruxelles-500g/
+2026-09-07,citron-1kg,CITRON 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/citron-1kg/
+2026-09-07,courgette-ronde-1kg,COURGETTE RONDE 1KG,fruits-legumes,16.95,https://aswakassalam.com/produit/courgette-ronde-1kg/
+2026-09-07,couscous-barquette-2kg,COUSCOUS BARQUETTE  +/- 2KG,fruits-legumes,22.95,https://aswakassalam.com/produit/couscous-barquette-2kg/
+2026-09-07,fraise-barquette-250,FRAISE BARQUETTE 250,fruits-legumes,12.95,https://aswakassalam.com/produit/fraise-barquette-250/
+2026-09-07,framboise-barquette-125g,FRAMBOISE BARQUETTE 125G,fruits-legumes,24.95,https://aswakassalam.com/produit/framboise-barquette-125g/
+2026-09-07,haricot-vert-1kg,HARICOT VERT 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/haricot-vert-1kg/
+2026-09-07,kiwi-1kg,KIWI 1KG,fruits-legumes,49.95,https://aswakassalam.com/produit/kiwi-1kg/
+2026-09-07,laitue-rouge-a-la-piece,LAITUE ROUGE A LA PIECE,fruits-legumes,6.5,https://aswakassalam.com/produit/laitue-rouge-a-la-piece/
+2026-09-07,mangue-a-la-piece-450g-a-500g,MANGUE A LA PIECE  (450G A 500G),fruits-legumes,16.95,https://aswakassalam.com/produit/mangue-a-la-piece-450g-a-500g/
+2026-09-07,mangue-avion-1kg,MANGUE AVION 1KG,fruits-legumes,31.95,https://aswakassalam.com/produit/mangue-avion-1kg/
+2026-09-07,melon-cantaloup-1kg,MELON CANTALOUP 1KG,fruits-legumes,14.95,https://aswakassalam.com/produit/melon-cantaloup-1kg/
+2026-09-07,melon-jaune-marhoum-a-la-piece-2kg,MELON JAUNE MARHOUM A LA PIECE 2KG,fruits-legumes,16.0,https://aswakassalam.com/produit/melon-jaune-marhoum-a-la-piece-2kg/
+2026-09-07,nectarine-1kg,NECTARINE 1KG,fruits-legumes,15.95,https://aswakassalam.com/produit/nectarine-1kg/
+2026-09-07,orange-a-jus-1kg,ORANGE A JUS 1KG,fruits-legumes,8.95,https://aswakassalam.com/produit/orange-a-jus-1kg/
+2026-09-07,peche-1kg,PECHE 1KG,fruits-legumes,15.95,https://aswakassalam.com/produit/peche-1kg/
+2026-09-07,piment-fort-barquette-500g,PIMENT FORT BARQUETTE 500G,fruits-legumes,7.0,https://aswakassalam.com/produit/piment-fort-barquette-500g/
+2026-09-07,poire-william-au-kg,POIRE WILLIAM AU KG,fruits-legumes,32.95,https://aswakassalam.com/produit/poire-william-au-kg/
+2026-09-07,poireau-1kg,POIREAU 1KG,fruits-legumes,18.95,https://aswakassalam.com/produit/poireau-1kg/
+2026-09-07,poivron-rouge-1kg,POIVRON ROUGE 1KG,fruits-legumes,16.95,https://aswakassalam.com/produit/poivron-rouge-1kg/
+2026-09-07,pomme-de-terre-blanche-1kg,POMME DE TERRE BLANCHE 1KG,fruits-legumes,7.95,https://aswakassalam.com/produit/pomme-de-terre-blanche-1kg/
+2026-09-07,pomme-rouge-1-kg,POMME ROUGE 1 KG,fruits-legumes,19.95,https://aswakassalam.com/produit/pomme-rouge-1-kg/
+2026-09-07,pomme-rouge-import-1kg,POMME ROUGE IMPORT 1KG,fruits-legumes,34.95,https://aswakassalam.com/produit/pomme-rouge-import-1kg/
+2026-09-07,potiron-1kg,POTIRON 1KG,fruits-legumes,9.95,https://aswakassalam.com/produit/potiron-1kg/
+2026-09-07,prune-noir-1kg,PRUNE NOIR 1KG,fruits-legumes,21.95,https://aswakassalam.com/produit/prune-noir-1kg/
+2026-09-07,raisin-blanc-1kg,RAISIN BLANC 1KG,fruits-legumes,14.95,https://aswakassalam.com/produit/raisin-blanc-1kg/
+2026-09-07,romarin-botte,ROMARIN BOTTE,fruits-legumes,6.5,https://aswakassalam.com/produit/romarin-botte/
+2026-09-07,salade-lolo-rouge-piece,SALADE LOLO ROUGE PIECE,fruits-legumes,6.95,https://aswakassalam.com/produit/salade-lolo-rouge-piece/
+2026-09-07,salade-lolo-vert-piece,SALADE LOLO VERT PIECE,fruits-legumes,6.5,https://aswakassalam.com/produit/salade-lolo-vert-piece/
+2026-09-07,thym-botte,THYM BOTTE,fruits-legumes,5.95,https://aswakassalam.com/produit/thym-botte/
+2026-09-07,brochettes-de-poulet-aux-3-poivrons-1kg,BROCHETTES DE POULET AUX 3 POIVRONS 1KG,boucherie-volaille,86.95,https://aswakassalam.com/produit/brochettes-de-poulet-aux-3-poivrons-1kg/
+2026-09-07,burger-de-boeuf-1kg,BURGER DE BOEUF 1KG,boucherie-volaille,144.95,https://aswakassalam.com/produit/burger-de-boeuf-1kg/
+2026-09-07,coquelet-a-la-piece,COQUELET A LA PIECE,boucherie-volaille,27.9,https://aswakassalam.com/produit/coquelet-a-la-piece/
+2026-09-07,cote-de-veau-1-kg,COTE DE VEAU 1 KG,boucherie-volaille,127.9,https://aswakassalam.com/produit/cote-de-veau-1-kg/
+2026-09-07,cuisse-de-poulet-1kg,CUISSE DE POULET 1KG,boucherie-volaille,39.9,https://aswakassalam.com/produit/cuisse-de-poulet-1kg/
+2026-09-07,cuisses-de-poulet-farcies-a-la-feta-1kg,CUISSES DE POULET FARCIES A LA FETA 1KG,boucherie-volaille,60.95,https://aswakassalam.com/produit/cuisses-de-poulet-farcies-a-la-feta-1kg/
+2026-09-07,entrecote-de-boeuf-1kg,ENTRECOTE DE BOEUF 1KG,boucherie-volaille,149.95,https://aswakassalam.com/produit/entrecote-de-boeuf-1kg/
+2026-09-07,faux-filet-new-york-05kg,"FAUX FILET NEW YORK 0,5KG",boucherie-volaille,77.5,https://aswakassalam.com/produit/faux-filet-new-york-05kg/
+2026-09-07,filet-de-poulet-1kg,FILET DE POULET 1KG,boucherie-volaille,59.9,https://aswakassalam.com/produit/filet-de-poulet-1kg/
+2026-09-07,gigot-d%c2%92agneau-entier-%c2%93calibre-2kg%c2%94,GIGOT DAGNEAU ENTIER CALIBRE +-2KG,boucherie-volaille,345.8,https://aswakassalam.com/produit/gigot-d%c2%92agneau-entier-%c2%93calibre-2kg%c2%94/
+2026-09-07,haut-de-cuisse-de-poulet-1kg,HAUT DE CUISSE DE POULET 1KG,boucherie-volaille,33.9,https://aswakassalam.com/produit/haut-de-cuisse-de-poulet-1kg/
+2026-09-07,jarret-de-boeuf-avec-os-1kg,JARRET DE BOEUF AVEC OS 1KG,boucherie-volaille,141.9,https://aswakassalam.com/produit/jarret-de-boeuf-avec-os-1kg/
+2026-09-07,merguez-de-boeuf-1kg,MERGUEZ DE BOEUF 1KG,boucherie-volaille,111.9,https://aswakassalam.com/produit/merguez-de-boeuf-1kg/
+2026-09-07,pied-de-veau,PIED DE VEAU,boucherie-volaille,164.9,https://aswakassalam.com/produit/pied-de-veau/
+2026-09-07,pilons-de-poulet-1kg,PILONS DE POULET 1KG,boucherie-volaille,45.9,https://aswakassalam.com/produit/pilons-de-poulet-1kg/
+2026-09-07,poulet-entier-1-piece,POULET ENTIER 1 PIECE,boucherie-volaille,52.5,https://aswakassalam.com/produit/poulet-entier-1-piece/
+2026-09-07,poulet-fermier-a-la-piece,POULET FERMIER A LA PIECE,boucherie-volaille,139.0,https://aswakassalam.com/produit/poulet-fermier-a-la-piece/
+2026-09-07,queue-de-boeuf-1kg,QUEUE DE BOEUF 1KG,boucherie-volaille,104.95,https://aswakassalam.com/produit/queue-de-boeuf-1kg/
+2026-09-07,saucisse-de-dinde-1kg,SAUCISSE DE DINDE 1KG,boucherie-volaille,49.95,https://aswakassalam.com/produit/saucisse-de-dinde-1kg/
+2026-09-07,saucisse-de-poulet-1kg,SAUCISSE DE POULET 1KG,boucherie-volaille,56.9,https://aswakassalam.com/produit/saucisse-de-poulet-1kg/
+2026-09-07,steak-de-boeuf-1kg,STEAK DE BOEUF 1KG,boucherie-volaille,145.9,https://aswakassalam.com/produit/steak-de-boeuf-1kg/
+2026-09-07,tagine-de-boeuf-extra-1kg,TAGINE DE BOEUF EXTRA 1KG,boucherie-volaille,125.95,https://aswakassalam.com/produit/tagine-de-boeuf-extra-1kg/
+2026-09-07,viande-hachee-de-boeuf-avec-graisse-1kg,VIANDE HACHEE DE BOEUF AVEC GRAISSE 1KG,boucherie-volaille,119.95,https://aswakassalam.com/produit/viande-hachee-de-boeuf-avec-graisse-1kg/
+2026-09-07,viande-hachee-de-boeuf-nature-1kg,VIANDE HACHEE DE BOEUF NATURE 1KG,boucherie-volaille,132.9,https://aswakassalam.com/produit/viande-hachee-de-boeuf-nature-1kg/
+2026-09-07,wings-de-poulet-marinees-1kg,WINGS DE POULET MARINEES 1KG,boucherie-volaille,36.95,https://aswakassalam.com/produit/wings-de-poulet-marinees-1kg/
 2026-09-07,agriche-1kg-ahl-fes,AGRICHE 1KG AHL FES,charcuterie-traiteur,76.95,https://aswakassalam.com/produit/agriche-1kg-ahl-fes/
 2026-09-07,agriche-250g-ahl-fes,AGRICHE 250G AHL FES,charcuterie-traiteur,25.5,https://aswakassalam.com/produit/agriche-250g-ahl-fes/
 2026-09-07,anchois-marines-a-loriental-200g-la-monegasque,ANCHOIS MARINES A L’ORIENTAL 200G LA MONEGASQUE,charcuterie-traiteur,39.95,https://aswakassalam.com/produit/anchois-marines-a-loriental-200g-la-monegasque/
@@ -592,6 +172,149 @@ date,product_id,produit,categorie,prix,source_url
 2026-09-07,boisson-de-riz-au-cacao-bio-sans-gluten-1l-scotti,BOISSON DE RIZ AU CACAO BIO SANS GLUTEN 1L  SCOTTI,cremerie,25.5,https://aswakassalam.com/produit/boisson-de-riz-au-cacao-bio-sans-gluten-1l-scotti/
 2026-09-07,boisson-de-riz-bio-sans-gluten-1l-scotti,BOISSON DE RIZ BIO SANS GLUTEN 1L SCOTTI,cremerie,24.5,https://aswakassalam.com/produit/boisson-de-riz-bio-sans-gluten-1l-scotti/
 2026-09-07,camembert-240g-8-portions-president,CAMEMBERT 240G 8 PORTIONS PRESIDENT,cremerie,88.5,https://aswakassalam.com/produit/camembert-240g-8-portions-president/
+2026-09-07,beurre-de-cacahuetes-340g-janis-4,Beurre de cacahuètes 340g – JANIS,epicerie,27.95,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-4/
+2026-09-07,boite-de-mais-340g-janis,Boîte de maïs 340g – JANIS,epicerie,12.5,https://aswakassalam.com/produit/boite-de-mais-340g-janis/
+2026-09-07,cornichons-epices-en-morceaux-330g-kuhne,Cornichons épicés en morceaux 330g – KÜHNE,epicerie,39.95,https://aswakassalam.com/produit/cornichons-epices-en-morceaux-330g-kuhne/
+2026-09-07,cornichons-legerement-surcres-180g-kuhne,Cornichons légèrement surcrés 180g – KÜHNE,epicerie,41.5,https://aswakassalam.com/produit/cornichons-legerement-surcres-180g-kuhne/
+2026-09-07,farine-fleur-10kg-kenz,Farine fleur 10kg – KENZ,epicerie,55.95,https://aswakassalam.com/produit/farine-fleur-10kg-kenz/
+2026-09-07,farine-pain-beldi-5kg-farine-de-luxe-1kg-luxor,Farine pain Beldi 5kg + farine de luxe 1kg – LUXOR,epicerie,33.9,https://aswakassalam.com/produit/farine-pain-beldi-5kg-farine-de-luxe-1kg-luxor/
+2026-09-07,huile-dolive-vierge-1l-campo-sur,Huile d’olive vierge 1L  – CAMPO SUR,epicerie,54.95,https://aswakassalam.com/produit/huile-dolive-vierge-1l-campo-sur/
+2026-09-07,lentilles-1kg-janis-2,Lentilles 1kg – JANIS,epicerie,12.95,https://aswakassalam.com/produit/lentilles-1kg-janis-2/
+2026-09-07,lot-3-boites-de-champignons-en-morceaux-185g-janis,Lot 3 boîtes de champignons en morceaux 185g – JANIS,epicerie,29.95,https://aswakassalam.com/produit/lot-3-boites-de-champignons-en-morceaux-185g-janis/
+2026-09-07,lot-de-3-boites-de-mais-140g-janis,Lot de 3 Boîtes de maïs 140g – JANIS,epicerie,28.95,https://aswakassalam.com/produit/lot-de-3-boites-de-mais-140g-janis/
+2026-09-07,lot-de-3-boites-de-thon-80g-janis,Lot de 3 boîtes de thon 80g – JANIS,epicerie,24.5,https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-janis/
+2026-09-07,lot-de-3-boites-de-thon-80g-sauce-tomate-ou-huile-de-tournesol-janis,Lot de 3 boites de thon 80g sauce tomate ou huile de tournesol  – JANIS,epicerie,24.95,https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-sauce-tomate-ou-huile-de-tournesol-janis/
+2026-09-07,lot-de-3-couscous-calibre-moyen-500g-dalia,Lot de 3 couscous calibre moyen 500g DALIA,epicerie,16.2,https://aswakassalam.com/produit/lot-de-3-couscous-calibre-moyen-500g-dalia/
+2026-09-07,lot-de-3-couscous-moyens-500g-alitkane-2,Lot de 3 couscous moyens 500g – ALITKANE,epicerie,15.95,https://aswakassalam.com/produit/lot-de-3-couscous-moyens-500g-alitkane-2/
+2026-09-07,lot-de-3-spaghettis-500g-janis,Lot de 3 spaghettis 500g  – JANIS,epicerie,21.6,https://aswakassalam.com/produit/lot-de-3-spaghettis-500g-janis/
+2026-09-07,melange-fruits-secs-80g-royal-mix-denia,Mélange fruits secs 80g Royal Mix – DÉNIA,epicerie,15.95,https://aswakassalam.com/produit/melange-fruits-secs-80g-royal-mix-denia/
+2026-09-07,semoule-fine-ble-dur-5kg-moony,Semoule fine blé dur 5Kg – MOONY,epicerie,52.95,https://aswakassalam.com/produit/semoule-fine-ble-dur-5kg-moony/
+2026-09-07,abricot-sec-500g-oncle-sam,ABRICOT SEC 500G ONCLE SAM,epicerie,118.6,https://aswakassalam.com/produit/abricot-sec-500g-oncle-sam/
+2026-09-07,ail-semoule-100g-gaya,AIL SEMOULE 100G GAYA,epicerie,22.95,https://aswakassalam.com/produit/ail-semoule-100g-gaya/
+2026-09-07,ail-semoule-215g-harmony,AIL SEMOULE 215G HARMONY,epicerie,83.9,https://aswakassalam.com/produit/ail-semoule-215g-harmony/
+2026-09-07,ail-semoule-300g-gaya,AIL SEMOULE 300G GAYA,epicerie,61.2,https://aswakassalam.com/produit/ail-semoule-300g-gaya/
+2026-09-07,ail-semoule-60g-ducros,AIL SEMOULE 60G DUCROS,epicerie,22.1,https://aswakassalam.com/produit/ail-semoule-60g-ducros/
+2026-09-07,ail-semoule-60g-harmony,AIL SEMOULE 60G HARMONY,epicerie,18.95,https://aswakassalam.com/produit/ail-semoule-60g-harmony/
+2026-09-07,amande-riffi-900g-oncle-sam,AMANDE RIFFI 900G ONCLE SAM,epicerie,146.95,https://aswakassalam.com/produit/amande-riffi-900g-oncle-sam/
+2026-09-07,amandes-250g-oncle-sam,AMANDES 250G ONCLE SAM,epicerie,43.5,https://aswakassalam.com/produit/amandes-250g-oncle-sam/
+2026-09-07,amandes-riffi-200g-rosana,AMANDES RIFFI 200G ROSANA,epicerie,33.5,https://aswakassalam.com/produit/amandes-riffi-200g-rosana/
+2026-09-07,anchois-a-lhuile-dolive-extra-vierge-100g-connetable,ANCHOIS A L’HUILE D’OLIVE EXTRA VIERGE 100G CONNETABLE,epicerie,27.9,https://aswakassalam.com/produit/anchois-a-lhuile-dolive-extra-vierge-100g-connetable/
+2026-09-07,angel-hair-n1-500g-barilla,ANGEL HAIR N°1 500G BARILLA,epicerie,26.95,https://aswakassalam.com/produit/angel-hair-n1-500g-barilla/
+2026-09-07,assaisonement-kefta-35g-javana,ASSAISONEMENT KEFTA 35G JAVANA,epicerie,16.95,https://aswakassalam.com/produit/assaisonement-kefta-35g-javana/
+2026-09-07,assaisonement-poulet-ail-origan-35g-ideal,ASSAISONEMENT POULET AIL ORIGAN 35G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-ail-origan-35g-ideal/
+2026-09-07,assaisonement-poulet-epice-gout-barbecue-52g-ideal,ASSAISONEMENT POULET EPICE GOUT BARBECUE 52G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-epice-gout-barbecue-52g-ideal/
+2026-09-07,assaisonement-poulet-epices-gout-grillade-32g-ideal,ASSAISONEMENT POULET EPICES GOUT GRILLADE 32G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-epices-gout-grillade-32g-ideal/
+2026-09-07,assaisonnement-chawarma-poulet-30g-javana,ASSAISONNEMENT CHAWARMA POULET 30G JAVANA,epicerie,16.95,https://aswakassalam.com/produit/assaisonnement-chawarma-poulet-30g-javana/
+2026-09-07,assaisonnement-grillade-40g-javana,ASSAISONNEMENT GRILLADE 40G JAVANA,epicerie,12.2,https://aswakassalam.com/produit/assaisonnement-grillade-40g-javana/
+2026-09-07,baba-ghannouge-pret-a-manger-385g-al-wadi,BABA GHANNOUGE PRET A MANGER 385G AL WADI,epicerie,46.95,https://aswakassalam.com/produit/baba-ghannouge-pret-a-manger-385g-al-wadi/
+2026-09-07,basilic-12g-harmony,BASILIC 12G HARMONY,epicerie,11.2,https://aswakassalam.com/produit/basilic-12g-harmony/
+2026-09-07,batonnet-de-glace-80ml-divers-parfums-haagen-dazs,Bâtonnet de glace 80ml divers parfums – HÄAGEN-DAZS,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/batonnet-de-glace-80ml-divers-parfums-haagen-dazs/
+2026-09-07,beurre-de-cacahuetes-340g-janis-2,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,29.85,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-2/
+2026-09-07,beurre-de-cacahuetes-340g-janis-3,Beurre de cacahuètes 340g – JANIS,biscuiterie-confiserie,27.95,https://aswakassalam.com/produit/beurre-de-cacahuetes-340g-janis-3/
+2026-09-07,cereales-cerealoco-1kg-cerealitalia,Céréales CEREALOCO 1kg – CEREALITALIA,biscuiterie-confiserie,39.95,https://aswakassalam.com/produit/cereales-cerealoco-1kg-cerealitalia/
+2026-09-07,fleur-de-mais-en-poudre-180g-alsa,Fleur de maïs en poudre 180g – ALSA,biscuiterie-confiserie,6.65,https://aswakassalam.com/produit/fleur-de-mais-en-poudre-180g-alsa/
+2026-09-07,lot-de-2-cafes-moulus-java-timor-200g-dubois,Lot de 2 cafés moulus JAVA TIMOR 200g – DUBOIS,biscuiterie-confiserie,68.95,https://aswakassalam.com/produit/lot-de-2-cafes-moulus-java-timor-200g-dubois/
+2026-09-07,lot-de-2-thes-verts-4011-en-filaments-200g-sultan,Lot de 2 thés verts 4011 en filaments 200g – SULTAN,biscuiterie-confiserie,36.95,https://aswakassalam.com/produit/lot-de-2-thes-verts-4011-en-filaments-200g-sultan/
+2026-09-07,lot-de-2-thes-verts-41022-en-filaments-200g-100g-dahmiss,Lot de 2 thés verts 41022 en filaments 200g + 100g – DAHMISS,biscuiterie-confiserie,28.95,https://aswakassalam.com/produit/lot-de-2-thes-verts-41022-en-filaments-200g-100g-dahmiss/
+2026-09-07,lot-de-3-thes-verts-en-grains-200g-selham,Lot de 3 thés verts en grains 200g – SELHAM,biscuiterie-confiserie,26.95,https://aswakassalam.com/produit/lot-de-3-thes-verts-en-grains-200g-selham/
+2026-09-07,mais-grilles-sales-100g-original-ou-barbecue-x-korn,Maïs grillés salés 100g Original ou barbecue – X-KORN,biscuiterie-confiserie,10.95,https://aswakassalam.com/produit/mais-grilles-sales-100g-original-ou-barbecue-x-korn/
+2026-09-07,miel-toutes-fleurs-850g-jnane-el-aassal,Miel toutes fleurs 850g – JNANE EL AÂSSAL,biscuiterie-confiserie,44.95,https://aswakassalam.com/produit/miel-toutes-fleurs-850g-jnane-el-aassal/
+2026-09-07,12-capsules-espresso-asta-black-10-achetes-2-gratuits,12 CAPSULES ESPRESSO ASTA BLACK (10 ACHETES = 2 GRATUITS),biscuiterie-confiserie,38.95,https://aswakassalam.com/produit/12-capsules-espresso-asta-black-10-achetes-2-gratuits/
+2026-09-07,225-morceaux-de-sucre-1kg-enmer,225 MORCEAUX DE SUCRE 1KG ENMER,biscuiterie-confiserie,6.15,https://aswakassalam.com/produit/225-morceaux-de-sucre-1kg-enmer/
+2026-09-07,4-barres-de-chocolat-au-lait-40g-kitkat-chunky,4 BARRES DE CHOCOLAT AU LAIT 40G KITKAT CHUNKY,biscuiterie-confiserie,29.95,https://aswakassalam.com/produit/4-barres-de-chocolat-au-lait-40g-kitkat-chunky/
+2026-09-07,amandes-effilees-100g-macao,AMANDES EFFILEES 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-effilees-100g-macao/
+2026-09-07,amandes-en-poudre-100g-macao,AMANDES EN POUDRE 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-en-poudre-100g-macao/
+2026-09-07,amandes-grillees-100g-oncle-sam,AMANDES GRILLEES 100G ONCLE SAM,biscuiterie-confiserie,24.95,https://aswakassalam.com/produit/amandes-grillees-100g-oncle-sam/
+2026-09-07,amandes-hachees-100g-macao,AMANDES HACHEES 100G MACAO,biscuiterie-confiserie,19.95,https://aswakassalam.com/produit/amandes-hachees-100g-macao/
+2026-09-07,amlou-cacahuete-200g-jnane-el-aassal,AMLOU CACAHUETE 200G JNANE EL AASSAL,biscuiterie-confiserie,15.5,https://aswakassalam.com/produit/amlou-cacahuete-200g-jnane-el-aassal/
+2026-09-07,amlou-cacahuete-700g-jnane-el-aassal,AMLOU CACAHUETE 700G JNANE EL AASSAL,biscuiterie-confiserie,47.95,https://aswakassalam.com/produit/amlou-cacahuete-700g-jnane-el-aassal/
+2026-09-07,assortiment-de-24-bouchees-ferrero-rondnoir-et-raffaello-ferrero-colletion,"ASSORTIMENT DE 24 BOUCHEES FERRERO, RONDNOIR ET RAFFAELLO FERRERO COLLETION",biscuiterie-confiserie,154.95,https://aswakassalam.com/produit/assortiment-de-24-bouchees-ferrero-rondnoir-et-raffaello-ferrero-colletion/
+2026-09-07,assortiment-de-chocolats-180g-creations-delaviuda,ASSORTIMENT DE CHOCOLATS 180G CREATIONS DELAVIUDA,biscuiterie-confiserie,153.95,https://aswakassalam.com/produit/assortiment-de-chocolats-180g-creations-delaviuda/
+2026-09-07,assortiment-de-chocolats-200g-selection-delaviuda,ASSORTIMENT DE CHOCOLATS 200G SELECTION DELAVIUDA,biscuiterie-confiserie,92.95,https://aswakassalam.com/produit/assortiment-de-chocolats-200g-selection-delaviuda/
+2026-09-07,assortiment-de-chocolats-sans-sucres-ajoutes-200g-selection-delaviuda,ASSORTIMENT DE CHOCOLATS SANS SUCRES AJOUTÉS 200G SELECTION DELAVIUDA,biscuiterie-confiserie,95.95,https://aswakassalam.com/produit/assortiment-de-chocolats-sans-sucres-ajoutes-200g-selection-delaviuda/
+2026-09-07,barre-caramel-peanuts-extrem-pack-de-5-unites-34g-excelo,BARRE CARAMEL & PEANUTS EXTREM PACK DE 5 UNITES 34G EXCELO,biscuiterie-confiserie,10.95,https://aswakassalam.com/produit/barre-caramel-peanuts-extrem-pack-de-5-unites-34g-excelo/
+2026-09-07,barre-chocolat-cacahuete-semi-enrobee-28g-nooco,BARRE CHOCOLAT CACAHUETE SEMI-ENROBEE 28G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-cacahuete-semi-enrobee-28g-nooco/
+2026-09-07,barre-chocolat-crispy-caramel-cacahuete-40g-nooco,BARRE CHOCOLAT CRISPY CARAMEL CACAHUETE 40G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-crispy-caramel-cacahuete-40g-nooco/
+2026-09-07,barre-chocolat-noix-de-coco-24g-nooco,BARRE CHOCOLAT NOIX DE COCO 24G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-noix-de-coco-24g-nooco/
+2026-09-07,barre-chocolat-nougat-34g-nooco,BARRE CHOCOLAT NOUGAT 34G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-nougat-34g-nooco/
+2026-09-07,barre-chocolat-nougat-caramel-42g-nooco,BARRE CHOCOLAT NOUGAT CARAMEL 42G NOOCO,biscuiterie-confiserie,4.95,https://aswakassalam.com/produit/barre-chocolat-nougat-caramel-42g-nooco/
+2026-09-07,barre-chocolat-nougat-caramel-cacahuete-24g-nooco,BARRE CHOCOLAT NOUGAT CARAMEL CACAHUETE 24G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-chocolat-nougat-caramel-cacahuete-24g-nooco/
+2026-09-07,barre-croustillante-chocolat-au-lait-18g-nooco,BARRE CROUSTILLANTE CHOCOLAT AU LAIT 18G NOOCO,biscuiterie-confiserie,1.95,https://aswakassalam.com/produit/barre-croustillante-chocolat-au-lait-18g-nooco/
+2026-09-07,barre-multi-cereales-au-chocolat-au-lait-621g-cerealitalia,BARRE MULTI-CEREALES AU CHOCOLAT AU LAIT 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-au-chocolat-au-lait-621g-cerealitalia/
+2026-09-07,barre-multi-cereales-aux-myrtilles-621g-cerealitalia,BARRE MULTI-CEREALES AUX MYRTILLES 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-aux-myrtilles-621g-cerealitalia/
+2026-09-07,barre-multi-cereales-aux-noix-de-coco-et-chocolat-621g-cerealitalia,BARRE MULTI-CEREALES AUX NOIX DE COCO ET CHOCOLAT 6*21G CEREALITALIA,biscuiterie-confiserie,22.95,https://aswakassalam.com/produit/barre-multi-cereales-aux-noix-de-coco-et-chocolat-621g-cerealitalia/
+2026-09-07,cannette-25cl-orangina-orangina-zero,Cannette 25cl – ORANGINA/ORANGINA ZÉRO,boissons,3.5,https://aswakassalam.com/produit/cannette-25cl-orangina-orangina-zero/
+2026-09-07,eau-minerale-25l-ain-soltane,"Eau minérale 2,5L – AIN SOLTANE",boissons,5.95,https://aswakassalam.com/produit/eau-minerale-25l-ain-soltane/
+2026-09-07,eau-minerale-gazeuse-1l-ain-soltane,Eau minérale gazeuse 1L – AÏN SOLTANE,boissons,5.0,https://aswakassalam.com/produit/eau-minerale-gazeuse-1l-ain-soltane/
+2026-09-07,ice-coffee-250ml-diverses-saveurs-rauch,"Ice coffee 250ml, diverses saveurs – RAUCH",boissons,21.95,https://aswakassalam.com/produit/ice-coffee-250ml-diverses-saveurs-rauch/
+2026-09-07,ice-tea-fruits-rouges-peche-50cl-lipton,Ice Tea fruits rouges/pêche 50cl – LIPTON,boissons,5.5,https://aswakassalam.com/produit/ice-tea-fruits-rouges-peche-50cl-lipton/
+2026-09-07,pack-6-canettes-boissons-gazeuses-25cl-coca-cola,Pack 6 canettes boissons gazeuses 25cl – COCA-COLA,boissons,21.95,https://aswakassalam.com/produit/pack-6-canettes-boissons-gazeuses-25cl-coca-cola/
+2026-09-07,7-up-canette-33cl,7 UP CANETTE 33CL,boissons,5.95,https://aswakassalam.com/produit/7-up-canette-33cl/
+2026-09-07,7-up-citron-1l,7 UP CITRON 1L,boissons,6.5,https://aswakassalam.com/produit/7-up-citron-1l/
+2026-09-07,7-up-citron-20cl,7 UP CITRON 20CL,boissons,2.95,https://aswakassalam.com/produit/7-up-citron-20cl/
+2026-09-07,7-up-citron-33cl,7 UP CITRON 33CL,boissons,3.5,https://aswakassalam.com/produit/7-up-citron-33cl/
+2026-09-07,7-up-citron-50cl,7 UP CITRON 50CL,boissons,4.5,https://aswakassalam.com/produit/7-up-citron-50cl/
+2026-09-07,7up-canette-25cl,7UP CANETTE 25CL,boissons,4.5,https://aswakassalam.com/produit/7up-canette-25cl/
+2026-09-07,boisson-a-lorange-frut-1l-marrakech,BOISSON A L’ORANGE FRUT 1L MARRAKECH,boissons,5.75,https://aswakassalam.com/produit/boisson-a-lorange-frut-1l-marrakech/
+2026-09-07,boisson-a-la-pulpe-dorange-1l-al-boustane,BOISSON A LA PULPE D’ORANGE 1L AL BOUSTANE,boissons,7.9,https://aswakassalam.com/produit/boisson-a-la-pulpe-dorange-1l-al-boustane/
+2026-09-07,boisson-a-la-pulpe-dorange-1l-jutos-jaouda,BOISSON A LA PULPE D’ORANGE 1L JUTOS JAOUDA,boissons,9.8,https://aswakassalam.com/produit/boisson-a-la-pulpe-dorange-1l-jutos-jaouda/
+2026-09-07,boisson-a-la-pulpe-peche-25cl-cappy-pulpy,BOISSON A LA PULPE PECHE 25CL CAPPY PULPY,boissons,4.5,https://aswakassalam.com/produit/boisson-a-la-pulpe-peche-25cl-cappy-pulpy/
+2026-09-07,boisson-ananas-des-tropiques-1l-marrakech,BOISSON ANANAS DES TROPIQUES 1L MARRAKECH,boissons,15.5,https://aswakassalam.com/produit/boisson-ananas-des-tropiques-1l-marrakech/
+2026-09-07,boisson-cocktail-1l-jutos,BOISSON COCKTAIL 1L JUTOS,boissons,8.5,https://aswakassalam.com/produit/boisson-cocktail-1l-jutos/
+2026-09-07,boisson-cocktail-355cl-rauch,"BOISSON COCKTAIL 35,5CL RAUCH",boissons,16.9,https://aswakassalam.com/produit/boisson-cocktail-355cl-rauch/
+2026-09-07,boisson-energetique-25cl-burn,BOISSON ENERGETIQUE 25CL BURN,boissons,11.85,https://aswakassalam.com/produit/boisson-energetique-25cl-burn/
+2026-09-07,boisson-energetique-25cl-red-bull,BOISSON ENERGETIQUE 25CL RED BULL,boissons,22.95,https://aswakassalam.com/produit/boisson-energetique-25cl-red-bull/
+2026-09-07,boisson-energetique-citron-50cl-aquarius,BOISSON ENERGETIQUE CITRON 50CL AQUARIUS,boissons,7.5,https://aswakassalam.com/produit/boisson-energetique-citron-50cl-aquarius/
+2026-09-07,boisson-energetique-pack-425cl-red-bull,BOISSON ENERGETIQUE PACK 4*25CL RED BULL,boissons,83.95,https://aswakassalam.com/produit/boisson-energetique-pack-425cl-red-bull/
+2026-09-07,boisson-energetique-sans-sucre-25cl-red-bull,BOISSON ENERGETIQUE SANS SUCRE 25CL RED BULL,boissons,21.5,https://aswakassalam.com/produit/boisson-energetique-sans-sucre-25cl-red-bull/
+2026-09-07,boisson-energisante-blue-25cl-bomba,BOISSON ENERGISANTE BLUE 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-blue-25cl-bomba/
+2026-09-07,boisson-energisante-burry-blast-25cl-sting,BOISSON ENERGISANTE BURRY BLAST 25CL STING,boissons,7.95,https://aswakassalam.com/produit/boisson-energisante-burry-blast-25cl-sting/
+2026-09-07,boisson-energisante-cherry-25cl-bomba,BOISSON ENERGISANTE CHERRY 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-cherry-25cl-bomba/
+2026-09-07,boisson-energisante-classic-250ml-hell,BOISSON ENERGISANTE CLASSIC 250ML HELL,boissons,14.95,https://aswakassalam.com/produit/boisson-energisante-classic-250ml-hell/
+2026-09-07,boisson-energisante-classic-25cl-bomba,BOISSON ENERGISANTE CLASSIC 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-classic-25cl-bomba/
+2026-09-07,boisson-energisante-gold-rush-25cl-sting,BOISSON ENERGISANTE GOLD RUSH 25CL STING,boissons,7.95,https://aswakassalam.com/produit/boisson-energisante-gold-rush-25cl-sting/
+2026-09-07,boisson-energisante-mojito-25cl-bomba,BOISSON ENERGISANTE MOJITO 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-mojito-25cl-bomba/
+2026-09-07,boisson-energisante-pink-25cl-bomba,BOISSON ENERGISANTE PINK 25CL BOMBA,boissons,30.5,https://aswakassalam.com/produit/boisson-energisante-pink-25cl-bomba/
+2026-09-07,boisson-gazeuse-25cl-la-cigogne,Boisson gazeuse 25cl – LA CIGOGNE,boissons,3.95,https://aswakassalam.com/produit/boisson-gazeuse-25cl-la-cigogne/
+2026-09-07,boisson-gazeuse-au-jus-naturel-de-pamplemousse-rose-200ml-le-tribute,BOISSON GAZEUSE AU JUS NATUREL DE PAMPLEMOUSSE ROSE 200ML LE TRIBUTE,boissons,26.95,https://aswakassalam.com/produit/boisson-gazeuse-au-jus-naturel-de-pamplemousse-rose-200ml-le-tribute/
+2026-09-07,boisson-gazeuse-orange-sanguine-canette-33cl-san-pellegrino,BOISSON GAZEUSE ORANGE SANGUINE CANETTE 33CL SAN PELLEGRINO,boissons,12.95,https://aswakassalam.com/produit/boisson-gazeuse-orange-sanguine-canette-33cl-san-pellegrino/
+2026-09-07,boisson-juper-orange-1l-valencia,BOISSON JUPER ORANGE 1L VALENCIA,boissons,6.95,https://aswakassalam.com/produit/boisson-juper-orange-1l-valencia/
+2026-09-07,creme-solaire-protectrice-et-hydratante-spf-50-200ml-nivea,Crème solaire protectrice et hydratante SPF 50+ 200ml – NIVEA,beaute-hygiene,164.95,https://aswakassalam.com/produit/creme-solaire-protectrice-et-hydratante-spf-50-200ml-nivea/
+2026-09-07,gel-douche-250ml-divers-parfums-taous,Gel douche 250ml. Divers parfums – TAOUS,beaute-hygiene,14.95,https://aswakassalam.com/produit/gel-douche-250ml-divers-parfums-taous/
+2026-09-07,lot-de-2-dentifrices-white-now-75ml-signal,Lot de 2 dentifrices WHITE NOW 75ml – SIGNAL,beaute-hygiene,27.95,https://aswakassalam.com/produit/lot-de-2-dentifrices-white-now-75ml-signal/
+2026-09-07,lot-de-2-gels-douche-250ml-divers-parfums-taous,Lot de 2 gels douche 250ml divers parfums – TAOUS,beaute-hygiene,21.95,https://aswakassalam.com/produit/lot-de-2-gels-douche-250ml-divers-parfums-taous/
+2026-09-07,lot-de-2-gels-douches-lait-hydratant-250ml-divers-parfums-cottage,Lot de 2 gels douches lait hydratant 250ml Divers parfums – COTTAGE,beaute-hygiene,55.95,https://aswakassalam.com/produit/lot-de-2-gels-douches-lait-hydratant-250ml-divers-parfums-cottage/
+2026-09-07,20-rasoirs-blue2-gillette-15-achetes-5-gratuits,20 RASOIRS BLUE2 GILLETTE (15 ACHETES = 5 GRATUITS),beaute-hygiene,83.95,https://aswakassalam.com/produit/20-rasoirs-blue2-gillette-15-achetes-5-gratuits/
+2026-09-07,after-shave-original-100-ml-brut,AFTER SHAVE ORIGINAL 100 ML BRUT,beaute-hygiene,50.5,https://aswakassalam.com/produit/after-shave-original-100-ml-brut/
+2026-09-07,apres-shampooing-avocat-200ml-ultra-doux,APRES SHAMPOOING AVOCAT 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-avocat-200ml-ultra-doux/
+2026-09-07,apres-shampooing-avocat-beurre-de-karite-400ml-ultra-doux-garnier,APRES SHAMPOOING AVOCAT BEURRE DE KARITE 400ML ULTRA DOUX GARNIER,beaute-hygiene,59.95,https://aswakassalam.com/produit/apres-shampooing-avocat-beurre-de-karite-400ml-ultra-doux-garnier/
+2026-09-07,apres-shampooing-dream-long-200ml-elseve,APRES SHAMPOOING DREAM LONG 200ML ELSEVE,beaute-hygiene,44.95,https://aswakassalam.com/produit/apres-shampooing-dream-long-200ml-elseve/
+2026-09-07,apres-shampooing-huile-extraordinaire-pour-cheveux-normaux-200ml-elseve,APRES SHAMPOOING HUILE EXTRAORDINAIRE POUR CHEVEUX NORMAUX 200ML ELSEVE,beaute-hygiene,44.95,https://aswakassalam.com/produit/apres-shampooing-huile-extraordinaire-pour-cheveux-normaux-200ml-elseve/
+2026-09-07,apres-shampooing-hydratant-72h-hyaluron-repulp-200ml-elseve,APRES SHAMPOOING HYDRATANT 72H HYALURON REPULP 200ML ELSEVE,beaute-hygiene,48.95,https://aswakassalam.com/produit/apres-shampooing-hydratant-72h-hyaluron-repulp-200ml-elseve/
+2026-09-07,apres-shampooing-lait-damande-nourricier-200ml-ultra-doux,APRES SHAMPOOING LAIT D’AMANDE NOURRICIER 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-lait-damande-nourricier-200ml-ultra-doux/
+2026-09-07,apres-shampooing-olive-mythique-400ml-ultra-doux,APRES SHAMPOOING OLIVE MYTHIQUE 400ML ULTRA DOUX,beaute-hygiene,59.95,https://aswakassalam.com/produit/apres-shampooing-olive-mythique-400ml-ultra-doux/
+2026-09-07,apres-shampooing-tresors-de-miel-200ml-ultra-doux,APRES SHAMPOOING TRESORS DE MIEL 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-tresors-de-miel-200ml-ultra-doux/
+2026-09-07,apres-shampooing-beurre-de-karite-et-macadamia-cheveux-tres-secs-ou-frises-200ml-le-petit-olivier,APRES-SHAMPOOING BEURRE DE KARITE ET MACADAMIA CHEVEUX TRES SECS OU FRISES 200ML LE PETIT OLIVIER,beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-beurre-de-karite-et-macadamia-cheveux-tres-secs-ou-frises-200ml-le-petit-olivier/
+2026-09-07,apres-shampooing-coco-et-the-vert-tous-types-de-cheveux-250ml-lovea,APRES-SHAMPOOING COCO ET THE VERT TOUS TYPES DE CHEVEUX 250ML LOVEA,beaute-hygiene,74.95,https://aswakassalam.com/produit/apres-shampooing-coco-et-the-vert-tous-types-de-cheveux-250ml-lovea/
+2026-09-07,apres-shampooing-monoi-karite-pour-cheveux-secs-et-abimes-200ml-lovea,APRES-SHAMPOOING MONOI & KARITE POUR CHEVEUX SECS ET ABIMES 200ML LOVEA,beaute-hygiene,74.95,https://aswakassalam.com/produit/apres-shampooing-monoi-karite-pour-cheveux-secs-et-abimes-200ml-lovea/
+2026-09-07,apres-shampooing-nutrition-huiles-dolive-karite-argan-200ml-le-petit-olivier,"APRES-SHAMPOOING NUTRITION HUILES D’OLIVE, KARITE, ARGAN 200ML LE PETIT OLIVIER",beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-nutrition-huiles-dolive-karite-argan-200ml-le-petit-olivier/
+2026-09-07,apres-shampooing-olive-mythique-200ml-ultra-doux,APRES-SHAMPOOING OLIVE MYTHIQUE 200ML ULTRA DOUX,beaute-hygiene,35.5,https://aswakassalam.com/produit/apres-shampooing-olive-mythique-200ml-ultra-doux/
+2026-09-07,apres-shampooing-purifiant-aloe-vera-the-vert-200ml-le-petit-olivier,APRES-SHAMPOOING PURIFIANT ALOE VERA & THE VERT 200ML LE PETIT OLIVIER,beaute-hygiene,69.95,https://aswakassalam.com/produit/apres-shampooing-purifiant-aloe-vera-the-vert-200ml-le-petit-olivier/
+2026-09-07,apres-shampooing-tonus-brillance-huile-sesame-300ml-timotei,APRES-SHAMPOOING TONUS BRILLANCE HUILE SESAME 300ML TIMOTEI,beaute-hygiene,34.5,https://aswakassalam.com/produit/apres-shampooing-tonus-brillance-huile-sesame-300ml-timotei/
+2026-09-07,baby-shampooing-shiny-drops-300ml-johnson-baby,BABY SHAMPOOING SHINY DROPS 300ML JOHNSON BABY,beaute-hygiene,45.5,https://aswakassalam.com/produit/baby-shampooing-shiny-drops-300ml-johnson-baby/
+2026-09-07,bain-bouche-fraiche-intense-500ml-listerine,BAIN BOUCHE FRAICHE INTENSE 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-fraiche-intense-500ml-listerine/
+2026-09-07,bain-bouche-soin-blancheur-500ml-listerine,BAIN BOUCHE SOIN BLANCHEUR 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-soin-blancheur-500ml-listerine/
+2026-09-07,bain-bouche-zero-alcool-menthe-500ml-listerine,BAIN BOUCHE ZERO ALCOOL MENTHE 500ML LISTERINE,beaute-hygiene,48.95,https://aswakassalam.com/produit/bain-bouche-zero-alcool-menthe-500ml-listerine/
+2026-09-07,bain-de-bouche-optic-white-500ml-colgate,BAIN DE BOUCHE OPTIC WHITE 500ML COLGATE,beaute-hygiene,45.5,https://aswakassalam.com/produit/bain-de-bouche-optic-white-500ml-colgate/
+2026-09-07,bain-moussant-200ml-johnson-baby,BAIN MOUSSANT 200ML JOHNSON BABY,beaute-hygiene,33.95,https://aswakassalam.com/produit/bain-moussant-200ml-johnson-baby/
+2026-09-07,bande-de-cire-peau-normale-10-unites-veet,BANDE DE CIRE PEAU NORMALE 10 UNITES VEET,beaute-hygiene,36.95,https://aswakassalam.com/produit/bande-de-cire-peau-normale-10-unites-veet/
+2026-09-07,bandes-de-cire-peaux-sensibles-10-unites-veet,BANDES DE CIRE PEAUX SENSIBLES 10 UNITES VEET,beaute-hygiene,36.95,https://aswakassalam.com/produit/bandes-de-cire-peaux-sensibles-10-unites-veet/
+2026-09-07,bandes-epilation-10-pieces-depiliss,BANDES EPILATION 10 PIECES DEPILISS,beaute-hygiene,5.95,https://aswakassalam.com/produit/bandes-epilation-10-pieces-depiliss/
+2026-09-07,bandes-epilation-50-unites-depiliss,BANDES EPILATION 50 UNITES DEPILISS,beaute-hygiene,15.95,https://aswakassalam.com/produit/bandes-epilation-50-unites-depiliss/
+2026-09-07,baume-a-levres-3en1-pink-48g-labello,"BAUME A LEVRES 3EN1 PINK 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-pink-48g-labello/
+2026-09-07,baume-a-levres-3en1-red-48g-labello,"BAUME A LEVRES 3EN1 RED 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-red-48g-labello/
+2026-09-07,baume-a-levres-3en1-rose-48g-labello,"BAUME A LEVRES 3EN1 ROSE 4,8G LABELLO",beaute-hygiene,42.5,https://aswakassalam.com/produit/baume-a-levres-3en1-rose-48g-labello/
+2026-09-07,baume-a-levres-coco-lovea,BAUME A LEVRES COCO LOVEA,beaute-hygiene,69.95,https://aswakassalam.com/produit/baume-a-levres-coco-lovea/
 2026-09-07,30-pods-3-en-1-ariel,30 pods 3 en 1 – ARIEL,entretien,92.95,https://aswakassalam.com/produit/30-pods-3-en-1-ariel/
 2026-09-07,eau-de-javel-1l-divers-parfums-janis,Eau de javel 1L Divers parfums – JANIS,entretien,5.95,https://aswakassalam.com/produit/eau-de-javel-1l-divers-parfums-janis/
 2026-09-07,eau-de-javel-25l-janis,"Eau de javel 2,5L – JANIS",entretien,10.95,https://aswakassalam.com/produit/eau-de-javel-25l-janis/
@@ -628,78 +351,4 @@ date,product_id,produit,categorie,prix,source_url
 2026-09-07,ajax-vitre-450ml,AJAX VITRE 450ML,entretien,15.95,https://aswakassalam.com/produit/ajax-vitre-450ml/
 2026-09-07,allume-feu-48-cubes-flammat,ALLUME-FEU 48 CUBES FLAMMAT,entretien,14.5,https://aswakassalam.com/produit/allume-feu-48-cubes-flammat/
 2026-09-07,allume-feu-ecologique-24-cubes-flammat,ALLUME-FEU ECOLOGIQUE 24 CUBES FLAMMAT,entretien,18.5,https://aswakassalam.com/produit/allume-feu-ecologique-24-cubes-flammat/
-2026-09-07,boite-de-mais-340g-janis,Boîte de maïs 340g – JANIS,epicerie,12.5,https://aswakassalam.com/produit/boite-de-mais-340g-janis/
-2026-09-07,cornichons-epices-en-morceaux-330g-kuhne,Cornichons épicés en morceaux 330g – KÜHNE,epicerie,39.95,https://aswakassalam.com/produit/cornichons-epices-en-morceaux-330g-kuhne/
-2026-09-07,cornichons-legerement-surcres-180g-kuhne,Cornichons légèrement surcrés 180g – KÜHNE,epicerie,41.5,https://aswakassalam.com/produit/cornichons-legerement-surcres-180g-kuhne/
-2026-09-07,farine-fleur-10kg-kenz,Farine fleur 10kg – KENZ,epicerie,55.95,https://aswakassalam.com/produit/farine-fleur-10kg-kenz/
-2026-09-07,farine-pain-beldi-5kg-farine-de-luxe-1kg-luxor,Farine pain Beldi 5kg + farine de luxe 1kg – LUXOR,epicerie,33.9,https://aswakassalam.com/produit/farine-pain-beldi-5kg-farine-de-luxe-1kg-luxor/
-2026-09-07,huile-dolive-vierge-1l-campo-sur,Huile d’olive vierge 1L  – CAMPO SUR,epicerie,54.95,https://aswakassalam.com/produit/huile-dolive-vierge-1l-campo-sur/
-2026-09-07,lentilles-1kg-janis-2,Lentilles 1kg – JANIS,epicerie,12.95,https://aswakassalam.com/produit/lentilles-1kg-janis-2/
-2026-09-07,lot-3-boites-de-champignons-en-morceaux-185g-janis,Lot 3 boîtes de champignons en morceaux 185g – JANIS,epicerie,29.95,https://aswakassalam.com/produit/lot-3-boites-de-champignons-en-morceaux-185g-janis/
-2026-09-07,lot-de-3-boites-de-mais-140g-janis,Lot de 3 Boîtes de maïs 140g – JANIS,epicerie,28.95,https://aswakassalam.com/produit/lot-de-3-boites-de-mais-140g-janis/
-2026-09-07,lot-de-3-boites-de-thon-80g-janis,Lot de 3 boîtes de thon 80g – JANIS,epicerie,24.5,https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-janis/
-2026-09-07,lot-de-3-boites-de-thon-80g-sauce-tomate-ou-huile-de-tournesol-janis,Lot de 3 boites de thon 80g sauce tomate ou huile de tournesol  – JANIS,epicerie,24.95,https://aswakassalam.com/produit/lot-de-3-boites-de-thon-80g-sauce-tomate-ou-huile-de-tournesol-janis/
-2026-09-07,lot-de-3-couscous-calibre-moyen-500g-dalia,Lot de 3 couscous calibre moyen 500g DALIA,epicerie,16.2,https://aswakassalam.com/produit/lot-de-3-couscous-calibre-moyen-500g-dalia/
-2026-09-07,lot-de-3-couscous-moyens-500g-alitkane-2,Lot de 3 couscous moyens 500g – ALITKANE,epicerie,15.95,https://aswakassalam.com/produit/lot-de-3-couscous-moyens-500g-alitkane-2/
-2026-09-07,lot-de-3-spaghettis-500g-janis,Lot de 3 spaghettis 500g  – JANIS,epicerie,21.6,https://aswakassalam.com/produit/lot-de-3-spaghettis-500g-janis/
-2026-09-07,melange-fruits-secs-80g-royal-mix-denia,Mélange fruits secs 80g Royal Mix – DÉNIA,epicerie,15.95,https://aswakassalam.com/produit/melange-fruits-secs-80g-royal-mix-denia/
-2026-09-07,semoule-fine-ble-dur-5kg-moony,Semoule fine blé dur 5Kg – MOONY,epicerie,52.95,https://aswakassalam.com/produit/semoule-fine-ble-dur-5kg-moony/
-2026-09-07,abricot-sec-500g-oncle-sam,ABRICOT SEC 500G ONCLE SAM,epicerie,118.6,https://aswakassalam.com/produit/abricot-sec-500g-oncle-sam/
-2026-09-07,ail-semoule-100g-gaya,AIL SEMOULE 100G GAYA,epicerie,22.95,https://aswakassalam.com/produit/ail-semoule-100g-gaya/
-2026-09-07,ail-semoule-215g-harmony,AIL SEMOULE 215G HARMONY,epicerie,83.9,https://aswakassalam.com/produit/ail-semoule-215g-harmony/
-2026-09-07,ail-semoule-300g-gaya,AIL SEMOULE 300G GAYA,epicerie,61.2,https://aswakassalam.com/produit/ail-semoule-300g-gaya/
-2026-09-07,ail-semoule-60g-ducros,AIL SEMOULE 60G DUCROS,epicerie,22.1,https://aswakassalam.com/produit/ail-semoule-60g-ducros/
-2026-09-07,ail-semoule-60g-harmony,AIL SEMOULE 60G HARMONY,epicerie,18.95,https://aswakassalam.com/produit/ail-semoule-60g-harmony/
-2026-09-07,amande-riffi-900g-oncle-sam,AMANDE RIFFI 900G ONCLE SAM,epicerie,146.95,https://aswakassalam.com/produit/amande-riffi-900g-oncle-sam/
-2026-09-07,amandes-250g-oncle-sam,AMANDES 250G ONCLE SAM,epicerie,43.5,https://aswakassalam.com/produit/amandes-250g-oncle-sam/
-2026-09-07,amandes-riffi-200g-rosana,AMANDES RIFFI 200G ROSANA,epicerie,33.5,https://aswakassalam.com/produit/amandes-riffi-200g-rosana/
-2026-09-07,anchois-a-lhuile-dolive-extra-vierge-100g-connetable,ANCHOIS A L’HUILE D’OLIVE EXTRA VIERGE 100G CONNETABLE,epicerie,27.9,https://aswakassalam.com/produit/anchois-a-lhuile-dolive-extra-vierge-100g-connetable/
-2026-09-07,angel-hair-n1-500g-barilla,ANGEL HAIR N°1 500G BARILLA,epicerie,26.95,https://aswakassalam.com/produit/angel-hair-n1-500g-barilla/
-2026-09-07,assaisonement-kefta-35g-javana,ASSAISONEMENT KEFTA 35G JAVANA,epicerie,16.95,https://aswakassalam.com/produit/assaisonement-kefta-35g-javana/
-2026-09-07,assaisonement-poulet-ail-origan-35g-ideal,ASSAISONEMENT POULET AIL ORIGAN 35G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-ail-origan-35g-ideal/
-2026-09-07,assaisonement-poulet-epice-gout-barbecue-52g-ideal,ASSAISONEMENT POULET EPICE GOUT BARBECUE 52G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-epice-gout-barbecue-52g-ideal/
-2026-09-07,assaisonement-poulet-epices-gout-grillade-32g-ideal,ASSAISONEMENT POULET EPICES GOUT GRILLADE 32G IDEAL,epicerie,10.9,https://aswakassalam.com/produit/assaisonement-poulet-epices-gout-grillade-32g-ideal/
-2026-09-07,assaisonnement-chawarma-poulet-30g-javana,ASSAISONNEMENT CHAWARMA POULET 30G JAVANA,epicerie,16.95,https://aswakassalam.com/produit/assaisonnement-chawarma-poulet-30g-javana/
-2026-09-07,assaisonnement-grillade-40g-javana,ASSAISONNEMENT GRILLADE 40G JAVANA,epicerie,12.2,https://aswakassalam.com/produit/assaisonnement-grillade-40g-javana/
-2026-09-07,baba-ghannouge-pret-a-manger-385g-al-wadi,BABA GHANNOUGE PRET A MANGER 385G AL WADI,epicerie,46.95,https://aswakassalam.com/produit/baba-ghannouge-pret-a-manger-385g-al-wadi/
-2026-09-07,basilic-12g-harmony,BASILIC 12G HARMONY,epicerie,11.2,https://aswakassalam.com/produit/basilic-12g-harmony/
-2026-09-07,ananas-la-piece-1kg-a-1200kg,"ANANAS LA PIECE (1KG A 1,200KG)",fruits-legumes,32.0,https://aswakassalam.com/produit/ananas-la-piece-1kg-a-1200kg/
-2026-09-07,avocat-1kg,AVOCAT 1KG,fruits-legumes,62.95,https://aswakassalam.com/produit/avocat-1kg/
-2026-09-07,banane-import-1kg,BANANE IMPORT 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/banane-import-1kg/
-2026-09-07,brocoli-1kg,BROCOLI 1KG,fruits-legumes,29.95,https://aswakassalam.com/produit/brocoli-1kg/
-2026-09-07,celeri-botte,CELERI BOTTE,fruits-legumes,15.95,https://aswakassalam.com/produit/celeri-botte/
-2026-09-07,champignon-de-paris-500g,CHAMPIGNON DE PARIS 500G,fruits-legumes,34.95,https://aswakassalam.com/produit/champignon-de-paris-500g/
-2026-09-07,chou-de-bruxelles-500g,CHOU DE BRUXELLES 500G,fruits-legumes,17.95,https://aswakassalam.com/produit/chou-de-bruxelles-500g/
-2026-09-07,citron-1kg,CITRON 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/citron-1kg/
-2026-09-07,courgette-ronde-1kg,COURGETTE RONDE 1KG,fruits-legumes,16.95,https://aswakassalam.com/produit/courgette-ronde-1kg/
-2026-09-07,couscous-barquette-2kg,COUSCOUS BARQUETTE  +/- 2KG,fruits-legumes,22.95,https://aswakassalam.com/produit/couscous-barquette-2kg/
-2026-09-07,fraise-barquette-250,FRAISE BARQUETTE 250,fruits-legumes,12.95,https://aswakassalam.com/produit/fraise-barquette-250/
-2026-09-07,framboise-barquette-125g,FRAMBOISE BARQUETTE 125G,fruits-legumes,24.95,https://aswakassalam.com/produit/framboise-barquette-125g/
-2026-09-07,haricot-vert-1kg,HARICOT VERT 1KG,fruits-legumes,19.95,https://aswakassalam.com/produit/haricot-vert-1kg/
-2026-09-07,kiwi-1kg,KIWI 1KG,fruits-legumes,49.95,https://aswakassalam.com/produit/kiwi-1kg/
-2026-09-07,laitue-rouge-a-la-piece,LAITUE ROUGE A LA PIECE,fruits-legumes,6.5,https://aswakassalam.com/produit/laitue-rouge-a-la-piece/
-2026-09-07,mangue-a-la-piece-450g-a-500g,MANGUE A LA PIECE  (450G A 500G),fruits-legumes,16.95,https://aswakassalam.com/produit/mangue-a-la-piece-450g-a-500g/
-2026-09-07,mangue-avion-1kg,MANGUE AVION 1KG,fruits-legumes,31.95,https://aswakassalam.com/produit/mangue-avion-1kg/
-2026-09-07,melon-cantaloup-1kg,MELON CANTALOUP 1KG,fruits-legumes,14.95,https://aswakassalam.com/produit/melon-cantaloup-1kg/
-2026-09-07,melon-jaune-marhoum-a-la-piece-2kg,MELON JAUNE MARHOUM A LA PIECE 2KG,fruits-legumes,16.0,https://aswakassalam.com/produit/melon-jaune-marhoum-a-la-piece-2kg/
-2026-09-07,nectarine-1kg,NECTARINE 1KG,fruits-legumes,15.95,https://aswakassalam.com/produit/nectarine-1kg/
-2026-09-07,orange-a-jus-1kg,ORANGE A JUS 1KG,fruits-legumes,8.95,https://aswakassalam.com/produit/orange-a-jus-1kg/
-2026-09-07,peche-1kg,PECHE 1KG,fruits-legumes,15.95,https://aswakassalam.com/produit/peche-1kg/
-2026-09-07,piment-fort-barquette-500g,PIMENT FORT BARQUETTE 500G,fruits-legumes,7.0,https://aswakassalam.com/produit/piment-fort-barquette-500g/
-2026-09-07,poire-william-au-kg,POIRE WILLIAM AU KG,fruits-legumes,32.95,https://aswakassalam.com/produit/poire-william-au-kg/
-2026-09-07,poireau-1kg,POIREAU 1KG,fruits-legumes,18.95,https://aswakassalam.com/produit/poireau-1kg/
-2026-09-07,poivron-rouge-1kg,POIVRON ROUGE 1KG,fruits-legumes,16.95,https://aswakassalam.com/produit/poivron-rouge-1kg/
-2026-09-07,pomme-de-terre-blanche-1kg,POMME DE TERRE BLANCHE 1KG,fruits-legumes,7.95,https://aswakassalam.com/produit/pomme-de-terre-blanche-1kg/
-2026-09-07,pomme-rouge-1-kg,POMME ROUGE 1 KG,fruits-legumes,19.95,https://aswakassalam.com/produit/pomme-rouge-1-kg/
-2026-09-07,pomme-rouge-import-1kg,POMME ROUGE IMPORT 1KG,fruits-legumes,34.95,https://aswakassalam.com/produit/pomme-rouge-import-1kg/
-2026-09-07,potiron-1kg,POTIRON 1KG,fruits-legumes,9.95,https://aswakassalam.com/produit/potiron-1kg/
-2026-09-07,prune-noir-1kg,PRUNE NOIR 1KG,fruits-legumes,21.95,https://aswakassalam.com/produit/prune-noir-1kg/
-2026-09-07,raisin-blanc-1kg,RAISIN BLANC 1KG,fruits-legumes,14.95,https://aswakassalam.com/produit/raisin-blanc-1kg/
-2026-09-07,romarin-botte,ROMARIN BOTTE,fruits-legumes,6.5,https://aswakassalam.com/produit/romarin-botte/
-2026-09-07,salade-lolo-rouge-piece,SALADE LOLO ROUGE PIECE,fruits-legumes,6.95,https://aswakassalam.com/produit/salade-lolo-rouge-piece/
-2026-09-07,salade-lolo-vert-piece,SALADE LOLO VERT PIECE,fruits-legumes,6.5,https://aswakassalam.com/produit/salade-lolo-vert-piece/
-2026-09-07,thym-botte,THYM BOTTE,fruits-legumes,5.95,https://aswakassalam.com/produit/thym-botte/
-2026-09-07,cake-oreo,CAKE INDIVIDUEL OREO,patisserie,19.95,https://aswakassalam.com/produit/cake-oreo/
-2026-09-07,eclaire,ECLAIR AU CHOCOLAT,patisserie,10.95,https://aswakassalam.com/produit/eclaire/
-2026-09-07,flan-x2,FLAN AUX FRUITS CONFITS,patisserie,14.95,https://aswakassalam.com/produit/flan-x2/
-2026-09-07,tarte-indiv-chocolat,TARTE INDIVIDUELLE AU CHOCOLAT,patisserie,12.95,https://aswakassalam.com/produit/tarte-indiv-chocolat/
+2026-09-07,logement-loyer-m2,Loyer (DH/m2/mois),logement,100.0,https://www.mubawab.ma/fr/sc/appartements-a-louer

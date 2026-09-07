@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))         # scripts/
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root
 
 from scrape_aswak_catalog import scrape_category  # noqa: E402
+from scrape_housing import median_rent_dh_m2  # noqa: E402
 
 CATALOG = Path("data/aswak_catalog.csv")
 OUT = Path("data/prix_actuels.csv")
@@ -48,6 +49,14 @@ def main() -> None:
                 "source_url": p["url"],
             })
         print(f"  {slug:28} cumulé {len(rows)} relevés", flush=True)
+
+    # housing component (Mubawab): median rent in MAD/m²/month
+    med, n_rent, hurl = median_rent_dh_m2()
+    if med:
+        rows.append({"date": today, "product_id": "logement-loyer-m2",
+                     "produit": "Loyer (DH/m²/mois)", "categorie": "logement",
+                     "prix": med, "source_url": hurl})
+        print(f"  logement (Mubawab)          loyer médian {med} DH/m² (n={n_rent})", flush=True)
 
     new = pd.DataFrame(rows).drop_duplicates("product_id")
     if OUT.exists():

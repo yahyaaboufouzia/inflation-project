@@ -22,6 +22,24 @@ import pandas as pd
 PRICES = Path("data/prix_actuels.csv")
 OUT = Path("data/indice_quotidien.csv")
 
+# Group the retail categories into CPI-style divisions and weight them so that
+# housing carries its real (heavy) share instead of counting as one food category.
+DIVISION = {
+    "patisserie": "Alimentation", "boulangerie": "Alimentation",
+    "fruits-legumes": "Alimentation", "boucherie-volaille": "Alimentation",
+    "charcuterie-traiteur": "Alimentation", "cremerie": "Alimentation",
+    "epicerie": "Alimentation", "biscuiterie-confiserie": "Alimentation",
+    "boissons": "Alimentation",
+    "beaute-hygiene": "Hygiène & entretien", "entretien": "Hygiène & entretien",
+    "logement": "Logement", "carburant": "Transport",
+    "maison-cuisine": "Équipement", "petit-electromenager": "Équipement",
+    "gros-electromenager": "Équipement", "multimedia": "Équipement",
+}
+DIVISION_WEIGHTS = {
+    "Alimentation": 0.45, "Logement": 0.22, "Transport": 0.13,
+    "Hygiène & entretien": 0.08, "Équipement": 0.12,
+}
+
 
 def main() -> None:
     if not PRICES.exists():
@@ -46,12 +64,17 @@ def main() -> None:
         r = row.dropna()
         if r.empty:
             continue
-        cat_vals: dict[str, list[float]] = {}
+        # Jevons within each division, then Laspeyres across divisions
+        div_vals: dict[str, list[float]] = {}
         for pid, v in r.items():
-            cat_vals.setdefault(cats.get(pid, "?"), []).append(v)
-        cat_idx = [float(np.exp(np.mean(np.log(vs)))) for vs in cat_vals.values()]  # Jevons
-        rows.append({"date": day,
-                     "indice_quotidien": round(100 * float(np.mean(cat_idx)), 2),
+            div = DIVISION.get(cats.get(pid, ""), "Autre")
+            div_vals.setdefault(div, []).append(v)
+        div_idx, weights = [], []
+        for div, vs in div_vals.items():
+            div_idx.append(float(np.exp(np.mean(np.log(vs)))))
+            weights.append(DIVISION_WEIGHTS.get(div, 0.02))
+        value = 100 * float(np.average(div_idx, weights=weights))
+        rows.append({"date": day, "indice_quotidien": round(value, 2),
                      "n_produits": int(len(r))})
 
     out = pd.DataFrame(rows)
