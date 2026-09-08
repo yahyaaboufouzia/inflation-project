@@ -21,24 +21,26 @@ Outputs:
 from __future__ import annotations
 
 import io
+import sys
 import zipfile
 from pathlib import Path
 
 import httpx
-import numpy as np
 import pandas as pd
+import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from inflation.index import index_from_relatives  # noqa: E402
 
 FAOSTAT_PRICES = Path("data/prix_maroc_faostat.csv")
 CP_BULK = "https://bulks-faostat.fao.org/production/ConsumerPriceIndices_E_All_Data_(Normalized).zip"
 CPI_OUT = Path("data/official/cpi_maroc_faostat.csv")
 INDEX_OUT = Path("data/indice_inflation.csv")
+WEIGHTS = Path("config/weights.yaml")
 BASE_YEAR = 2010
 
-# Fix 3 — household food-consumption weights (sum to 1).
-CATEGORY_WEIGHTS = {
-    "Céréales": 0.28, "Viandes": 0.22, "Produits animaux": 0.14,
-    "Légumes": 0.16, "Fruits": 0.12, "Légumineuses": 0.08,
-}
+FOOD_WEIGHTS = yaml.safe_load(WEIGHTS.read_text(encoding="utf-8"))["food_subcategories"]
 
 
 def our_index(prices: pd.DataFrame) -> pd.DataFrame:
@@ -46,18 +48,10 @@ def our_index(prices: pd.DataFrame) -> pd.DataFrame:
     base = (p[p["annee"] == BASE_YEAR][["produit", "prix_mad_par_kg"]]
             .rename(columns={"prix_mad_par_kg": "p0"}))
     p = p.merge(base, on="produit", how="inner")
-    p["rel"] = p["prix_mad_par_kg"] / p["p0"]
-    out = []
-    for year, g in p.groupby("annee"):
-        cat_rel, cat_w = {}, {}
-        for cat, gc in g.groupby("categorie"):
-            cat_rel[cat] = float(np.exp(np.log(gc["rel"]).mean()))  # Jevons
-            cat_w[cat] = CATEGORY_WEIGHTS.get(cat, 0.0)
-        w = np.array([cat_w[c] for c in cat_rel]); v = np.array(list(cat_rel.values()))
-        if w.sum() == 0:
-            continue
-        out.append((int(year), round(100.0 * float(np.average(v, weights=w)), 2)))
-    return pd.DataFrame(out, columns=["annee", "indice_nous"])
+    p["relative"] = p["prix_mad_par_kg"] / p["p0"]
+    long = p.rename(columns={"annee": "period", "categorie": "category"})
+    out = index_from_relatives(long[["period", "category", "relative"]], FOOD_WEIGHTS)
+    return out.rename(columns={"period": "annee", "value": "indice_nous"})
 
 
 def _rebase(s: pd.Series, years: pd.Series) -> pd.Series:

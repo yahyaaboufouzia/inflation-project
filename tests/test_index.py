@@ -7,8 +7,10 @@ import pandas as pd
 import pytest
 
 from inflation.index import (
+    chained_matched_index,
     compute_index,
     compute_monthly_index,
+    index_from_relatives,
     simple_laspeyres,
     top_movers,
 )
@@ -94,6 +96,44 @@ def test_monthly_index_forward_fills_and_weights():
     assert out.loc[date(2026, 1, 1)] == pytest.approx(100.0)   # base
     assert out.loc[date(2026, 2, 1)] == pytest.approx(98.0)    # A ffilled, B -5%
     assert out.loc[date(2026, 3, 1)] == pytest.approx(104.0)   # A +10%, B -5%
+
+
+def test_index_from_relatives_weights_categories():
+    # p1: everything at base (1.0) -> 100
+    # p2: cat X (w0.6) +10%, cat Y (w0.4) -5% -> 100*(0.6*1.1 + 0.4*0.95) = 104
+    rows = [
+        ("p1", "X", 1.0), ("p1", "Y", 1.0),
+        ("p2", "X", 1.10), ("p2", "Y", 0.95),
+    ]
+    df = pd.DataFrame(rows, columns=["period", "category", "relative"])
+    out = index_from_relatives(df, weights={"X": 0.6, "Y": 0.4}).set_index("period")["value"]
+    assert out["p1"] == pytest.approx(100.0)
+    assert out["p2"] == pytest.approx(104.0)
+
+
+def test_chained_matched_index():
+    # A (cat X, w0.6), B (cat Y, w0.4)
+    # d1->d2: A +10%, B -5%  -> link 1.04 -> 104
+    # d2->d3: A  0%, B +10%  -> link 1.04 -> 108.16
+    wide = pd.DataFrame(
+        {"A": [100.0, 110.0, 110.0], "B": [200.0, 190.0, 209.0]},
+        index=["d1", "d2", "d3"],
+    )
+    out = chained_matched_index(wide, {"A": "X", "B": "Y"}, {"X": 0.6, "Y": 0.4})
+    vals = out.set_index("period")["value"]
+    assert vals["d1"] == pytest.approx(100.0)
+    assert vals["d2"] == pytest.approx(104.0)
+    assert vals["d3"] == pytest.approx(108.16, abs=0.02)
+
+
+def test_chained_index_ignores_unmatched_product():
+    # C appears only on d2 -> it must not create a jump on either link
+    wide = pd.DataFrame(
+        {"A": [100.0, 110.0], "C": [None, 50.0]},
+        index=["d1", "d2"],
+    )
+    out = chained_matched_index(wide, {"A": "X", "C": "X"}, {"X": 1.0})
+    assert out.set_index("period")["value"]["d2"] == pytest.approx(110.0)
 
 
 def test_top_movers_ranks_by_absolute_change():

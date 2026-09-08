@@ -114,7 +114,7 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(x=idx["annee"], y=idx["indice_nous"], name="Notre indice (brut)",
                          mode="lines", line=dict(color=RAW, width=1.5, dash="dot")))
 fig.add_trace(go.Scatter(x=idx["annee"], y=idx["indice_nous_lisse"],
-                         name="Notre indice (lissé ≈ détail)",
+                         name="Notre indice (lissé, lisibilité)",
                          mode="lines+markers", line=dict(color=OURS, width=2.8)))
 fig.add_trace(go.Scatter(x=idx["annee"], y=idx["cpi_food_officiel"],
                          name="Inflation alimentaire officielle",
@@ -159,31 +159,46 @@ st.caption(
     "volatils lors de la sécheresse et de la flambée mondiale)."
 )
 
-# ---- method validation on the USA -------------------------------------------
+# ---- method validation on the USA (honest metrics) --------------------------
 val = load_validation()
 if not val.empty:
-    st.subheader("🇺🇸 Preuve que la méthode marche : validation sur les USA")
-    corr = val["indice_nous_usa"].corr(val["cpi_food_usa"])
-    a, b = st.columns([1, 3])
-    a.metric("Corrélation", f"{corr:.2f}",
-             help="Entre notre indice US (vrais prix de détail) et l'inflation officielle US")
-    a.caption(
-        "Là où les **vrais prix de détail existent** (USA), notre méthode "
-        "**reproduit l'inflation officielle**. Le problème au Maroc est donc la "
-        "**donnée** (on n'a que des prix producteurs), pas la méthode."
+    st.subheader("🇺🇸 Validation de la méthode sur les USA")
+    v = val.sort_values("annee").copy()
+    v["yoy_n"] = v["indice_nous_usa"].pct_change() * 100
+    v["yoy_o"] = v["cpi_food_usa"].pct_change() * 100
+    yv = v.dropna(subset=["yoy_n", "yoy_o"])
+    yoy_corr = yv["yoy_n"].corr(yv["yoy_o"])
+    mae = (yv["yoy_n"] - yv["yoy_o"]).abs().mean()
+    cum_n = (v["indice_nous_usa"].iloc[-1] / v["indice_nous_usa"].iloc[0] - 1) * 100
+    cum_o = (v["cpi_food_usa"].iloc[-1] / v["cpi_food_usa"].iloc[0] - 1) * 100
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Corrélation (taux annuels)", f"{yoy_corr:.2f}",
+              help="Le test honnête : sur les variations annuelles (stationnaires), pas les niveaux")
+    c2.metric("Erreur moyenne (MAE)", f"{mae:.1f} pts")
+    c3.metric("Inflation cumulée", f"+{cum_n:.0f}%", f"officiel +{cum_o:.0f}%", delta_color="off")
+    st.caption(
+        "⚠️ Corréler les **niveaux** de deux séries qui montent donne toujours ~0,99 "
+        "(piège de Granger–Newbold : même une tendance bidon `exp(0,03·t)` atteint 0,99). "
+        "Le vrai test est sur les **taux annuels** (affichés ci-dessus) avec 13 produits "
+        "sur 46 ans — un résultat honnête. L'écart de niveau cumulé "
+        "vient d'un panier plus étroit que le CPI officiel."
     )
     vfig = go.Figure()
-    vfig.add_trace(go.Scatter(x=val["annee"], y=val["indice_nous_usa"],
-                              name="Notre indice US (prix de détail réels)",
-                              mode="lines", line=dict(color=OURS, width=2.8)))
-    vfig.add_trace(go.Scatter(x=val["annee"], y=val["cpi_food_usa"],
-                              name="Inflation alimentaire officielle US (BLS)",
+    vfig.add_trace(go.Scatter(x=yv["annee"], y=yv["yoy_n"], name="Notre méthode",
+                              mode="lines", line=dict(color=OURS, width=2.2)))
+    vfig.add_trace(go.Scatter(x=yv["annee"], y=yv["yoy_o"], name="CPI alimentaire officiel US",
                               mode="lines", line=dict(color=FOOD, width=2, dash="dash")))
-    vfig.update_layout(height=340, hovermode="x unified",
+    vfig.update_layout(height=320, hovermode="x unified",
                        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
                        margin=dict(l=10, r=10, t=10, b=10),
-                       yaxis_title="Indice (base 2000 = 100)")
-    b.plotly_chart(vfig, use_container_width=True)
+                       yaxis_title="Inflation annuelle (%)")
+    st.plotly_chart(vfig, use_container_width=True)
+    st.caption(
+        "Là où de vrais prix de détail existent (USA), la méthode **suit** l'inflation "
+        "officielle année après année. Au Maroc, il manque cette donnée de détail — "
+        "c'est un problème de données, pas de méthode."
+    )
 
 # ---- recent daily prices ----------------------------------------------------
 daily = load_daily()
@@ -237,8 +252,9 @@ légumes 16%, fruits 12%, légumineuses 8%).
 1. **Couverture** — on compare à l'**inflation alimentaire** officielle (et non
    l'indice tous produits), puisque notre panier est alimentaire.
 2. **Producteur → détail** — les prix FAOSTAT sont des prix *à la production*,
-   plus volatils que les prix en rayon ; on publie donc aussi une version
-   **lissée** (moyenne mobile 3 ans) qui approche la « viscosité » du détail.
+   plus volatils que les prix en rayon. La version **lissée** (moyenne mobile
+   3 ans) est un **lissage de lisibilité** — elle ne convertit *pas* un prix
+   producteur en prix de détail (il faudrait modéliser marge + délai).
 3. **Pondération** — poids alignés sur la structure de consommation alimentaire.
 
 **Écart résiduel** — même corrigé, notre indice reste un peu au-dessus : les

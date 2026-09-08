@@ -1,12 +1,8 @@
-"""Compute the DAILY inflation index from the accumulated daily prices.
+"""Compute the DAILY index from accumulated daily prices.
 
-Method (matched-model, base = first collection day = 100):
-  - price relative per product: r(i,t) = prix(i,t) / prix(i, base)
-  - Jevons (geometric mean) within each category
-  - equal average across categories (so a category with many products does not
-    dominate)
-Only products present on the base day anchor the index; the series grows one
-point per collection day.
+Uses the shared, unit-tested `chained_matched_index` from inflation/index.py
+(chained, matched-sample — robust to composition changes and to the base day)
+with the single sourced weights file config/weights.yaml.
 
 Output: data/indice_quotidien.csv  (date, indice_quotidien, n_produits)
 
@@ -14,16 +10,21 @@ Output: data/indice_quotidien.csv  (date, indice_quotidien, n_produits)
 """
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
+import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from inflation.index import chained_matched_index  # noqa: E402
 
 PRICES = Path("data/prix_actuels.csv")
 OUT = Path("data/indice_quotidien.csv")
+WEIGHTS = Path("config/weights.yaml")
 
-# Group the retail categories into CPI-style divisions and weight them so that
-# housing carries its real (heavy) share instead of counting as one food category.
+# retail category -> CPI division (weights come from config/weights.yaml)
 DIVISION = {
     "patisserie": "Alimentation", "boulangerie": "Alimentation",
     "fruits-legumes": "Alimentation", "boucherie-volaille": "Alimentation",
@@ -34,10 +35,6 @@ DIVISION = {
     "logement": "Logement", "carburant": "Transport",
     "maison-cuisine": "Équipement", "petit-electromenager": "Équipement",
     "gros-electromenager": "Équipement", "multimedia": "Équipement",
-}
-DIVISION_WEIGHTS = {
-    "Alimentation": 0.45, "Logement": 0.22, "Transport": 0.13,
-    "Hygiène & entretien": 0.08, "Équipement": 0.12,
 }
 
 
@@ -50,40 +47,23 @@ def main() -> None:
         print("Fichier de prix vide.")
         return
 
-    cats = df.drop_duplicates("product_id").set_index("product_id")["categorie"]
-    wide = df.pivot_table(index="date", columns="product_id", values="prix", aggfunc="median")
-    wide = wide.sort_index()
+    weights = yaml.safe_load(WEIGHTS.read_text(encoding="utf-8"))["divisions"]
+    prod_cat = df.drop_duplicates("product_id").set_index("product_id")["categorie"]
+    category_of = {pid: DIVISION.get(c, "Autre") for pid, c in prod_cat.items()}
 
-    base_date = wide.index[0]
-    p0 = wide.loc[base_date]
-    valid = p0.dropna().index
-    rel = wide[valid].divide(p0[valid])
+    wide = df.pivot_table(index="date", columns="product_id", values="prix",
+                          aggfunc="median").sort_index()
 
-    rows = []
-    for day, row in rel.iterrows():
-        r = row.dropna()
-        if r.empty:
-            continue
-        # Jevons within each division, then Laspeyres across divisions
-        div_vals: dict[str, list[float]] = {}
-        for pid, v in r.items():
-            div = DIVISION.get(cats.get(pid, ""), "Autre")
-            div_vals.setdefault(div, []).append(v)
-        div_idx, weights = [], []
-        for div, vs in div_vals.items():
-            div_idx.append(float(np.exp(np.mean(np.log(vs)))))
-            weights.append(DIVISION_WEIGHTS.get(div, 0.02))
-        value = 100 * float(np.average(div_idx, weights=weights))
-        rows.append({"date": day, "indice_quotidien": round(value, 2),
-                     "n_produits": int(len(r))})
+    out = (chained_matched_index(wide, category_of, weights)
+           .rename(columns={"period": "date", "value": "indice_quotidien"}))
+    n = wide.notna().sum(axis=1).rename("n_produits")
+    out = out.merge(n, left_on="date", right_index=True)
 
-    out = pd.DataFrame(rows)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False, encoding="utf-8")
-    print(f"Indice quotidien: {len(out)} jour(s), base 100 le {base_date}, "
-          f"{len(valid)} produits suivis -> {OUT}")
-    if not out.empty:
-        print(out.tail(7).to_string(index=False))
+    print(f"Indice quotidien (chaîné): {len(out)} jour(s), base 100 le {wide.index[0]} "
+          f"-> {OUT}")
+    print(out.tail(7).to_string(index=False))
 
 
 if __name__ == "__main__":

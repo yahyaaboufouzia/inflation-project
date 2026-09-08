@@ -25,6 +25,83 @@ import numpy as np
 import pandas as pd
 
 
+def index_from_relatives(
+    df: pd.DataFrame,
+    weights: dict[str, float] | None = None,
+    period_col: str = "period",
+    cat_col: str = "category",
+    rel_col: str = "relative",
+) -> pd.DataFrame:
+    """The one index computation every script shares (single source of truth).
+
+    Input: long DataFrame with a period, a category and a price relative
+    (relative = p_t / p_base) per product-period. For each period it computes
+    the **Jevons** (geometric mean) within each category, then the **Laspeyres**
+    weighted average across categories. Weights are renormalised over whichever
+    categories are present that period; None means equal weights.
+
+    Returns a DataFrame with columns [period_col, "value"].
+    """
+    out = []
+    for period, g in df.groupby(period_col):
+        cats, cat_idx = [], []
+        for cat, gc in g.groupby(cat_col):
+            r = gc[rel_col].dropna()
+            if r.empty:
+                continue
+            cats.append(cat)
+            cat_idx.append(float(np.exp(np.log(r).mean())))   # Jevons
+        if not cats:
+            continue
+        w = np.array([(weights or {}).get(c, 0.0) for c in cats], dtype=float)
+        if w.sum() == 0:
+            w = np.ones(len(cats))
+        out.append((period, round(100.0 * float(np.average(cat_idx, weights=w)), 2)))
+    return pd.DataFrame(out, columns=[period_col, "value"])
+
+
+def chained_matched_index(
+    wide: pd.DataFrame,
+    category_of: dict[str, str],
+    weights: dict[str, float] | None = None,
+) -> pd.DataFrame:
+    """Chained, matched-sample index — the robust choice for scraped daily data.
+
+        I_t = I_{t-1} × Laspeyres_c[ Jevons_i( p_{i,t} / p_{i,t-1} ) ]
+
+    Only products present in BOTH consecutive periods enter each link (matched
+    sample). This fixes the three weaknesses of a fixed-base index on scraped
+    data: a product dropping out no longer moves the index (composition bias),
+    the arbitrary base day no longer biases the whole series, and new products
+    join cleanly at their first link.
+
+    `wide`: DataFrame indexed by period (sorted), columns = product_id,
+    values = price. `category_of`: product_id -> category. Base period = 100.
+    Returns DataFrame with columns ["period", "value"].
+    """
+    periods = list(wide.index)
+    if not periods:
+        return pd.DataFrame(columns=["period", "value"])
+
+    out = [(periods[0], 100.0)]
+    level = 100.0
+    for prev, cur in zip(periods, periods[1:]):
+        a, b = wide.loc[prev], wide.loc[cur]
+        matched = [pid for pid in wide.columns if pd.notna(a[pid]) and pd.notna(b[pid])]
+        cat_rel: dict[str, list[float]] = {}
+        for pid in matched:
+            cat_rel.setdefault(category_of.get(pid, "?"), []).append(b[pid] / a[pid])
+        if cat_rel:
+            cats = list(cat_rel)
+            cat_j = [float(np.exp(np.mean(np.log(v)))) for v in cat_rel.values()]
+            w = np.array([(weights or {}).get(c, 0.0) for c in cats], dtype=float)
+            if w.sum() == 0:
+                w = np.ones(len(cats))
+            level *= float(np.average(cat_j, weights=w))
+        out.append((cur, round(level, 2)))
+    return pd.DataFrame(out, columns=["period", "value"])
+
+
 def _daily_price(df: pd.DataFrame) -> pd.DataFrame:
     """Collapse many intraday observations into one price per product per day.
 

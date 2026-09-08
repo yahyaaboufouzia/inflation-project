@@ -39,11 +39,17 @@ I(t) = 100 × Σ_c  w(c) · I(c,t)
 
 ## Method validation (the important part)
 
-Anyone can build an index — the question is whether it's *right*. So the method is tested where the truth is known: the **USA**, which publishes decades of real retail prices (BLS "Average Price" series via FRED). Feeding those into **our exact method** and comparing to the **official US food CPI** gives:
+Anyone can build an index — the question is whether it's *right*. So the method is tested where the truth is known: the **USA**, which publishes decades of real retail prices (BLS "Average Price" series via FRED). Feeding those into **our exact method** and comparing to the **official US food CPI** (13 products, 1980–2026):
 
-> **Correlation = 0.99** over 1980–2026.
+| Metric | Value |
+|---|---|
+| Correlation on **year-over-year rates** | **0.72** |
+| Mean absolute error on annual rates | **2.6 pts** |
+| Cumulative inflation (ours vs official) | +208% vs +301% |
 
-Where real retail prices exist, our method reproduces official inflation. Morocco's gap is therefore a **data problem** (only producer prices are publicly available), not a method problem — a concrete, evidence-backed case for seeking better data access. See [`scripts/validate_usa.py`](scripts/validate_usa.py).
+> ⚠️ **Not** the level correlation (0.99). Correlating two rising non-stationary series is spurious (Granger–Newbold): even a made-up `exp(0.03·t)` trend scores 0.99 against the CPI. The honest test is on **stationary year-over-year rates**, where 0.72 with just 13 products is a genuine result. The cumulative-level gap reflects a narrower basket than the official one.
+
+The method **tracks** official inflation year to year where real retail data exists. Morocco's gap is therefore largely a **data problem** (only producer prices are public), not a method problem. See [`scripts/validate_usa.py`](scripts/validate_usa.py).
 
 ## Data & sources (all verifiable)
 
@@ -119,7 +125,9 @@ Run the tests with `pytest -q`.
 - **Local (reliable):** `scripts/daily_collect.bat` is registered in **Windows Task Scheduler** (runs at 20:00) — it collects, rebuilds the index, and commits + pushes. A Morocco IP is not blocked by the retailer.
 - **Cloud:** the [nightly GitHub Actions workflow](.github/workflows/nightly.yml) does the same and refreshes the official series; the retailer may block cloud IPs, so the local runner is the primary collector.
 
-Because prices are collected **forward** in time, the daily curve **grows one point per day** — a real daily history can't be reconstructed from the past, exactly as the Billion Prices Project did.
+Because prices are collected **forward** in time, the daily curve **grows one point per day** — a real daily history can't be reconstructed from the past, exactly as the Billion Prices Project did. **The daily series started in September 2026**, so it is still short; the long-run comparison and the US validation are what carry the analysis for now.
+
+The daily index is a **chained, matched-sample** index (`I_t = I_{t-1} × Jevons(p_t / p_{t-1})` over products present on both days), so it is robust to products dropping in/out of a scrape and does not depend on an arbitrary base day.
 
 ## Honest limitations
 

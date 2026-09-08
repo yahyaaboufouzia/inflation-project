@@ -16,11 +16,16 @@ Output: data/validation_usa.csv  (year, our US index, official US food CPI)
 from __future__ import annotations
 
 import io
+import sys
 from pathlib import Path
 
 import httpx
-import numpy as np
 import pandas as pd
+import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from inflation.index import index_from_relatives  # noqa: E402
 
 OUT = Path("data/validation_usa.csv")
 BASE_YEAR = 2000
@@ -41,10 +46,9 @@ US_BASKET = {
     "Café (moulu, /lb)":      ("APU0000717311", "Boissons"),
     "Sucre (/lb)":            ("APU0000715211", "Sucre"),
 }
-CATEGORY_WEIGHTS = {
-    "Céréales": 0.30, "Viandes": 0.25, "Produits animaux": 0.18,
-    "Fruits": 0.10, "Légumes": 0.10, "Boissons": 0.04, "Sucre": 0.03,
-}
+FOOD_WEIGHTS = yaml.safe_load(
+    (Path(__file__).resolve().parent.parent / "config" / "weights.yaml")
+    .read_text(encoding="utf-8"))["food_subcategories"]
 
 
 def fred(series_id: str) -> pd.Series | None:
@@ -73,21 +77,13 @@ def our_us_index() -> pd.DataFrame:
         print(f"  + {label}: {len(s)} years")
 
     rel = pd.DataFrame(prices)
-    rows = []
-    for year, row in rel.iterrows():
-        cat_rel, cat_w = {}, {}
-        for label, r in row.dropna().items():
-            c = cats[label]
-            cat_rel.setdefault(c, []).append(r)
-            cat_w[c] = CATEGORY_WEIGHTS.get(c, 0.0)
-        vals, ws = [], []
-        for c, rs in cat_rel.items():
-            vals.append(float(np.exp(np.mean(np.log(rs)))))  # Jevons
-            ws.append(cat_w[c])
-        if sum(ws) == 0:
-            continue
-        rows.append((int(year), round(100 * float(np.average(vals, weights=ws)), 2)))
-    return pd.DataFrame(rows, columns=["annee", "indice_nous_usa"])
+    rel.index.name = "period"
+    long = (rel.reset_index()
+            .melt(id_vars="period", var_name="label", value_name="relative")
+            .dropna(subset=["relative"]))
+    long["category"] = long["label"].map(cats)
+    out = index_from_relatives(long[["period", "category", "relative"]], FOOD_WEIGHTS)
+    return out.rename(columns={"period": "annee", "value": "indice_nous_usa"})
 
 
 def main() -> None:
@@ -99,10 +95,30 @@ def main() -> None:
     m = ours.merge(cpi, on="annee", how="inner").sort_values("annee").reset_index(drop=True)
     m.to_csv(OUT, index=False, encoding="utf-8")
 
-    corr = m["indice_nous_usa"].corr(m["cpi_food_usa"])
+    # --- honest validation metrics ------------------------------------------
+    # NOTE: correlating index LEVELS is spurious (Granger-Newbold): two rising
+    # non-stationary series always correlate ~0.99 — even a bogus exp(0.03 t)
+    # trend beats us. The real test is on year-over-year RATES (stationary).
+    m = m.sort_values("annee")
+    yoy_n = m["indice_nous_usa"].pct_change() * 100
+    yoy_o = m["cpi_food_usa"].pct_change() * 100
+    ok = yoy_n.notna() & yoy_o.notna()
+    yoy_corr = yoy_n[ok].corr(yoy_o[ok])
+    mae = (yoy_n[ok] - yoy_o[ok]).abs().mean()
+    cum_n = (m["indice_nous_usa"].iloc[-1] / m["indice_nous_usa"].iloc[0] - 1) * 100
+    cum_o = (m["cpi_food_usa"].iloc[-1] / m["cpi_food_usa"].iloc[0] - 1) * 100
+
     print(f"\nWrote {OUT}: {len(m)} years ({m['annee'].min()}-{m['annee'].max()})")
-    print(f"Corrélation notre indice US vs CPI alimentaire officiel US : {corr:.4f}")
-    print(m[m["annee"] >= 2018].to_string(index=False))
+    print("Honest metrics (do NOT report the level correlation):")
+    print(f"  YoY-rate correlation : {yoy_corr:.3f}")
+    print(f"  MAE on annual rates  : {mae:.2f} pts")
+    print(f"  Cumulative inflation : ours {cum_n:.0f}% vs official {cum_o:.0f}%")
+
+    pd.DataFrame([{"yoy_corr": round(yoy_corr, 3), "mae_pts": round(mae, 2),
+                   "cum_ours_pct": round(cum_n), "cum_official_pct": round(cum_o),
+                   "annee_min": int(m["annee"].min()), "annee_max": int(m["annee"].max()),
+                   "n_produits": len(US_BASKET)}]).to_csv(
+        "data/validation_metrics.csv", index=False, encoding="utf-8")
 
 
 if __name__ == "__main__":
