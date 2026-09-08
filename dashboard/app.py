@@ -1,9 +1,9 @@
 """Morocco Inflation Tracker — public dashboard.
 
-Compares OUR food inflation index against the official Morocco food CPI, with
-three methodological corrections (food-vs-food coverage, a smoothed series to
-approximate sticky retail prices, and household food weights). Reads only
-committed CSVs, so it deploys cleanly on Streamlit Community Cloud.
+Three views: (1) our DAILY chained index of ~350 consumer products scraped from
+Aswak Assalam, (2) a long-run comparison of our food index vs the official
+Morocco food CPI, and (3) a method validation on the USA. Reads only committed
+CSVs, so it deploys cleanly on Streamlit Community Cloud.
 
     streamlit run dashboard/app.py
 """
@@ -11,84 +11,152 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-RAW = "#93c5fd"      # our raw index (light)
-OURS = "#2563eb"     # our smoothed index
-FOOD = "#e07a3f"     # official food CPI
-GEN = "#9ca3af"      # official general CPI
+RAW = "#93c5fd"
+OURS = "#2563eb"
+FOOD = "#e07a3f"
+GEN = "#9ca3af"
+
+# retail category -> CPI division (mirrors build_daily_index.DIVISION; housing
+# is deliberately absent — it is tracked as a separate noisy series)
+DIVISION = {
+    "patisserie": "Alimentation", "boulangerie": "Alimentation",
+    "fruits-legumes": "Alimentation", "boucherie-volaille": "Alimentation",
+    "charcuterie-traiteur": "Alimentation", "cremerie": "Alimentation",
+    "epicerie": "Alimentation", "biscuiterie-confiserie": "Alimentation",
+    "boissons": "Alimentation",
+    "beaute-hygiene": "Hygiène & entretien", "entretien": "Hygiène & entretien",
+}
 
 st.set_page_config(page_title="Morocco Inflation Tracker", page_icon="📈", layout="wide")
 
 
+def _csv(name: str, **kw) -> pd.DataFrame:
+    p = ROOT / "data" / name
+    return pd.read_csv(p, **kw) if p.exists() else pd.DataFrame()
+
+
 @st.cache_data(ttl=600)
 def load_index() -> pd.DataFrame:
-    return pd.read_csv(ROOT / "data" / "indice_inflation.csv")
+    return _csv("indice_inflation.csv")
 
 
 @st.cache_data(ttl=600)
 def load_prices() -> pd.DataFrame:
-    return pd.read_csv(ROOT / "data" / "prix_maroc_faostat.csv")
+    return _csv("prix_maroc_faostat.csv")
 
 
 @st.cache_data(ttl=600)
 def load_daily() -> pd.DataFrame:
-    p = ROOT / "data" / "prix_actuels.csv"
-    return pd.read_csv(p, parse_dates=["date"]) if p.exists() else pd.DataFrame()
+    return _csv("prix_actuels.csv", parse_dates=["date"])
 
 
 @st.cache_data(ttl=600)
 def load_validation() -> pd.DataFrame:
-    p = ROOT / "data" / "validation_usa.csv"
-    return pd.read_csv(p) if p.exists() else pd.DataFrame()
+    return _csv("validation_usa.csv")
 
 
 @st.cache_data(ttl=600)
 def load_daily_index() -> pd.DataFrame:
-    p = ROOT / "data" / "indice_quotidien.csv"
-    return pd.read_csv(p, parse_dates=["date"]) if p.exists() else pd.DataFrame()
+    return _csv("indice_quotidien.csv", parse_dates=["date"])
+
+
+@st.cache_data(ttl=600)
+def load_housing() -> pd.DataFrame:
+    return _csv("serie_logement.csv", parse_dates=["date"])
+
+
+@st.cache_data(ttl=600)
+def _weights() -> dict:
+    p = ROOT / "config" / "weights.yaml"
+    return yaml.safe_load(p.read_text(encoding="utf-8")).get("divisions", {}) if p.exists() else {}
+
+
+def covered_legend(daily_prices: pd.DataFrame) -> str:
+    """Legend generated FROM the YAML weights, restricted to the divisions we
+    actually collect and renormalised — never announces uncovered divisions."""
+    if daily_prices.empty:
+        return ""
+    divs = {DIVISION[c] for c in daily_prices["categorie"].unique() if c in DIVISION}
+    w = _weights()
+    present = {d: w.get(d, 0.0) for d in divs}
+    total = sum(present.values()) or 1.0
+    return " · ".join(f"**{d} {v / total * 100:.0f}%**"
+                      for d, v in sorted(present.items(), key=lambda x: -x[1]))
 
 
 st.title("📈 Morocco Inflation Tracker")
 st.caption(
-    "Notre indice d'inflation **alimentaire indépendant** (panier de 21 produits "
-    "de base) vs l'**inflation alimentaire officielle** du Maroc. "
+    "Un indice d'inflation **indépendant** pour le Maroc : un indice **quotidien** "
+    "de ~350 produits scrapés, comparé à l'inflation officielle. "
     "Inspiré du Billion Prices Project du MIT."
 )
 
-# ---- DAILY index (the headline: our real-time measure) ----------------------
+# ---- DAILY index (headline: food + hygiene, the real observations) ----------
 di = load_daily_index()
 if not di.empty:
-    st.subheader("🗓️ Indice quotidien — notre mesure en temps réel")
+    st.subheader("🗓️ Indice quotidien — alimentation & hygiène (temps réel)")
     latest = di.iloc[-1]
     d1, d2, d3 = st.columns(3)
-    d1.metric("Indice du jour", f"{latest['indice_quotidien']:.1f}",
+    d1.metric("Indice du jour", f"{latest['indice_quotidien']:.2f}",
               f"{latest['indice_quotidien'] - 100:+.2f}% vs départ")
     d2.metric("Produits suivis", int(latest["n_produits"]))
     d3.metric("Jours collectés", len(di))
-    st.caption(
-        "Panier pondéré façon CPI : **Alimentation 45%** (Aswak Assalam), "
-        "**Logement 22%** (loyers Mubawab, DH/m²), Transport 13%, Équipement 12%, "
-        "Hygiène & entretien 8%. Non plus seulement alimentaire."
-    )
-    if len(di) >= 2:
+
+    daily = load_daily()
+    leg = covered_legend(daily)
+    if leg:
+        st.caption(f"Panier pondéré (poids HCP renormalisés sur les divisions **réellement "
+                   f"couvertes**) : {leg}. Le loyer est suivi **à part** (proxy bruité, ci-dessous).")
+
+    if len(di) >= 7:
         dfig = go.Figure()
         dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"],
-                                  mode="lines+markers", line=dict(color=OURS, width=2.5),
-                                  name="Indice quotidien"))
+                                  mode="lines+markers", line=dict(color=OURS, width=2.5)))
         dfig.update_layout(height=330, hovermode="x unified",
                            margin=dict(l=10, r=10, t=10, b=10),
                            yaxis_title="Indice (base 100 au départ)")
         st.plotly_chart(dfig, use_container_width=True)
+    elif len(di) >= 2:
+        # too few points for a line — it would falsely suggest a trend
+        dfig = go.Figure()
+        dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"],
+                                  mode="markers", marker=dict(color=OURS, size=12)))
+        dfig.update_layout(height=300, margin=dict(l=10, r=10, t=10, b=10),
+                           yaxis_title="Indice (base 100)")
+        st.plotly_chart(dfig, use_container_width=True)
+        st.caption(f"Seulement **{len(di)} jours** collectés — on affiche des points, pas une "
+                   "courbe (une ligne suggérerait une fausse tendance). Série démarrée en "
+                   "sept. 2026, +1 point/jour.")
     else:
-        st.info(
-            f"📈 La série quotidienne démarre aujourd'hui (base 100, "
-            f"{int(latest['n_produits'])} produits). **Elle s'enrichit d'un point "
-            "chaque jour** — reviens demain pour voir la courbe se tracer."
-        )
+        st.info(f"📈 Série démarrée (base 100, {int(latest['n_produits'])} produits). "
+                "Elle s'enrichit d'un point chaque jour.")
+
+    # price-change frequency — a real BPP-literature metric
+    if len(di) >= 2 and not daily.empty:
+        piv = (daily[daily["categorie"] != "logement"]
+               .pivot_table(index="product_id", columns="date", values="prix", aggfunc="median"))
+        if piv.shape[1] >= 2:
+            last2 = piv.iloc[:, -2:].dropna()
+            if len(last2):
+                changed = (last2.iloc[:, 0] != last2.iloc[:, 1]).mean() * 100
+                st.caption(f"📊 **{changed:.0f}% des prix ont changé** entre les deux derniers "
+                           "jours. Les prix de détail sont rigides (Cavallo : ~1 changement "
+                           "toutes les 2–3 semaines) — d'où un indice quotidien peu volatil.")
+
+    # housing shown separately, honestly labelled
+    hz = load_housing()
+    if not hz.empty:
+        st.caption(f"🏠 **Loyer (Mubawab)** — proxy d'annonces **très bruité, hors indice** : "
+                   f"dernier {hz['loyer_dh_m2'].iloc[-1]:.0f} DH/m²/mois. Exclu du headline car "
+                   "il bouge surtout selon les annonces listées, pas les vrais loyers "
+                   "(les IPC relèvent les loyers trimestriellement).")
     st.divider()
 
 idx = load_index()
@@ -200,12 +268,19 @@ if not val.empty:
         "c'est un problème de données, pas de méthode."
     )
 
-# ---- recent daily prices ----------------------------------------------------
+# ---- today's scraped prices (compact) ---------------------------------------
 daily = load_daily()
 if not daily.empty:
-    st.subheader("Prix de détail relevés récemment (scraping quotidien)")
-    st.caption("Prix réels ajoutés chaque jour depuis Aswak Assalam, avec leur source.")
-    st.dataframe(daily.sort_values("date").tail(60), use_container_width=True, hide_index=True)
+    st.subheader("Derniers prix relevés (Aswak Assalam)")
+    last_day = daily["date"].max()
+    view = (daily[(daily["date"] == last_day) & (daily["categorie"] != "logement")]
+            .assign(Jour=last_day.date().isoformat())
+            [["Jour", "produit", "categorie", "prix"]]
+            .rename(columns={"produit": "Produit", "categorie": "Catégorie", "prix": "Prix (DH)"})
+            .sort_values("Catégorie"))
+    st.caption(f"{len(view)} produits relevés le {last_day.date().isoformat()}. "
+               "Source de chaque prix : `data/prix_actuels.csv` (colonne source_url).")
+    st.dataframe(view, use_container_width=True, hide_index=True, height=280)
 
 # ---- per-product changes ----------------------------------------------------
 st.subheader("Variation de prix par produit (base FAOSTAT)")
@@ -223,7 +298,6 @@ if len(piv.columns):
 # ---- what drives inflation, by category -------------------------------------
 st.subheader("Ce qui tire l'inflation, par catégorie")
 if len(piv.columns):
-    import numpy as np
     y0, y1 = min(piv.columns), max(piv.columns)
     prices2 = prices[prices["annee"].isin([y0, y1])]
     contrib = []

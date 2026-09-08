@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/prix_actuels.csv data/indice_quotidien.csv data/indice_inflation.csv data/official/cpi_maroc_faostat.csv data/aswak_catalog.csv
+          git add data/prix_actuels.csv data/indice_quotidien.csv data/serie_logement.csv data/indice_inflation.csv data/official/cpi_maroc_faostat.csv data/aswak_catalog.csv
           if git diff --staged --quiet; then
             echo "No change."
           else

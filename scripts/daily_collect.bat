@@ -16,7 +16,7 @@ REM 2. scrape today's prices, rebuild the daily index, refresh the official seri
 "venv\Scripts\python.exe" scripts\build_inflation_index.py >> collect.log 2>&1
 
 REM 3. commit + push only if something changed
-git add data\prix_actuels.csv data\indice_quotidien.csv data\indice_inflation.csv data\official\cpi_maroc_faostat.csv data\aswak_catalog.csv
+git add data\prix_actuels.csv data\indice_quotidien.csv data\serie_logement.csv data\indice_inflation.csv data\official\cpi_maroc_faostat.csv data\aswak_catalog.csv
 git diff --cached --quiet
 if errorlevel 1 (
   git commit -m "chore: releve quotidien (%DATE%)" >> collect.log 2>&1
