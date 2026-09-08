@@ -16,14 +16,15 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from inflation.index import chained_matched_index  # noqa: E402
 
-PRICES = Path("data/prix_actuels.csv")
-OUT = Path("data/indice_quotidien.csv")
-HOUSING_OUT = Path("data/serie_logement.csv")
-WEIGHTS = Path("config/weights.yaml")
+PRICES = ROOT / "data" / "prix_actuels.csv"
+OUT = ROOT / "data" / "indice_quotidien.csv"
+HOUSING_OUT = ROOT / "data" / "serie_logement.csv"
+WEIGHTS = ROOT / "config" / "weights.yaml"
 
 _CFG = yaml.safe_load(WEIGHTS.read_text(encoding="utf-8"))
 DIVISION = _CFG["division_of_category"]   # single source of truth (config/weights.yaml)
@@ -44,6 +45,12 @@ def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
                .rename(columns={"prix": "loyer_dh_m2"}).sort_values("date")
                .reset_index(drop=True))
     core = df[df["categorie"] != "logement"]
+
+    # fail loudly if a collected category has no division mapping — otherwise it
+    # would silently get weight 0 and never enter the index
+    unmapped = set(core["categorie"]) - set(DIVISION)
+    if unmapped:
+        raise ValueError(f"catégories non mappées dans weights.yaml : {sorted(unmapped)}")
 
     prod_cat = core.drop_duplicates("product_id").set_index("product_id")["categorie"]
     category_of = {pid: DIVISION.get(c, "Autre") for pid, c in prod_cat.items()}

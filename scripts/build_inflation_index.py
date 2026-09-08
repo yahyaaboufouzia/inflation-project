@@ -29,15 +29,16 @@ import httpx
 import pandas as pd
 import yaml
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from inflation.index import index_from_relatives  # noqa: E402
 
-FAOSTAT_PRICES = Path("data/prix_maroc_faostat.csv")
+FAOSTAT_PRICES = ROOT / "data" / "prix_maroc_faostat.csv"
 CP_BULK = "https://bulks-faostat.fao.org/production/ConsumerPriceIndices_E_All_Data_(Normalized).zip"
-CPI_OUT = Path("data/official/cpi_maroc_faostat.csv")
-INDEX_OUT = Path("data/indice_inflation.csv")
-WEIGHTS = Path("config/weights.yaml")
+CPI_OUT = ROOT / "data" / "official" / "cpi_maroc_faostat.csv"
+INDEX_OUT = ROOT / "data" / "indice_inflation.csv"
+WEIGHTS = ROOT / "config" / "weights.yaml"
 BASE_YEAR = 2010
 
 FOOD_WEIGHTS = yaml.safe_load(WEIGHTS.read_text(encoding="utf-8"))["food_subcategories"]

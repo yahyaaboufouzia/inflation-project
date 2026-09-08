@@ -134,13 +134,14 @@ if not di.empty:
             if len(last2):
                 changed_mask = last2.iloc[:, 0] != last2.iloc[:, 1]
                 n_changed, n_tot = int(changed_mask.sum()), len(last2)
-                msg = (f"📊 **{n_changed} produit(s) sur {n_tot} "
-                       f"({n_changed / n_tot * 100:.1f} %)** ont changé de prix entre les deux "
-                       "derniers jours")
+                nom = "produit" if n_changed == 1 else "produits"
+                verbe = "a changé" if n_changed == 1 else "ont changé"
+                pct = f"{n_changed / n_tot * 100:.1f}".replace(".", ",")
+                msg = f"📊 **{n_changed} {nom} sur {n_tot} ({pct} %)** {verbe} de prix entre les deux derniers jours"
                 if n_changed:
                     rel = (last2.iloc[:, 1] / last2.iloc[:, 0] - 1) * 100
-                    mv = rel.loc[rel.abs().idxmax()]
-                    msg += f" — plus gros mouvement **{mv:+.1f} %** (typiquement une promo)"
+                    mv = f"{rel.loc[rel.abs().idxmax()]:+.1f}".replace(".", ",")
+                    msg += f" — plus gros mouvement **{mv} %** (typiquement une promo)"
                 st.caption(msg + ". Les prix de détail sont rigides (Cavallo : ~1 changement "
                            "toutes les 2–3 semaines).")
 
@@ -312,8 +313,13 @@ if len(piv.columns):
     st.plotly_chart(cbar, use_container_width=True)
 
 with st.expander("Méthodologie, corrections et sources"):
+    # weights renormalised over the food categories ACTUALLY in the FAOSTAT data
+    # (boissons/sucre are absent -> they must not appear as if applied)
     _fw = _CFG.get("food_subcategories", {})
-    food_w_str = ", ".join(f"{k.lower()} {v * 100:.0f}%" for k, v in _fw.items())
+    _present = set(prices["categorie"].unique()) if not prices.empty else set(_fw)
+    _fw = {k: v for k, v in _fw.items() if k in _present}
+    _tot = sum(_fw.values()) or 1.0
+    food_w_str = ", ".join(f"{k.lower()} {v / _tot * 100:.0f}%" for k, v in _fw.items())
     st.markdown(
         f"""
 **Indice** (base 2010 = 100) : moyenne géométrique (Jevons) des prix par
