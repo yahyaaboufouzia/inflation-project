@@ -7,6 +7,26 @@
 # should be refined against the exact figures in the official HCP publication.
 # Weights are renormalised over whichever groups are actually covered.
 
+# Map each scraped retail category to a CPI division. Single source of truth,
+# loaded by both build_daily_index.py and the dashboard (no duplication).
+division_of_category:
+  patisserie: Alimentation
+  boulangerie: Alimentation
+  fruits-legumes: Alimentation
+  boucherie-volaille: Alimentation
+  charcuterie-traiteur: Alimentation
+  cremerie: Alimentation
+  epicerie: Alimentation
+  biscuiterie-confiserie: Alimentation
+  boissons: Alimentation
+  beaute-hygiene: "Hygiène & entretien"
+  entretien: "Hygiène & entretien"
+  maison-cuisine: Équipement
+  petit-electromenager: Équipement
+  gros-electromenager: Équipement
+  multimedia: Équipement
+  # "logement" is intentionally absent: tracked as a separate noisy series.
+
 # For the DAILY multi-division index (spans food, housing, etc.).
 divisions:
   Alimentation: 0.39           # 01  produits alimentaires & boissons

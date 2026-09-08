@@ -23,16 +23,11 @@ OURS = "#2563eb"
 FOOD = "#e07a3f"
 GEN = "#9ca3af"
 
-# retail category -> CPI division (mirrors build_daily_index.DIVISION; housing
-# is deliberately absent — it is tracked as a separate noisy series)
-DIVISION = {
-    "patisserie": "Alimentation", "boulangerie": "Alimentation",
-    "fruits-legumes": "Alimentation", "boucherie-volaille": "Alimentation",
-    "charcuterie-traiteur": "Alimentation", "cremerie": "Alimentation",
-    "epicerie": "Alimentation", "biscuiterie-confiserie": "Alimentation",
-    "boissons": "Alimentation",
-    "beaute-hygiene": "Hygiène & entretien", "entretien": "Hygiène & entretien",
-}
+_WPATH = ROOT / "config" / "weights.yaml"
+_CFG = yaml.safe_load(_WPATH.read_text(encoding="utf-8")) if _WPATH.exists() else {}
+# category -> CPI division and division weights, both from the single config
+# source of truth (no duplication with build_daily_index.py)
+DIVISION = _CFG.get("division_of_category", {})
 
 st.set_page_config(page_title="Morocco Inflation Tracker", page_icon="📈", layout="wide")
 
@@ -72,19 +67,13 @@ def load_housing() -> pd.DataFrame:
     return _csv("serie_logement.csv", parse_dates=["date"])
 
 
-@st.cache_data(ttl=600)
-def _weights() -> dict:
-    p = ROOT / "config" / "weights.yaml"
-    return yaml.safe_load(p.read_text(encoding="utf-8")).get("divisions", {}) if p.exists() else {}
-
-
 def covered_legend(daily_prices: pd.DataFrame) -> str:
     """Legend generated FROM the YAML weights, restricted to the divisions we
     actually collect and renormalised — never announces uncovered divisions."""
     if daily_prices.empty:
         return ""
     divs = {DIVISION[c] for c in daily_prices["categorie"].unique() if c in DIVISION}
-    w = _weights()
+    w = _CFG.get("divisions", {})
     present = {d: w.get(d, 0.0) for d in divs}
     total = sum(present.values()) or 1.0
     return " · ".join(f"**{d} {v / total * 100:.0f}%**"
@@ -115,25 +104,23 @@ if not di.empty:
         st.caption(f"Panier pondéré (poids HCP renormalisés sur les divisions **réellement "
                    f"couvertes**) : {leg}. Le loyer est suivi **à part** (proxy bruité, ci-dessous).")
 
-    if len(di) >= 7:
-        dfig = go.Figure()
-        dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"],
-                                  mode="lines+markers", line=dict(color=OURS, width=2.5)))
-        dfig.update_layout(height=330, hovermode="x unified",
-                           margin=dict(l=10, r=10, t=10, b=10),
-                           yaxis_title="Indice (base 100 au départ)")
+    if len(di) >= 2:
+        # fixed y-range so a 0.01-point move doesn't look like a collapse,
+        # and a date x-axis (not hours)
+        lo = min(98.0, di["indice_quotidien"].min() - 1)
+        hi = max(102.0, di["indice_quotidien"].max() + 1)
+        mode = "lines+markers" if len(di) >= 7 else "markers"
+        dfig = go.Figure(go.Scatter(x=di["date"], y=di["indice_quotidien"], mode=mode,
+                                    line=dict(color=OURS, width=2.5),
+                                    marker=dict(color=OURS, size=11)))
+        dfig.update_layout(height=320, margin=dict(l=10, r=10, t=10, b=10),
+                           yaxis=dict(title="Indice (base 100 au départ)", range=[lo, hi]),
+                           xaxis=dict(tickformat="%d %b", dtick=86400000.0))
         st.plotly_chart(dfig, use_container_width=True)
-    elif len(di) >= 2:
-        # too few points for a line — it would falsely suggest a trend
-        dfig = go.Figure()
-        dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"],
-                                  mode="markers", marker=dict(color=OURS, size=12)))
-        dfig.update_layout(height=300, margin=dict(l=10, r=10, t=10, b=10),
-                           yaxis_title="Indice (base 100)")
-        st.plotly_chart(dfig, use_container_width=True)
-        st.caption(f"Seulement **{len(di)} jours** collectés — on affiche des points, pas une "
-                   "courbe (une ligne suggérerait une fausse tendance). Série démarrée en "
-                   "sept. 2026, +1 point/jour.")
+        if len(di) < 7:
+            st.caption(f"Seulement **{len(di)} jours** collectés — points, pas une courbe "
+                       "(une ligne suggérerait une fausse tendance). Série démarrée en "
+                       "sept. 2026, +1 point/jour.")
     else:
         st.info(f"📈 Série démarrée (base 100, {int(latest['n_produits'])} produits). "
                 "Elle s'enrichit d'un point chaque jour.")
@@ -145,10 +132,17 @@ if not di.empty:
         if piv.shape[1] >= 2:
             last2 = piv.iloc[:, -2:].dropna()
             if len(last2):
-                changed = (last2.iloc[:, 0] != last2.iloc[:, 1]).mean() * 100
-                st.caption(f"📊 **{changed:.0f}% des prix ont changé** entre les deux derniers "
-                           "jours. Les prix de détail sont rigides (Cavallo : ~1 changement "
-                           "toutes les 2–3 semaines) — d'où un indice quotidien peu volatil.")
+                changed_mask = last2.iloc[:, 0] != last2.iloc[:, 1]
+                n_changed, n_tot = int(changed_mask.sum()), len(last2)
+                msg = (f"📊 **{n_changed} produit(s) sur {n_tot} "
+                       f"({n_changed / n_tot * 100:.1f} %)** ont changé de prix entre les deux "
+                       "derniers jours")
+                if n_changed:
+                    rel = (last2.iloc[:, 1] / last2.iloc[:, 0] - 1) * 100
+                    mv = rel.loc[rel.abs().idxmax()]
+                    msg += f" — plus gros mouvement **{mv:+.1f} %** (typiquement une promo)"
+                st.caption(msg + ". Les prix de détail sont rigides (Cavallo : ~1 changement "
+                           "toutes les 2–3 semaines).")
 
     # housing shown separately, honestly labelled
     hz = load_housing()
@@ -160,6 +154,9 @@ if not di.empty:
     st.divider()
 
 idx = load_index()
+if idx.empty or "indice_nous" not in idx.columns:
+    st.warning("Données long terme absentes — lance `python scripts/build_inflation_index.py`.")
+    st.stop()
 
 # ---- long-run comparison (context) -----------------------------------------
 st.subheader("📅 Comparaison longue durée (contexte annuel)")
@@ -315,12 +312,14 @@ if len(piv.columns):
     st.plotly_chart(cbar, use_container_width=True)
 
 with st.expander("Méthodologie, corrections et sources"):
+    _fw = _CFG.get("food_subcategories", {})
+    food_w_str = ", ".join(f"{k.lower()} {v * 100:.0f}%" for k, v in _fw.items())
     st.markdown(
-        """
+        f"""
 **Indice** (base 2010 = 100) : moyenne géométrique (Jevons) des prix par
 catégorie, puis moyenne pondérée (Laspeyres) entre catégories, avec des poids
-de consommation alimentaire (céréales 28%, viandes 22%, produits animaux 14%,
-légumes 16%, fruits 12%, légumineuses 8%).
+de consommation alimentaire lus depuis `config/weights.yaml`
+({food_w_str}).
 
 **Trois corrections pour une comparaison juste**
 1. **Couverture** — on compare à l'**inflation alimentaire** officielle (et non

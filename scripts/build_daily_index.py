@@ -25,18 +25,8 @@ OUT = Path("data/indice_quotidien.csv")
 HOUSING_OUT = Path("data/serie_logement.csv")
 WEIGHTS = Path("config/weights.yaml")
 
-# retail category -> CPI division (weights come from config/weights.yaml)
-DIVISION = {
-    "patisserie": "Alimentation", "boulangerie": "Alimentation",
-    "fruits-legumes": "Alimentation", "boucherie-volaille": "Alimentation",
-    "charcuterie-traiteur": "Alimentation", "cremerie": "Alimentation",
-    "epicerie": "Alimentation", "biscuiterie-confiserie": "Alimentation",
-    "boissons": "Alimentation",
-    "beaute-hygiene": "Hygiène & entretien", "entretien": "Hygiène & entretien",
-    "logement": "Logement", "carburant": "Transport",
-    "maison-cuisine": "Équipement", "petit-electromenager": "Équipement",
-    "gros-electromenager": "Équipement", "multimedia": "Équipement",
-}
+_CFG = yaml.safe_load(WEIGHTS.read_text(encoding="utf-8"))
+DIVISION = _CFG["division_of_category"]   # single source of truth (config/weights.yaml)
 
 
 def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -48,7 +38,7 @@ def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     labelled series, out of the headline index (real CPIs survey rents
     quarterly, not daily).
     """
-    weights = yaml.safe_load(WEIGHTS.read_text(encoding="utf-8"))["divisions"]
+    weights = _CFG["divisions"]
 
     housing = (df[df["categorie"] == "logement"][["date", "prix"]]
                .rename(columns={"prix": "loyer_dh_m2"}).sort_values("date")
@@ -83,10 +73,6 @@ def main() -> None:
         housing.to_csv(HOUSING_OUT, index=False, encoding="utf-8")
     print(f"Indice quotidien (chaîné): {len(out)} jour(s) -> {OUT}")
     print(out.tail(7).to_string(index=False))
-
-
-if __name__ == "__main__":
-    main()
 
 
 if __name__ == "__main__":
