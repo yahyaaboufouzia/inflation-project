@@ -13,13 +13,14 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from inflation.index import chained_matched_index, family_keys  # noqa: E402
+from inflation.index import chained_matched_index  # noqa: E402
 
 PRICES = ROOT / "data" / "prix_actuels.csv"
 OUT = ROOT / "data" / "indice_quotidien.csv"
@@ -41,13 +42,13 @@ def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     weights = _CFG["divisions"]
 
-    # tolerate older price files that predate the promo columns
+    # distinguish "not on promo" from "promo NOT MEASURED": on older files that
+    # predate the promo columns, leave them NaN (not False / not = prix) so the
+    # dashboard hides the reference series and the % promo instead of claiming 0
     if "prix_reference" not in df.columns:
-        df = df.assign(prix_reference=df["prix"])
-    else:
-        df["prix_reference"] = df["prix_reference"].fillna(df["prix"])
+        df = df.assign(prix_reference=np.nan)
     if "en_promo" not in df.columns:
-        df = df.assign(en_promo=False)
+        df = df.assign(en_promo=np.nan)
 
     housing = (df[df["categorie"] == "logement"][["date", "prix"]]
                .rename(columns={"prix": "loyer_dh_m2"}).sort_values("date")
@@ -62,24 +63,30 @@ def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
     prod_cat = core.drop_duplicates("product_id").set_index("product_id")["categorie"]
     category_of = {pid: DIVISION.get(c, "Autre") for pid, c in prod_cat.items()}
-    family_of = family_keys(prod_cat.index)   # collapse range variants
 
-    def series(value_col: str) -> pd.DataFrame:
-        wide = core.pivot_table(index="date", columns="product_id", values=value_col,
-                                aggfunc="median").sort_index()
-        return chained_matched_index(wide, category_of, weights, family_of)
+    def series(frame: pd.DataFrame, value_col: str, name: str) -> pd.DataFrame:
+        wide = frame.pivot_table(index="date", columns="product_id", values=value_col,
+                                 aggfunc="median").sort_index()
+        return chained_matched_index(wide, category_of, weights).rename(
+            columns={"period": "date", "value": name})
 
-    disp = series("prix").rename(columns={"period": "date", "value": "indice_quotidien"})
-    ref = series("prix_reference").rename(columns={"period": "date", "value": "indice_reference"})
-    out = disp.merge(ref, on="date")
+    out = series(core, "prix", "indice_quotidien")
 
-    # per-day: products matched, and share of them on promotion
+    # reference series only over days where the reference price was measured
+    ref_rows = core[core["prix_reference"].notna()]
+    if not ref_rows.empty:
+        ref = series(ref_rows, "prix_reference", "indice_reference")
+        out = out.merge(ref, on="date", how="left")
+
     wide_disp = core.pivot_table(index="date", columns="product_id", values="prix",
                                  aggfunc="median").sort_index()
     out = out.merge(wide_disp.notna().sum(axis=1).rename("n_produits"),
                     left_on="date", right_index=True)
-    promo = (core.assign(en_promo=core["en_promo"].astype(bool))
-             .groupby("date")["en_promo"].mean().mul(100).round(1).rename("pct_en_promo"))
+
+    # % on promo per day; NaN (not 0) on days where it was not measured
+    promo_num = core["en_promo"].map({True: 1.0, False: 0.0})
+    promo = (promo_num.groupby(core["date"]).mean().mul(100).round(1)
+             .rename("pct_en_promo"))
     out = out.merge(promo, left_on="date", right_index=True, how="left").reset_index(drop=True)
     return out, housing
 

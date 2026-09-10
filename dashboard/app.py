@@ -111,7 +111,9 @@ if not di.empty:
     if len(di) >= 2:
         # fixed y-range so a 0.01-point move doesn't look like a collapse,
         # and a date x-axis (not hours)
-        cols = ["indice_quotidien"] + (["indice_reference"] if "indice_reference" in di else [])
+        # only show the reference series where it was actually measured
+        has_ref = "indice_reference" in di and di["indice_reference"].notna().any()
+        cols = ["indice_quotidien"] + (["indice_reference"] if has_ref else [])
         lo = min(98.0, di[cols].min().min() - 1)
         hi = max(102.0, di[cols].max().max() + 1)
         mode = "lines+markers" if len(di) >= 7 else "markers"
@@ -119,9 +121,9 @@ if not di.empty:
         dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"], mode=mode,
                                   name="Prix affichés (avec promos)",
                                   line=dict(color=OURS, width=2.5), marker=dict(color=OURS, size=11)))
-        if "indice_reference" in di:
+        if has_ref:
             dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_reference"], mode=mode,
-                                      name="Prix de référence (hors promos)",
+                                      name="Prix de référence (hors promos)", connectgaps=False,
                                       line=dict(color=GEN, width=2, dash="dash"),
                                       marker=dict(color=GEN, size=9)))
         dfig.update_layout(height=320, margin=dict(l=10, r=10, t=10, b=10),
@@ -129,10 +131,14 @@ if not di.empty:
                            yaxis=dict(title="Indice (base 100 au départ)", range=[lo, hi]),
                            xaxis=dict(tickformat="%d %b", dtick=86400000.0))
         st.plotly_chart(dfig, use_container_width=True)
-        st.caption("Deux séries : **prix affichés** (ce que paie le client, promos incluses) et "
-                   "**prix de référence** (prix barrés, hors promos). L'écart entre les deux "
-                   "**est** l'effet promotionnel — sans ça, une rotation de promos se lirait "
-                   "comme de l'inflation.")
+        if has_ref:
+            st.caption("Deux séries : **prix affichés** (ce que paie le client, promos incluses) "
+                       "et **prix de référence** (prix barrés, hors promos). L'écart entre les "
+                       "deux **est** l'effet promotionnel — sans ça, une rotation de promos se "
+                       "lirait comme de l'inflation.")
+        else:
+            st.caption("La série « prix de référence » (hors promos) apparaîtra dès la première "
+                       "collecte avec le scraper qui lit les prix barrés.")
         if len(di) < 7:
             st.caption(f"Seulement **{len(di)} jours** collectés — points, pas une courbe "
                        "(une ligne suggérerait une fausse tendance). Série démarrée en "
