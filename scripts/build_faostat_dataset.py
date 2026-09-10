@@ -25,7 +25,7 @@ import httpx
 import pandas as pd
 
 BULK_URL = "https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip"
-OUT = Path("data/prix_maroc_faostat.csv")
+OUT = Path(__file__).resolve().parent.parent / "data" / "prix_maroc_faostat.csv"
 
 # FAOSTAT item name -> (French label, category). Heavily consumed Moroccan
 # staples that carry weight in food inflation.

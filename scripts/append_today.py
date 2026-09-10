@@ -17,13 +17,15 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from inflation.config import load_basket  # noqa: E402
 from inflation.scrapers.registry import get_scraper  # noqa: E402
 from inflation.config import load_sites  # noqa: E402
 
-OUT = Path("data/prix_actuels.csv")
+OUT = ROOT / "data" / "prix_actuels.csv"
+CONFIG = ROOT / "config"
 
 
 def unit_to_kg(unit: str) -> float | None:
@@ -41,8 +43,8 @@ def unit_to_kg(unit: str) -> float | None:
 
 
 def main() -> None:
-    basket = load_basket("config")
-    sites = load_sites("config")
+    basket = load_basket(CONFIG)
+    sites = load_sites(CONFIG)
     today = date.today().isoformat()
 
     rows = []

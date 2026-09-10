@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
-DEFAULT_PATH = Path("data/official/hcp_ipc.csv")
+DEFAULT_PATH = Path(__file__).resolve().parent.parent / "data" / "official" / "hcp_ipc.csv"
 
 
 def load_official(path: Path | str = DEFAULT_PATH) -> pd.DataFrame:

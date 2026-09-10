@@ -18,20 +18,21 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))         # scripts/
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT))
 
 from scrape_aswak_catalog import scrape_category  # noqa: E402
 from scrape_housing import median_rent_dh_m2  # noqa: E402
 
-CATALOG = Path("data/aswak_catalog.csv")
-OUT = Path("data/prix_actuels.csv")
+CATALOG = ROOT / "data" / "aswak_catalog.csv"
+OUT = ROOT / "data" / "prix_actuels.csv"
 
 
-def main() -> None:
+def main() -> int:
     if not CATALOG.exists():
-        print("Catalogue absent — lance d'abord scripts/scrape_aswak_catalog.py")
-        return
+        print("ERREUR: catalogue absent — lance d'abord scripts/scrape_aswak_catalog.py")
+        return 1
     cats = sorted(pd.read_csv(CATALOG)["categorie"].unique())
     today = date.today().isoformat()
 
@@ -58,6 +59,12 @@ def main() -> None:
                      "prix": med, "source_url": hurl})
         print(f"  logement (Mubawab)          loyer médian {med} DH/m² (n={n_rent})", flush=True)
 
+    # a silently-empty collection is the worst case for a daily series — fail loud
+    product_rows = [r for r in rows if r["product_id"] != "logement-loyer-m2"]
+    if not product_rows:
+        print("ERREUR: 0 produit relevé (site bloqué / structure changée ?) — rien écrit.")
+        return 1
+
     new = pd.DataFrame(rows).drop_duplicates("product_id")
     if OUT.exists():
         old = pd.read_csv(OUT)
@@ -65,8 +72,9 @@ def main() -> None:
         new = pd.concat([old, new], ignore_index=True)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     new.to_csv(OUT, index=False, encoding="utf-8")
-    print(f"Relevé {today}: {len(rows)} produits. Total historique: {len(new)} lignes.")
+    print(f"Relevé {today}: {len(product_rows)} produits. Total historique: {len(new)} lignes.")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

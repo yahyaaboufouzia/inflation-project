@@ -23,11 +23,13 @@ import httpx
 import pandas as pd
 import yaml
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from inflation.index import index_from_relatives  # noqa: E402
 
-OUT = Path("data/validation_usa.csv")
+OUT = ROOT / "data" / "validation_usa.csv"
+METRICS_OUT = ROOT / "data" / "validation_metrics.csv"
 BASE_YEAR = 2000
 
 # Retail average-price series (FRED APU codes) grouped like the Morocco basket.
@@ -118,7 +120,7 @@ def main() -> None:
                    "cum_ours_pct": round(cum_n), "cum_official_pct": round(cum_o),
                    "annee_min": int(m["annee"].min()), "annee_max": int(m["annee"].max()),
                    "n_produits": len(US_BASKET)}]).to_csv(
-        "data/validation_metrics.csv", index=False, encoding="utf-8")
+        METRICS_OUT, index=False, encoding="utf-8")
 
 
 if __name__ == "__main__":

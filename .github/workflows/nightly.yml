@@ -1,8 +1,11 @@
 name: nightly-update
 
-# Runs daily: appends today's real retail prices, rebuilds the inflation index
-# (and refreshes the official World Bank CPI), and commits the data back so the
-# public dashboard always reads fresh, versioned data.
+# Refreshes the DERIVED series (long-run index + official CPI) and re-checks the
+# daily index against the committed prices. It does NOT scrape prices: Aswak
+# Assalam blocks cloud IPs, so daily COLLECTION runs on a local machine
+# (Task Scheduler + scripts/daily_collect.bat, which fails loudly on an empty
+# day). Masking a blocked scrape as success here would silently freeze the
+# series — the worst case — so we don't do it.
 on:
   schedule:
     - cron: "0 6 * * *"  # 06:00 UTC daily
@@ -25,28 +28,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      # Scrape today's prices for the whole catalog -> DAILY index.
-      # NOTE: Aswak Assalam may block GitHub's runners (non-Morocco IP); if so
-      # this adds nothing and the reliable collector is a local machine
-      # (Task Scheduler + scripts/daily_collect.bat).
-      - name: Collect today's prices
-        run: python scripts/collect_daily.py || echo "scrape skipped/blocked"
-
+      # rebuild the daily index from the COMMITTED prices (no scraping)
       - name: Rebuild daily index
-        run: python scripts/build_daily_index.py || echo "no daily data yet"
+        run: python scripts/build_daily_index.py
 
-      # Refresh the official series (FAOSTAT + World Bank work fine from CI).
-      - name: Rebuild long-run index
+      # refresh the long-run index + official CPI (FAOSTAT + World Bank reachable)
+      - name: Refresh long-run index & official CPI
         run: python scripts/build_inflation_index.py
 
       - name: Commit refreshed data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/prix_actuels.csv data/indice_quotidien.csv data/serie_logement.csv data/indice_inflation.csv data/official/cpi_maroc_faostat.csv data/aswak_catalog.csv
+          git add data/indice_quotidien.csv data/serie_logement.csv data/indice_inflation.csv data/official/cpi_maroc_faostat.csv
           if git diff --staged --quiet; then
             echo "No change."
           else
-            git commit -m "chore: nightly data update ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: nightly refresh ($(date -u +%Y-%m-%d))"
             git push
           fi

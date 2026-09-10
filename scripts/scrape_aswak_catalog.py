@@ -27,7 +27,7 @@ HEADERS = {
 }
 MAX_PAGES = 3          # per category
 PRICE_MIN, PRICE_MAX = 0.1, 100000.0   # sanity bounds (MAD) — reject 0 / 999999
-OUT = Path("data/aswak_catalog.csv")
+OUT = Path(__file__).resolve().parent.parent / "data" / "aswak_catalog.csv"
 
 client = httpx.Client(headers=HEADERS, timeout=30, follow_redirects=True)
 

@@ -12,7 +12,7 @@ from pathlib import Path
 import yaml
 from pydantic import BaseModel, Field
 
-CONFIG_DIR = Path("config")
+CONFIG_DIR = Path(__file__).resolve().parent.parent / "config"
 
 
 class CategoryCfg(BaseModel):

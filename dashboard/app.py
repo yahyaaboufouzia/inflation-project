@@ -93,8 +93,8 @@ if not di.empty:
     st.subheader("🗓️ Indice quotidien — alimentation & hygiène (temps réel)")
     latest = di.iloc[-1]
     d1, d2, d3 = st.columns(3)
-    d1.metric("Indice du jour", f"{latest['indice_quotidien']:.2f}",
-              f"{latest['indice_quotidien'] - 100:+.2f}% vs départ")
+    d1.metric("Indice du jour", f"{latest['indice_quotidien']:.2f}".replace(".", ","),
+              f"{latest['indice_quotidien'] - 100:+.2f}% vs départ".replace(".", ","))
     d2.metric("Produits suivis", int(latest["n_produits"]))
     d3.metric("Jours collectés", len(di))
 
