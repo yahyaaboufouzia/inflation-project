@@ -127,7 +127,10 @@ Run the tests with `pytest -q`.
 
 Because prices are collected **forward** in time, the daily curve **grows one point per day** — a real daily history can't be reconstructed from the past, exactly as the Billion Prices Project did. **The daily series started in September 2026**, so it is still short; the long-run comparison and the US validation are what carry the analysis for now.
 
-The daily index is a **chained, matched-sample** index (`I_t = I_{t-1} × Jevons(p_t / p_{t-1})` over products present on both days), so it is robust to products dropping in/out of a scrape and does not depend on an arbitrary base day.
+The daily index is a **chained, matched-sample** index (`I_t = I_{t-1} × Jevons(p_t / p_{t-1})` over products present on both days), so it is robust to products dropping in/out of a scrape and does not depend on an arbitrary base day. Two refinements keep it from measuring the wrong thing:
+
+- **Promotions vs inflation.** Retail scraping mostly captures promotions, not underlying inflation. The scraper reads WooCommerce `<del>/<ins>` markup, so it stores both the **displayed** price (with promos) and the **reference** price (crossed-out), plus an `en_promo` flag. The index is published as **two series** — the gap between them *is* the promotional effect, so a rotation of promos can't be mistaken for inflation.
+- **Range grouping.** A four-flavour drink is one commercial decision, not four price movements. Variants of a range are collapsed into a single elementary quote (geometric mean of their relatives) **before** the category Jevons, so a range doesn't count several times.
 
 ## Honest limitations
 
@@ -141,6 +144,8 @@ The daily index is a **chained, matched-sample** index (`I_t = I_{t-1} × Jevons
 - [x] Gap analysis: cumulative deviation vs the official index
 - [x] Scraping robustness: retries with jitter + sanity checks (rejects 0 / 999999)
 - [x] Category contribution chart (what drives inflation)
+- [x] Promotion handling: displayed vs reference series, `en_promo` flag
+- [x] Range grouping: variants collapsed to one elementary quote before Jevons
 - [ ] More sources: solve the anti-bot block on Jumia/Marjane (Playwright + stealth)
 - [ ] Regulated prices (fuel, butane, bread, sugar) from official communiqués
 - [ ] Deploy the dashboard publicly (Streamlit Community Cloud)

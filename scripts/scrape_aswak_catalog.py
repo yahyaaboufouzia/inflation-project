@@ -101,8 +101,17 @@ def scrape_category(slug: str) -> list[dict]:
             amounts = li.select(".price .woocommerce-Price-amount")
             if not a or not amounts:
                 continue
-            price = parse_price(amounts[-1].get_text(" ", strip=True))
-            if not plausible(price):   # reject 0 / 999999 / unparsable
+            # WooCommerce wraps the old price in <del> and the sale price in <ins>
+            del_el = li.select_one(".price del .woocommerce-Price-amount")
+            ins_el = li.select_one(".price ins .woocommerce-Price-amount")
+            if del_el is not None and ins_el is not None:
+                prix = parse_price(ins_el.get_text(" ", strip=True))          # displayed
+                prix_ref = parse_price(del_el.get_text(" ", strip=True))      # reference
+                en_promo = True
+            else:
+                prix = parse_price(amounts[-1].get_text(" ", strip=True))
+                prix_ref, en_promo = prix, False
+            if not plausible(prix) or not plausible(prix_ref):   # reject 0 / 999999
                 dropped += 1
                 continue
             name = title.get_text(" ", strip=True) if title else a.get_text(" ", strip=True)
@@ -112,7 +121,9 @@ def scrape_category(slug: str) -> list[dict]:
                 "categorie": slug,
                 "unite": parse_unit(name),
                 "url": a["href"],
-                "prix": price,
+                "prix": prix,
+                "prix_reference": prix_ref,
+                "en_promo": en_promo,
             })
         time.sleep(1.5)
     if dropped:

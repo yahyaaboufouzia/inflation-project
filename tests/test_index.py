@@ -10,6 +10,7 @@ from inflation.index import (
     chained_matched_index,
     compute_index,
     compute_monthly_index,
+    family_keys,
     index_from_relatives,
     simple_laspeyres,
     top_movers,
@@ -124,6 +125,32 @@ def test_chained_matched_index():
     assert vals["d1"] == pytest.approx(100.0)
     assert vals["d2"] == pytest.approx(104.0)
     assert vals["d3"] == pytest.approx(108.16, abs=0.02)
+
+
+def test_family_keys_group_variants_keep_singletons():
+    fam = family_keys(["bomba-blue", "bomba-cherry", "bomba-classic", "bomba-mojito",
+                       "farine-fleur-10kg"])
+    assert fam["bomba-blue"] == fam["bomba-cherry"] == "bomba"   # 4 variants merged
+    assert fam["farine-fleur-10kg"] == "farine-fleur-10kg"       # unique -> itself
+
+
+def test_family_grouping_counts_a_range_once():
+    # a 4-flavour range all at -14.9% must weigh the same as ONE product at -14.9%
+    variants = pd.DataFrame(
+        {"bomba-blue": [100.0, 85.1], "bomba-cherry": [100.0, 85.1],
+         "bomba-classic": [100.0, 85.1], "bomba-mojito": [100.0, 85.1],
+         "farine-1kg": [10.0, 10.0]},
+        index=["d1", "d2"],
+    )
+    cat = {c: "X" for c in variants.columns}
+    grouped = chained_matched_index(variants, cat, {"X": 1.0}, family_keys(variants.columns))
+
+    single = pd.DataFrame({"bomba": [100.0, 85.1], "farine-1kg": [10.0, 10.0]},
+                          index=["d1", "d2"])
+    ungrouped = chained_matched_index(single, {"bomba": "X", "farine-1kg": "X"}, {"X": 1.0})
+
+    assert (grouped.set_index("period")["value"]["d2"]
+            == pytest.approx(ungrouped.set_index("period")["value"]["d2"]))
 
 
 def test_chained_index_ignores_unmatched_product():

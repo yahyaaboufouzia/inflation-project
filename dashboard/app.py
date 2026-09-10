@@ -92,11 +92,15 @@ di = load_daily_index()
 if not di.empty:
     st.subheader("🗓️ Indice quotidien — alimentation & hygiène (temps réel)")
     latest = di.iloc[-1]
-    d1, d2, d3 = st.columns(3)
+    d1, d2, d3, d4 = st.columns(4)
     d1.metric("Indice du jour", f"{latest['indice_quotidien']:.2f}".replace(".", ","),
               f"{latest['indice_quotidien'] - 100:+.2f}% vs départ".replace(".", ","))
     d2.metric("Produits suivis", int(latest["n_produits"]))
     d3.metric("Jours collectés", len(di))
+    if "pct_en_promo" in di.columns and pd.notna(latest.get("pct_en_promo")):
+        d4.metric("En promo aujourd'hui", f"{latest['pct_en_promo']:.1f} %".replace(".", ","),
+                  help="Part du panier en promotion (prix barré). L'indice « prix affichés » "
+                       "les inclut ; l'indice « référence » les neutralise.")
 
     daily = load_daily()
     leg = covered_legend(daily)
@@ -107,16 +111,28 @@ if not di.empty:
     if len(di) >= 2:
         # fixed y-range so a 0.01-point move doesn't look like a collapse,
         # and a date x-axis (not hours)
-        lo = min(98.0, di["indice_quotidien"].min() - 1)
-        hi = max(102.0, di["indice_quotidien"].max() + 1)
+        cols = ["indice_quotidien"] + (["indice_reference"] if "indice_reference" in di else [])
+        lo = min(98.0, di[cols].min().min() - 1)
+        hi = max(102.0, di[cols].max().max() + 1)
         mode = "lines+markers" if len(di) >= 7 else "markers"
-        dfig = go.Figure(go.Scatter(x=di["date"], y=di["indice_quotidien"], mode=mode,
-                                    line=dict(color=OURS, width=2.5),
-                                    marker=dict(color=OURS, size=11)))
+        dfig = go.Figure()
+        dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_quotidien"], mode=mode,
+                                  name="Prix affichés (avec promos)",
+                                  line=dict(color=OURS, width=2.5), marker=dict(color=OURS, size=11)))
+        if "indice_reference" in di:
+            dfig.add_trace(go.Scatter(x=di["date"], y=di["indice_reference"], mode=mode,
+                                      name="Prix de référence (hors promos)",
+                                      line=dict(color=GEN, width=2, dash="dash"),
+                                      marker=dict(color=GEN, size=9)))
         dfig.update_layout(height=320, margin=dict(l=10, r=10, t=10, b=10),
+                           legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
                            yaxis=dict(title="Indice (base 100 au départ)", range=[lo, hi]),
                            xaxis=dict(tickformat="%d %b", dtick=86400000.0))
         st.plotly_chart(dfig, use_container_width=True)
+        st.caption("Deux séries : **prix affichés** (ce que paie le client, promos incluses) et "
+                   "**prix de référence** (prix barrés, hors promos). L'écart entre les deux "
+                   "**est** l'effet promotionnel — sans ça, une rotation de promos se lirait "
+                   "comme de l'inflation.")
         if len(di) < 7:
             st.caption(f"Seulement **{len(di)} jours** collectés — points, pas une courbe "
                        "(une ligne suggérerait une fausse tendance). Série démarrée en "

@@ -60,20 +60,40 @@ def index_from_relatives(
     return pd.DataFrame(out, columns=[period_col, "value"])
 
 
+def family_keys(product_ids) -> dict[str, str]:
+    """Group product variants of the same range under one family key.
+
+    A four-flavour drink (…-blue, …-cherry, …-classic, …-mojito) is one
+    commercial decision, not four price movements. We key each product by its
+    slug minus the last "-" token, but only merge when at least two products
+    share that root — a unique product keeps its own id.
+    """
+    from collections import Counter
+
+    cand = {pid: (pid.rsplit("-", 1)[0] if "-" in pid else pid) for pid in product_ids}
+    counts = Counter(cand.values())
+    return {pid: (root if counts[root] >= 2 else pid) for pid, root in cand.items()}
+
+
 def chained_matched_index(
     wide: pd.DataFrame,
     category_of: dict[str, str],
     weights: dict[str, float] | None = None,
+    family_of: dict[str, str] | None = None,
 ) -> pd.DataFrame:
     """Chained, matched-sample index — the robust choice for scraped daily data.
 
-        I_t = I_{t-1} × Laspeyres_c[ Jevons_i( p_{i,t} / p_{i,t-1} ) ]
+        I_t = I_{t-1} × Laspeyres_c[ Jevons_fam( geomean_variants( p_t / p_{t-1} ) ) ]
 
     Only products present in BOTH consecutive periods enter each link (matched
     sample). This fixes the three weaknesses of a fixed-base index on scraped
     data: a product dropping out no longer moves the index (composition bias),
     the arbitrary base day no longer biases the whole series, and new products
     join cleanly at their first link.
+
+    `family_of` (product_id -> family key) collapses variants of the same range
+    into ONE elementary quote (geometric mean of the variants' relatives) before
+    the category Jevons, so a 4-flavour range does not count four times.
 
     `wide`: DataFrame indexed by period (sorted), columns = product_id,
     values = price. `category_of`: product_id -> category. Base period = 100.
@@ -83,17 +103,31 @@ def chained_matched_index(
     if not periods:
         return pd.DataFrame(columns=["period", "value"])
 
+    def geomean(v):
+        return float(np.exp(np.mean(np.log(v))))
+
     out = [(periods[0], 100.0)]
     level = 100.0
     for prev, cur in zip(periods, periods[1:]):
         a, b = wide.loc[prev], wide.loc[cur]
         matched = [pid for pid in wide.columns if pd.notna(a[pid]) and pd.notna(b[pid])]
-        cat_rel: dict[str, list[float]] = {}
+
+        # 1) collapse variants of a range into one family relative
+        fam_rel: dict[str, list[float]] = {}
+        fam_cat: dict[str, str] = {}
         for pid in matched:
-            cat_rel.setdefault(category_of.get(pid, "?"), []).append(b[pid] / a[pid])
+            fam = (family_of or {}).get(pid, pid)
+            fam_rel.setdefault(fam, []).append(b[pid] / a[pid])
+            fam_cat[fam] = category_of.get(pid, "?")
+
+        # 2) Jevons over families within each category
+        cat_rel: dict[str, list[float]] = {}
+        for fam, rels in fam_rel.items():
+            cat_rel.setdefault(fam_cat[fam], []).append(geomean(rels))
+
         if cat_rel:
             cats = list(cat_rel)
-            cat_j = [float(np.exp(np.mean(np.log(v)))) for v in cat_rel.values()]
+            cat_j = [geomean(v) for v in cat_rel.values()]
             w = np.array([(weights or {}).get(c, 0.0) for c in cats], dtype=float)
             if w.sum() == 0:
                 w = np.ones(len(cats))

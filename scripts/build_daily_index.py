@@ -19,7 +19,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from inflation.index import chained_matched_index  # noqa: E402
+from inflation.index import chained_matched_index, family_keys  # noqa: E402
 
 PRICES = ROOT / "data" / "prix_actuels.csv"
 OUT = ROOT / "data" / "indice_quotidien.csv"
@@ -41,6 +41,14 @@ def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     weights = _CFG["divisions"]
 
+    # tolerate older price files that predate the promo columns
+    if "prix_reference" not in df.columns:
+        df = df.assign(prix_reference=df["prix"])
+    else:
+        df["prix_reference"] = df["prix_reference"].fillna(df["prix"])
+    if "en_promo" not in df.columns:
+        df = df.assign(en_promo=False)
+
     housing = (df[df["categorie"] == "logement"][["date", "prix"]]
                .rename(columns={"prix": "loyer_dh_m2"}).sort_values("date")
                .reset_index(drop=True))
@@ -54,13 +62,25 @@ def compute_daily(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
     prod_cat = core.drop_duplicates("product_id").set_index("product_id")["categorie"]
     category_of = {pid: DIVISION.get(c, "Autre") for pid, c in prod_cat.items()}
-    wide = core.pivot_table(index="date", columns="product_id", values="prix",
-                            aggfunc="median").sort_index()
+    family_of = family_keys(prod_cat.index)   # collapse range variants
 
-    out = (chained_matched_index(wide, category_of, weights)
-           .rename(columns={"period": "date", "value": "indice_quotidien"}))
-    n = wide.notna().sum(axis=1).rename("n_produits")
-    out = out.merge(n, left_on="date", right_index=True).reset_index(drop=True)
+    def series(value_col: str) -> pd.DataFrame:
+        wide = core.pivot_table(index="date", columns="product_id", values=value_col,
+                                aggfunc="median").sort_index()
+        return chained_matched_index(wide, category_of, weights, family_of)
+
+    disp = series("prix").rename(columns={"period": "date", "value": "indice_quotidien"})
+    ref = series("prix_reference").rename(columns={"period": "date", "value": "indice_reference"})
+    out = disp.merge(ref, on="date")
+
+    # per-day: products matched, and share of them on promotion
+    wide_disp = core.pivot_table(index="date", columns="product_id", values="prix",
+                                 aggfunc="median").sort_index()
+    out = out.merge(wide_disp.notna().sum(axis=1).rename("n_produits"),
+                    left_on="date", right_index=True)
+    promo = (core.assign(en_promo=core["en_promo"].astype(bool))
+             .groupby("date")["en_promo"].mean().mul(100).round(1).rename("pct_en_promo"))
+    out = out.merge(promo, left_on="date", right_index=True, how="left").reset_index(drop=True)
     return out, housing
 
 

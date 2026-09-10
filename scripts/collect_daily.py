@@ -47,6 +47,8 @@ def main() -> int:
                 "produit": p["produit"],
                 "categorie": p["categorie"],
                 "prix": p["prix"],
+                "prix_reference": p.get("prix_reference", p["prix"]),
+                "en_promo": p.get("en_promo", False),
                 "source_url": p["url"],
             })
         print(f"  {slug:28} cumulé {len(rows)} relevés", flush=True)
@@ -56,7 +58,8 @@ def main() -> int:
     if med:
         rows.append({"date": today, "product_id": "logement-loyer-m2",
                      "produit": "Loyer (DH/m²/mois)", "categorie": "logement",
-                     "prix": med, "source_url": hurl})
+                     "prix": med, "prix_reference": med, "en_promo": False,
+                     "source_url": hurl})
         print(f"  logement (Mubawab)          loyer médian {med} DH/m² (n={n_rent})", flush=True)
 
     # a silently-empty collection is the worst case for a daily series — fail loud

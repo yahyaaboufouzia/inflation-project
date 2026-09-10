@@ -31,3 +31,20 @@ def test_daily_index_reproduces_committed_file():
     assert len(m) == len(committed), "date mismatch between committed and rebuilt"
     # the committed index value must equal a fresh recomputation
     assert (m["indice_quotidien_committed"] - m["indice_quotidien_rebuilt"]).abs().max() < 0.01
+
+
+def test_reference_series_strips_promotions():
+    """A -20% promotion must move the displayed index but NOT the reference one."""
+    from build_daily_index import compute_daily
+
+    df = pd.DataFrame([
+        {"date": "2026-01-01", "product_id": "x", "produit": "X", "categorie": "epicerie",
+         "prix": 100.0, "prix_reference": 100.0, "en_promo": False},
+        {"date": "2026-01-02", "product_id": "x", "produit": "X", "categorie": "epicerie",
+         "prix": 80.0, "prix_reference": 100.0, "en_promo": True},
+    ])
+    out, _ = compute_daily(df)
+    last = out.iloc[-1]
+    assert last["indice_quotidien"] == pytest.approx(80.0)   # displayed follows the promo
+    assert last["indice_reference"] == pytest.approx(100.0)  # reference ignores it
+    assert last["pct_en_promo"] == pytest.approx(100.0)
