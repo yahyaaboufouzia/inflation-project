@@ -1,0 +1,338 @@
+<title>Morocco Inflation Tracker</title>
+<meta name="description" content="Un indice de prix indépendant et quotidien pour le Maroc, validé sur les USA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+
+<style>
+  :root{
+    --bg:#f5f7fb; --surface:#ffffff; --surface-2:#eef1f8; --ink:#15213f;
+    --muted:#5c6579; --line:#e3e7f0; --ours:#2563eb; --ours-soft:rgba(37,99,235,.10);
+    --official:#c9772b; --alert:#c0392b; --good:#1c7a45;
+    --shadow:0 1px 2px rgba(20,33,63,.05), 0 8px 24px -14px rgba(20,33,63,.18);
+  }
+  :root:not([data-theme="light"]){ color-scheme:light; }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --bg:#0c1020; --surface:#141a2c; --surface-2:#1c2540; --ink:#eaeefa;
+      --muted:#98a2bd; --line:#26304c; --ours:#6a9bff; --ours-soft:rgba(106,155,255,.14);
+      --official:#e6a45e; --alert:#f0736a; --good:#5bbd84;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#0c1020; --surface:#141a2c; --surface-2:#1c2540; --ink:#eaeefa;
+    --muted:#98a2bd; --line:#26304c; --ours:#6a9bff; --ours-soft:rgba(106,155,255,.14);
+    --official:#e6a45e; --alert:#f0736a; --good:#5bbd84;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-variant-numeric:tabular-nums}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--muted)}
+  h1,h2,h3{text-wrap:balance; line-height:1.15; margin:0}
+  a{color:var(--ours); text-decoration:none}
+  a:hover{text-decoration:underline}
+  :focus-visible{outline:2px solid var(--ours); outline-offset:2px; border-radius:4px}
+
+  /* header */
+  header{border-bottom:1px solid var(--line); background:var(--surface)}
+  .head-row{display:flex; justify-content:space-between; align-items:flex-start; gap:20px;
+    padding:26px 0 30px}
+  header h1{font-size:clamp(1.9rem,4.5vw,3rem); font-weight:700; letter-spacing:-.02em; margin:.5rem 0 .6rem}
+  header p{margin:0; color:var(--muted); max-width:60ch; font-size:1.02rem}
+  .toggle{flex:none; background:var(--surface-2); color:var(--ink); border:1px solid var(--line);
+    border-radius:999px; padding:8px 14px; font-size:.8rem; cursor:pointer;
+    font-family:"IBM Plex Mono",monospace; display:flex; gap:7px; align-items:center}
+  .toggle:hover{border-color:var(--ours)}
+
+  section{padding:44px 0; border-bottom:1px solid var(--line)}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:6px}
+  .sec-head h2{font-size:1.5rem; font-weight:600; letter-spacing:-.01em}
+  .sec-num{font-family:"IBM Plex Mono",monospace; color:var(--ours); font-size:.9rem; font-weight:600}
+  .lead{color:var(--muted); max-width:68ch; margin:.4rem 0 0}
+
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-top:26px}
+  .tile{background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:20px 20px 18px; box-shadow:var(--shadow)}
+  .tile .k{font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--muted)}
+  .tile .v{font-family:"IBM Plex Mono",monospace; font-size:2.1rem; font-weight:600;
+    letter-spacing:-.02em; margin-top:8px; line-height:1}
+  .tile .s{font-size:.82rem; color:var(--muted); margin-top:8px}
+  .v.ours{color:var(--ours)} .v.official{color:var(--official)} .v.alert{color:var(--alert)}
+
+  .chart{margin-top:22px; background:var(--surface); border:1px solid var(--line);
+    border-radius:14px; padding:12px 8px 6px; box-shadow:var(--shadow)}
+  .chart-plot{width:100%; height:360px}
+  .cap{color:var(--muted); font-size:.9rem; margin-top:14px; max-width:72ch}
+  .cap b{color:var(--ink); font-weight:600}
+
+  .legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:14px; font-size:.85rem; color:var(--muted)}
+  .legend span{display:flex; align-items:center; gap:7px}
+  .dot{width:12px; height:12px; border-radius:3px; flex:none}
+
+  /* daily chips */
+  .chips{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px}
+  .chip{background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; box-shadow:var(--shadow); min-width:118px}
+  .chip .d{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--muted)}
+  .chip .n{font-family:"IBM Plex Mono",monospace; font-size:1.35rem; font-weight:600; margin-top:4px}
+
+  .note{display:flex; gap:12px; margin-top:22px; padding:16px 18px; border-radius:12px;
+    background:var(--ours-soft); border:1px solid color-mix(in srgb,var(--ours) 22%,transparent)}
+  .note .mk{color:var(--ours); font-weight:700; flex:none}
+  .note p{margin:0; font-size:.92rem}
+
+  /* methodology */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:24px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px}
+  .card h3{font-size:1rem; font-weight:600; margin-bottom:8px; display:flex; gap:8px; align-items:center}
+  .card p{margin:0; color:var(--muted); font-size:.9rem}
+  .card .tag{font-family:"IBM Plex Mono",monospace; font-size:.66rem; color:var(--ours);
+    border:1px solid var(--line); border-radius:6px; padding:2px 7px}
+  .formula{font-family:"IBM Plex Mono",monospace; background:var(--surface-2); border:1px solid var(--line);
+    border-radius:10px; padding:14px 16px; margin-top:18px; overflow-x:auto; font-size:.9rem; color:var(--ink)}
+  ul.src{list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px}
+  ul.src li{display:flex; gap:10px; font-size:.9rem; color:var(--muted)}
+  ul.src b{color:var(--ink); font-weight:600}
+
+  footer{padding:34px 0 60px; color:var(--muted); font-size:.86rem}
+  footer .fr{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header>
+  <div class="wrap head-row">
+    <div>
+      <div class="eyebrow">Indice de prix indépendant · Maroc</div>
+      <h1>Morocco Inflation Tracker</h1>
+      <p>Mesurer l'inflation soi-même, tous les jours, à partir de vrais prix — et
+         vérifier si le chiffre officiel raconte la même histoire. Inspiré du
+         <em>Billion Prices Project</em> du MIT.</p>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="Changer de thème">
+      <span id="themeIcon">◐</span><span id="themeLbl">Thème</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- hero stats -->
+  <section id="hero" style="border-bottom:1px solid var(--line)">
+    <div class="tiles">
+      <div class="tile">
+        <div class="k">Validation USA · corrélation</div>
+        <div class="v ours" id="t-corr">0,72</div>
+        <div class="s">sur les <b>taux annuels</b> — la méthode reproduit l'inflation officielle américaine (1980–2026).</div>
+      </div>
+      <div class="tile">
+        <div class="k">Panier scrapé / jour</div>
+        <div class="v" id="t-basket">352</div>
+        <div class="s">produits de détail (alimentation + hygiène), relevés chaque jour chez Aswak Assalam.</div>
+      </div>
+      <div class="tile">
+        <div class="k">Historique reconstruit</div>
+        <div class="v">2000<span style="color:var(--muted)">–</span>26</div>
+        <div class="s">prix producteurs FAOSTAT + CPI officiel, base 2010 = 100.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- US validation -->
+  <section id="usa">
+    <div class="sec-head"><span class="sec-num">01</span><h2>La preuve : validation sur les USA</h2></div>
+    <p class="lead">Là où de vrais prix de détail existent, notre méthode doit reproduire l'inflation
+      officielle. Aux États-Unis, les prix de détail (BLS/FRED) sont publics depuis 1980 : on reconstruit
+      notre indice avec <b>exactement la même méthode</b> et on le compare au CPI alimentaire officiel.</p>
+    <div class="tiles" style="margin-top:22px">
+      <div class="tile"><div class="k">Corrélation (taux annuels)</div><div class="v ours">0,72</div>
+        <div class="s">On rejette la corrélation de niveaux (0,99) : deux séries qui montent corrèlent
+          toujours (piège Granger–Newbold). Le vrai test est sur les variations.</div></div>
+      <div class="tile"><div class="k">Erreur moyenne (MAE)</div><div class="v">2,6 <span style="font-size:1rem;color:var(--muted)">pts</span></div>
+        <div class="s">écart absolu moyen sur les taux d'inflation annuels, 13 produits sur 46 ans.</div></div>
+      <div class="tile"><div class="k">Inflation cumulée</div><div class="v mono">+208 <span style="font-size:1rem;color:var(--muted)">%</span></div>
+        <div class="s">la nôtre vs <b>+301 %</b> officiel — un écart de niveau qui reste, panier plus étroit.</div></div>
+    </div>
+    <div class="chart"><div id="chart-usa" class="chart-plot"></div></div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--ours)"></i>Notre indice US (prix de détail réels)</span>
+      <span><i class="dot" style="background:var(--official)"></i>CPI alimentaire officiel US (BLS)</span>
+    </div>
+  </section>
+
+  <!-- Morocco long-run -->
+  <section id="maroc">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Maroc — longue durée</h2></div>
+    <p class="lead">Notre indice alimentaire (prix producteurs FAOSTAT) face à l'inflation
+      <b>alimentaire</b> officielle du Maroc, et à l'indice tous produits. Comparaison alimentaire
+      contre alimentaire, base 2010 = 100.</p>
+    <div class="chart"><div id="chart-maroc" class="chart-plot"></div></div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--ours)"></i>Notre indice (lissé)</span>
+      <span><i class="dot" style="background:var(--official)"></i>Inflation alimentaire officielle</span>
+      <span><i class="dot" style="background:var(--muted)"></i>Inflation générale officielle</span>
+    </div>
+    <p class="cap">Les pics <b>2022–2023</b> coïncident. L'écart de niveau restant est attendu et honnête :
+      FAOSTAT donne des <b>prix à la production</b> (plus volatils, hors marges), et notre panier est
+      100 % alimentaire alors que l'indice général inclut le logement, stable. Notre alimentaire cumule
+      <b>+100 %</b> (2000→2024) vs <b>+91 %</b> officiel.</p>
+  </section>
+
+  <!-- category contribution -->
+  <section id="cat">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Ce qui tire l'inflation</h2></div>
+    <p class="lead">Variation du prix moyen par catégorie, 2000 → 2024 (prix producteurs). Les céréales
+      et les fruits mènent la hausse.</p>
+    <div class="chart"><div id="chart-cat" class="chart-plot" style="height:300px"></div></div>
+  </section>
+
+  <!-- daily -->
+  <section id="daily">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Indice quotidien — temps réel</h2></div>
+    <p class="lead">La vraie valeur du projet : un indice <b>quotidien</b>, ce que l'officiel (mensuel)
+      ne fait pas. On ne peut pas fabriquer le passé au jour le jour — la série démarre en septembre 2026
+      et gagne un point chaque jour.</p>
+    <div class="chips" id="daily-chips"></div>
+    <div class="note">
+      <span class="mk">↳</span>
+      <p><b>Promotions vs inflation.</b> Le scraper lit les prix barrés (<span class="mono">&lt;del&gt;/&lt;ins&gt;</span>)
+        et publiera <b>deux séries</b> — prix affichés (avec promos) et prix de référence (hors promos) —
+        car sur 3 jours le seul mouvement observé était promotionnel. L'écart entre les deux <em>est</em>
+        l'effet promo, et empêche de lire une rotation de promotions comme de l'inflation.</p>
+    </div>
+  </section>
+
+  <!-- methodology -->
+  <section id="method">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Méthodologie</h2></div>
+    <p class="lead">Un indice en deux étages, comme les vrais instituts.</p>
+    <div class="formula">I(t) = 100 × Σ<sub>c</sub> w<sub>c</sub> · Jevons<sub>i∈c</sub>( p<sub>i,t</sub> / p<sub>i,0</sub> )
+&nbsp;&nbsp;·&nbsp;&nbsp; quotidien : I<sub>t</sub> = I<sub>t−1</sub> × Jevons( p<sub>t</sub> / p<sub>t−1</sub> ) en échantillon apparié</div>
+    <div class="cards">
+      <div class="card"><h3>Jevons + Laspeyres <span class="tag">cœur</span></h3>
+        <p>Moyenne géométrique des prix relatifs dans chaque catégorie, puis moyenne pondérée entre
+          catégories (poids de consommation). Testé unitairement.</p></div>
+      <div class="card"><h3>Chaîné, échantillon apparié <span class="tag">robuste</span></h3>
+        <p>Chaque maillon ne compare que les produits présents les deux jours : un produit qui disparaît
+          d'un scrape ne bouge plus l'indice, et le jour de base ne biaise pas la série.</p></div>
+      <div class="card"><h3>Promos séparées <span class="tag">honnête</span></h3>
+        <p>Prix affiché vs prix de référence : une promotion ne peut pas être confondue avec de
+          l'inflation. « Promo non mesurée » ≠ « pas de promo ».</p></div>
+      <div class="card"><h3>Loyer à part <span class="tag">prudent</span></h3>
+        <p>Le loyer (Mubawab, DH/m²) est un proxy d'annonces très bruité — suivi séparément, hors du
+          headline, car il varie selon les annonces listées, pas les vrais loyers.</p></div>
+    </div>
+    <ul class="src">
+      <li><b>Prix producteurs Maroc</b> — FAOSTAT, Producer Prices · <a href="https://www.fao.org/faostat/fr/#data/PP" target="_blank" rel="noopener">faostat</a></li>
+      <li><b>Inflation officielle Maroc</b> — FAOSTAT, Consumer Price Indices (food + general)</li>
+      <li><b>Validation USA</b> — US BLS « Average Price » &amp; CPI, via FRED</li>
+      <li><b>Prix de détail quotidiens</b> — Aswak Assalam · <b>Loyers</b> — Mubawab</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="fr">
+    <span>Instantané des données au <b class="mono" id="snapdate">10 sept. 2026</b> — la version qui se met à jour chaque jour tourne depuis le dépôt.</span>
+    <a href="https://github.com/yahyaaboufouzia/inflation-project" target="_blank" rel="noopener">github.com/yahyaaboufouzia/inflation-project ↗</a>
+  </div>
+</footer>
+
+<script>
+const DATA = {"daily": {"dates": ["2026-09-07", "2026-09-08", "2026-09-09"], "index": [100.0, 99.99, 99.77], "n": [352, 352, 352]}, "longrun": {"years": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026], "ours": [92.72, 88.2, 79.5, 77.47, 77.72, 85.44, 79.99, 100.39, 115.96, 95.27, 100.0, 104.96, 112.76, 111.75, 104.83, 100.73, 117.27, 100.93, 94.52, 94.48, 101.37, 109.41, 149.76, 158.34, 185.15, null, null], "ours_smooth": [90.46, 86.81, 81.72, 78.23, 80.21, 81.05, 88.61, 98.78, 103.87, 103.74, 100.08, 105.91, 109.82, 109.78, 105.77, 107.61, 106.31, 104.24, 96.64, 96.79, 101.75, 120.18, 139.17, 164.42, 171.74, null, null], "food_off": [74.16, 74.94, 78.51, 80.07, 82.09, 83.46, 88.14, 91.22, 97.89, 98.79, 100.0, 101.42, 103.84, 106.1, 104.82, 107.51, 110.53, 110.54, 111.58, 110.19, 111.14, 111.8, 124.41, 140.47, 141.37, 142.53, 142.17], "gen_off": [83.62, 84.14, 86.49, 87.5, 88.81, 89.68, 92.63, 94.55, 98.06, 99.02, 100.0, 100.91, 102.21, 104.13, 104.59, 106.22, 107.95, 108.77, 110.73, 111.07, 111.85, 113.42, 120.97, 128.34, 129.6, 130.51, 130.85]}, "validation": {"years": [1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026], "ours": [71.41, 74.54, 72.5, 73.09, 77.63, 74.4, 77.89, 75.35, 79.24, 88.59, 92.35, 92.16, 88.33, 89.13, 90.58, 93.21, 97.63, 99.43, 100.13, 102.06, 100.0, 103.61, 105.9, 108.44, 113.28, 117.01, 120.44, 128.93, 148.47, 141.66, 141.58, 152.68, 153.22, 157.8, 164.31, 165.68, 158.26, 157.15, 156.51, 155.97, 162.82, 165.53, 194.53, 205.38, 212.83, 223.49, 219.63], "cpi": [51.74, 55.8, 58.04, 59.29, 61.57, 62.97, 65.0, 67.64, 70.42, 74.53, 78.87, 81.17, 82.17, 83.93, 85.96, 88.43, 91.33, 93.73, 95.74, 97.78, 100.0, 103.14, 104.99, 107.24, 110.93, 113.66, 116.3, 120.92, 127.59, 129.88, 130.87, 135.77, 139.3, 141.24, 144.63, 147.32, 147.74, 149.01, 151.09, 153.92, 159.23, 165.51, 181.98, 192.44, 196.81, 202.31, 207.3]}, "metrics": {"yoy_corr": 0.718, "mae_pts": 2.6, "cum_ours_pct": 208.0, "cum_official_pct": 301.0}, "products": {"y0": 2000, "y1": 2024, "items": [{"p": "Olives", "c": 240.0}, {"p": "Oranges", "c": 230.0}, {"p": "Maïs", "c": 184.0}, {"p": "Mouton", "c": 123.0}, {"p": "Pois chiches", "c": 106.0}, {"p": "Orge", "c": 100.0}, {"p": "Pommes de terre", "c": 93.0}, {"p": "Lait de vache", "c": 88.0}, {"p": "Oignons", "c": 86.0}, {"p": "Lentilles", "c": 83.0}, {"p": "Œufs", "c": 82.0}, {"p": "Bœuf", "c": 77.0}, {"p": "Blé", "c": 69.0}, {"p": "Haricots secs", "c": 48.0}, {"p": "Clémentines", "c": 47.0}, {"p": "Tomates", "c": 21.0}, {"p": "Bananes", "c": -2.0}]}, "categories": [{"cat": "Légumes", "c": 62.9}, {"cat": "Légumineuses", "c": 77.7}, {"cat": "Produits animaux", "c": 85.0}, {"cat": "Viandes", "c": 98.8}, {"cat": "Fruits", "c": 100.6}, {"cat": "Céréales", "c": 112.6}], "housing": {"dates": ["2026-09-07", "2026-09-08", "2026-09-09"], "v": [100.0, 115.6, 106.5]}};
+
+/* ---------- theme ---------- */
+const root=document.documentElement;
+function currentThemeDark(){
+  const t=root.getAttribute('data-theme');
+  if(t==='dark') return true; if(t==='light') return false;
+  return matchMedia('(prefers-color-scheme:dark)').matches;
+}
+function cssvar(n){return getComputedStyle(root).getPropertyValue(n).trim();}
+const btn=document.getElementById('themeBtn');
+btn.addEventListener('click',()=>{
+  root.setAttribute('data-theme', currentThemeDark()?'light':'dark');
+  syncToggle(); drawAll();
+});
+function syncToggle(){
+  const d=currentThemeDark();
+  document.getElementById('themeIcon').textContent=d?'☾':'☀';
+  document.getElementById('themeLbl').textContent=d?'Sombre':'Clair';
+}
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(!root.getAttribute('data-theme')){syncToggle();drawAll();}});
+
+/* ---------- plotly helpers ---------- */
+function baseLayout(){
+  const ink=cssvar('--ink'), muted=cssvar('--muted'), line=cssvar('--line');
+  return {
+    paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)',
+    font:{family:'IBM Plex Mono, monospace', size:12, color:muted},
+    margin:{l:52,r:18,t:12,b:40},
+    xaxis:{gridcolor:line, zerolinecolor:line, linecolor:line, tickcolor:line, color:muted},
+    yaxis:{gridcolor:line, zerolinecolor:line, linecolor:line, tickcolor:line, color:muted},
+    legend:{orientation:'h', y:1.08, x:0, font:{color:ink}},
+    hovermode:'x unified', showlegend:false
+  };
+}
+const CFG={displayModeBar:false, responsive:true};
+function col(n){return cssvar(n);}
+
+function drawUSA(){
+  const d=DATA.validation, L=baseLayout();
+  L.yaxis.title={text:'Indice (base 2000 = 100)',font:{size:11}};
+  Plotly.react('chart-usa',[
+    {x:d.years,y:d.ours,mode:'lines',name:'Nous (US)',line:{color:col('--ours'),width:2.6}},
+    {x:d.years,y:d.cpi,mode:'lines',name:'CPI officiel US',line:{color:col('--official'),width:2,dash:'dot'}}
+  ],L,CFG);
+}
+function drawMaroc(){
+  const d=DATA.longrun, L=baseLayout();
+  L.yaxis.title={text:'Indice (base 2010 = 100)',font:{size:11}};
+  Plotly.react('chart-maroc',[
+    {x:d.years,y:d.gen_off,mode:'lines',name:'Générale off.',line:{color:col('--muted'),width:1.5}},
+    {x:d.years,y:d.ours_smooth,mode:'lines+markers',name:'Nous (lissé)',line:{color:col('--ours'),width:2.8},marker:{size:5}},
+    {x:d.years,y:d.food_off,mode:'lines+markers',name:'Alim. off.',line:{color:col('--official'),width:2,dash:'dash'},marker:{size:5}}
+  ],L,CFG);
+}
+function drawCat(){
+  const d=DATA.categories, L=baseLayout();
+  L.margin.l=110; L.xaxis.title={text:'Variation 2000→2024 (%)',font:{size:11}};
+  Plotly.react('chart-cat',[{
+    type:'bar', orientation:'h',
+    x:d.map(o=>o.c), y:d.map(o=>o.cat),
+    marker:{color:col('--ours')},
+    text:d.map(o=>'+'+o.c.toFixed(0)+'%'), textposition:'auto',
+    textfont:{color:'#fff',family:'IBM Plex Mono'},
+    hovertemplate:'%{y}: +%{x:.1f}%<extra></extra>'
+  }],L,CFG);
+}
+function drawAll(){drawUSA();drawMaroc();drawCat();}
+
+/* ---------- daily chips ---------- */
+(function(){
+  const d=DATA.daily, box=document.getElementById('daily-chips');
+  const fmt=s=>{const p=s.split('-');return p[2]+'/'+p[1];};
+  d.dates.forEach((dt,i)=>{
+    const c=document.createElement('div'); c.className='chip';
+    c.innerHTML='<div class="d">'+fmt(dt)+' · '+d.n[i]+' prod.</div><div class="n">'+
+      d.index[i].toFixed(2).replace('.',',')+'</div>';
+    box.appendChild(c);
+  });
+})();
+
+syncToggle();
+if(window.Plotly){drawAll();}
+else{addEventListener('load',()=>{if(window.Plotly)drawAll();});}
+</script>
