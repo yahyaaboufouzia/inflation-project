@@ -16,12 +16,13 @@ if errorlevel 1 (
   exit /b 1
 )
 
-REM 3. rebuild the indices
+REM 3. rebuild the indices, then regenerate the public dashboard page
 "venv\Scripts\python.exe" scripts\build_daily_index.py >> collect.log 2>&1
 "venv\Scripts\python.exe" scripts\build_inflation_index.py >> collect.log 2>&1
+"venv\Scripts\python.exe" scripts\build_dashboard_page.py >> collect.log 2>&1
 
 REM 4. commit + push only if something changed
-git add data\prix_actuels.csv data\indice_quotidien.csv data\serie_logement.csv data\indice_inflation.csv data\official\cpi_maroc_faostat.csv data\aswak_catalog.csv
+git add data\prix_actuels.csv data\indice_quotidien.csv data\serie_logement.csv data\indice_inflation.csv data\official\cpi_maroc_faostat.csv data\aswak_catalog.csv docs\index.html
 git diff --cached --quiet
 if errorlevel 1 (
   git commit -m "chore: releve quotidien (%DATE%)" >> collect.log 2>&1
